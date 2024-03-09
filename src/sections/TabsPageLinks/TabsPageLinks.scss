@@ -1,0 +1,21 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.tabs-page-links{
+	&__wrapper {
+		/*	display: flex;
+		flex-direction: column;	*/
+		row-gap: responsive-size(40, 80);
+	}
+
+	&__tabs-buttons {
+		overflow: auto;
+
+		@include no-scrollbar;
+	}
+
+	&__tabs-content {
+		display: flex;
+		flex-direction: column;
+	}
+}

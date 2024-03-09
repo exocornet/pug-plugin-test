@@ -1,0 +1,12 @@
+mixin ModalPerspective(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ModalPerspective.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.modalPerspective data-dialog-name=DATA('dialogName', false))
+		+I('Modal', ELEM('Modal'))
+			+ModalBody()
+				+I('Form', ELEM('Form'))(class=styles.modalPerspectiveForm)

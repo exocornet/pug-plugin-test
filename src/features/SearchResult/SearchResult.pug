@@ -1,0 +1,22 @@
+//- # ПОДКЛЮЧЕНИЕ ФУНКЦИОНАЛЬНОСТИ # -//
+include ../../shared/shared
+
+mixin SearchResult(props)
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SearchResult.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.searchResult)
+		+Text({data: {text: props.name}, cn: {style: 'cap', margin: 'mb-24'}})
+
+		for item in props.elements
+			a(class=styles.searchResultTheme href=item.detailPageUrl || '#!')
+				p(class=styles.searchResultWrapText)
+					+Text({ data: { text: item.title, tag: 'span'} })
+					if item.body
+						+Text({ data: { text: item.body, tag: 'span'}, cn: { size: 'small' } })
+				+Text({data: {text: item.date}, cn: {style: 'cap'}})(class=styles.searchResultDate)
+
+//- # ВЫЗОВ МИКСИНА И ПРОКИДЫВАНИЕ ДАННЫХ ИЗ ЗАПРОСА # -//
++SearchResult(data)

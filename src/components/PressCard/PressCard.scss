@@ -1,0 +1,97 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.press-card {
+	padding: responsive-size(20, 28) responsive-size(20, 28) responsive-size(20, 28) responsive-size(10, 18);
+
+	border-radius: responsive-size(8, 16);
+
+	&[data-mode="green"] {
+		background-color: $light-green;
+	}
+
+	&[data-mode="grey"] {
+		background-color: $smoky-white;
+	}
+
+	&__body {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+
+		@include media(xs) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__link {
+		z-index: 1;
+		right: responsive-size(20, 40);
+
+		margin-top: responsive-size(-20, -70);
+
+		@include media(xs) {
+			position: static;
+
+			width: 100%;
+			margin-top: 20px;
+
+			.button {
+				display: block;
+
+				width: 100%;
+				max-height: 64px;
+				padding: 28px 48px;
+			}
+
+			&_buttonSlider {
+				.button {
+					width: fit-content;
+					max-height: 32px;
+					padding: 12px;
+				}
+			}
+		}
+	}
+
+	&__text-container {
+		&_fix-height-and-blur {
+			position: relative;
+
+			overflow: hidden;
+
+			height: 106px;
+
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+		@media screen and (min-width: 1600px) {
+			mask-image: linear-gradient(to bottom, $black 40%, transparent 100%);
+		}
+	}
+
+	&__text {
+		overflow: hidden;
+
+		text-overflow: ellipsis;
+	}
+
+	&__footnote {
+		@include media(xs) {
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	&__slider-header-row {
+		@include media(xs) {
+			flex-wrap: nowrap;
+		}
+	}
+
+
+
+	@include media(xs) {
+		padding: 20px;
+	}
+}

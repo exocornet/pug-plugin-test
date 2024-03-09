@@ -1,0 +1,17 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-info-card')
+
+		return {
+			sliderInfoCard: BLOCK({}, [cn?.margin]),
+			sliderInfoCardSliderNavigation: BLOCK('slider-navigation'),
+			sliderProductsSliderPagination: BLOCK('slider-pagination', ['d-none@xs']),
+			sliderInfoCardSliderSlide: BLOCK('slider-slide'),
+			sliderInfoCardSliderSwiper: BLOCK('slider-swiper', {
+				'border-bottom': cn?.isBorderBottom,
+				'padding-bottom': cn?.isPaddingBottom,
+			}),
+			sliderInfoCardLinkContainer: BLOCK('link-container'),
+			sliderInfoCardLink: BLOCK('link', [cn?.showButton]),
+		}
+	}

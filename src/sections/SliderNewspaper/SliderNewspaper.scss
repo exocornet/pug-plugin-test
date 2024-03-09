@@ -1,0 +1,56 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.slider-newspaper {
+	&__slider-swiper {
+		padding-bottom: responsive-size(40, 92);
+
+		border-bottom: 1px solid $black;
+
+		@include media(xs) {
+			padding-bottom: responsive-size(40, 80);
+
+			border-bottom: 0;
+		}
+	}
+
+	&__slider-navigation {
+		bottom: responsive-size(0, 40);
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__link {
+		z-index: 1;
+		right: responsive-size(20, 40);
+
+		margin-top: responsive-size(-20, -70);
+
+		@include media(xs) {
+			position: static;
+
+			width: 100%;
+
+			.button {
+				display: block;
+
+				width: 100%;
+				max-height: 64px;
+				padding: 28px 48px;
+			}
+		}
+	}
+
+	&__col-card {
+		flex: 0 0 75.0000000001%;
+
+		max-width: 75.0000000001%;
+		@include media(xs) {
+			flex: 0 0 100%;
+
+			max-width: 100%;
+		}
+	}
+}

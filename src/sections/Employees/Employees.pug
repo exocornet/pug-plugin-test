@@ -1,0 +1,40 @@
+mixin Employees(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const TEXT_PROPS = {data: {...ELEM('Text').data}, cn: {style: 'cap', textTransform: 'upper'}};
+		const ROW_PROPS = {cn: {margin: 'mt-56 mt-20@xs'}}
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Employees.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.employees data-dialog-name=DATA('dialogName', false))
+		+Container
+			if ELEM('Heading', false)
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+
+			if ELEM('Text', false)
+				+Row
+					if ELEM('Text', false)
+						+Col({cn: {cols: 'col-2 col-4@xs', margin: 'mb-12@xs'}})
+							+Text(TEXT_PROPS)
+
+			+Row(class=styles.employeesRow)
+				for item in DATA_ARR('cardPersonalColArr')
+					//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+					include ../../shared/helpers/pug/shortcut-check-store
+					- const COL_PROPS = {cn: {cols: 'col-5 col-4@xs'}};
+					- const stylesItem = classes(item && item.cn);
+					+Col(deepMerge(COL_PROPS, I_ELEM('Col')))(class=stylesItem.employeesCol)
+						+I('CardPersonal', I_ELEM('CardPersonal'))
+
+			if ELEM('PageLink', false)
+				+Row(deepMerge(ROW_PROPS, ELEM('Row')))
+					+Col({cn: {display: 'd-flex', justify: 'justify-content-end'}})
+						+Button(ELEM('PageLink'))

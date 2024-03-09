@@ -1,0 +1,13 @@
+mixin AsidePageNav(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include AsidePageNav.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.asidePageNav)
+		+Container(class=styles.asidePageNav__list)
+			each link in props.linksArr
+				+Link({data: {linkHref: link.href, text: link.text, ariaLink: link.text,}})(class=styles.asidePageNav__item)

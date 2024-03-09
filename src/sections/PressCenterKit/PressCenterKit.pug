@@ -1,0 +1,16 @@
+mixin PressCenterKit(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include PressCenterKit.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.pressCenterKit id=DATA('id', false))
+		div(class=styles.pressCenterKitContainer)
+			+Row
+				+Col(ELEM('Col'))
+					+Heading(ELEM('Heading'))
+				+Col
+					+I('PressCard', ELEM('PressCard'))

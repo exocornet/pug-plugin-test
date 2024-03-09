@@ -1,0 +1,33 @@
+//- # ПОДКЛЮЧЕНИЕ ФУНКЦИОНАЛЬНОСТИ # -//
+include ../../shared/shared
+
+mixin SearchResultProduct(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SearchResultProduct.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.searchResultProduct)
+		+Text({data: {text: props.name}, cn: {style: 'cap', margin: 'mb-24'}})
+
+		for item in props.elements
+			a(class=styles.searchResultProductTheme href=item.detailPageUrl || '#!')
+				picture
+					img(class=styles.searchResultProductThemeImage src=item.image alt="")
+				div(class=styles.searchResultProductThemeBody)
+					div(class=styles.searchResultProductThemeTop)
+						+Text({data: {text: item.formula}, cn: {style: 'cap', textTransform: 'upper'}})(class="d-none d-block@xs")
+						+Text({data: {text: item.title}})(class=styles.searchResultProductThemeHeading)
+						p(class=styles.searchResultProductThemeBrand)
+							+Text({data: {text: 'Марка <span class="d-none d-inline-block@md">[A]</span>', tag: 'span'}, cn: {style: 'cap', textTransform: 'upper'}})
+							+Text({data: {text: item.type, tag: 'span'}, cn: {style: 'cap'}})(class="d-none@xs")
+					div(class=styles.searchResultProductThemeBottom)
+						+Text({data: {text: item.body}})(class=styles.searchResultProductThemeText)
+						if OPT('isPrice')
+							+Text({data: {text: item.price}})(class=styles.searchResultProductThemePrice)
+
+//- # ВЫЗОВ МИКСИНА И ПРОКИДЫВАНИЕ ДАННЫХ ИЗ ЗАПРОСА # -//
++SearchResultProduct(data)

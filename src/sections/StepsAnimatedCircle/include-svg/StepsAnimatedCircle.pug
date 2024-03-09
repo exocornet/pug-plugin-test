@@ -1,0 +1,40 @@
+include ForeignObject/ForeignObject
+
+svg(class=styles.stepsAnimatedCircleSvg viewBox="0 0 1600 884" fill="none")
+	path(d="M385.211,468.5a414.5,414.5 0 1,0 829,0a414.5,414.5 0 1,0 -829,0" stroke="#DADADA")/
+	circle(cx="800" cy="470" r="375" fill="var(--circle-color, hsla(101, 100%, 84%, 1))")/
+	path(d="M0.210938 470L385.211 470" stroke="#DADADA")/
+	path(d="M1214.21 470L1600.21 470" stroke="#DADADA")/
+
+	//- ### step 1 ### -//
+	+ForeignObject(ELEM('ForeignObjectNumber1'))&attributes({ForeignObject: { 'class': 'js-step-1' }, Text: { 'class': `${styles.stepsAnimatedCircleStepNumber} steps-animated-circle__step-number_bg-black js-step-1-number` }})
+	+ForeignObject(ELEM('ForeignObjectName1'))&attributes({ForeignObject: {'class': 'js-step-1'}, Text: { 'class': `${styles.stepsAnimatedCircleStepName} text-align-center text-align-left@xs` }})
+	path(class="js-step-1-loading" d="M820.436 54.7508C889.284 58.6591 952.306 77.7556 1008.42 110.5C1064.53 143.243 1112.15 188.718 1147.46 243.254C1182.76 297.791 1204.75 359.862 1211.65 424.46C1218.56 489.058 1210.18 554.374 1187.2 615.138" stroke="var(--circle-loading-color, hsla(108, 67%, 44%, 1))")/
+
+	+ForeignObject(ELEM('ForeignObjectImage1'))&attributes({ ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepImageForeign} js-step-1-image js-step-1` } })
+		picture
+			img(class=`${styles.stepsAnimatedCircleStepImage}` src=DATA('image1') alt="")/
+	+ForeignObject(ELEM('ForeignObjectTitle1'))&attributes({ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepTitleForeign} js-step-1-title js-step-1` }, Text: { 'class': `${styles.stepsAnimatedCircleStepTitle} text-align-center text-align-left@xs` }})
+	+ForeignObject(ELEM('ForeignObjectDescription1'))&attributes({ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepDescriptionForeign} js-step-1-description js-step-1` }, Text: { 'class': `${styles.stepsAnimatedCircleStepDescription} text-align-center text-align-left@xs` }})
+
+	//- ### step 2 ### -//
+	+ForeignObject(ELEM('ForeignObjectNumber2'))&attributes({ ForeignObject: { 'class': 'js-step-2' }, Text: { 'class': `${styles.stepsAnimatedCircleStepNumber} js-step-2-number` } })
+	+ForeignObject(ELEM('ForeignObjectName2'))&attributes({ForeignObject: { 'class': 'js-step-2' }, Text: { 'class': `${styles.stepsAnimatedCircleStepName}` }})
+	path(class="js-step-2-loading" d="M1171.01 652.332C1136.73 721.589 1083.79 779.887 1018.14 820.646C952.492 861.405 876.758 883.003 799.486 883C722.214 882.997 646.482 861.395 580.837 820.632C515.192 779.868 462.248 721.566 427.983 652.307" stroke="var(--circle-loading-color, hsla(108, 67%, 44%, 1))")/
+
+	+ForeignObject(ELEM('ForeignObjectImage2'))&attributes({ ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepImageForeign} js-step-2-image js-step-2` } })
+		picture
+			img(class=`${styles.stepsAnimatedCircleStepImage}` src=DATA('image2') alt="")/
+	+ForeignObject(ELEM('ForeignObjectTitle2'))&attributes({ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepTitleForeign} js-step-2-title js-step-2` }, Text: { 'class': `${styles.stepsAnimatedCircleStepTitle} text-align-center text-align-left@xs` }})
+	+ForeignObject(ELEM('ForeignObjectDescription2'))&attributes({ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepDescriptionForeign} js-step-2-description js-step-2` }, Text: { 'class': `${styles.stepsAnimatedCircleStepDescription} text-align-center text-align-left@xs` }})
+
+	//- ### step 3 ### -//
+	+ForeignObject(ELEM('ForeignObjectNumber3'))&attributes({ ForeignObject: { 'class': 'js-step-3' }, Text: { 'class': `${styles.stepsAnimatedCircleStepNumber} js-step-3-number` } })
+	+ForeignObject(ELEM('ForeignObjectName3'))&attributes({ForeignObject: { 'class': 'js-step-3' }, Text: { 'class': `${styles.stepsAnimatedCircleStepName} text-align-right text-align-left@xs` }})
+	path(class="js-step-3-loading" d="M412.089 615.886C388.69 554.381 380.271 488.188 387.529 422.784C394.787 357.379 417.513 294.643 453.827 239.764C490.141 184.885 539 139.44 596.361 107.19C653.723 74.9398 717.939 56.8103 779.697 54.3014" stroke="var(--circle-loading-color, hsla(108, 67%, 44%, 1))")/
+
+	+ForeignObject(ELEM('ForeignObjectImage3'))&attributes({ ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepImageForeign} js-step-3-image js-step-3` } })
+		picture
+			img(class=`${styles.stepsAnimatedCircleStepImage}` src=DATA('image3') alt="")/
+	+ForeignObject(ELEM('ForeignObjectTitle3'))&attributes({ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepTitleForeign} js-step-3-title js-step-3` }, Text: { 'class': `${styles.stepsAnimatedCircleStepTitle} text-align-center text-align-left@xs` }})
+	+ForeignObject(ELEM('ForeignObjectDescription3'))&attributes({ForeignObject: { 'class': `${styles.stepsAnimatedCircleStepDescriptionForeign} js-step-3-description js-step-3` }, Text: { 'class': `${styles.stepsAnimatedCircleStepDescription} text-align-center text-align-left@xs` }})

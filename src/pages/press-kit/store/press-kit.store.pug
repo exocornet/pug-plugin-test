@@ -1,0 +1,51 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Пресс-кит';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Пресс-центр' } },
+						{ data: { text: 'Пресс-кит' } }
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции HeadingDetailed # -//
+include press-kit--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Подключение store секции ImageFacts # -//
+include press-kit--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- # Подключение store секции PageLinks # -//
+include press-kit--page-links-services
+- pageStore.addSection(PageLinksServices);
+
+//- # Подключение store секции EmployeesMaterials # -//
+include press-kit--employees-materials
+- pageStore.addSection(EmployeesMaterials);
+
+//- # Подключение store секции PageLinks # -//
+include press-kit--page-links-press-release
+- pageStore.addSection(PageLinksPressRelease);
+
+//- # Подключение store секции SliderInfoCardNews # -//
+include press-kit--slider-info-card-news
+- pageStore.addSection(SliderInfoCardNews);
+
+//- # Подключение store секции ListContactLinks # -//
+include press-kit--list-contact-links
+- pageStore.addSection(ListContactLinks);

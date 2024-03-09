@@ -1,0 +1,41 @@
+mixin TitleText(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const HEADING_TITLE_TEXT_TITLE_PROPS = {
+			data: { tag: 'span' },
+			cn: { size: 'h1', display: 'd-flex' },
+		}
+
+		const HEADING_TITLE_TEXT_SUP_PROPS = {
+			data: { tag: 'span' },
+			cn: { size: 'h4', colorClass: 'light-grey' }
+		}
+
+		const COL_PROPS = {
+			cn: {
+				cols: 'col-7 col-4@xs',
+				display: 'd-flex',
+				direction: 'flex-direction-column',
+				gap: 'rg-64 rg-20@xs',
+			}
+		}
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TitleText.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	//TODO ЗАРЕФАКТОРИТЬ ВСЕ НАЗВАНИЯ ЭЛЕМЕНТОВ И В СТОРАХ ИЗМЕНИТЬ И КОМПОНЕНТ ПЕРЕПИСАТЬ
+	+Col(deepMerge(COL_PROPS, ELEM('Col')))
+		if DATA('title', false)
+			+Heading(deepMerge(HEADING_TITLE_TEXT_TITLE_PROPS, ELEM('HeadingTitleTextTitle')))
+				span !{DATA('title')}
+				if DATA('titleSup', false)
+					+Heading(deepMerge(HEADING_TITLE_TEXT_SUP_PROPS, ELEM('HeadingTitleTextSup')))(class=styles.titleTextSup)
+						| !{DATA('titleSup')}
+		if DATA('text', false)
+			+Text(ELEM('TitleTextText'))
+				| !{DATA('text')}

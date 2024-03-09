@@ -1,0 +1,20 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('requisites')
+
+		return {
+			requisites: BLOCK({}, [
+				cn?.margin,
+			]),
+			requisitesWrapper: BLOCK('wrapper', {
+				[`${cn?.bgGreen}`]: ['bg-green'].includes(cn?.bgGreen)
+			}),
+			requisitesFootnote: BLOCK('footnote'),
+			requisitesHeader: BLOCK('header'),
+			requisitesFooterBordered: BLOCK('footer', { 'bordered': cn?.border }),
+			requisitesFooterWrapper: BLOCK('footer-wrapper'),
+			requisitesLine: BLOCK('line', ['mb-20 mb-16@xs js-copy']),
+			requisitesButton: BLOCK('button', ['mt-20@xs']),
+			requisitesCopyButton: BLOCK('copy-button', ['js-copy-btn']),
+		}
+	}

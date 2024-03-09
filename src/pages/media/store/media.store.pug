@@ -1,0 +1,51 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Медиа';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Пресс-центр' } },
+						{ data: { text: 'Медиа' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции Employees ## -//
+include media--employees.pug
+- pageStore.addSection(Employees);
+
+//- ## Подключение store секции TabsInnerTabMedia ## -//
+include media--tabs-inner-tab-media.pug
+- pageStore.addSection(TabsInnerTabMedia);
+
+//- ## Подключение store секции SubscriptionForm ## -//
+include media--subscription-form
+- pageStore.addSection(SubscriptionForm);
+
+//- ## Подключение store секции ListContactLinks ## -//
+include media--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- ## Подключение store секции ModalVideoCustom ## -//
+include media--modal-video-custom
+- pageStore.addSection(ModalVideoCustom);
+
+//- ## Подключение store секции ModalImageSlider ## -//
+include media--modal-image-slider
+- pageStore.addSection(ModalImageSlider);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include media--dialog
+- pageStore.addSection(HiddenDialogContent);

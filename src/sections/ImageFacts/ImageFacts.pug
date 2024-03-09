@@ -1,0 +1,30 @@
+mixin ImageFacts(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ImageFacts.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.imageFacts)
+		+Container
+			div(class=styles.imageFactsWrapper)
+				div(class=styles.imageFactsPictureWrapper)
+					picture(class=styles.imageFactsPicture)
+						source(srcset=DATA('imgXs') media=`(max-width: ${media.xs})`)
+						img(class=styles.imageFactsImage src=DATA('img') alt="")
+					if DATA('captionFirstLine', false)
+						div(class=styles.imageFactsCaption)
+							+Text({
+								data: {tag: 'span'},
+								cn: {style: 'cap', textTransform: 'upper'}
+							})(class=styles.imageFactsCaptionTopLine) !{DATA('captionFirstLine')}
+							if DATA('captionLastLine', false)
+								+Text({
+									data: {tag: 'span'},
+									cn: {style: 'cap', textTransform: 'upper'}
+								})(class=styles.imageFactsCaptionBottomLine) !{DATA('captionLastLine')}
+
+			if ELEM('Facts', false)
+				+I('Facts', ELEM('Facts'))

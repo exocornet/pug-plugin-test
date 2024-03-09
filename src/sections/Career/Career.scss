@@ -1,0 +1,28 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.career {
+	&__wrapper {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			padding-top: 1px;
+		}
+	}
+
+	&__row-top {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 19px;
+		}
+	}
+
+	&__row-bottom {
+		margin-top: responsive-size(20);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 20px;
+		}
+	}
+}
+

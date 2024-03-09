@@ -1,0 +1,38 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Устойчивое развитие';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Устойчивое развитие' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Добавление store для секции HeadingDetailed # -//
+include sustainable-development--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Добавление store для секции ImageFacts # -//
+include sustainable-development--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- # Добавление store для секции Career # -//
+include sustainable-development--career
+- pageStore.addSection(Career);
+
+//- ## Подключение store секции ListInfoCard ## -//
+include sustainable-development--list-info-card
+- pageStore.addSection(ListInfoCard);

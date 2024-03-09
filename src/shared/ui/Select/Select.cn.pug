@@ -1,0 +1,15 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('custom-select')
+
+		return {
+			customSelect: BLOCK(
+				{[cn?.icon]: cn?.icon === 'with-icon',
+					[cn?.subscription]: ['subscription'].includes(cn?.subscription)
+				},
+			),
+			customSelectImage: BLOCK('image'),
+			customSelected: BLOCK('selected'),
+			customSelectItems: BLOCK('items')
+		}
+	}

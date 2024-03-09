@@ -1,0 +1,16 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('input')
+
+		return {
+			input: BLOCK(
+				{[cn?.icon]: cn?.icon === 'with-icon',
+					[cn?.subscription]: ['subscription'].includes(cn?.subscription)
+				},
+			),
+			inputImage: BLOCK('image'),
+			resetFile: BLOCK('reset-file'),
+			inputButtonNumberContainer: BLOCK('button-number-container'),
+			inputButtonNumber: BLOCK('button-number')
+		}
+	}

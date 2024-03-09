@@ -1,0 +1,30 @@
+.bread-crumbs {
+	align-items: center;
+
+	margin-left: 178px;
+	gap: 8px;
+
+	&__link, &__separator, &__disabled {
+		color: $light-gray;
+
+		font-family: $font-helvetica;
+		font-weight: 550;
+
+		line-height: 1.4;
+
+		@include font-size-responsive(1);
+	}
+
+	&__separator {
+		margin-top: 3px;
+	}
+
+	&__disabled {
+		cursor: default;
+		pointer-events: none;
+	}
+
+	@include media(xs) {
+		display: none;
+	}
+}

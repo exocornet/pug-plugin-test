@@ -1,0 +1,27 @@
+mixin SliderNews(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderNews.cn.pug
+	- const styles = classes(props && props.cn);
+
+		//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderNews id=DATA('id', false))
+		+Container
+			if ELEM('Heading', false)
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			+Row
+				+Col(ELEM('ColNewsSlider'))
+					+Slider(ELEM('Slider'))&attributes({SliderNavigation: {class: styles.sliderNewsSliderNavigation}, SliderSwiper: {class: styles.sliderNewsSliderSwiper}})
+						for item in ELEM_ARR('SliderNewsArr')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+SliderSlide(class=styles.sliderNewsSliderSlide)
+								+NewsCard(I_ELEM('NewsCard'))
+
+					//- ## Ссылка на страницу  ## -//
+					if ELEM('PageLink', false)
+						div(class=styles.sliderNewsLink)
+							+Button(ELEM('PageLink'))

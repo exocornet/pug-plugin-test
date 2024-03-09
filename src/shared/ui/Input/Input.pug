@@ -1,0 +1,26 @@
+mixin Input(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Input.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	input(
+		type=DATA('type', 'text')
+		placeholder=DATA('placeholder')
+		name=DATA('name', 'search')
+		data-type=DATA('dataType', DATA('name'))
+		accept=DATA('accept', false)
+		class=styles.input
+		data-required=DATA('required', false)
+		data-min=DATA('min', false)
+		data-text-default=DATA('textDefault', false)
+	)&attributes(attributes)
+
+	if OPT('img')
+		img(src=DATA('img') alt="" width="18" height="18" class=styles.inputImage)
+
+	if DATA('type') === 'file'
+		include include-svg/close

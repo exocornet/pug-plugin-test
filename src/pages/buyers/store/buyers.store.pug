@@ -1,0 +1,62 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Покупателям';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Покупателям' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Добавление store для секции HeadingDetailed # -//
+include buyers--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Добавление store для секции ImageFacts # -//
+include buyers--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- # Добавление store для секции PageLinks # -//
+include buyers--page-links
+- pageStore.addSection(PageLinks);
+
+//- # Добавление store для секции SliderProducts # -//
+include buyers--slider-products
+- pageStore.addSection(SliderProducts);
+
+//- # Добавление store для секции SliderInfoCard # -//
+include buyers--slider-info-card
+- pageStore.addSection(SliderInfoCard);
+
+//- # Добавление store для секции PageLinks # -//
+include buyers--page-links-document
+- pageStore.addSection(PageLinksDocument);
+
+//- # Подключение store секции SliderNews # -//
+include buyers--slider-news
+- pageStore.addSection(SliderNews);
+
+//- ## Подключение store секции FeedbackForm ## -//
+include buyers--feedback-form
+- pageStore.addSection(FeedbackForm);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include buyers--dialog
+- pageStore.addSection(HiddenDialogContent);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include buyers--modal-quality-passport
+- pageStore.addSection(ModalQualityPassport);

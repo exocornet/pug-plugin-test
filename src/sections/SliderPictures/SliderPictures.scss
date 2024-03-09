@@ -1,0 +1,62 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.slider-pictures {
+	&__slider-swiper {
+		margin-right: responsive-size(-20, -40);
+
+		padding-bottom: 32px;
+	}
+
+	&__slider-slides-wrapper {
+		margin-bottom: 20px;
+	}
+
+	&__bottom-heading {
+		margin-top: -32px;
+
+		&_underlined {
+			padding-bottom: responsive-size(24, 50, md);
+
+			border-bottom: 1px solid var(--light-gray);
+		}
+
+		@include media(xs) {
+			padding-bottom: 0;
+
+			border-bottom: none;
+		}
+	}
+
+	&__slider-slide {
+		width: auto;
+
+		@include media(xs) {
+			//TODO FIX
+			width: 90%;
+			//margin-left: 20px;
+		}
+	}
+
+	&__image {
+		display: block;
+		object-fit: cover;
+
+		height: responsive-size(368, 560);
+
+		border-radius: 8px;
+	}
+
+	&__link {
+		position: relative;
+		z-index: 1;
+
+		@include media(xs) {
+			display: block;
+
+			width: 100%;
+			max-height: 64px;
+			padding: 28px 48px;
+		}
+	}
+}

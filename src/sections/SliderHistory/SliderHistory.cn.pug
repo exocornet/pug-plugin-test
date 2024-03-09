@@ -1,0 +1,23 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-history')
+
+		return {
+			sliderHistory: BLOCK({}, [cn?.margin]),
+			sliderHistoryContainer: BLOCK('container'),
+			sliderHistoryBgWrap: BLOCK('bg-wrap'),
+			sliderHistoryWrapBigPicture: BLOCK('wrap-big-picture'),
+			sliderHistoryImageBg: BLOCK('image-bg'),
+			sliderHistoryDate: BLOCK('date'),
+			sliderHistorySliderSwiper: BLOCK('slider-swiper'),
+			sliderHistorySliderSlide: BLOCK('slider-slide'),
+			sliderHistorySliderPagination: BLOCK('slider-pagination'),
+			sliderHistorySliderNavigation: BLOCK('slider-navigation', ['d-none@xs']),
+			sliderHistoryImage: BLOCK('image'),
+			sliderHistoryImageBig: BLOCK('image-big'),
+			sliderHistoryPictureWrap: BLOCK('picture-wrap'),
+			sliderHistoryCloseButtonWrapper: BLOCK('close-button-wrapper'),
+			sliderHistoryCloseButton: BLOCK('close-button'),
+			sliderHistoryText: BLOCK('text')
+		}
+	}

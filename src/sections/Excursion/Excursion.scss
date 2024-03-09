@@ -1,0 +1,86 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.excursion {
+	&__container {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			padding: 0;
+		}
+	}
+
+	&__wrapper {
+		padding: responsive-size(20, 28);
+
+		border-radius: 8px;
+
+		background: $smoky-white;
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			padding: 20px;
+		}
+	}
+
+	&__row-top {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 19px;
+		}
+	}
+
+	&__row-bottom {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 20px;
+		}
+	}
+
+	&__info {
+		color: $dark-green;
+
+		@include font-size-responsive(1, 1);
+	}
+
+	&__description {
+		margin-bottom: responsive-size(20, 65);
+		@include font-size-responsive(1.6, 2);
+	}
+
+	&__button {
+		display: block;
+	}
+
+	&__video-container {
+		height: responsive-size(280, 368);
+
+		border-radius: 16px;
+
+		.video {
+			max-height: responsive-size(280, 368);
+		}
+
+		.video__caption {
+			top: 20px;
+			right: 20px;
+
+			display: block;
+
+			padding: 4px;
+
+			opacity: 1;
+			border-radius: 4px;
+			background: rgba(255, 255, 255, 0.30);
+
+			backdrop-filter: blur(6.5px);
+		}
+
+		@include media(xxl, min) {
+			height: responsive-size(280, 468);
+
+			.video {
+				max-height: responsive-size(280, 468);
+			}
+		}
+
+	}
+}

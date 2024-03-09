@@ -1,0 +1,78 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.calculator {
+	&__container {
+		overflow: hidden;
+
+		margin-right: responsive-size(0,12);
+		margin-left: responsive-size(0,12);
+		padding: responsive-size(20, 28);
+
+		border-radius: responsive-size(8, 16);
+		background: $smoky-white;
+	}
+
+	&__footnote {
+		display: flex;
+
+		letter-spacing: 1px;
+
+		text-transform: uppercase;
+
+		font-family: $font-helvetica;
+		font-size: 10px;
+		font-weight: 550;
+		font-style: normal;
+		line-height: 14px;
+
+		&-container {
+			display: flex;
+
+			width: 100%;
+			gap: 10px;
+			@include media(xs) {
+				gap: 24px;
+
+				flex-direction: column;
+			}
+		}
+
+		&-steps {
+			display: flex;
+			flex-grow: 2;
+			gap: 40px;
+			@include media(xs) {
+				justify-content: space-between;
+			}
+		}
+
+		&-grow-one-half {
+			flex-grow: 1.5;
+		}
+
+		@include media(xxl, "min") {
+			@include font-size-responsive(1,1.2);
+		}
+
+		@include media(xs) {
+			margin-bottom: 0;
+		}
+	}
+
+	&__footnote-step {
+		&-active {
+			color: $light-gray;
+		}
+	}
+
+	&__forms-wrapper {
+		display: flex;
+
+		width: 100%;
+	}
+
+	&__slide {
+		transform: translateX(200px);
+	}
+}

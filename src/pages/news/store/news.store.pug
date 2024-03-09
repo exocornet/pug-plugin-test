@@ -1,0 +1,47 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Новости';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Пресс-центр' } },
+						{ data: { text: 'Новости' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include news--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- ## Подключение store секции FilterNews ## -//
+include news--filter-news
+- pageStore.addSection(FilterNews);
+
+//- ## Подключение store секции SliderVideo ## -//
+include news--slider-video
+- pageStore.addSection(SliderVideo);
+
+//- ## Подключение store секции ListContactLinks ## -//
+include news--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- ## Подключение store секции ModalVideoCustom ## -//
+include news--modal-video-custom
+- pageStore.addSection(ModalVideoCustom);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include news--dialog
+- pageStore.addSection(HiddenDialogContent);

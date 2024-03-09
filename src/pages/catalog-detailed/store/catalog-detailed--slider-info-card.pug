@@ -1,0 +1,90 @@
+-
+	const SliderInfoCard = {
+		includeSection: 'SliderInfoCard',
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Арендуйте автотранспорт и спецтехнику для перевозки грузов",
+					footnoteText: "дополнителная информация"
+				},
+				cn: {
+					size: "h3",
+					margin: 'mb-40 mb-20@xs',
+					textIndent: true,
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto'
+				},
+			},
+			ColCardSlider: {
+				cn:{
+					cols: 'col-10 col-4@xs',
+					offset: 'offset-2 offset-0@xs',
+				}
+			},
+			SliderInfoArr: [
+				{
+					elem: {
+						CardInfo: {
+							data: {
+								img: require('IMAGES/sections/image-heading/image-heading-transportation-services.jpg'),
+								imgXs: require('IMAGES/sections/image-heading/image-heading-transportation-services-xs.jpg')
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										size: 'large'
+									}
+								},
+								Header: {
+									data: {
+										text: 'заказать автотранспорт'
+									},
+									cn: {
+										textTransform: 'lower',
+										size: 'bigger'
+									},
+								},
+								Text: {
+									data: {
+										text: 'Аренда от леговых автомобилей до автогидроподъёмников. Разнообразный выбор автомобилей и&nbsp;опытные водители'
+									},
+									cn: {
+										width: 'w-30 w-100@xs mb-20@xs',
+									},
+								},
+							},
+							cn: {
+								cols: 'col-4@xs',
+								slider: 'slider__slide swiper-slide d-flex flex-direction-column justify-content-between h-auto position-relative',
+								isRow: 'd-flex justify-content-between align-items-end w-100 flex-direction-column@xs'
+							},
+							opt: {
+								isCircle: true
+							}
+						}
+					}
+				},
+			],
+		}
+	}

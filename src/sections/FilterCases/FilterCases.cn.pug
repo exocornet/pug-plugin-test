@@ -1,0 +1,13 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('filter-cases')
+
+		return {
+			FilterCases: BLOCK({}, ['mt-40']),
+			FilterCasesFiltersSelectControl: BLOCK('filters-select-control'),
+			FilterCasesCards: BLOCK('cards'),
+			FilterCasesCardWrap: BLOCK('card-wrap', {
+				[`${cn?.widthType}`]: ['wide', 'narrow'].includes(cn?.widthType),
+			}),
+		}
+	}

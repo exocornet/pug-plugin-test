@@ -1,0 +1,121 @@
+@import "../../shared/styles/include-setings-styles";
+
+.tabs-slider {
+	&__slider-swiper {
+		&_padding-bottom {
+			padding-bottom: responsive-size(40, 52);
+			@include media(xs) {
+				padding-bottom: 84px;
+			}
+		}
+
+		&_border-bottom {
+			border-bottom: 1px solid $light-gray;
+			@include media(xs) {
+				border-bottom: 0;
+			}
+		}
+	}
+
+	&__slider-slide {
+		width: auto;
+	}
+
+	&__slider-pagination {
+		--swiper-pagination-bottom: #{responsive-size(50, 52, md)};
+		right: responsive-size(20, 28);
+
+		margin-left: auto;
+	}
+
+	&__slider-navigation {
+		position: relative;
+
+		flex-wrap: wrap;
+
+		width: 100%;
+		margin-top: 20px;
+
+		.swiper-button-lock {
+			visibility: hidden;
+		}
+
+		.slider__border-bottom {
+			flex: 0 0 100%;
+
+			padding-bottom: 40px;
+		}
+
+		.swiper-button-lock + .slider__border-bottom {
+			visibility: hidden;
+		}
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__link {
+		z-index: 1;
+
+		right: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+
+		margin-top: responsive-size(-70, -66);
+
+		@include media(xs) {
+			width: 100%;
+
+			margin-top: 20px;
+
+			.button {
+				display: block;
+
+				width: 100%;
+				max-height: 64px;
+				padding: 28px 48px;
+			}
+		}
+	}
+
+	&__tab-body {
+		flex: none;
+	}
+
+	&__tab-button {
+		display: flex;
+		padding-inline: 0;
+
+		background-color: transparent;
+
+		&:hover {
+			color: $dark-green;
+			background-color: transparent;
+
+			.button__download {
+				color: $dark-green;
+			}
+		}
+
+		&:hover:not([disabled]) {
+			background: none;
+		}
+
+		&-separator {
+			flex: 0 0 2px;
+
+			padding: 1px;
+
+			border-radius: 50%;
+			background-color: $black;
+			margin-inline: responsive-size(8, 10);
+		}
+
+		@include media(xs) {
+			background-color: $black-04;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.tabs-images-heading {
+	&__tabs-buttons {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			position: absolute;
+			bottom: responsive-size(368, 1635);
+		}
+	}
+
+	&__row-top {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 72px;
+		}
+	}
+}

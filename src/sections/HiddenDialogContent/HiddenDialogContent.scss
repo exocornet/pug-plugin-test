@@ -1,0 +1,18 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.hidden-dialog-content {
+	&__footer {
+		text-align: right;
+	}
+
+	&__body {
+		margin-top: responsive-size(24, 64);
+		column-gap: responsive-size(0, 120);
+
+		@include media(xs){
+			flex-direction: column;
+			row-gap: 12px;
+		}
+	}
+}

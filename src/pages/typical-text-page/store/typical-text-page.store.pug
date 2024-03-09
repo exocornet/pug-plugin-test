@@ -1,0 +1,121 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Типовая текстовая страница';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции HeadingDetailed # -//
+include typical-text-page--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Подключение store секции HeadingDetailed # -//
+include typical-text-page--heading-detailed-footnote
+- pageStore.addSection(HeadingDetailedFootnote);
+
+//- # Подключение store секции HeadingDetailed # -//
+include typical-text-page--heading-detailed-image
+- pageStore.addSection(HeadingDetailedImage);
+
+//- # Подключение store секции ImageFacts # -//
+include typical-text-page--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- # Подключение store секции HeadingDetailed # -//
+include typical-text-page--heading-detailed-video
+- pageStore.addSection(HeadingDetailedVideo);
+
+//- # Подключение store секции VideoFacts # -//
+include typical-text-page--video-facts
+- pageStore.addSection(VideoFacts);
+
+//- # Подключение store секции FactsWrap # -//
+include typical-text-page--facts-wrap-video
+- pageStore.addSection(FactsWrapVideo);
+
+//- # Подключение store секции TitleTextWrap # -//
+include typical-text-page--title-text-wrap
+- pageStore.addSection(TitleTextWrap);
+
+//- # Подключение store секции FactsWrap # -//
+include typical-text-page--facts-wrap
+- pageStore.addSection(FactsWrap);
+
+//- # Подключение store секции CardQuoteWrap # -//
+include typical-text-page--card-quote-wrap
+- pageStore.addSection(CardQuoteWrap);
+
+//- # Подключение store секции VacancyList # -//
+include typical-text-page--vacancy-list
+- pageStore.addSection(VacancyList);
+
+//- # Подключение store секции TitleTextWrapCost # -//
+include typical-text-page--title-text-wrap-cost
+- pageStore.addSection(TitleTextWrapCost);
+
+//- # Подключение store секции TitleTextWrapDeadline # -//
+include typical-text-page--title-text-wrap-deadline
+- pageStore.addSection(TitleTextWrapDeadline);
+
+//- # Подключение store секции TitleTextWrapLocation # -//
+include typical-text-page--title-text-wrap-location
+- pageStore.addSection(TitleTextWrapLocation);
+
+//- # Подключение store секции AccordionList # -//
+include typical-text-page--accordion-list
+- pageStore.addSection(AccordionList);
+
+//- # Подключение store секции SliderStories # -//
+include typical-text-page--slider-stories
+- pageStore.addSection(SliderStories);
+
+//- ## Подключение store секции SliderInfoCardSuitable ## -//
+include typical-text-page--slider-info-card-suitable
+- pageStore.addSection(SliderInfoCardSuitable);
+
+//- ## Подключение store секции SliderInfoCardPrograms ## -//
+include typical-text-page--slider-info-card-programs
+- pageStore.addSection(SliderInfoCardPrograms);
+
+//- ## Подключение store секции CareerIncrease ## -//
+include typical-text-page--career-increase
+- pageStore.addSection(CareerIncrease);
+
+//- ## Подключение store секции CareerLastMain ## -//
+include typical-text-page--career-last-main
+- pageStore.addSection(CareerLastMain);
+
+//- ## Подключение store секции CareerFirstMain ## -//
+include typical-text-page--career-first-main
+- pageStore.addSection(CareerFirstMain);
+
+//- ## Подключение store секции Excursion ## -//
+include typical-text-page--excursion
+- pageStore.addSection(Excursion);
+
+//- ## Подключение store секции Employees ## -//
+include typical-text-page--employees
+- pageStore.addSection(Employees);
+
+//- ## Подключение store секции SliderVideo ## -//
+include typical-text-page--slider-video
+- pageStore.addSection(SliderVideo);
+
+//- ## Подключение store секции TabsInnerTabMedia ## -//
+include typical-text-page--tabs-inner-tab-media
+- pageStore.addSection(TabsInnerTabMedia);
+
+//- ## Подключение store секции PageLinks ## -//
+include typical-text-page--page-links
+- pageStore.addSection(PageLinks);
+
+//- ## Подключение store секции ModalVideoCustom ## -//
+include typical-text-page--modal-video-custom
+- pageStore.addSection(ModalVideoCustom);
+
+//- ## Подключение store секции ModalImageSlider ## -//
+include typical-text-page--modal-image-slider
+- pageStore.addSection(ModalImageSlider);

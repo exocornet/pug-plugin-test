@@ -1,0 +1,13 @@
+mixin AdvertisementMore(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	+Row(ELEM('Row'))
+		+Col({ cn: { cols: 'col-9 col-4@xs' } })
+			+Heading(ELEM('Heading'))
+		+Col({ cn: { cols: 'col-3 col-4@xs text-align-right' } })
+			+Button(ELEM('Button'))
+		hr(class="mt-80 d-none@xs")

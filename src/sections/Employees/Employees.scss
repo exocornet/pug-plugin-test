@@ -1,0 +1,29 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.employees {
+	$self: &;
+
+	&__row {
+		row-gap: responsive-size(60, 64);
+
+		&_slide{
+			@include media(xs) {
+				display: flex;
+
+				overflow-x: scroll;
+
+				flex-direction: row;
+				flex-wrap: nowrap;
+
+				#{$self}__col {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+.js-card-personal-resize-right, .js-card-personal-resize-left {
+	transition: max-width 0.4s, flex 0.4s;
+}

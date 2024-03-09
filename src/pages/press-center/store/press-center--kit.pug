@@ -1,0 +1,74 @@
+-
+	const PressCenterKit = {
+		includeSection: 'PressCenterKit',
+		data: {
+			id: 'press-kit',
+		},
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-8 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Основные данные о нашей компании и предстоящих событиях",
+				},
+				cn: {
+					size: "h3",
+					margin: 'mb-40 mb-20@md',
+				},
+			},
+			PressCard: {
+				data: {
+					mode: 'green',
+				},
+				cn: {
+					marginBody: 'mt-200 mt-80@xs',
+				},
+				elem: {
+					ColHeader: {
+						cn: {
+							cols: 'col-9 col-4@xs'
+						}
+					},
+					Heading: {
+						data: {
+							tag: "h4",
+							text: "пресс-кит",
+						},
+						cn: {
+							size: "h4",
+							margin: 'mb-40 mb-20@md',
+						},
+					},
+					ColText: {
+						cn: {
+							cols: 'col-4 col-4@xs'
+						}
+					},
+					Text: {
+						data: {
+							text: 'Тут вы найдете все нужные данные о новом продукте, предстоящем событии или самой организации.'
+						},
+						cn: {
+							size: 'small',
+						}
+					},
+					Button: {
+						data: {
+							text: 'Скачать',
+							href: '#!'
+						},
+						opt: {
+							"icon-download": true
+						}
+					}
+				}
+			}
+		}
+	}

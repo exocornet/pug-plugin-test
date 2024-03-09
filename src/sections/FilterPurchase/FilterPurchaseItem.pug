@@ -1,0 +1,69 @@
+include FilterPurchaseItemText
+
+mixin FilterPurchaseItem(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FilterPurchase.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.filterPurchaseItem)&attributes(attributes)
+		+Row({cn: {alignItems:'align-items-start', flexWrap: 'flex-nowrap flex-wrap@xs'}})
+			+Col({cn: {cols: 'col-1 col-2@md col-4@xs', order: 'order-1@xs'}})
+				+Text(ELEM('TextPublication'))(class=styles.filterPurchaseItemPublication)
+			+Col({cn: {cols: 'col-1 col-4@xs', order: 'order-3@xs', display: 'd-block d-flex@xs'}})
+				+Row(class="w-100 align-items-center")
+					+Col({ cn: { cols: 'col-2@xs', display: 'd-none d-block@xs' } })
+						+Text({ data: { text: 'номер', tag: 'span' }, cn: { style: 'cap' } })(class=styles.filterPurchaseItemColName)
+					+Col({ cn: { cols: 'col-12 col-2@xs' } })
+						+Text(ELEM('TextNumber'))(class=styles.filterPurchaseItemNumber)
+			+Col({cn: {cols: 'col-6 col-5@md col-4@xs', order: 'order-2@xs'}})
+				+Text(ELEM('TextName'))(class=styles.filterPurchaseItemName)
+			+Col({cn: {cols: 'col-1 col-4@xs', order: 'order-3@xs'}})
+				+Row(class="w-100 align-items-center")
+					+Col({ cn: { cols: 'col-2@xs', display: 'd-none d-block@xs' } })
+						+Text({ data: { text: 'тип', tag: 'span' }, cn: {style: 'cap'} })(class=styles.filterPurchaseItemColName)
+					+Col({ cn: { cols: 'col-12 col-2@xs' } })
+						+Text(ELEM('TextType'))(class=styles.filterPurchaseItemType)
+			+Col({cn: {cols: 'col-1 col-4@xs', order: 'order-3@xs'}})
+				+Row(class="w-100 align-items-center")
+					+Col({ cn: { cols: 'col-2@xs', display: 'd-none d-block@xs' } })
+						+Text({data: { text: 'статус', tag: 'span' }, cn: { style: 'cap' }})(class=styles.filterPurchaseItemColName)
+					+Col({ cn: { cols: 'col-12 col-2@xs' } })
+						+Text(ELEM('TextStatus'))(class=styles.filterPurchaseItemStatus)
+			+Col({cn: {cols: 'col-1 col-2@md col-4@xs', order: 'order-3@xs'}})
+				+Row(class="w-100 align-items-center")
+					+Col({ cn: { cols: 'col-2@xs', display: 'd-none d-block@xs' } })
+						+Text({
+							data: { text: 'вскрытие', tag: 'span' },
+							cn: { style: 'cap' }
+						})(class=styles.filterPurchaseItemColName)
+					+Col({ cn: { cols: 'col-12 col-2@xs' } })
+						+Text(ELEM('TextOpening'))(class=styles.filterPurchaseItemOpening)
+			+Col({cn: {cols: 'col-1', alignItems: 'text-align-right', order: 'order-3@xs', display: 'd-none@md'}})
+				+Button(ELEM('Button'))(class=styles.filterPurchaseItemButton type="button")
+
+		+Row({cn: {margin: 'mb-40 mt-40 mb-20@xs mt-20@xs'}})(class=styles.filterPurchaseBlockHidden)
+			+Col({cn: {cols: 'col-10 col-4@xs', offset: 'offset-2 offset-0@xs'}})
+				hr(class=styles.filterPurchaseItemDelimiter)
+
+		for item in ELEM_ARR('HiddenElemsArr')
+			include ../../shared/helpers/pug/shortcut-check-store
+			+Row(I_ELEM('Row'))(class=styles.filterPurchaseBlockHidden)
+				if (I_ELEM('ColLeft', false))
+					+Col(I_ELEM('ColLeft'))
+						+Text(I_ELEM('TextLeft'))
+				if (I_ELEM('ColRight', false))
+					+Col(I_ELEM('ColRight'))
+						for text in I_ELEM_ARR('TextsRightArr')
+							+FilterPurchaseItemText(text)(class=styles.filterPurchaseItemText)
+			if I_ELEM('Button', false)
+				+Row(class=styles.filterPurchaseBlockHidden)
+					+Col(I_ELEM('ColButton'))
+						+Button(I_ELEM('Button'))
+			if I_ELEM('ButtonMobile', false)
+				+Row()(class=styles.filterPurchaseBlockHidden)
+					+Col({cn: {cols: 'col-10 col-4@xs', offset: 'offset-2 offset-0@xs', margin: 'mb-40 mt-40 mb-20@xs mt-20@xs'}})
+						hr(class=styles.filterPurchaseItemDelimiter)
+					+Button(I_ELEM('ButtonMobile'))

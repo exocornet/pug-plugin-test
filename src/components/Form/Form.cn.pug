@@ -1,0 +1,17 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('form')
+
+		return {
+			form: BLOCK({}, [cn?.margin]),
+			formAdditionals: BLOCK('additionals', ['d-flex justify-content-between flex-direction-column@xs', 'mt-24@xs']),
+			formAgreement: BLOCK('agreement'),
+			formEstimated: BLOCK('estimated'),
+			formEstimatedFrom: BLOCK('estimated-from'),
+			formEstimatedValue: BLOCK('estimated-value'),
+			formEstimatedCurrency: BLOCK('estimated-currency'),
+			formEstimatedCurrencyContainer: BLOCK('estimated-currency-container'),
+			formButton: BLOCK('button', [cn?.button]),
+			formButtonSubscribe: BLOCK('button-subscribe', ['mt-auto mt-16@xs'])
+		}
+	}

@@ -1,0 +1,24 @@
+mixin FilterPageLinks(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ СЕКЦИИ # -//
+	include FilterPageLinks.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА СЕКЦИИ # -//
+	section(class=styles.block)
+		+Container
+			+I('Filters', {data: {dataIdComponent: 'vacancies33'}})
+				+FiltersPanel(class=styles.elementFilterPanel)
+					if (ELEM('FilterSearch', false))
+						+FiltersSearch(ELEM('FilterSearch'))
+					+FiltersSelectControl(ELEM('FiltersSelectControl'))
+				+FiltersContentContainer(class=styles.elementContentContainer)
+					for item, pos in ELEM_ARR('PageLinkArr')
+						+I('PageLink', item)
+						if(ELEM('Advert'))
+							if pos === 9
+								+I('AdvertisementMore', ELEM('Advert'))
+					if (ELEM('LoadMoreButton', false))
+						+Button(ELEM('LoadMoreButton'))

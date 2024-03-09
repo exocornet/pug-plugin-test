@@ -1,0 +1,92 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+// ## ------------ Import OfficeList ------------ ## //
+@import "OfficeList/OfficeList";
+
+.tabs-map {
+	&__wrap-office-list {
+		.office__wrap {
+			width: calc(50% - 10px);
+
+			cursor: default;
+		}
+	}
+
+	&__office-wrap {
+		position: relative;
+	}
+
+	&__office-list {
+		position: absolute;
+		top: 20px;
+		left: 0;
+
+		display: flex;
+
+		overflow-x: hidden;
+
+		flex-direction: column;
+		gap: 12px;
+
+		height: calc(100% - 20px);
+
+		scroll-behavior: smooth;
+
+		&::-webkit-scrollbar {
+			overflow: -moz-scrollbars-none;
+
+			width: 0;
+			-ms-overflow-style: none;
+		}
+
+		.office__wrap {
+			max-width: responsive-size(320, 493);
+		}
+
+		@include media(xs) {
+			top: 486px;
+			left: 0;
+
+			overflow-x: auto;
+			overflow-y: hidden;
+
+			flex-direction: row;
+
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	&__office-item {
+		max-width: responsive-size(320, 453);
+
+		padding: 20px;
+
+		transition: background-color .3s ease-in-out;
+
+		border-radius: 16px;
+
+		&_green {
+			background-color: var(--light-green);
+		}
+
+		@include media(xs) {
+			display: flex;
+			flex-direction: column;
+
+			min-width: 320px;
+		}
+	}
+
+	.map {
+		width: auto;
+		height: responsive-size(580, 820);
+
+		margin-inline: responsive-size(-20, -28);
+
+		@include media(xs) {
+			margin-bottom: 288px;
+		}
+	}
+}

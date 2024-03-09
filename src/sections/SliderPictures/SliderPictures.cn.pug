@@ -1,0 +1,17 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-pictures')
+
+		return {
+			sliderPictures: BLOCK({}, [cn?.margin]),
+			sliderPicturesSliderSwiper: BLOCK('slider-swiper'),
+			sliderPicturesSliderSlidesWrapper: BLOCK('slider-slides-wrapper'),
+			sliderPicturesSliderSlide: BLOCK('slider-slide'),
+			sliderPicturesSliderNavigation: BLOCK('slider-navigation', ['d-none@xs']),
+			sliderPicturesImage: BLOCK('image'),
+			sliderPicturesLink: BLOCK('link'),
+			sliderPicturesBottomHeading: BLOCK('bottom-heading', {
+				[`${cn?.underline}`]: ['underlined'].includes(cn?.underline),
+			})
+		}
+	}

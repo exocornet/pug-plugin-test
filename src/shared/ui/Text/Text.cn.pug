@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('text');
+
+		return {
+			text: BLOCK({
+				[`${cn?.size}`]: ['biggest', 'bigger', 'big', 'small', 'smaller'].includes(cn?.size),
+				[`${cn?.style}`]: ['cap', 'cap-small'].includes(cn?.style),
+				[`${cn?.textTransform}`]: ['upper', 'lower'].includes(cn?.textTransform)
+			}, [
+				cn?.margin,
+				cn?.padding,
+				cn?.width,
+				cn?.align,
+				cn?.textAlign,
+				cn?.flexGrow,
+				cn?.order,
+				cn?.overflow
+			]),
+		}
+	}

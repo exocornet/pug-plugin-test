@@ -1,0 +1,161 @@
+-
+	const SliderInfoCard = {
+		includeSection: 'SliderInfoCard',
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "КАО «Азот» закупает широкий спектр товаров и услуг. Мы всегда рады работать с талантливыми поставщиками",
+					footnoteText: "закупки"
+				},
+				cn: {
+					size: "h3",
+					margin: 'mb-40 mb-20@xs',
+					textIndent: true,
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto'
+				},
+				opt: {
+					isSliderNavigation: true,
+					isSliderBorderBottom: true
+				},
+			},
+			ColCardSlider: {
+				cn:{
+					cols: 'col-12 col-4@xs',
+				}
+			},
+			SliderInfoArr: [
+				{
+					elem: {
+						CardInfo: {
+							data: {
+								img: require('IMAGES/sections/image-heading/image-heading-transportation-services.jpg'),
+								imgXs: require('IMAGES/sections/image-heading/image-heading-transportation-services-xs.jpg')
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'подробнее',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+								},
+								Header: {
+									data: {
+										text: 'материальные товары'
+									},
+									cn: {
+										size: 'bigger'
+									}
+								},
+							},
+							cn: {
+								cols: 'col-5 col-4@xs',
+								slider: 'slider__slide swiper-slide d-flex flex-direction-column justify-content-between h-auto position-relative',
+							},
+							opt: {
+								isCircle: true
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CardInfo: {
+							data: {
+								img: require('IMAGES/sections/image-heading/image-heading-transportation-services.jpg'),
+								imgXs: require('IMAGES/sections/image-heading/image-heading-transportation-services-xs.jpg')
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'подробнее',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+								},
+								Header: {
+									data: {
+										text: 'закупка услуг'
+									},
+									cn: {
+										size: 'bigger'
+									},
+								},
+							},
+							cn: {
+								cols: 'col-5 col-4@xs',
+								slider: 'slider__slide swiper-slide d-flex flex-direction-column justify-content-between h-auto position-relative',
+							},
+							opt: {
+								isCircle: true
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CardInfo: {
+							data: {
+								img: require('IMAGES/sections/image-heading/image-heading-transportation-services.jpg'),
+								imgXs: require('IMAGES/sections/image-heading/image-heading-transportation-services-xs.jpg')
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'подробнее',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+								},
+								Header: {
+									data: {
+										text: 'транспорт и обслуживание техники'
+									},
+									cn: {
+										size: 'bigger'
+									}
+								},
+							},
+							cn: {
+								cols: 'col-5 col-4@xs',
+								slider: 'slider__slide swiper-slide d-flex flex-direction-column justify-content-between h-auto position-relative',
+							},
+							opt: {
+								isCircle: true
+							}
+						}
+					}
+				},
+			],
+			PageLink: {
+				data: {
+					href: '#!',
+					text: 'Перейти в раздел'
+				},
+				opt: {
+					icon: true,
+				}
+			},
+		}
+	}

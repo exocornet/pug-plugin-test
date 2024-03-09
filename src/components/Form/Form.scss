@@ -1,0 +1,79 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.form {
+	overflow-x: hidden;
+	overflow-y: auto;
+
+	margin-top: responsive-size(0, 84);
+
+	&__agreement {
+		align-self: flex-end;
+
+		letter-spacing: responsive-size(0.48, 1);
+		text-transform: uppercase;
+
+		color: $light-gray;
+
+		font-family: $font-helvetica;
+
+		font-weight: 550;
+		font-style: normal;
+		line-height: responsive-size(9, 14);
+
+		mix-blend-mode: multiply;
+		@include font-size-responsive(0.8, 1);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			order: 1;
+
+			margin-top: 16px;
+		}
+	}
+
+	&__button, &__button-subscribe {
+		width: 240px;
+		max-height: 64px;
+		padding: 28px 48px;
+
+		color: $black-gray;
+
+		@include media(xs) {
+			display: block;
+
+			width: 100%;
+		}
+	}
+
+	&__estimated {
+		margin-top: 24px;
+
+		&-currency-container {
+			display: flex;
+			gap: 10px;
+
+			p {
+				@include font-size-responsive(6.4);
+			}
+		}
+		@include media(xs) {
+			margin-top: 0;
+		}
+	}
+
+	&__button-subscribe {
+		width: 100%;
+		max-height: none;
+		margin-bottom: responsive-size(0, 20);
+		padding-block: responsive-size(27);
+		padding-inline: responsive-size(40);
+
+		@include media(xs) {
+			max-height: 64px;
+			padding: 28px 48px;
+		}
+	}
+
+	@include no-scrollbar;
+}

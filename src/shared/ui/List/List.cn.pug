@@ -1,0 +1,12 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('list')
+
+		return {
+			list: BLOCK({
+				[`${cn?.listStyle}`]: ['square', 'numeric', 'none', 'square-no-margin'].includes(cn?.listStyle),
+				[`${cn?.listStyleMarker}`]: ['large-marker'].includes(cn?.listStyleMarker)
+			}),
+			listElement: BLOCK('list-element'),
+		}
+	}

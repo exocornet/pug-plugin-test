@@ -1,0 +1,31 @@
+mixin FilterNvi(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FilterNvi.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.filterNvi)
+		+Container
+			+I('Filters', {data: {dataIdComponent: '5555'}})
+				+FiltersPanel
+					+FiltersSearch({data: {action: '/nvi'}})
+					+FiltersLinkControl({
+						elem: {
+							ButtonFilterArr: [
+								{ data: { text: 'все нви', href: '/all-nvi-sale' }, cn: { jsActiveLinkControl: true } },
+								{ data: { text: 'все нвз', href: '/all-nvi-sale/nvz' } },
+							]
+						}
+					})
+				div(class=styles.filterNviTableHeading)
+					for item in DATA_ARR('TableColArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						span !{I_DATA('text')}
+				+FiltersContentContainer(class=styles.filterNviContainer)
+					for item in ELEM_ARR('NviItemArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						+I('NviItem', I_ELEM('NviItem'))
+					+Button(ELEM('ButtonMore'))

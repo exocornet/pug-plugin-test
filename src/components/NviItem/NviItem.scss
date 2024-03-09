@@ -1,0 +1,123 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.nvi-item {
+	display: flex;
+	column-gap: responsive-size(14, 20);
+
+	flex-direction: row;
+
+	width: 100%;
+
+	padding-bottom: responsive-size(20, 40);
+
+	border-bottom: 1px solid $light-gray;
+
+	&__number {
+		width: responsive-size(86, 118, md);
+
+		line-height: 2.4;
+	}
+
+	&__code {
+		width: responsive-size(86, 128, md);
+
+		line-height: 2.4;
+	}
+
+	&__name {
+		width: responsive-size(180, 898, md);
+
+		@include media(xs){
+			order: -1;
+		}
+	}
+
+	&__count {
+		width: responsive-size(86, 129, md);
+
+		line-height: 2.4;
+	}
+
+	&__price {
+		width: responsive-size(86, 129, md);
+
+		line-height: 2.4;
+	}
+
+	@include media(xs) {
+		flex-direction: column;
+
+		gap: 4px 12px;
+
+		justify-content: start;
+
+		&__number {
+			display: flex;
+
+			width: 100%;
+		}
+
+		&__code {
+			display: flex;
+
+			width: 100%;
+		}
+
+		&__name {
+			width: 100%;
+
+			margin-bottom: 16px;
+		}
+
+		&__count {
+			display: flex;
+
+			width: 100%;
+		}
+
+		&__price {
+			display: flex;
+
+			width: 100%;
+		}
+
+		&__button {
+			width: 100%;
+
+			text-align: center;
+		}
+
+		&__number::before {
+			width: 55%;
+
+			content: "НОМЕР";
+
+			color: $contrast-gray;
+		}
+
+		&__code::before {
+			width: 55%;
+
+			content: "КОД";
+
+			color: $contrast-gray;
+		}
+
+		&__count::before {
+			width: 55%;
+
+			content: "В НАЛИЧИИ";
+
+			color: $contrast-gray;
+		}
+
+		&__price::before {
+			width: 55%;
+
+			content: "СТОИМОСТЬ";
+
+			color: $contrast-gray;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+//- # ПОДКЛЮЧЕНИЕ ВСПОМОГАТЕЛЬНЫХ БЛОКОВ СПИСКА # -//
+include ./LiItem
+
+mixin List(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const LIST_TAGS = ['ol', 'ul'];
+		const TAG = LIST_TAGS.includes(DATA('tag')) ? DATA('tag') : 'ul';
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include List.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	#{TAG}(class=styles.list)&attributes(attributes)
+		block

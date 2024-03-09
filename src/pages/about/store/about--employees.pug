@@ -1,0 +1,198 @@
+-
+	const Employees = {
+		includeSection: 'Employees',
+		data: {
+			dialogName: 'employeesVideo',
+		},
+		cn: {
+			isVideoResize: true,
+			margin: 'mt-200 mt-80@xs'
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: 'Профессионализм, безопасность, люди — фундамент нашей компании',
+					footnoteText: 'главные ценности'
+				},
+				cn: {
+					size: 'h3',
+					margin: 'mt-20 mb-40 mb-20@md'
+				}
+			},
+		},
+		dataArr: {
+			cardPersonalColArr: [
+				{
+					cn: {
+						jsClassResize: 'js-card-personal-resize-left'
+					},
+					elem: {
+						Col: {
+							cn: {
+								offset: 'offset-2 offset-0@xs'
+							}
+						},
+						CardPersonal: {
+							elem: {
+								TextName: {
+									data: {
+										text: 'Вишневский<br />Андрей Николаевич',
+									},
+									cn: {
+										size: 'big',
+									}
+								},
+								TextPosition: {
+									data: {
+										text: 'Генеральный директор КАО «Азот»'
+									},
+									cn: {
+										size: 'small',
+									}
+								},
+								Video: {
+									data: {
+										'data-modal-video': 'modal-video-custom',
+										videoMp4: '/public/static-files/video/sample-30s.mp4',
+										settings: {
+											controls: false,
+											muted: true
+										},
+										caption: "«азот» - вклад в надежное будущее"
+									},
+								},
+							}
+						}
+					}
+				},
+				{
+					cn: {
+						jsClassResize: 'js-card-personal-resize-right'
+					},
+					elem: {
+						CardPersonal: {
+							elem: {
+								TextName: {
+									data: {
+										text: 'Козлова<br />Мария Геннадьевна',
+									},
+									cn: {
+										size: 'big',
+									}
+								},
+								TextPosition: {
+									data: {
+										text: 'Заместитель генерального директора по персоналу <br> КАО «Азот»'
+									},
+									cn: {
+										size: 'small',
+									}
+								},
+								Video: {
+									data: {
+										'data-modal-video': 'modal-video-custom',
+										videoMp4: '/public/static-files/video/sample-30s.mp4',
+										settings: {
+											controls: false,
+											muted: true
+										},
+										caption: "как мы строим корпоративную культуру"
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					cn: {
+						jsClassResize: 'js-card-personal-resize-left'
+					},
+					elem: {
+						Col: {
+							cn: {
+								offset: 'offset-2 offset-0@xs'
+							}
+						},
+						CardPersonal: {
+							elem: {
+								TextName: {
+									data: {
+										text: 'Храбровский<br />Олег Игоревич',
+									},
+									cn: {
+										size: 'big',
+									}
+								},
+								TextPosition: {
+									data: {
+										text: 'Заместитель генерального директора <br> по промышленной и экологической безопасности <br> КАО «Азот»'
+									},
+									cn: {
+										size: 'small',
+									}
+								},
+								Video: {
+									data: {
+										'data-modal-video': 'modal-video-custom',
+										videoMp4: '/public/static-files/video/sample-30s.mp4',
+										settings: {
+											controls: false,
+											muted: true
+										},
+										caption: "экологичный поход к производству"
+									},
+								},
+							}
+						}
+					}
+				},
+				{
+					cn: {
+						jsClassResize: 'js-card-personal-resize-right'
+					},
+					elem: {
+						CardPersonal: {
+							data: {
+								'data-modal-video': 'modal-video-custom',
+							},
+							elem: {
+								TextName: {
+									data: {
+										text: 'Храмов<br>Александр Анатольевич',
+									},
+									cn: {
+										size: 'big',
+									}
+								},
+								TextPosition: {
+									data: {
+										text: 'Заместитель генерального директора <br> по социальным вопросам КАО «Азот»'
+									},
+									cn: {
+										size: 'small',
+									}
+								},
+								Video: {
+									data: {
+										'data-modal-video': 'modal-video-custom',
+										videoMp4: '/public/static-files/video/sample-30s.mp4',
+										settings: {
+											controls: false,
+											muted: true
+										},
+										caption: "экологичный поход к производству"
+									},
+								},
+							}
+						}
+					}
+				}
+			]
+		},
+	}

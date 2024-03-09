@@ -1,0 +1,67 @@
+mixin SliderAbout(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderAbout.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	mixin renderBarOrPie(item)
+		div(class=styles.sliderAboutSlideTitle)
+			p !{item.title}
+			if item.subtitle
+				p(class=styles.sliderAboutSlideSubtitle) !{item.subtitle}
+		if item.type === 'bar'
+			+renderBar(item)
+		if item.type === 'pie'
+			+renderPie(item)
+
+	mixin renderBar(item)
+		div(class=styles.sliderAboutSlideBar)
+			each itemData in item.data
+				div(class=styles.sliderAboutSlideBarItem)
+					div
+						p(class=styles.sliderAboutSlideBarItemValue) !{itemData.value}
+						p(class=styles.sliderAboutSlideBarItemPercent) !{itemData.percent}
+					p(class=styles.sliderAboutSlideBarItemTitle) !{itemData.title}
+
+	mixin renderPie(item)
+		div(class=styles.sliderAboutSlidePie)
+			picture(class=styles.sliderAboutSlidePieImage)
+				img(src=item.img alt="pie")
+			div(class=styles.sliderAboutSlidePieLegend)
+				each itemData in item.legend
+					p(class=styles.sliderAboutSlidePieLegendTitle) !{itemData.title}
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderAbout)
+		+Container
+			if ELEM('Heading')
+				+Heading(ELEM('Heading'))
+			+Slider(ELEM('Slider'))&attributes({SliderNavigation: {class: styles.sliderAboutSliderNavigation}, SliderSwiper: {class: styles.sliderAboutSliderSwiper}})
+				for item, index in ELEM_ARR('SliderSlideArr')
+					include ../../shared/helpers/pug/shortcut-check-store
+					+SliderSlide(class=styles.sliderAboutSliderSlide data-slide-index=index)
+						if item.type === 'bar' || item.type === 'pie'
+							+renderBarOrPie(item)
+						else
+							div(class=styles.sliderAboutSlideCard)
+								div(class=styles.sliderAboutSlideCardContent)
+									div(class=styles.sliderAboutSlideCardText)
+										+Text(item.Title)(class=styles.sliderAboutSlideTitle)
+										if item.ShortTextTitle
+											div(class=styles.sliderAboutSlideShortText)
+												+Text(item.ShortTextTitle)
+												+Text(item.ShortTextSubtitle)
+										+Text(item.Text)(class=styles.sliderAboutSlideCardHiddenText)
+										if item.Button
+											+Button(item.Button)(type="button")
+									picture(class=styles.sliderAboutSlideImage)
+										source(srcset=item.data.imageXs media=`(max-width: ${media.xs})`)
+										img(src=item.data.image alt=item.Title.data.text)
+
+			//- ## Ссылка на страницу  ## -//
+			if ELEM('PageLink', false)
+				div(class=styles.sliderAboutLink)
+					+Button(ELEM('PageLink'))

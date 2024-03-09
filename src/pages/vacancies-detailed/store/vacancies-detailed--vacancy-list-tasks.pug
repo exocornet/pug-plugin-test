@@ -1,0 +1,52 @@
+-
+	const VacancyListTasks = {
+		includeSection: 'VacancyList',
+		opt: {
+			isHR: true,
+		},
+		elem: {
+			TextFootnote: {
+				data: {
+					text: 'задачи',
+				},
+				cn: {
+					style: 'cap',
+					textTransform: 'upper'
+				}
+			},
+			List: {
+				data: {
+					tag: 'ul',
+				},
+				cn: {
+					listStyle: 'square-no-margin',
+				},
+			},
+			ListArr: [
+				{
+					data: {
+						text: 'Осуществлять опилку и валку деревьев',
+						tag: 'li',
+					}
+				},
+				{
+					data: {
+						text: 'Производить уборку территории от мусора и снега',
+						tag: 'li',
+					}
+				},
+				{
+					data: {
+						text: 'Выполнять ремонт электроинструмента и бензоинструмента',
+						tag: 'li',
+					}
+				},
+				{
+					data: {
+						text: 'Выполнять погрузо-разгрузочные работы',
+						tag: 'li',
+					}
+				},
+			]
+		}
+	}

@@ -1,0 +1,118 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.page-link {
+	$self: &;
+
+	&__item {
+		position: relative;
+
+		display: flex;
+		align-items: flex-start;
+
+		cursor: pointer;
+
+		text-decoration: none;
+
+		border-bottom: 1px solid $white-aluminum;
+		padding-block: responsive-size(20, 40);
+
+		@include media(md, "min") {
+			&::after {
+				position: absolute;
+				bottom: -2px;
+				left: 0;
+
+				width: 0;
+				height: 2px;
+
+				content: "";
+				transition: width 0.4s linear;
+
+				background-color: $selection-color;
+			}
+
+			&:hover {
+				#{$self}__text, #{$self}__arrow {
+					color: $selection-color;
+				}
+
+				#{$self}__download-icon {
+					color: $selection-color;
+				}
+
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&__wrapper {
+		flex-grow: 1;
+
+		max-width: 100%;
+	}
+
+	&__text {
+		transition: color 0.4s linear;
+
+		text-align: left;
+
+		letter-spacing: -0.04em;
+	}
+
+	&__extension {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: fit-content;
+		height: fit-content;
+
+		padding: 11px 12px 7px;
+
+		text-transform: uppercase;
+
+		border-radius: 4px;
+		background-color: $black-04;
+	}
+
+	&__arrow, &__download-icon {
+		flex: 0 0 auto;
+
+		width: 9px;
+		height: 9px;
+
+		margin-left: auto;
+
+		transition: color 0.4s linear;
+	}
+
+	&__date, &__date-right {
+		color: $black-40;
+	}
+
+	&__date-right {
+		text-wrap: nowrap;
+
+		@include media(xs) {
+			bottom: 20px;
+			left: 70px;
+		}
+	}
+
+	&__salary, &__experience {
+		margin-top: 16px;
+
+		text-align: center;
+		text-wrap: balance;
+
+		color: $black-40;
+		@include font-size-responsive(1.6, 2.4);
+
+		@include media(xs){
+			text-align: left;
+		}
+	}
+}

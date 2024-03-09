@@ -1,0 +1,10 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.video-facts {
+	&__wrapper {
+		margin-inline: responsive-size(-20, -28);
+
+		row-gap: responsive-size(20, 40);
+	}
+}

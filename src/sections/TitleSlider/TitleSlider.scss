@@ -1,0 +1,35 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.title-slider {
+	&__slider-pagination {
+		--swiper-pagination-bottom: #{responsive-size(-38, -44)};
+		right: 0;
+
+		margin-left: auto;
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__slider-navigation {
+		bottom: #{responsive-size(-50, -56)};
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		min-height: responsive-size(770);
+	}
+
+	&__slider-swiper {
+		overflow: visible;
+	}
+}

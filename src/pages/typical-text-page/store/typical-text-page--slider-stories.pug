@@ -1,0 +1,118 @@
+-
+	const SliderStories = {
+		includeSection: 'SliderStories',
+		cn: {
+			margin: 'mt-200 mt-80@xs'
+		},
+		elem: {
+			Button: {
+				data: { text: 'перейти в раздел', href: '#!' },
+				cn: { size: 'small' },
+				opt: { icon: true }
+			},
+			Col: {
+				cn:{
+					margin: 'mb-40 mb-20@xs'
+				}
+			},
+			TextFootnote: {
+				data: {
+					text: 'ещё истории',
+				},
+				cn: {
+					size: 'h3',
+					style: 'cap',
+					textTransform: 'upper',
+				}
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: '3;2;1',
+				},
+				opt: {
+					isSliderNavigation: true,
+				}
+			},
+			SliderStoriesSlideArr: [
+				{
+					data: {
+						image: require('IMAGES/sections/slider-stories/slider-stories-slide-1.png')
+					},
+					elem: {
+						TextStory: {
+							data: {
+								text: 'Кристалл растёт до нужного размера несколько недель...',
+							},
+							cn: {
+								size: 'big',
+							}
+						},
+						TextCreator: {
+							data: {
+								text: 'Виктория Санникова, Менеджер Дирекции по развитию бизнес-системы'
+							},
+							cn: {
+								size: 'small',
+							}
+						},
+					},
+					opt: {
+						isLink: true
+					}
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-stories/slider-stories-slide-2.png')
+					},
+					elem: {
+						TextStory: {
+							data: {
+								text: 'Основным продуктом является аммиачная селитра',
+							},
+							cn: {
+								size: 'big',
+							}
+						},
+						TextCreator: {
+							data: {
+								text: 'Андрей, Бетонщик'
+							},
+							cn: {
+								size: 'small',
+							}
+						},
+					},
+					opt: {
+						isLink: true
+					}
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-stories/slider-stories-slide-3.png')
+					},
+					elem: {
+						TextStory: {
+							data: {
+								text: 'Я приобрёл глубокие познания в области химии и развил навыки управления',
+							},
+							cn: {
+								size: 'big',
+							}
+						},
+						TextCreator: {
+							data: {
+								text: 'Артур, сантехник'
+							},
+							cn: {
+								size: 'small',
+							}
+						},
+					},
+					opt: {
+						isLink: true
+					}
+				},
+			]
+		}
+	}

@@ -1,0 +1,18 @@
+.link {
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	font-family: $font-helvetica;
+	font-weight: 550;
+	line-height: 1.4;
+	
+	&__arrow {
+		width: responsive-size(9);
+		min-width: 9px;
+		
+		color: $black;
+	}
+	
+	@include font-size-responsive(1);
+}

@@ -1,0 +1,126 @@
+-
+	const PageLinksDocument = {
+		includeSection: 'PageLinks',
+		elem: {
+			Col2: {
+				cn: {
+					cols: 'col-2 col-6@md col-4@xs'
+				}
+			},
+			Col10: {
+				cn: {
+					cols: 'col-10 col-6@md col-4@xs'
+				}
+			},
+			PageLinkArr: [
+				{
+					data: {
+						extension: 'PDF',
+						href: '#!',
+					},
+					elem: {
+						ColLink: {
+							cn: {
+								cols: 'col-9 col-4@xs',
+								display: 'd-flex',
+								direction: 'flex-direction-column@xs',
+								alignItems: 'align-items-start'
+							}
+						},
+						Text: {
+							data: {
+								text: 'продажа удобрений сельскохозяйственным производителям'
+							},
+							cn: {
+								size: 'bigger',
+							},
+						},
+						TextDateRight: {
+							data: {
+								text: '01.06.2023-30.11.2023'
+							},
+							cn: {
+								style: 'cap',
+								order: 'order-3'
+							}
+						},
+					},
+					opt: {
+						download: true
+					},
+				},
+				{
+					data: {
+						extension: 'PDF',
+						href: '#!',
+					},
+					elem: {
+						Text: {
+							data: {
+								text: 'паспорт безопасности',
+							},
+							cn: {
+								size: 'bigger'
+							},
+						}
+					},
+					opt: {
+						download: true
+					},
+				},
+				{
+					data: {
+						extension: 'PDF',
+						href: '#!',
+					},
+					elem: {
+						Text: {
+							data: {
+								text: 'декларации о соответствии',
+							},
+							cn: {
+								size: 'bigger'
+							},
+						}
+					},
+					opt: {
+						download: true
+					},
+				},
+				{
+					data: {
+						extension: 'PDF',
+						href: '#!',
+					},
+					elem: {
+						Text: {
+							data: {
+								text: 'торговая политика',
+							},
+							cn: {
+								size: 'bigger'
+							},
+						}
+					},
+					opt: {
+						download: true
+					},
+				},
+			],
+			Button: {
+				data: {
+					text: 'все документы',
+				},
+				cn: {
+					size: 'large',
+				},
+				opt: {
+					icon: true,
+				}
+			},
+			FootNote: {
+				data: {text: 'торговая политика'},
+				cn: {style: 'cap', textTransform: 'upper'}
+			},
+		}
+	}

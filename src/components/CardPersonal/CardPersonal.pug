@@ -1,0 +1,49 @@
+mixin CardPersonal(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const TAG = OPT('isLink') ? 'a' : 'div';
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include CardPersonal.cn.pug
+	- const styles = classes(props && props.cn)
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	#{TAG}(class=styles.cardPersonal)&attributes(attributes)
+		if ELEM('Video', false)
+			div(class=styles.cardPersonalVideoContainer)
+				+I('Video', ELEM('Video'))&attributes({ Video: { 'class': styles.cardPersonalVideo }, Player: { 'class': styles.cardPersonalPlayer } })
+		else
+			if OPT('isMaterialIcon')
+				div(class=styles.cardPersonalMaterialImageContainer)
+					div(class=styles.cardPersonalMaterialIconWrap)
+						picture(class=styles.cardPersonalMaterialPicture)
+							img(class=styles.cardPersonalMaterialIcon src=DATA('image') alt="")
+						if DATA('text')
+							p !{DATA('text')}
+			else
+				div(class=styles.cardPersonalImageContainer)
+					if OPT('isFilterCases')
+						div(class=styles.cardPersonalProductWrap)
+							object
+								a(class=styles.cardPersonalProductLink href=DATA('productLink', false) target="_blank")
+							div(class=styles.cardPersonalProductImageWrap)
+								picture
+									img(class=styles.cardPersonalProductImage src=DATA('productImage') alt="")
+							div(class=styles.cardPersonalProductInfo) !{DATA('productInfo')}
+					picture(class=styles.cardPersonalPicture)
+						img(class=styles.cardPersonalImage src=DATA('image') alt="")
+
+		div(class=styles.cardPersonalInfo)
+			if (ELEM('TextName'))
+				+Text(ELEM('TextName'))(class=styles.cardPersonalName)
+			if (ELEM('TextPosition'))
+				+Text(ELEM('TextPosition'))(class=styles.cardPersonalPosition)
+			if !ELEM('Video', false)
+				if OPT('isDownloadButton')
+					div(class=styles.cardPersonalButtonWrap)
+						+Button(ELEM('Button'))(class=styles.cardPersonalDownloadButton)
+				else
+					include include-svg/arrow

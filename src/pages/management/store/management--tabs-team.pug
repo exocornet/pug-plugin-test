@@ -1,0 +1,459 @@
+-
+	const TabsTeam = {
+		includeSection: 'TabsTeam',
+		elem: {
+			Text: {
+				data: {
+					text: "руководство компании",
+				},
+				cn: {
+					style: 'cap',
+					textTransform: 'upper'
+				}
+			},
+			TabsButtons: {
+				dataArr: {
+					buttonArr: [
+						{
+							data: {
+								dataTabsButton: 'kao'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'КАО «Азот»',
+									}
+								}
+							}
+						},
+						{
+							data: {
+								dataTabsButton: 'gk'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'гк «Азот»',
+									}
+								}
+							}
+						},
+					]
+				},
+			},
+			TabsContentArr: [
+				{
+					data: {
+						dataTabsContent: 'kao',
+					},
+					elem: {
+						TeamArr: [
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-1.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Вишневский<br />Андрей Николаевич',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Генеральный директор КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								},
+								opt: {
+									isLink: true
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-2.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Кондратьев<br />Сергей Александрович',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Главный инженер КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-3.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Храбровский<br />Олег Игоревич',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель генерального директора <br> по промышленной и экологической безопасности <br> КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-4.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Король<br>Татьяна Олеговна',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель генерального директора <br> по экономике и финансам КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-5.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Фомичёв<br>Александр Анатольевич',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель генерального директора <br> по коммерческим вопросам — коммерческий <br> директор КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-6.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Кудашкина <br>Ольга Владимировна',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Главный бухгалтер КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-7.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Мельников <br>Александр Иванович',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель генерального директора <br> по безопасности КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-8.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Козлова<br>Мария Геннадьевна',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель генерального директора <br> по персоналу КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-9.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Левин <br>Евгений Викторович',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель генерального директора <br> по капитальному строительству КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-10.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Храмов<br>Александр Анатольевич',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель генерального директора <br> по социальным вопросам КАО «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-11.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Ляшко<br>Григорий Николаевич',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Директор «Торговый дом Азот» (филиал <br> КАО «Азот» в  г. Москве)'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-12.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Альбрехт<br>Сергей Николаевич',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Заместитель директора по продажам «Торговый<br> дом Азот» (филиал КАО «Азот» в г. Москве)'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+						]
+					},
+				},
+				{
+					data: {
+						dataTabsContent: 'gk',
+					},
+					elem: {
+						TeamArr: [
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-13.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Троценко <br />Роман Викторович',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Председатель совета директоров АО ГК «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-14.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Бебутов<br />Всеволод Петрович',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Генеральный директор АО ГК «Азот» <br> Член совета директоров'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-15.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Колмогоров<br />Сергей Александрович',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Член Совета директоров АО ГК «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-16.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Сливинская <br>Инна Григорьевна',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Член совета директоров АО ГК «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+							{
+								data: {
+									image: require('IMAGES/sections/tabs-team/tabs-team-17.png')
+								},
+								elem: {
+									TextName: {
+										data: {
+											text: 'Коновалова <br>Джамиля Аскеровна',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextPosition: {
+										data: {
+											text: 'Член Совета директоров АО ГК «Азот»'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								}
+							},
+						]
+					},
+				},
+			]
+		}
+	}

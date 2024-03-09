@@ -1,0 +1,31 @@
+mixin PressCard(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include PressCard.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.pressCard data-mode=DATA('mode', 'grey'))
+		if ELEM('ColHeader', false)
+			+Col(ELEM('ColHeader'))
+				+Heading(ELEM('Heading'))
+		if ELEM('ColHeadingSlider', false)
+			+Row(class=styles.pressCardSliderHeaderRow)
+				+Col(ELEM('ColHeadingSliderFootnote'))
+					+Text(ELEM('HeadingSliderFootnote'))(class=styles.pressCardSliderFootnote)
+				+Col( ELEM('ColHeadingSlider'))
+					+Heading(ELEM('HeadingSlider'))
+		div(class=styles.pressCardBody)
+			+Col(ELEM('ColText'))
+				if ELEM('Text', false)
+					div(class=styles.pressCardTextContainer)
+						+Text(ELEM('Text'))(class=styles.pressCardText)
+				if ELEM('List', false)
+					+List(ELEM('List'))
+						for item in ELEM_ARR('ListTextArr')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+Text(I_ELEM('Text'))
+			div(class=styles.pressCardLink)
+				+Button(ELEM('Button'))

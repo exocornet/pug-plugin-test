@@ -1,0 +1,33 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../styles/include-setings-styles";
+
+.card-search-menu-info {
+	position: relative;
+
+	width: 100%;
+	height: responsive-size(190, 208);
+	padding: 20px;
+
+	border-radius: 16px;
+
+	background-color: $smoky-white;
+
+	* {
+		position: relative;
+	}
+
+	&__background {
+		position: absolute;
+		top: 50px;
+		left: 50%;
+
+		width: auto;
+		height: 70%;
+
+		transform: translateX(-50%);
+	}
+
+	&:hover {
+		background-color: $light-green;
+	}
+}

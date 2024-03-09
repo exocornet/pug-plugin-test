@@ -1,0 +1,15 @@
+//- # ПОДКЛЮЧЕНИЕ ВСПОМОГАТЕЛЬНЫХ БЛОКОВ АККОРДЕОНА # -//
+include ./AccordionBody
+
+mixin Accordion(props)
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Accordion.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # Верстка компонента # -//
+	div(class=styles.accordion)
+		div(class=styles.accordionTitleWrap)
+			+Text(ELEM('AccordionTitle'))(class=styles.accordionTitle)
+		block

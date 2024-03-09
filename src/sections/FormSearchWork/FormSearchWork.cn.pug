@@ -1,0 +1,13 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('form-search-work');
+
+		return {
+			formSearchWork: BLOCK({}, [cn?.margin]),
+			formSearchWorkForm: BLOCK('form'),
+			formSearchWorkHeader: BLOCK('header'),
+			formSearchWorkWrapper: BLOCK('wrapper', ['d-flex flex-nowrap g-20 flex-direction-column@xs']),
+			formSearchWorkButton: BLOCK('button'),
+			formSearchWorkButtonSubmit: BLOCK('button-submit'),
+		}
+	}

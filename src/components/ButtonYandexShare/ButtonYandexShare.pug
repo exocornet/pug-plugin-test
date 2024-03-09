@@ -1,0 +1,12 @@
+mixin ButtonYandexShare(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class="ya-share2"
+		data-curtain
+		data-limit="0"
+		data-more-button-type="long"
+		data-bare
+		data-use-links
+		data-services=DATA('shareButtonServices', false))

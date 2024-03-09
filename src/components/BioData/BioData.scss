@@ -1,0 +1,51 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.bio-data {
+	&:not(:last-child) {
+		margin-bottom: responsive-size(32, 60);
+	}
+
+	&__name-col {
+		align-self: flex-start;
+	}
+
+	&__date {
+		font-variant-numeric: lining-nums tabular-nums;
+
+		letter-spacing: -0.04em;
+
+		color: $light-gray;
+
+		@include media(xs) {
+			font-variant-numeric: normal;
+
+			letter-spacing: -0.03em;
+		}
+
+		// stylelint-disable-next-line order/order
+		span {
+			display: inline-block;
+			@include font-size-responsive(2, 2.4);
+		}
+	}
+
+	&__event {
+		line-height: 1;
+		@include font-size-responsive(2, 2.4);
+
+		@include media(xs) {
+			line-height: 1.35;
+		}
+	}
+
+	&__icon {
+		width: responsive-size(32, 44);
+		height: responsive-size(32, 44);
+		margin-right: responsive-size(24);
+
+		@include media(xs) {
+			margin-bottom: 10px;
+		}
+	}
+}

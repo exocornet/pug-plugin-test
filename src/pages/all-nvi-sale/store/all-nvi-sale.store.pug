@@ -1,0 +1,47 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Все НВИ на продажу';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Покупателям' } },
+						{ data: { text: 'Продажа невостребованного сырья компании'}}
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include all-nvi-sale--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- ## Подключение store секции FilterNvi ## -//
+include all-nvi-sale--filter-nvi
+- pageStore.addSection(FilterNvi);
+
+//- ## Подключение store секции FeedbackForm ## -//
+include all-nvi-sale--feedback-form
+- pageStore.addSection(FeedbackForm);
+
+//- ## Подключение store секции ListContactLinks ## -//
+include all-nvi-sale--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include all-nvi-sale--dialog
+- pageStore.addSection(HiddenDialogContent);
+
+//- ## Подключение store секции ModalOrderForm ## -//
+include all-nvi-sale--modal-order-form
+- pageStore.addSection(ModalOrderForm);

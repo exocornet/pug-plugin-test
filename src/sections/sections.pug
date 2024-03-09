@@ -1,0 +1,286 @@
+mixin S(nameSection, variablesSection)
+	case nameSection
+		when 'AsidePageNav'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include AsidePageNav/AsidePageNav
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'BannerSlider'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include BannerSlider/BannerSlider
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ImageFacts'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ImageFacts/ImageFacts
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'VideoFacts'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include VideoFacts/VideoFacts
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'StatisticsMap'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include StatisticsMap/StatisticsMap
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsImagesHeading'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsImagesHeading/TabsImagesHeading
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Career'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Career/Career
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderProducts'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderProducts/SliderProducts
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'StepsAnimatedCircle'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include StepsAnimatedCircle/StepsAnimatedCircle
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Employees'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Employees/Employees
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'PageLinks'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include PageLinks/PageLinks
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TitleSlider'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TitleSlider/TitleSlider
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderHistory'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderHistory/SliderHistory
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Excursion'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Excursion/Excursion
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderAbout'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderAbout/SliderAbout
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderCompany'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderCompany/SliderCompany
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsTeam'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsTeam/TabsTeam
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderNews'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderNews/SliderNews
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TextFootnote'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TextFootnote/TextFootnote
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Supervisor'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Supervisor/Supervisor
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Bio'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Bio/Bio
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderInfoCard'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderInfoCard/SliderInfoCard
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ListInfoCard'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ListInfoCard/ListInfoCard
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ListContactLinks'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ListContactLinks/ListContactLinks
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FeedbackForm'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FeedbackForm/FeedbackForm
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ArrowedSection'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ArrowedSection/ArrowedSection
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Requisites'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Requisites/Requisites
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FactsAlignRight'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FactsAlignRight/FactsAlignRight
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'HeadingMap'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include HeadingMap/HeadingMap
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsMap'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsMap/TabsMap
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderPictures'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderPictures/SliderPictures
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderStories'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderStories/SliderStories
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FactsWrap'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FactsWrap/FactsWrap
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TitleTextWrap'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TitleTextWrap/TitleTextWrap
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'CardQuoteWrap'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include CardQuoteWrap/CardQuoteWrap
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'AccordionList'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include AccordionList/AccordionList
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'HiddenDialogContent'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include HiddenDialogContent/HiddenDialogContent
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SubscriptionForm'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SubscriptionForm/SubscriptionForm
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsFacts'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsFacts/TabsFacts
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'HeadingDetailed'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include HeadingDetailed/HeadingDetailed
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalStreamRegistration'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalStreamRegistration/ModalStreamRegistration
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalPerspective'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalPerspective/ModalPerspective
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalForm'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalForm/ModalForm
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalOrderForm'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalOrderForm/ModalOrderForm
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsPageLinks'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsPageLinks/TabsPageLinks
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsInnerTab'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsInnerTab/TabsInnerTab
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalVideoCustom'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalVideoCustom/ModalVideoCustom
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalProcurement'
+			if typeof pug_mixins[ `${ nameSection }` ] !== 'function'
+				include ModalProcurement/ModalProcurement
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'VacancyList'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include VacancyList/VacancyList
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'PressCenterKit'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include PressCenterKit/PressCenterKit
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'VacanciesCard'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include VacanciesCard/VacanciesCard
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderNewspaper'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderNewspaper/SliderNewspaper
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderEvents'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderEvents/SliderEvents
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Search'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Search/Search
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsSlider'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsSlider/TabsSlider
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ResumeForm'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ResumeForm/ResumeForm
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FormSearchWork'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FormSearchWork/FormSearchWork
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'SliderVideo'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include SliderVideo/SliderVideo
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'TabsInnerTabMedia'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include TabsInnerTabMedia/TabsInnerTabMedia
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalImageSlider'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalImageSlider/ModalImageSlider
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalPractices'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalPractices/ModalPractices
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalQualityPassport'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalQualityPassport/ModalQualityPassport
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'ModalCareerGuidance'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include ModalCareerGuidance/ModalCareerGuidance
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FilterNewspaper'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FilterNewspaper/FilterNewspaper
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'CatalogItemsList'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include CatalogItemsList/CatalogItemsList
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FilterCases'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FilterCases/FilterCases
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FilterNews'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FilterNews/FilterNews
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FilterNvi'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FilterNvi/FilterNvi
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FilterPurchase'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FilterPurchase/FilterPurchase
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'FilterPageLinks'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include FilterPageLinks/FilterPageLinks
+			+#{nameSection}(variablesSection)&attributes(attributes)
+		when 'Calculator'
+			if typeof pug_mixins[`${nameSection}`] !== 'function'
+				include Calculator/Calculator
+			+#{nameSection}(variablesSection)&attributes(attributes)

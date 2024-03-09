@@ -1,0 +1,43 @@
+mixin SliderPictures(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА # -//
+	-
+		const BUTTON_COL = {
+			cn: {
+				display: 'd-flex',
+				justify: 'justify-content-end',
+			}
+		};
+		if (ELEM('HeadingBottom', false)){
+			BUTTON_COL.cn.cols = 'col-3 col-4@xs';
+			BUTTON_COL.cn.margin = 'mt-20@xs';
+		}
+		else
+			BUTTON_COL.cn.cols = 'col-12 col-4@xs';
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderPictures.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderPictures)
+		+Container
+			if ELEM('Heading', false)
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			+Row
+				+Slider(ELEM('Slider'))&attributes({ SliderSwiper: { class: styles.sliderPicturesSliderSwiper }, SliderNavigation: { class: styles.sliderPicturesSliderNavigation }, SliderSlidesWrapper: { class: styles.sliderPicturesSliderSlidesWrapper } })
+					for item in ELEM_ARR('SliderPicturesSlideArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						+SliderSlide(class=styles.sliderPicturesSliderSlide)
+							picture
+								img(class=styles.sliderPicturesImage src=I_DATA('image') alt="")
+			+Row(class=styles.sliderPicturesBottomHeading)
+				if(ELEM('HeadingBottom', false))
+					+Col({ cn: { cols: 'col-9 col-4@xs' } })
+						+Heading(ELEM('HeadingBottom'))
+				+Col(BUTTON_COL)
+					+Button(ELEM('Button'))(class=styles.sliderPicturesLink)

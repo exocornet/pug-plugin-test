@@ -1,0 +1,24 @@
+include ModalFooter
+include ModalBody
+
+mixin Modal(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Modal.cn.pug
+	- const styles = classes(props && props.cn)
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.modal data-name=DATA('name', false))&attributes(attributes)
+		div(class=styles.modalOverlay)
+		div(class=styles.modalInner)
+			if(OPT('SwipeModal', false))
+				div(class=styles.modalSwipeModal)
+			if ELEM('Footnote', false)
+				+Text(ELEM('Footnote'))(class=styles.modalFootnote)
+			if ELEM('Heading', false)
+				+Heading(ELEM('Heading'))
+			if ELEM('ButtonClose', false)
+				+Button(ELEM('ButtonClose'))(class=styles.modalClose)
+			block

@@ -1,0 +1,11 @@
+mixin FiltersPanel(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ СЕКЦИИ # -//
+	include Filters.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА СЕКЦИИ # -//
+	div(class=styles.elementPanel)&attributes(attributes)
+		block

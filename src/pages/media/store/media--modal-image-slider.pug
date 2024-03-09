@@ -1,0 +1,40 @@
+-
+	const ModalImageSlider = {
+		includeContent: 'ModalImageSlider',
+		elem: {
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: '1'
+				},
+				opt: {
+					isSliderNavigation: true,
+				},
+				cn: {
+					buttonBackground: 'white',
+				}
+			},
+			Modal: {
+				cn: {
+					modalInnerStyle: 'slider',
+					modalBackground: 'transparent',
+				},
+				data: {
+					name: 'modal-image-slider-media'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							type: 'button',
+						},
+						cn: {
+							color: 'white',
+						},
+						opt: {
+							'icon-close': true,
+						}
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,26 @@
+mixin TabsImagesHeading(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TabsImagesHeading.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.tabsImagesHeading)
+		+Container
+			+Tabs(ELEM('Tabs'))
+				+TabsButtons(ELEM('TabsButtons'))(class=styles.tabsImagesHeadingTabsButtons)
+				+TabsBody
+					for item in ELEM_ARR('TabsContentArr')
+						//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+						include ../../shared/helpers/pug/shortcut-check-store
+						//- # ЛОГИКА # -//
+						-
+							const PROPS_TABS_CONTENT = {
+								...item,
+								cn: {displayTabsContent: 'd-flex@xs',directionTabsContent:'flex-direction-column@xs'}
+							}
+						//- # ВЕРСТКА # -//
+						+TabsContent(PROPS_TABS_CONTENT)
+							+I('ImagesHeading', I_ELEM('ImagesHeading'))&attributes({RowTop: {'class': styles.tabsImagesHeadingRowTop}})

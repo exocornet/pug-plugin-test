@@ -1,0 +1,275 @@
+-
+	const ModalProcurement = {
+		includeContent: 'ModalProcurement',
+		elem: {
+			Modal: {
+				data: {
+					name: 'modal-procurement'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							img: require('IMAGES/modals/close.svg'),
+							type: 'button',
+						},
+						cn: {
+							color: 'transparent'
+						},
+						opt: {
+							withCloseIcon: true,
+						}
+					},
+					Footnote: {
+						cn: {
+							style: 'cap',
+							textTransform: 'upper',
+						},
+						data: {
+							tag: 'span',
+							text: 'заявка на участие в закупке'
+						}
+					}
+				},
+				opt: {
+					SwipeModal: true,
+				}
+			},
+			Form: {
+				data: {
+					action: '/api/forms/callback',
+					init: 'false'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'purchase-number'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "номер закупки",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'name'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "имя",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'company'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "компания",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'email'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш email",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'phone'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "номер телефона",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'file',
+												type: 'file',
+												required: 'required',
+												textDefault: 'Файл не выбран'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "прикрепите файл",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										RequiredText: {
+											data: {
+												text: 'Форматы файла: DOC, DOCX, PDF, zip. Не более 10 МБ',
+												tag: 'span',
+											},
+											cn: {
+												textTransform: 'upper',
+												style: 'cap',
+											}
+										},
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'file',
+												type: 'file',
+												textDefault: 'Файл не выбран'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "прикрепите файл",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'comment'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "комментарий",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						}
+					},
+					SubmitButton: {
+						data: {
+							text: 'Отправить',
+							type: 'submit',
+						}
+					}
+				}
+			}
+		}
+	}

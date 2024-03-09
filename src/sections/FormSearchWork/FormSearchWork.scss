@@ -1,0 +1,39 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.form-search-work {
+	margin: 0;
+
+	padding: responsive-size(20, 28);
+
+	margin-inline: responsive-size(0, 12);
+
+	border-radius: 16px;
+	background-color: $light-green;
+
+	&__button {
+		align-self: flex-end;
+
+		flex: 1 1 50%;
+
+		padding-bottom: responsive-size(16, 20);
+
+		.button {
+			width: 100%;
+		}
+
+		@include media(xs) {
+			flex: 0;
+
+			width: 100%;
+
+			padding-bottom: 0;
+
+			line-height: 0;
+		}
+	}
+
+	&__header {
+		margin-bottom: responsive-size(200, 320);
+	}
+}

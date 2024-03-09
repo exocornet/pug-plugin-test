@@ -1,0 +1,70 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.aside-page-nav {
+	&__list {
+		position: sticky;
+		top: 30px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 20px 18px;
+
+		@include media(xs) {
+			overflow-x: scroll;
+			align-items: center;
+			flex-direction: row;
+		}
+	}
+
+	&__item {
+		display: flex;
+
+		white-space: nowrap;
+
+		line-height: 70%;
+
+		&--active {
+			pointer-events: none;
+
+			color: $dark-green;
+		}
+
+		@include media(xs) {
+			position: relative;
+
+			padding: 8px 0;
+
+			color: $light-gray;
+
+			line-height: 140%;
+
+			&--active {
+				;
+				padding-right: 12px;
+				padding-left: 12px;
+
+				color: $black-gray;
+				border-radius: 4px;
+				background-color: $black-04;
+			}
+
+			&:not(:last-child)::after {
+				position: absolute;
+				top: 6px;
+				right: -10px;
+
+				width: 2px;
+				height: 2px;
+
+				content: url("../../app/assets/img/other/pagination-separator.svg");
+
+				background-color: $black-04;
+			}
+		}
+	}
+
+	@include media(xs) {
+		margin-bottom: 20px;
+	}
+}

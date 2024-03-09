@@ -1,0 +1,31 @@
+mixin ResumeForm(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ResumeForm.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.resumeForm)
+		+Container({cn: {position: 'position-relative'}})(class=styles.resumeFormContainer)
+			div(class=styles.resumeFormStepCounter)
+				+Text({data: {text: 'шаг 1'}, cn: {style: 'cap'}})(class=`${styles.resumeFormStep} active`)
+				+Text({data: {text: 'шаг 2'}, cn: {style: 'cap'}})(class=styles.resumeFormStep)
+			label
+				div(class=styles.resumeFormFileLoader)
+					+Input({data: {placeholder: '', name: 'file', type: 'file'}})(class=styles.resumeFormHiddenInput)
+					div(class=styles.resumeFormFileLoaderInner)
+						div(class=styles.resumeFormAddedIcon data-default=DATA('iconDefault') data-success=DATA('iconSuccess') data-error=DATA('iconError'))
+						div(class=styles.resumeFormAddedText)
+							+Text({data: {text: `<span class=${styles.resumeFormGreenText}>Выберите файл</span> или переместите резюме сюда`}, cn: {size: 'bigger', textAlign: 'text-align-center'}})
+							+Text({data: {text: 'Форматы файла: DOC, DOCX, PDF. Не более 10 МБ'}, cn: {size: 'big', textAlign: 'text-align-center', margin: 'mt-40 mt-20@xs'}})
+						div(class=styles.resumeFormSuccessText)
+							+Text({ data: {text: ''}, cn: {size: 'bigger', textAlign: 'text-align-center'} })
+						div(class=styles.resumeFormErrorText)
+							+Text({ data: {text: 'неверный формат файла'}, cn: {size: 'bigger', textAlign: 'text-align-center'} })
+							+Text({ data: {text: 'Загрузите DOC, DOCX, PDF. Не более 10 МБ'}, cn: {style: 'cap', textAlign: 'text-align-center', margin: 'mt-40 mt-20@xs'} })
+							+Button({data: {text: 'попробовать еще раз'}, cn: {size: 'large', margin: 'mt-40 mt-20@xs'}})(class=styles.resumeFormErrorButton)
+
+			div(class=styles.resumeFormForm)
+				+I('Form', ELEM('Form'))

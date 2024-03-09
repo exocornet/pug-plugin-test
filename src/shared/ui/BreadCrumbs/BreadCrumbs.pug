@@ -1,0 +1,18 @@
+mixin BreadCrumbs(props)
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include BreadCrumbs.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # Верстка компонента # -//
+	if props
+		div(class=styles.breadCrumbs)
+			for item, index in DATA_ARR('LinksArr')
+				if index !== DATA_ARR('LinksArr').length - 1
+					span
+						+Link(item)(class=styles.bradCrumbsLink)
+					span(class=styles.breadCrumbsSeparator) /
+				else
+					span
+						+Link(item)(class=styles.bradCrumbsDisabled)

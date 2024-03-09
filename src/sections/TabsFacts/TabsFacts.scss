@@ -1,0 +1,55 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.tabs-facts {
+	&__tabs-buttons {
+		overflow: auto;
+
+		margin-bottom: responsive-size(20, 40);
+
+		@include no-scrollbar;
+	}
+
+	&__tabs-content {
+		display: flex;
+		flex-direction: column;
+
+		row-gap: responsive-size(20, 40);
+	}
+
+	&__row {
+		display: grid;
+		grid-template-columns: 1fr;
+
+		&_two-cols{
+			grid-template-columns: 1fr 1fr;
+			grid-column-gap: 22px;
+
+			@include media(xs) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+
+	&__fact {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		margin-bottom: responsive-size(20, 40);
+
+		padding-bottom: responsive-size(20, 40);
+
+		border-bottom: 1px solid $light-gray;
+
+		&_text-desc {
+			@include media(xs) {
+				grid-template-columns: 1fr;
+				grid-row-gap: 12px;
+			}
+		}
+	}
+
+	&__fact-text {
+		width: responsive-size(236, 590);
+	}
+}

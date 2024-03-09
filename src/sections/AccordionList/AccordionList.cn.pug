@@ -1,0 +1,9 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('accordion-list')
+
+		return {
+			accordionSection: BLOCK({}, [cn?.margin]),
+			accordionListAccordionBody: BLOCK('accordion-body'),
+		}
+	}

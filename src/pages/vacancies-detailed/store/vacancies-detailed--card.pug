@@ -1,0 +1,104 @@
+-
+	const VacanciesCard = {
+		includeSection: 'VacanciesCard',
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+		},
+		elem: {
+			PressCard: {
+				data: {
+					mode: 'grey',
+				},
+				cn: {
+					marginBody: 'mt-170 mt-48@xs',
+				},
+				elem: {
+					ColHeader: {
+						cn: {
+							cols: 'col-9 col-4@xs'
+						}
+					},
+					Heading: {
+						data: {
+							tag: "h3",
+							text: "Рабочий по комплексному обслуживанию и ремонту зданий",
+							footnoteText: '14.05.2023'
+						},
+						cn: {
+							size: "h3",
+							margin: 'mb-40 mb-20@md',
+							top0Footnote: true,
+						},
+					},
+					ColText: {
+						cn: {
+							cols: 'col-6 col-4@xs',
+							offset: 'offset-2 offset-0@xs'
+						}
+					},
+					List: {
+						data: {
+							tag: 'ul',
+						},
+						cn: {
+							listStyle: 'square',
+							listStyleMarker: 'large-marker',
+						},
+					},
+					ListTextArr: [
+						{
+							elem: {
+								Text: {
+									data: {
+										tag: 'li',
+										text: '38 600 ₽/месяц'
+									},
+									cn: {
+										size: 'bigger'
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Text: {
+									data: {
+										tag: 'li',
+										text: 'опыт работы: 1–3 года'
+									},
+									cn: {
+										size: 'bigger'
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Text: {
+									data: {
+										tag: 'li',
+										text: 'полная занятость'
+									},
+									cn: {
+										size: 'bigger'
+									}
+								}
+							}
+						},
+					],
+					Button: {
+						data: {
+							text: 'откликнуться',
+							href: '#!'
+						},
+						opt: {
+							icon: true
+						},
+						cn: {
+							size: 'large',
+						}
+					}
+				}
+			}
+		}
+	}

@@ -1,0 +1,67 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Вакансии. Детальная страница';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Карьера' } },
+						{ data: { text: 'Вакансии'}},
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции ListContactLinks # -//
+include vacancies-detailed--card
+- pageStore.addSection(VacanciesCard);
+
+//- # Подключение store секции VacancyList # -//
+include vacancies-detailed--vacancy-list-tasks
+- pageStore.addSection(VacancyListTasks);
+
+//- # Подключение store секции VacancyList # -//
+include vacancies-detailed--vacancy-list-expectations
+- pageStore.addSection(VacancyListExpectations);
+
+//- # Подключение store секции VacancyList # -//
+include vacancies-detailed--vacancy-list-offers
+- pageStore.addSection(VacancyListOffers);
+
+//- # Подключение store секции VacancyList # -//
+include vacancies-detailed--vacancy-list-address
+- pageStore.addSection(VacancyListAddress);
+
+//- # Подключение store секции ListContactLinks # -//
+include vacancies-detailed--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- ## Подключение store секции ResumeForm ## -//
+include vacancies-detailed--resume-form
+- pageStore.addSection(ResumeForm);
+
+//- ## Подключение store секции SliderInfoCard ## -//
+include vacancies-detailed--slider-info-card-programs
+- pageStore.addSection(SliderInfoCardPrograms);
+
+//- # Подключение store секции Employees # -//
+include vacancies-detailed--employees
+- pageStore.addSection(Employees);
+
+//- ## Подключение store секции PageLinks ## -//
+include vacancies-detailed--page-links
+- pageStore.addSection(PageLinks);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include vacancies-detailed--dialog
+- pageStore.addSection(HiddenDialogContent)

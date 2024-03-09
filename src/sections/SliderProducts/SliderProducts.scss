@@ -1,0 +1,101 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.slider-products {
+	&__link {
+		margin-top: responsive-size(16, 34.1);
+	}
+
+	&__bg-wrap {
+		position: relative;
+
+		padding-bottom: #{responsive-size(64, 90, md)};
+
+		border-bottom: 1px solid $light-gray;
+
+		margin-inline: responsive-size(-20, -28);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			padding-bottom: 0;
+
+			border: none;
+			border-radius: 8px;
+		}
+	}
+
+	&__slider-swiper {
+		overflow: visible;
+
+
+	}
+
+	&__slider-slide {
+		display: flex;
+		flex-direction: column;
+
+		height: responsive-size(394, 820);
+
+		padding: responsive-size(20, 28);
+
+		border-radius: 16px;
+		background-color: $light-green;
+
+		&_transparent {
+			background: transparent;
+		}
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			height: auto;
+			row-gap: responsive-size(20, 42.7);
+		}
+	}
+
+	&__slider-pagination {
+		--swiper-pagination-bottom: #{responsive-size(-37, -42, md)};
+		right: responsive-size(20, 28);
+
+		margin-left: auto;
+
+		.slider-pagination__bullet {
+			letter-spacing: 0.01em;
+		}
+	}
+
+	&__slider-navigation {
+		bottom: #{responsive-size(-45, -50, md)};
+		left: responsive-size(20, 28);
+	}
+
+	&__image {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: responsive-size(312, 650);
+		margin: auto;
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			position: static;
+
+			width: responsive-size(275, 587);
+			margin-block: 0;
+		}
+	}
+
+	&__slider-slide-text {
+		@include media(xs){
+			display: -webkit-box;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+
+			overflow: hidden;
+		}
+	}
+}
+

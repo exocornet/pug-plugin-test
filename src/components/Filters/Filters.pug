@@ -1,0 +1,17 @@
+include ./FiltersPanel
+include ./FiltersSearch
+include ./FiltersLinkControl
+include ./FiltersSelectControl
+include ./FiltersContentContainer
+
+mixin Filters(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ СЕКЦИИ # -//
+	include Filters.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА СЕКЦИИ # -//
+	div(class=styles.block data-id-component=DATA('dataIdComponent', false))&attributes(attributes)
+		block

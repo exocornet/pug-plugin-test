@@ -1,0 +1,14 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('catalog-items-list');
+
+		return {
+			catalogItemsList: BLOCK({}, [cn?.margin]),
+			catalogItemsListWrapper: BLOCK('wrapper'),
+			catalogItemsListFilterToggle: BLOCK('filter-toggle'),
+			catalogItemsLinesHeading: BLOCK('lines-heading'),
+			catalogItemsListContentContainer: BLOCK('content-container'),
+			catalogItemsListFilterLinkWrapper: BLOCK('filter-link-wrapper'),
+			elementFilterLinkControlWrapper: BLOCK('filter-link-control-wrapper')
+		}
+	}

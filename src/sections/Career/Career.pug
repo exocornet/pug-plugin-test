@@ -1,0 +1,16 @@
+mixin Career(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Career.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.career)
+		+Container
+			div(class=styles.careerWrapper)
+				+I('ImagesHeading', ELEM('ImagesHeading'))&attributes({
+					RowTop: {'class': styles.careerRowTop},
+					RowBottom: {'class': styles.careerRowBottom}
+				})

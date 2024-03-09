@@ -1,0 +1,689 @@
+-
+	const TabsInnerTabMedia = {
+		includeSection: 'TabsInnerTabMedia',
+		cn: {
+			margin: 'mt-200 mt-80@xs',
+		},
+		data: {
+			displaySpan: 'd-none@xs',
+			iconMargin: 'ml-0@xs',
+		},
+		elem: {
+			TabsButtons: {
+				dataArr: {
+					buttonArr: [
+						{
+							data: {
+								dataTabsButton: 'photo'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'фотографии',
+									}
+								}
+							}
+						},
+						{
+							data: {
+								dataTabsButton: 'video'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'видео',
+									}
+								}
+							}
+						},
+					]
+				},
+			},
+			TabsContentArr: [
+				{
+					data: {
+						dataTabsContent: 'photo',
+					},
+					elem: {
+						ButtonDownload: {
+							data: {
+								text: 'Скачать все фото',
+								download: 'download',
+								href: '#',
+							},
+							opt: {
+								"icon-download": true,
+							},
+							cn: {
+								marginSvg: 'ml-8 ml-0@xs',
+							}
+						},
+						TabsInnerButtons: {
+							cn: {
+								buttonStyle: 'none-stroke'
+							},
+							dataArr: {
+								buttonArr: [
+									{
+										data: {
+											dataTabsButton: 'our-people'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: 'наши люди',
+												}
+											}
+										}
+									},
+									{
+										data: {
+											dataTabsButton: 'industrial-buildings'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: 'промышленные строения',
+												}
+											}
+										}
+									},
+								]
+							},
+						},
+						TabsInnerContentArr: [
+							{
+								cn: {
+									tabContent: 'image',
+									jsClass: 'js-more',
+									jsInnerClassItem: 'js-more-item',
+								},
+								data: {
+									dataTabsContent: 'our-people',
+									moreAttributes: {
+										'data-modal-image-slider':'modal-image-slider-media',
+										'data-more-desktop': 16,
+										'data-more-desktop-step': 4,
+										'data-more-mobile': 10,
+										'data-more-mobile-step': 3,
+										'data-button-text': 'Показать еще',
+									},
+								},
+								dataArr: {
+									MediaDataArr: [
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+									]
+								}
+							},
+							{
+								cn: {
+									tabContent: 'image',
+									jsClass: 'js-more',
+									jsInnerClassItem: 'js-more-item',
+								},
+								data: {
+									dataTabsContent: 'industrial-buildings',
+									moreAttributes: {
+										'data-modal-image-slider':'modal-image-slider-media',
+										'data-more-desktop': 16,
+										'data-more-desktop-step': 4,
+										'data-more-mobile': 10,
+										'data-more-mobile-step': 3,
+										'data-button-text': 'Показать еще',
+									},
+								},
+								dataArr: {
+									MediaDataArr: [
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+										{
+											data: {
+												imageSource: require('IMAGES/sections/tabs-inner-tab-media/picture-1--tabs-inner-tab-media.png'),
+												imageInfo: {
+													text: 'Афанасьев Андрей',
+													date: '09.07.2023',
+												}
+											}
+										},
+									]
+								}
+							},
+						]
+					},
+					opt: {
+						InnerTab: true,
+					}
+				},
+				{
+					cn: {
+						tabContent: 'video',
+						jsClass: 'js-more',
+						jsInnerClassItem: 'js-more-item',
+					},
+					data: {
+						dataTabsContent: 'video',
+						moreAttributes: {
+							'data-more-desktop': 3,
+							'data-more-desktop-step': 3,
+							'data-more-mobile': 3,
+							'data-more-mobile-step': 1,
+							'data-button-text': 'Показать еще',
+						},
+					},
+					elem: {
+						ButtonDownload: {
+							data: {
+								text: 'Скачать все видео',
+								download: 'download-video',
+								href: '#',
+							},
+							opt: {
+								"icon-download": true,
+							},
+							cn: {
+								marginSvg: 'ml-8 ml-0@xs',
+							}
+						},
+						StoryCardArr: [
+							{
+								elem: {
+									Video: {
+										data: {
+											'data-modal-video': 'modal-video-custom',
+											videoMp4: '/public/static-files/video/sample-30s.mp4',
+											settings: {
+												controls: true,
+												muted: false,
+											},
+										},
+									},
+									TextStory: {
+										data: {
+											text: 'Репортаж о станции УФ обеззараживания сточных вод в г.Кемерово',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextCreator: {
+										data: {
+											text: '09.06.2023'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								},
+								opt: {
+									isLink: true
+								}
+							},
+							{
+								elem: {
+									Video: {
+										data: {
+											'data-modal-video': 'modal-video-custom',
+											iframeSrc: "https://www.youtube.com/embed/rUxij4oVCzE?rel=0&enablejsapi=1",
+											settings: {
+												controls: false,
+												muted: false,
+											},
+											caption: "«азот» - вклад в надежное будущее"
+										},
+										opt: {
+											'iframe': true,
+										}
+									},
+									TextStory: {
+										data: {
+											text: 'День предприятия на большой сцене. «Вести. Кузбасс»',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextCreator: {
+										data: {
+											text: '09.06.2023'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								},
+								opt: {
+									isLink: true
+								}
+							},
+							{
+								elem: {
+									Video: {
+										data: {
+											'data-modal-video': 'modal-video-custom',
+											videoMp4: '/public/static-files/video/sample-30s.mp4',
+											settings: {
+												controls: true,
+												muted: false,
+											},
+										},
+									},
+									TextStory: {
+										data: {
+											text: 'Репортаж о станции УФ обеззараживания сточных вод в г.Кемерово',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextCreator: {
+										data: {
+											text: '09.06.2023'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								},
+								opt: {
+									isLink: true
+								}
+							},
+							{
+								elem: {
+									Video: {
+										data: {
+											'data-modal-video': 'modal-video-custom',
+											videoMp4: '/public/static-files/video/sample-30s.mp4',
+											settings: {
+												controls: true,
+												muted: false,
+											},
+										},
+									},
+									TextStory: {
+										data: {
+											text: 'Репортаж о станции УФ обеззараживания сточных вод в г.Кемерово',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextCreator: {
+										data: {
+											text: '09.06.2023'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								},
+								opt: {
+									isLink: true
+								}
+							},
+							{
+								elem: {
+									Video: {
+										data: {
+											'data-modal-video': 'modal-video-custom',
+											videoMp4: '/public/static-files/video/sample-30s.mp4',
+											settings: {
+												controls: true,
+												muted: false,
+											},
+										},
+									},
+									TextStory: {
+										data: {
+											text: 'Репортаж о станции УФ обеззараживания сточных вод в г.Кемерово',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextCreator: {
+										data: {
+											text: '09.06.2023'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								},
+								opt: {
+									isLink: true
+								}
+							},
+							{
+								elem: {
+									Video: {
+										data: {
+											'data-modal-video': 'modal-video-custom',
+											videoMp4: '/public/static-files/video/sample-30s.mp4',
+											settings: {
+												controls: true,
+												muted: false,
+											},
+										},
+									},
+									TextStory: {
+										data: {
+											text: 'Репортаж о станции УФ обеззараживания сточных вод в г.Кемерово',
+										},
+										cn: {
+											size: 'big',
+										}
+									},
+									TextCreator: {
+										data: {
+											text: '09.06.2023'
+										},
+										cn: {
+											size: 'small',
+										}
+									},
+								},
+								opt: {
+									isLink: true
+								}
+							},
+						]
+					},
+				},
+			]
+		},
+	}

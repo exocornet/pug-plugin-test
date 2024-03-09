@@ -1,0 +1,72 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../styles/include-setings-styles";
+
+.contact-link {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	border-bottom: 1px solid $light-gray;
+
+	&__header {
+		letter-spacing: responsive-size(1, 1);
+
+		text-transform: uppercase;
+
+		font-family: $font-helvetica;
+		font-weight: 500;
+		font-style: normal;
+		line-height: responsive-size(14, 14);
+
+		@include font-size-responsive(1.0, 1.0);
+	}
+
+	&__link-block {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		width: 100%;
+
+		@include media(xs) {
+			flex-direction: column;
+		}
+	}
+
+	&__email {
+		align-self: flex-end;
+
+		letter-spacing: responsive-size(-0.2, -0.4);
+
+		font-family: $font-radio;
+
+		font-weight: 400;
+		font-style: normal;
+		line-height: responsive-size(27, 44);
+
+		@include media(xs) {
+			align-self: flex-start;
+
+			margin-bottom: 16px;
+		}
+
+		@include font-size-responsive(2.0, 4.0);
+	}
+
+	&__phone {
+		letter-spacing: responsive-size(-1.52, -2.56);
+
+		text-transform: uppercase;
+
+		color: $light-gray;
+
+		font-family: $font-radio;
+
+		font-weight: 400;
+		font-style: normal;
+		line-height: responsive-size(30, 64);
+
+		@include font-size-responsive(4, 6.4);
+	}
+
+}

@@ -1,0 +1,341 @@
+-
+	const ModalCareerGuidance = {
+		includeContent: 'ModalCareerGuidance',
+		elem: {
+			Modal: {
+				data: {
+					name: 'modal-career-guidance'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							img: require('IMAGES/modals/close.svg'),
+							type: 'button',
+						},
+						cn: {
+							color: 'transparent'
+						},
+						opt: {
+							withCloseIcon: true,
+						}
+					},
+					Footnote: {
+						data: {
+							tag: 'span',
+							text: 'регистрация на мероприятие'
+						},
+						cn: {
+							style: 'cap',
+							textTransform: 'upper',
+						}
+					}
+				},
+				opt: {
+					SwipeModal: true,
+				}
+			},
+			Form: {
+				data: {
+					action: '/api/forms/callback'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Select: {
+											data: {
+												name: 'stream'
+											},
+											elem: {
+												OptionsArr: [
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "Отрытый урок",
+																	textTransform: 'upper',
+																},
+															}
+														},
+														data: {
+															dataEventId: 'stream'
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "профессиональная проба",
+																	textTransform: 'upper'
+																},
+															}
+														},
+														data: {
+															dataEventId: 'stream2'
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "биржа химических инноваций",
+																	textTransform: 'upper'
+																},
+															}
+														},
+														data: {
+															dataEventId: 'stream3'
+														}
+													},
+												]
+											},
+											cn: {
+												subscription: 'subscription'
+											}
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "выберите мероприятие",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									cn: {
+										isPl: true
+									},
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										DatePicker: {
+											data: {
+												event: 'excursion'
+											},
+											elem: {
+												Input: {
+													data: {
+														name: 'date',
+													}
+												},
+												TextDate: {
+													data: {
+														text: 'Дата'
+													},
+													cn: {
+														style: 'cap'
+													}
+												},
+												TextTime: {
+													data: {
+														text: 'Сеансы'
+													},
+													cn: {
+														style: 'cap'
+													},
+													ColDate: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													}
+												},
+												ColDate: {
+													cn: {
+														cols: 'col-6 col-4@xs',
+													}
+												}
+											}
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "выберите дату",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										InputNumber: {
+											data: {
+												type: 'text',
+												name: 'count',
+												dataType: 'text',
+												min: '1',
+												max: '30'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "количество участников",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'name'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "имя",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'institution'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "учебное заведение",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'school-class',
+												dataType: 'text'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "класс",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'email'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш email",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						}
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						}
+					},
+					SubmitButton: {
+						data: {
+							text: 'отправить',
+							type: 'submit',
+						},
+					},
+				},
+				cn: {
+					margin: 'mt-auto'
+				}
+			}
+		}
+	}

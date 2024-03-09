@@ -1,0 +1,92 @@
+-
+	const SliderInfoCardSuitable = {
+		includeSection: 'SliderInfoCard',
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					footnoteText: "кто подойдёт"
+				},
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto'
+				},
+			},
+			ColCardSlider: {
+				cn:{
+					cols: 'col-10 col-4@xs',
+					offset: 'offset-2 offset-0@xs',
+				}
+			},
+			SliderInfoArr: [
+				{
+					elem: {
+						CardInfo: {
+							elem: {
+								Header: {
+									data: {
+										text: 'молодой специалист'
+									},
+									cn: {
+										size: 'bigger'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Выпускник высшего или среднего образовательного учреждения без опыта работы или работник, имеющий опыт работы до 3 лет, трудоустроенный в КАО «Азот» в течение 3-х лет после окончания учебного заведения'
+									},
+									cn: {
+										margin: 'mb-16@xs',
+									},
+								}
+							},
+							cn: {
+								cols: 'col-4@xs',
+								slider: 'slider__slide swiper-slide d-flex flex-direction-column justify-content-between h-auto',
+								isDefaultWidth: true,
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CardInfo: {
+							elem: {
+								Header: {
+									data: {
+										text: 'квалифицированный работник'
+									},
+									cn: {
+										size: 'bigger'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Работник, имеющий образование и опыт работы от 3-х лет. Работник, не имеющий профильного образования, но c опытом работы от 5 лет'
+									},
+									cn: {
+										margin: 'mb-16@xs',
+									},
+								}
+							},
+							cn: {
+								cols: 'col-4@xs',
+								slider: 'slider__slide swiper-slide d-flex flex-direction-column justify-content-between h-auto',
+								isDefaultWidth: true
+							}
+						}
+					}
+				},
+			],
+		}
+	}

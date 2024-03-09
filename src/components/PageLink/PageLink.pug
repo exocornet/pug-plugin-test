@@ -1,0 +1,51 @@
+mixin PageLink(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const PAGE_LINK_COL_PROPS = {
+			cn: {
+				cols: 'col-11 col-4@xs',
+				display: 'd-flex',
+				direction: 'flex-direction-column@xs',
+				alignItems: 'align-items-start'
+			}
+		}
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include PageLink.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	a(class=styles.pageLinkItem href=DATA('href'))
+		div(class=styles.pageLinkWrapper)
+			+Row
+				+Col(deepMerge(PAGE_LINK_COL_PROPS, ELEM('ColLink')))
+					+Text(ELEM('Text'))(class=styles.pageLinkText)
+
+					if OPT('download')
+						div(class=styles.pageLinkExtension)  #{DATA('extension')}
+
+				if ELEM('TextDateRight', false)
+					+Col({ cn: { cols: 'col-2 col-2@xs' } })
+						+Text(ELEM('TextDateRight'))(class=styles.pageLinkDateRight)
+
+				if ELEM('TextSalary', false)
+					+Col(ELEM('ColTextSalary', false) || { cn: { cols: 'col-3 col-2@xs' } })
+						+Text(ELEM('TextSalary'))(class=styles.pageLinkSalary)
+
+				if ELEM('TextExperience', false)
+					+Col(ELEM('ColTextExperience', false) || { cn: { cols: 'col-3 col-2@xs' } })
+						+Text(ELEM('TextExperience'))(class=styles.pageLinkExperience)
+
+			if ELEM('TextDateBottom', false)
+				+Row
+					+Col
+						+Text(ELEM('TextDateBottom'))(class=styles.pageLinkDate)
+
+		if OPT('icon')
+			include include-svg/arrow
+
+		if OPT('download')
+			include include-svg/download

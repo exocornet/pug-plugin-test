@@ -1,0 +1,60 @@
+-
+	const FormSearchWork = {
+		includeSection: 'FormSearchWork',
+		cn: {
+			margin: 'mt-80',
+		},
+		elem: {
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "найди любимую<br> работу",
+					footnoteText: "вакансии"
+				},
+				cn: {
+					size: "h3",
+					textIndent: true,
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			Field: {
+				elem: {
+					Col: {
+						cn: {
+							cols: 'col-7 col-3@md col-4@xs',
+							offset: 'offset-2 offset-0@md',
+							margin: 'mb-12@xs'
+						}
+					},
+					Input: {
+						data: {
+							name: 'search',
+							required: true,
+							min: '3'
+						},
+					},
+					Label: {
+						data: {
+							tag: 'span',
+							text: "поиск",
+							textTransform: 'upper'
+						},
+					}
+				}
+			},
+			DropList: {
+				data: {
+					name: 'drop-list'
+				},
+				dataArr: {items: ['без опыта', 'от 1 до 3 лет', 'от 3 до 5 лет', 'более 5 лет']},
+				elem: {
+					Button: {data: {text: 'Опыт', type: 'button'}, cn: {size: 'large'}}
+				}
+			},
+			ColDropList: {
+				cn: {
+					cols: 'col-3 col-3@md col-4@xs'
+				}
+			}
+		}
+	}

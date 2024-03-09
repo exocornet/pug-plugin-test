@@ -1,0 +1,41 @@
+mixin TextFootnote(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const TEXT_FOOTNOTE_ROW_PROPS = {
+			cn: {
+				margin: 'mt-64 mt-20@xs',
+			}
+		};
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TextFootnote.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.textFootnote)
+		+Container
+			for item in DATA_ARR('TextBlockArr')
+				//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+				include ../../shared/helpers/pug/shortcut-check-store
+				- const stylesItem = classes(item && item.cn);
+				if I_ELEM('Facts', false)
+					+I('Facts', I_ELEM('Facts'))
+				else
+					+Row(deepMerge(TEXT_FOOTNOTE_ROW_PROPS, I_ELEM('Row')))
+						if I_DATA('footnote', false)
+							+Col({ cn: { cols: 'col-2 col-2@xs', order: 'order-0@xs'} })
+								+Text(TEXT_FOOTNOTE_FOOTNOTE_PROPS)
+									| !{I_DATA('footnote')}
+						if I_ELEM('CardQuote', false)
+							+Col({ cn: { cols: 'col-7 col-4@xs', offset: 'offset-2 offset-0@xs'} })
+								+CardQuote(I_ELEM('CardQuote'))
+						if I_ELEM('TitleText', false)
+							+TitleText(I_ELEM('TitleText'))
+						if I_ELEM('ImagesHeading', false)
+							+I('ImagesHeading', I_ELEM('ImagesHeading'))
+						if I_ELEM('Button', false)
+							+Col({ cn: { cols: 'col-3 col-2@xs', display: 'd-flex', justify: 'justify-content-end', alignItems: 'align-items-center@xs', order: 'order-1@xs' } })
+								+Button(I_ELEM('Button'))

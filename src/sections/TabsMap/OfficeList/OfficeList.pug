@@ -1,0 +1,39 @@
+//- # ПОДКЛЮЧЕНИЕ ФУНКЦИОНАЛЬНОСТИ # -//
+include ../../../shared/shared
+
+mixin OfficeList(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include OfficeList.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+
+	div(class=styles.officeItemWrap data-id=DATA('dataId', false) data-coordinates=DATA('dataCoordinates', false))
+		div(class=styles.officeItem)
+			if OPT('isImage', false)
+				picture(class="mb-24 mb-16@xs")
+					source(srcset=DATA('imageXs') media="(max-width: 767px)")
+					img(class=styles.officeImage src=DATA('image') alt="")
+			+Text(ELEM('TextOfficeName'))
+			+Text(ELEM('TextOfficeDescription'))
+			div(class=styles.officeInfo)
+				div(class=styles.officeLine)
+					+Text(ELEM('TextAddress'))
+					+Text(ELEM('TextAddressValue'))
+				div(class=styles.officeLine)
+					+Text(ELEM('TextPhone'))
+					span(class=styles.officePhones)
+						for item, index in ELEM_ARR('LinkPhoneValueArr')
+							+Link(item)(class=styles.officeLink)
+							if index !== ELEM_ARR('LinkPhoneValueArr').length - 1
+								| ;&nbsp;
+				div(class=styles.officeLine)
+					+Text(ELEM('TextEmail'))
+					+Link(ELEM('LinkEmailValue'))(class=styles.officeLink)
+			+Button(ELEM('Link'))
++OfficeList(data)

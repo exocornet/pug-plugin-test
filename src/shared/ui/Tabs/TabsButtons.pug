@@ -1,0 +1,19 @@
+mixin TabsButtons(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Tabs.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.tabsButtons)&attributes(attributes)
+		for item, index in DATA_ARR('buttonArr')
+			//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+			include ../../../shared/helpers/pug/shortcut-check-store
+			- const PROPS_BUTTON = {...I_ELEM('Button'), cn: {color: 'transparent'}};
+			+Button(PROPS_BUTTON)(class=styles.tabsButton data-tabs-button=I_DATA('dataTabsButton', false))
+
+			//- ## Добавление разделителя ## -//
+			if index < DATA_ARR('buttonArr').length - 1
+				div(class=styles.tabsButtonSeparator)

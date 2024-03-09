@@ -1,0 +1,46 @@
+mixin TabsInnerTabMedia(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TabsInnerTabMedia.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.tabsInnerTabMedia)
+		+Container
+			div(class=styles.tabsInnerTabMediaWrapper)
+				+Row
+					+Col
+						+Tabs(ELEM('Tabs'))
+							+TabsButtons(ELEM('TabsButtons'))(class=styles.tabsInnerTabMediaButtons)
+							+TabsBody
+								for item in ELEM_ARR('TabsContentArr')
+									//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+									include ../../shared/helpers/pug/shortcut-check-store
+									- const stylesItem = classes(item && item.cn);
+
+									//- # ВЕРСТКА # -//
+									+TabsContent(item)(class=stylesItem.tabsInnerTabMediaContent)&attributes({...I_DATA('moreAttributes', false)})
+										if(I_ELEM('ButtonDownload', false))
+											+Button(I_ELEM('ButtonDownload'))&attributes({ Span: { 'class': DATA('displaySpan') } })(class=styles.tabsInnerTabMediaDownload)
+										if(I_OPT('InnerTab', false))
+											+Tabs(I_ELEM('Tabs'))
+												+TabsButtons(I_ELEM('TabsInnerButtons'))(class=styles.tabsInnerTabMediaInnerButtons)
+												+TabsBody
+													for item in I_ELEM_ARR('TabsInnerContentArr')
+														//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+														include ../../shared/helpers/pug/shortcut-check-store
+														- const stylesItem = classes(item && item.cn);
+
+														//- # ВЕРСТКА # -//
+														+TabsContent(item)(class=stylesItem.tabsInnerTabMediaContent)&attributes({...I_DATA('moreAttributes', false)})
+															if(I_DATA_ARR('MediaDataArr', false))
+																for item in I_DATA_ARR('MediaDataArr')
+																	include ../../shared/helpers/pug/shortcut-check-store
+																	if(I_DATA('imageSource', false))
+																		img(class=stylesItem.tabsInnerTabMediaImage src=I_DATA('imageSource') data-image-info=I_DATA('imageInfo') alt=I_DATA('alt'))
+															if(I_ELEM_ARR('StoryCardArr', false))
+																for item in I_ELEM_ARR('StoryCardArr')
+																	include ../../shared/helpers/pug/shortcut-check-store
+																	+I('StoryCard', item)(class=stylesItem.tabsInnerTabMediaStoryCard)

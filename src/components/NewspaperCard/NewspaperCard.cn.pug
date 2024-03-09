@@ -1,0 +1,15 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('newspaper-card');
+
+		return {
+			newspaperCard: BLOCK({}, [
+				cn?.margin,
+				cn?.padding
+			]),
+			newspaperCardTop: BLOCK('top'),
+			newspaperCardCenter: BLOCK('center'),
+			newspaperCardCenterText: BLOCK('center-text'),
+			newspaperCardBottom: BLOCK('bottom'),
+		}
+	}

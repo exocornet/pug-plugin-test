@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('resume-form');
+
+		return {
+			resumeForm: BLOCK({}, [cn?.margin]),
+			resumeFormContainer: BLOCK('container', ['p-0@xs']),
+			resumeFormStepCounter: BLOCK('step-counter', ['d-flex justify-content-between', 'position-absolute']),
+			resumeFormFileLoader: BLOCK('file-loader'),
+			resumeFormFileLoaderInner: BLOCK('file-loader-inner', ['d-flex justify-content-center align-items-center flex-direction-column']),
+			resumeFormAddedIcon: BLOCK('added-icon'),
+			resumeFormHiddenInput: BLOCK('hidden-input'),
+			resumeFormGreenText: BLOCK('green-text'),
+			resumeFormStep: BLOCK('step'),
+			resumeFormAddedText: BLOCK('added-text'),
+			resumeFormSuccessText: BLOCK('success-text'),
+			resumeFormErrorText: BLOCK('error-text'),
+			resumeFormErrorButton: BLOCK('error-button', ['position-relative']),
+			resumeFormForm: BLOCK('form', ['d-none'])
+		}
+	}

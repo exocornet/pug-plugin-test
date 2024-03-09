@@ -1,0 +1,57 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.newspaper-card {
+	width: responsive-size(72.5, 365);
+
+	padding: 20px;
+
+	border-radius: 8px;
+	background: $smoky-white;
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__center {
+		display: flex;
+		flex-direction: column;
+		row-gap: responsive-size(12, 16);
+
+		margin-top: responsive-size(70, 150);
+	}
+
+	&__center-text {
+		--webkit-line-clamp: 6;
+
+		position: relative;
+
+		overflow: hidden;
+
+		height: responsive-size(72, 144);
+
+		&::after {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			height: responsive-size(20, 100);
+
+			content: "";
+
+			pointer-events: none;
+
+			background: linear-gradient(to top, $smoky-white -5%, transparent 100%);
+		}
+	}
+
+	&__bottom {
+		margin-top: responsive-size(16, 32);
+	}
+
+	@include media(xs){
+		min-width: 320px;
+	}
+}

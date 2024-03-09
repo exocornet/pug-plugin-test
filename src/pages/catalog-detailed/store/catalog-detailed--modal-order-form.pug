@@ -1,0 +1,172 @@
+-
+	const ModalOrderForm = {
+		includeContent: 'ModalOrderForm',
+		elem: {
+			Modal: {
+				data: {
+					name: 'modal-order-form'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							img: require('IMAGES/modals/close.svg'),
+							type: 'button',
+						},
+						cn: {
+							color: 'transparent'
+						},
+						opt: {
+							withCloseIcon: true,
+						}
+					},
+					Footnote: {
+						data: {
+							tag: 'span',
+							text: 'заказ'
+						},
+						cn: {
+							style: 'cap',
+							textTransform: 'upper',
+						}
+					},
+					Heading: {
+						data: {
+							tag: "h3",
+							text: "двуокись углерода жидкая низкотемпературная марка [а-б]",
+						},
+						cn: {
+							size: "h3",
+							margin: "mb-40 mb-20@xs",
+							textIndent: true
+						}
+					}
+				},
+				opt: {
+					SwipeModal: true,
+				}
+			},
+			Form: {
+				data: {
+					dialogName: 'feedBackFormDialog',
+					action: '/api/forms/callback'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'company',
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "компания",
+												textTransform: 'upper'
+											},
+										}
+									},
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'phone'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "номер телефона",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'email'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш email",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'comment'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "комментарий к заказу",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						}
+					},
+					SubmitButton: {
+						data: {
+							text: 'Отправить',
+							type: 'submit',
+						},
+					}
+				}
+			}
+		}
+	}

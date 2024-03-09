@@ -1,0 +1,18 @@
+mixin Career(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Contacts.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.contacts)
+		+Container
+			div(class=styles.contactsWrapper)
+				if ELEM('Heading')
+					+Heading(ELEM('Heading'))
+				for item in ELEM_ARR('SliderSlideArr')
+					include ../../shared/helpers/pug/shortcut-check-store
+					div(class="d-flex justify-content-between mb-16 mb-4@xs")
+						+Contact(item)

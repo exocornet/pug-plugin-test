@@ -1,0 +1,25 @@
+mixin ModalImageSlider(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ModalImageSlider.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.modalImageSliderModal)
+		+I('Modal', ELEM('Modal'))&attributes(attributes)
+			+Slider(ELEM('Slider'))&attributes({ Slider: { class: styles.modalImageSlider }, SliderSwiper: { class: styles.modalImageSliderSwiper }, SliderNavigation: { class: styles.modalImageSliderNavigation }, SliderSlidesWrapper: { class: styles.modalImageSliderWrapper } })
+				template(data-template="slider-slide")
+					+SliderSlide(class=styles.modalImageSliderSlide)
+						div(class=styles.modalImageSliderContainer)
+							picture(class=styles.modalImageSliderPicture)
+								img(class=styles.modalImageSliderImage src alt="")
+								div(class=styles.modalImageSliderRow)
+									div(class=styles.modalImageSliderText)
+										+Text(class=styles.modalImageSliderTextTitle)
+										+Text({ cn: { size: 'smaller', style: 'cap-small' } })(class=styles.modalImageSliderTextDate)
+									+Button({
+										data: { text: 'скачать', href: '#!', download: 'download' },
+										cn: { size: 'small', color: 'white' },
+										opt: { icon: true }
+									})(class=styles.modalImageSliderDownload)

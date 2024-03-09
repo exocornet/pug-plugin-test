@@ -1,0 +1,41 @@
+mixin Form(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Form.cn.pug
+	- const styles = classes(props && props.cn)
+
+	form(
+		class=styles.form action=DATA( 'action' )
+		data-required="Обязательное поле"
+		data-wrong-phone="Неверный номер телефона"
+		data-wrong-email="Неверный email"
+		data-file-type="Неверный тип файла"
+		data-file-size="Не допустимый размер файла"
+		data-wrong-date="Выберете дату и время"
+		data-init=DATA('init', false)
+		data-name=DATA( 'name', false)
+	)&attributes(attributes)
+		if OPT('multistep', false)
+			block
+		else
+			+Row
+				for item in ELEM_ARR('FromFieldsArr')
+					include ../../shared/helpers/pug/shortcut-check-store
+					+Field(I_ELEM("Field"))
+				if ELEM('ButtonSubscribe', false)
+					+Col(ELEM('ColButtonSubscribe'))(class="d-flex")
+						+Button(ELEM("ButtonSubscribe"))(class=styles.formButtonSubscribe)
+				div(class=styles.formAdditionals)
+					if ELEM("Estimated", false)
+						div(class=styles.formEstimated)
+							+Text(ELEM("EstimatedAgreement"))(class=styles.formAgreement)
+							div(class=styles.formEstimatedCurrencyContainer)
+								+Text(ELEM("EstimatedFrom"))(class=styles.formEstimatedFrom)
+								+Text(ELEM("Estimated"))(class=styles.formEstimatedValue)
+								+Text(ELEM("EstimatedCurrency"))(class=styles.formEstimatedCurrency)
+					if ELEM("Agreement", false)
+						+Text(ELEM("Agreement"))(class=styles.formAgreement)
+					if ELEM("SubmitButton", false)
+						+Button(ELEM("SubmitButton"))(class=styles.formButton)

@@ -1,0 +1,26 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.tabs-inner-tab{
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: responsive-size(40, 80);
+	}
+
+	&__tabs-buttons {
+		overflow: auto;
+
+		margin-bottom: responsive-size(20, 24);
+		padding-bottom: responsive-size(20, 24);
+
+		border-bottom: 1px solid $black-gray;
+
+		@include no-scrollbar;
+	}
+
+	&__tabs-content {
+		display: flex;
+		flex-direction: column;
+	}
+}

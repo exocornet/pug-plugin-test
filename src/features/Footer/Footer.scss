@@ -1,0 +1,49 @@
+.footer {
+	padding-bottom: 40px;
+
+	color: $black-40;
+
+	&__border-top {
+		margin-right: calc(-20px + (-28 - -20) * ((100vw - 360px) / (1600 - 360)));
+		margin-left: calc(-20px + (-28 - -20) * ((100vw - 360px) / (1600 - 360)));
+	}
+
+	&__link-phone {
+		letter-spacing: -0.04em;
+
+		font-family: $body-font-family;
+		font-weight: 400;
+		line-height: 0.8;
+		@include font-size-responsive(3.8, 12);
+	}
+
+	&__address {
+		letter-spacing: -0.01em;
+
+		font-family: $body-font-family;
+		font-weight: 400;
+		line-height: 1.3;
+		@include font-size-responsive(1.6, 2);
+	}
+
+	&__social-buttons {
+		display: flex;
+		gap: 4px;
+	}
+
+	&__social-button {
+		padding: 6px 12px;
+	}
+
+	&__made-in {
+		font-family: $font-helvetica;
+	}
+
+	&__contacts-row {
+		padding: 33px 0;
+
+		@include media(xs) {
+			padding: 20px 0;
+		}
+	}
+}

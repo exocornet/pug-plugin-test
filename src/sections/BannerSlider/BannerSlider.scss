@@ -1,0 +1,92 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.banner-slider {
+	&__slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		min-height: calc(100vh - var(--header-height));
+		padding-bottom: responsive-size(45);
+
+		@include media(xs) {
+			min-height: responsive-size(770);
+			padding-bottom: responsive-size(105, 224);
+		}
+	}
+
+	&__slider-pagination {
+		--swiper-pagination-top: #{responsive-size(68, 180)};
+		--swiper-pagination-bottom: "unset";
+	}
+
+	&__picture {
+		position: absolute;
+		z-index: -1;
+		left: 50%;
+
+		display: block;
+
+		transform: translateX(-50%);
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+
+			width: 100%;
+			height: responsive-size(297);
+
+			content: "";
+
+			background: linear-gradient(0deg, hsl(0deg 0% 96.47%) 19.61%, hsl(0deg 0% 96.47% / 0%) 100.32%);
+		}
+	}
+
+	&__image-slide {
+		height: calc(100vh - var(--header-height));
+
+		@include media(xs) {
+			width: responsive-size(790);
+			height: 100%;
+		}
+	}
+
+	&__content-bottom {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+	}
+
+	// # MEDIA QUERY 360 # //
+	@include media(xs) {
+		&__slider-pagination {
+			--swiper-pagination-top: "unset";
+			--swiper-pagination-bottom: 0;
+			right: 0;
+
+			margin-left: auto;
+		}
+
+		&__picture {
+			position: relative;
+			left: unset;
+
+			transform: unset;
+
+			&::after {
+				height: responsive-size(190, 405);
+			}
+		}
+
+		&__image-slide {
+			width: 100%;
+		}
+
+		&__link {
+			position: absolute;
+			bottom: 0;
+		}
+	}
+}

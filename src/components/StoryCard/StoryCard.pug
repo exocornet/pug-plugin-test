@@ -1,0 +1,19 @@
+mixin StoryCard(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include StoryCard.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(data-modal-video=DATA('data-modal-video', false) class=styles.storyCard)&attributes(attributes)
+		if(DATA('image', false))
+			picture
+				img(class=styles.storyCardImage src=DATA('image') alt="")
+		if(ELEM('Video', false))
+			+I('Video', ELEM('Video'))&attributes({ Video: { 'class': styles.storyCardVideoStory }, Player: { 'class': styles.storyCardVideoPlayer } })
+		div(class=styles.storyCardText)
+			+Text(ELEM('TextStory'))(class=styles.storyCardTextStory)
+			+Text(ELEM('TextCreator'))(class=styles.storyCardTextCreator)
+			include include-svg/arrow

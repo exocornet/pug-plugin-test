@@ -1,0 +1,47 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Вакансии. Список';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Карьера' } },
+						{ data: { text: 'Вакансии'}},
+					]
+				}
+			},
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include vacancies-list--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- ## Подключение store секции FilterPageLinks ## -//
+include vacancies-list--filter-page-links
+- pageStore.addSection(FilterPageLinks);
+
+//- ## Подключение store секции ArrowedSection ## -//
+include vacancies-list--arrowed-section
+- pageStore.addSection(ArrowedSection);
+
+//- ## Подключение store секции ResumeForm ## -//
+include vacancies-list--resume-form
+- pageStore.addSection(ResumeForm);
+
+//- ## Подключение store секции SliderInfoCard ## -//
+include vacancies-list--slider-info-card-programs
+- pageStore.addSection(SliderInfoCardPrograms);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include vacancies-list--dialog
+- pageStore.addSection(HiddenDialogContent)

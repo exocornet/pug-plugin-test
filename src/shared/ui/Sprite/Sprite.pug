@@ -1,0 +1,29 @@
+mixin Sprite(props)
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Sprite.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	case props
+		when 'icon-1'
+			include include-svg/icon-1
+		when 'icon-2'
+			include include-svg/icon-2
+		when 'icon-3'
+			include include-svg/icon-3
+		when 'icon-4'
+			include include-svg/icon-4
+		when 'icon-5'
+			include include-svg/icon-5
+		when 'icon-6'
+			include include-svg/icon-6
+		when 'icon-7'
+			include include-svg/icon-7
+		when 'icon-8'
+			include include-svg/icon-8
+		when 'icon'
+			include include-svg/icon-arrow
+		when 'icon-download'
+			include include-svg/icon-download
+		when 'icon-copy'
+			include include-svg/icon-copy

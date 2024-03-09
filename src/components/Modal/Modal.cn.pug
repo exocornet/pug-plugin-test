@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('modal')
+
+		return {
+			modal: BLOCK({}),
+			modalInner: BLOCK('inner', {
+				[`${cn?.modalInnerStyle}`]: ['video', 'slider'].includes(cn?.modalInnerStyle),
+				[`${cn?.modalBackground}`]: ['transparent'].includes(cn?.modalBackground),
+			}),
+			modalOverlay: BLOCK('overlay', ['position-absolute']),
+			modalSwipeModal: BLOCK('swipe-modal', ['d-none d-block@xs', 'mb-24@xs']),
+			modalFootnote: BLOCK('footnote'),
+			modalFormSteps: BLOCK('form-steps'),
+			modalFormStep: BLOCK('form-step'),
+			modalBody: BLOCK('body'),
+			modalFooter: BLOCK('footer'),
+			modalClose: BLOCK('close'),
+			modalFooterButtonClose: BLOCK('footer-button-close')
+		}
+	}

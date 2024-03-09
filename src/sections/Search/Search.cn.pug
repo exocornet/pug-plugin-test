@@ -1,0 +1,20 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('search')
+
+		return {
+			search: BLOCK(),
+			searchLabel: BLOCK('label', ['position-relative', 'mt-40 mt-32@md', 'd-block']),
+			searchInput: BLOCK('input'),
+			searchButtonClear: BLOCK('button-clear', ['d-none']),
+			searchWrapHistory: BLOCK('wrap-history'),
+			searchWrapTop: BLOCK('wrap-top'),
+			searchFrequentQueries: BLOCK('frequent-queries'),
+			searchPromotionalProducts: BLOCK('promotional-products', ['mt-auto', 'flex-nowrap', 'overflow-auto@md', 'pb-16@md']),
+			searchResult: BLOCK('result'),
+			searchWrapButtonResult: BLOCK('wrap-button-result'),
+			searchWrapResult: BLOCK('wrap-result'),
+			searchWrapPagination: BLOCK('wrap-pagination'),
+			searchButtonRequestHistory: BLOCK('button-request-history'),
+		}
+	}

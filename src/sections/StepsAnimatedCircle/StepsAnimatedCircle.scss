@@ -1,0 +1,183 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+@import "include-svg/ForeignObject/ForeignObject";
+
+.steps-animated-circle {
+	&__content {
+		@include media(xs) {
+			column-gap: 20px;
+		}
+	}
+
+	&__line {
+		@include media(xs) {
+			width: 40px;
+
+			&::before {
+				display: block;
+
+				width: 1px;
+				height: calc(100% + 20px);
+
+				content: "";
+
+				background: $light-gray;
+				margin-inline: auto;
+			}
+
+			&::after {
+				display: block;
+
+				width: 6px;
+				height: 6px;
+
+				content: "";
+
+				border-radius: 50%;
+				background: $light-gray;
+				margin-inline: auto;
+			}
+		}
+	}
+
+	&__cloned-element {
+		@include media(xs) {
+			display: grid;
+			row-gap: 40px;
+
+			& > * {
+				display: grid;
+				row-gap: 12px;
+			}
+		}
+	}
+
+	&__step-name, &__step-number {
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+
+		font-family: $font-helvetica;
+		font-size: $fs10;
+		font-weight: 550;
+		line-height: 1.4;
+	}
+
+	&__step-name {
+		opacity: 0.4;
+
+		@include media(xs) {
+			margin-top: 10px;
+		}
+	}
+
+	&__step-number {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 40px;
+		height: 40px;
+
+		color: $black;
+
+		border-radius: 50%;
+		outline: solid 1px $gainsborough;
+		background: $main;
+
+		@include media(xs) {
+			position: absolute;
+			left: -59px;
+
+			border-radius: 50%;
+		}
+
+		// stylelint-disable-next-line order/order
+		&_bg-black {
+			color: $white;
+			outline: none;
+			background: $black;
+
+			@include media(xs) {
+				color: $black;
+				outline: solid 1px $gainsborough;
+				background: $main;
+			}
+		}
+	}
+
+	&__step-title-foreign {
+		y: 435px;
+		x: 540px;
+
+		width: 520px;
+	}
+
+	&__step-title {
+		width: 100%;
+
+		letter-spacing: -0.04em;
+
+		color: $black;
+
+		font-size: $fs64;
+		line-height: 1;
+
+		@include media(xs) {
+			letter-spacing: -0.03em;
+
+			font-size: $fs28;
+		}
+	}
+
+	&__step-description-foreign {
+		y: 605px;
+		x: 540px;
+
+		width: 520px;
+	}
+
+	&__step-description {
+		width: 100%;
+
+		letter-spacing: -0.01em;
+
+		color: $black;
+
+		font-size: $fs20;
+		line-height: 1.35;
+
+		@include media(xs) {
+			font-size: $fs16;
+			line-height: 1.3;
+		}
+	}
+
+	&__step-image-foreign {
+		x: 690px;
+		y: 172px;
+	}
+
+	&__step-image {
+		width: 228px;
+		height: 228px;
+
+		@include media(xs) {
+			width: 124px;
+			height: 124px;
+		}
+	}
+
+	&_dark {
+		--circle-color: #{$smoky-white};
+		--circle-loading-color: #{$black-gray};
+	}
+}
+
+.js-number-name-container {
+	@include media(xs) {
+		position: relative;
+
+		display: flex;
+	}
+}

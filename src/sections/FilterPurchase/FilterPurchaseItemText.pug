@@ -1,0 +1,6 @@
+mixin FilterPurchaseItemText(props)
+	include ../../shared/helpers/pug/shortcut-check-store
+	if DATA('docType', false)
+		+Button(ELEM('Text'))(data-doc-type=DATA('docType', false))&attributes(attributes)
+	else
+		+Text(ELEM('Text'))&attributes(attributes)

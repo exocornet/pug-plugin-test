@@ -1,0 +1,30 @@
+mixin BioData(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const NAME_PROPS = { data: {...ELEM('TextName').data}, cn: {style: 'cap', textTransform: 'upper'} };
+		const DATE_PROPS = { data: {tag: 'span', ...ELEM('HeadingDate').data}, cn: {size: 'h4'} };
+		const EVENT_PROPS = { data: {...ELEM('TextEvent').data} };
+		const offset = `${ELEM('TextName', false) ? '' : 'offset-2 offset-0@xs'}`
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include BioData.cn.pug
+	- const styles = classes(props && props.cn)
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	+Row(class=`${styles.bioData} align-items-baseline`)&attributes(attributes)
+		if (ELEM('TextName', false))
+			+Col({cn: {cols: 'col-2 col-4@xs', margin: 'mb-24@xs'}})(class=styles.bioDataNameCol)
+				+Text(NAME_PROPS)
+
+		if (DATA('icon', false))
+			+Col({cn: {cols: 'col-10 col-4@xs', offset, display: 'd-flex d-block@xs', alignItems: 'align-items-center' }})
+				img(class=styles.bioDataIcon src=DATA('icon') alt="")
+				+Text(EVENT_PROPS)(class=styles.bioDataEvent)
+		else
+			+Col({cn: {cols: 'col-4 col-4@xs', offset, margin: 'mb-10@xs'}})
+				+Heading(DATE_PROPS)(class=styles.bioDataDate)
+			+Col({cn: {cols: 'col-6 col-4@xs'}})
+				+Text(EVENT_PROPS)(class=styles.bioDataEvent)

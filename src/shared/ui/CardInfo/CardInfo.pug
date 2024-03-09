@@ -1,0 +1,56 @@
+mixin CardInfo(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include CardInfo.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.cardInfo)&attributes(attributes)
+		//- для страницы транcпорта -//
+		if OPT('isTransport')
+			if I_ELEM('TransportHeader')
+				+Text(ELEM('TransportHeader'))(class=styles.cardInfoTransportInfo)
+		//- для слайдера с иконками СМИ -//
+		if OPT('isNewsIcon')
+			+Row
+				+Col
+					div(class="d-flex justify-content-between align-items-start")
+						img(class=styles.cardInfoIcon src=DATA('img') alt="")
+						+Text(ELEM('TextDate'))
+		else
+			//- для страницы транcпорта -//
+			if OPT('isTransport')
+				+Text(ELEM('Header'))(class=styles.cardInfoTransportHeader)
+				div(class="d-flex justify-content-between")
+					if ELEM('Value', false)
+						+Text(ELEM('Value'))
+					if ELEM('Quantity', false)
+						+Text(ELEM('Quantity'))
+			//- все остальные -//
+			else
+				+Text(ELEM('Header'))
+		//- блоки с кружками -//
+		if OPT('isCircle')
+			div(class=styles.cardInfoCircle)
+				picture
+					source(srcset=DATA('imgXs') media=`(max-width: ${media.xs})`)
+					img(class=styles.imageHeadingImage src=DATA('img') alt="")
+		div(class=styles.cardInfoTextBlock)
+			//- филиалы -//
+			if OPT('isBranch')
+				div(class=styles.cardInfoBranchLine)
+					+Text(ELEM('Address'), false)
+					+Text(ELEM('AddressValue'), false)
+				div(class=styles.cardInfoBranchLine)
+					+Text(ELEM('Phone'), false)
+					+Link(ELEM('PhoneValue'), false)
+				div(class=styles.cardInfoBranchLine)
+					+Text(ELEM('Email'), false)
+					+Link(ELEM('EmailValue'), false)(class="phone")
+			else
+				if ELEM('Text', false)
+					+Text(ELEM('Text'))
+				if ELEM('Button', false)
+					+Button(ELEM('Button'))(type="button")

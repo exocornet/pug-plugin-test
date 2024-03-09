@@ -1,0 +1,358 @@
+-
+	const ModalPractices = {
+		includeContent: 'ModalPractices',
+		elem: {
+			Modal: {
+				data: {
+					name: 'modal-practices'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							img: require('IMAGES/modals/close.svg'),
+							type: 'button',
+						},
+						cn: {
+							color: 'transparent'
+						},
+						opt: {
+							withCloseIcon: true,
+						}
+					},
+					Footnote: {
+						data: {
+							tag: 'span',
+							text: 'программа «практика»'
+						},
+						cn: {
+							style: 'cap',
+							textTransform: 'upper',
+						}
+					}
+				},
+				opt: {
+					SwipeModal: true,
+				}
+			},
+			Form: {
+				data: {
+					action: '/api/forms/callback',
+					init: 'false'
+				},
+				elem: {
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						}
+					},
+					SubmitButton: {
+						data: {
+							text: 'Отправить',
+							type: 'submit',
+						},
+					},
+				},
+				cn: {
+					margin: 'mt-56'
+				},
+				opt: {
+					multistep: true
+				}
+			},
+			Steps: [
+				{
+					elem: {
+						Text: {
+							data: {
+								text: 'шаг 1'
+							},
+							cn: {
+								style: 'cap',
+								textTransform: 'upper'
+							},
+						}
+					},
+					data: {
+						active: 'active'
+					}
+				},
+				{
+					elem: {
+						Text: {
+							data: {
+								text: 'шаг 2'
+							},
+							cn: {
+								style: 'cap',
+								textTransform: 'upper'
+							}
+						}
+					}
+				}
+			],
+			Step1Fields: [
+				{
+					elem: {
+						Field: {
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-6 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										name: 'name'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "имя",
+										textTransform: 'upper'
+									},
+								}
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						Field: {
+							cn: {
+								isPl: true
+							},
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-6 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										name: 'phone'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "номер телефона",
+										textTransform: 'upper'
+									},
+								}
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						Field: {
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-12 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										type: 'text',
+										name: 'email'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "ваш email",
+										textTransform: 'upper'
+									},
+								}
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						Field: {
+							cn: {
+								placeholder: 'shown-placeholder'
+							},
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-12 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										type: 'text',
+										name: 'comment',
+										placeholder: 'почему вы хотите пройти практику в нашей компании?'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "комментарий",
+										textTransform: 'upper'
+									},
+								}
+							}
+						},
+					}
+				}
+			],
+			Step2Fields: [
+				{
+					elem: {
+						Field: {
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-6 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										name: 'institution'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "учебное заведение",
+										textTransform: 'upper'
+									},
+								}
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						Field: {
+							cn: {
+								isPl: true
+							},
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-6 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										name: 'direct'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "направление обучения",
+										textTransform: 'upper'
+									},
+								}
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						Field: {
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-6 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										type: 'text',
+										name: 'course'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "курс",
+										textTransform: 'upper'
+									},
+								}
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						Field: {
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-6 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										type: 'text',
+										name: 'period'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "период практики",
+										textTransform: 'upper'
+									},
+								}
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						Field: {
+							elem: {
+								Col: {
+									cn: {
+										cols: 'col-12 col-4@xs',
+									}
+								},
+								Input: {
+									data: {
+										type: 'text',
+										name: 'manager'
+									},
+								},
+								Label: {
+									data: {
+										tag: 'span',
+										text: "руководитель практики",
+										textTransform: 'upper'
+									},
+								}
+							}
+						},
+					}
+				}
+			],
+			ButtonNext: {
+				data: {
+					text: 'следующий шаг',
+					type: 'button',
+				},
+				cn: {
+					size: 'large',
+					margin: 'ml-auto'
+				}
+			},
+			ButtonSubmit: {
+				data: {
+					text: 'Отправить',
+					type: 'submit',
+				},
+				cn: {
+					size: 'large',
+					margin: 'ml-auto'
+				}
+			},
+		}
+	}

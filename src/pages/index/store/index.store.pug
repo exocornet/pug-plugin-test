@@ -1,0 +1,63 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Главная';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'index-body';
+	// const classMainPage = 'index-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: false,
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции BannerSlider ## -//
+include index--banner-slider
+- pageStore.addSection(BannerSlider);
+
+//- ## Подключение store секции ImageFacts ## -//
+include index--image-facts-mission
+- pageStore.addSection(ImageFactsMission);
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include index--heading-detailed-mission
+- pageStore.addSection(HeadingDetailedMission);
+
+//- ## Подключение store секции StatisticsMap ## -//
+include index--statistics-map
+- pageStore.addSection(StatisticsMap);
+
+//- ## Подключение store секции TabsImagesHeading ## -//
+include index--tabs-images-heading
+- pageStore.addSection(TabsImagesHeading);
+
+//- ## Подключение store секции SliderProducts ## -//
+include index--slider-products
+- pageStore.addSection(SliderProducts);
+
+//- ## Подключение store секции ImageFacts ## -//
+include index--image-facts-development
+- pageStore.addSection(ImageFactsDevelopment);
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include index--heading-detailed-development
+- pageStore.addSection(HeadingDetailedDevelopment);
+
+//- ## Подключение store секции ImageHeading Development ## -//
+include index--steps-animated-circle
+- pageStore.addSection(StepsAnimatedCircle);
+
+//- ## Подключение store секции Career ## -//
+include index--career
+- pageStore.addSection(Career);
+
+//- ## Подключение store секции VideoFacts ## -//
+include index--video-facts
+- pageStore.addSection(VideoFacts);
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include index--heading-detailed-video
+- pageStore.addSection(HeadingDetailedVideo);

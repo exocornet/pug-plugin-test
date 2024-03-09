@@ -1,0 +1,9 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.filter-news {
+	&__subscription-form {
+		margin-top: responsive-size(80, 120);
+		margin-bottom: responsive-size(80, 120);
+	}
+}

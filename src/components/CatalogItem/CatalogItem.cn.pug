@@ -1,0 +1,17 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('catalog-item')
+
+		return {
+			catalogItem: BLOCK({}, [cn?.margin, cn?.cols]),
+			catalogItemHeader: BLOCK('header'),
+			catalogItemImage: BLOCK('image', [cn?.margin,]),
+			catalogItemFormula: BLOCK('formula'),
+			catalogItemMark: BLOCK('mark'),
+			catalogItemTitle: BLOCK('title'),
+			catalogItemCondition: BLOCK('condition'),
+			catalogItemType: BLOCK('type'),
+			catalogItemDescription: BLOCK('description'),
+			catalogItemButton: BLOCK('button'),
+		}
+	}

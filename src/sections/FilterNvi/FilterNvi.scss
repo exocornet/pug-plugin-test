@@ -1,0 +1,79 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.filter-nvi {
+	&__container {
+		display: flex;
+		flex-direction: column;
+
+		row-gap: responsive-size(20, 40);
+	}
+
+	&__table-heading {
+		display: flex;
+		column-gap: responsive-size(14, 20);
+
+		width: 100%;
+		margin-bottom: 48px;
+
+		border-bottom: 1px solid $light-gray;
+
+		span {
+			position: relative;
+
+			padding: 16px 5px;
+
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+
+			color: $light-gray;
+
+			font-family: $font-helvetica;
+
+			font-size: 10px;
+			font-weight: 550;
+			line-height: 14px;
+
+			&:not(:first-child)::before {
+				position: absolute;
+				bottom: -10px;
+				left: -10px;
+
+				width: 1px;
+				height: 10px;
+
+				content: "";
+
+				background-color: $light-gray;
+			}
+
+			&:nth-child(1) {
+				width: responsive-size(86, 118, md);
+			}
+
+			&:nth-child(2) {
+				width: responsive-size(86, 128, md);
+			}
+
+			&:nth-child(3) {
+				width: responsive-size(180, 898, md);
+			}
+
+			&:nth-child(4) {
+				width: responsive-size(86, 129, md);
+			}
+
+			&:nth-child(5) {
+				width: responsive-size(86, 129, md);
+			}
+
+			&:nth-child(6) {
+				width: responsive-size(86, 110, md);
+			}
+		}
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+}

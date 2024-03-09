@@ -1,0 +1,14 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-stories')
+
+		return {
+			sliderStories: BLOCK({}, [cn?.margin]),
+			sliderStoriesSliderSwiper: BLOCK('slider-swiper'),
+			sliderStoriesSliderSlidesWrapper: BLOCK('slider-slides-wrapper'),
+			sliderStoriesSliderSlide: BLOCK('slider-slide'),
+			sliderStoriesSliderNavigation: BLOCK('slider-navigation', ['d-none@xs']),
+			sliderStoriesLink: BLOCK('link'),
+			sliderStoriesBottom: BLOCK('bottom'),
+		}
+	}

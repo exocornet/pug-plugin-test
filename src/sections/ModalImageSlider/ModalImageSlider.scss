@@ -1,0 +1,92 @@
+@import "../../shared/styles/include-setings-styles";
+
+.modal-image-slider {
+	&__modal {
+		&.show {
+			@include media(xs) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+
+	&__swiper {
+		height: responsive-size(860);
+
+		max-height: 860px;
+
+		@include media(xs){
+			width: 100%;
+		}
+	}
+
+	&__row {
+		position: absolute;
+
+		z-index: 0;
+
+		bottom: 0;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+
+		width: 100%;
+
+		padding-bottom: responsive-size(20, 28);
+		padding-inline: responsive-size(20, 28);
+	}
+
+	&__text-title {
+		color: $white;
+	}
+
+	&__text-date {
+		color: $white;
+	}
+
+	&__navigation {
+		z-index: 1;
+
+		top: 50%;
+		left: 50%;
+
+		justify-content: space-between;
+
+		width: responsive-size(336, 1250);
+
+		transform: translate(-50%, -50%);
+
+		@include media(xs) {
+			top: 45%;
+		}
+	}
+
+	&__slide {
+		width: responsive-size(326, 1278);
+	}
+
+	&__container {
+		position: relative;
+
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+
+		height: 100%;
+	}
+
+	&__picture {
+		position: absolute;
+
+		height: 100%;
+	}
+
+	&__image {
+		height: 100%;
+
+		border-radius: 8px;
+		object-fit: cover;
+	}
+}

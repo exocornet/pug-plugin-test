@@ -1,0 +1,44 @@
+mixin TitleTextWrap(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const FOOTNOTE_PROPS = {
+			cn: {
+				style: 'cap',
+				textTransform: 'upper',
+				margin: 'mb-20@xs',
+			}
+		};
+
+		const COL_HR = ELEM('ColHr', false) || {
+			cn: {
+				cols: 'col-8 col-4@xs',
+				offset: 'offset-2 offset-0@xs',
+				margin: 'mt-120 mt-80@xs'
+			}
+		}
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TitleTextWrap.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.titleText)
+		+Container
+			+Row
+				if DATA('footnote', false)
+					+Col({ cn: { cols: 'col-2 col-2@xs', order: 'order-0@xs' } })
+						+Text(FOOTNOTE_PROPS)
+							| !{DATA('footnote')}
+				+TitleText(ELEM('TitleText'))
+				if ELEM('Button', false)
+					+Col({ cn: { cols: 'col-3 col-2@xs', display: 'd-flex', justify: 'justify-content-end', alignItems: 'align-items-center@xs', order: 'order-1@xs' } })
+						+Button(ELEM('Button'))
+				if ELEM('ButtonYandexShare', false)
+					+Col({ cn: { cols: 'col-3 col-2@xs', display: 'd-flex', justify: 'justify-content-end', alignItems: 'align-items-center@xs', order: 'order-1@xs' } })
+						+I('ButtonYandexShare', ELEM('ButtonYandexShare'))
+			if OPT('isHR')
+				+Col(COL_HR)
+					hr

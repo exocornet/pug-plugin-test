@@ -1,0 +1,15 @@
+mixin DropList(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include DropList.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.dropList)&attributes(attributes)
+		input(type="hidden" value="" name="experience" class=styles.dropListInput)
+		+Button(ELEM('Button'))(class=styles.dropListButton)
+		div(class=styles.dropListItems)
+			for item, index in DATA_ARR('items')
+				+Text({ cn: { style: 'cap', textTransform: 'upper' } })(class=styles.dropListItem data-value=index) #{item}

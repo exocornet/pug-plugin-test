@@ -1,0 +1,26 @@
+mixin Supervisor(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const NAME_PROPS = { data: {tag: 'h1', ...ELEM('HeadingName').data}, cn: {textIndent: true, size: 'h1'} };
+		const POST_PROPS = { data: {tag: 'p', ...ELEM('TextPost').data}, cn: {textIndent: true, size: 'h1', margin: 'mt-32 mt-16@xs'} };
+		const QUOTE_PROPS = { data: {tag: 'p', ...ELEM('HeadingQuote').data}, cn: {size: 'h4'} };
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Supervisor.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.supervisor)
+		+Container
+			div(class=styles.supervisorWrapper)
+				+Heading(NAME_PROPS)
+				+Text(POST_PROPS)
+				+Row(class="mt-80 mt-48@xs d-flex flex-direction-column-reverse@xs justify-content-between align-items-end align-items-start@xs rg-20@xs")
+					+Col({ cn: { cols: 'col-7 col-4@xs' } })
+						+Heading(QUOTE_PROPS)
+					+Col({ cn: { cols: 'col-4 col-4@xs' } })
+						picture(class=styles.supervisorPicture)
+							img(class=styles.supervisorImage src=DATA('image') alt="")

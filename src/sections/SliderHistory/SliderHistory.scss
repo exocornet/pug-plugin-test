@@ -1,0 +1,283 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.slider-history {
+	&__none {
+		display: none;
+	}
+
+	&__flex {
+		display: flex;
+	}
+
+	&__container {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			padding: 0;
+		}
+	}
+
+	&__bg-wrap {
+		height: responsive-size(520, 740);
+
+		//transition: all ease 500ms;
+		transition: visibility 0.8s ease-out;
+
+		// # MEDIA QUERY 1601 # //
+		@include media(xxl, min) {
+			height: responsive-size(740, 1020);
+		}
+	}
+
+	&__wrap-big-picture {
+		position: absolute;
+
+		visibility: hidden;
+		overflow: hidden;
+
+		height: 0;
+
+		transition: visibility 0.8s ease-out;
+		pointer-events: none;
+
+		border-radius: 16px;
+	}
+
+	&__image-bg {
+		position: relative;
+
+		display: flex;
+
+		overflow: hidden;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+
+		height: 100%;
+
+		padding: responsive-size(28, 32);
+
+		transition: visibility 0.4s ease-out;
+
+		border-radius: 8px;
+
+		background: $light-green;
+	}
+
+	&__date {
+		position: absolute;
+		z-index: 0;
+		top: responsive-size(-50, -30);
+		left: 50%;
+
+		transform: translateX(-50%);
+
+		text-align: center;
+
+		pointer-events: none;
+
+		opacity: 0.07;
+
+		color: $dark-green;
+
+		font-family: $include-font-family;
+
+		font-weight: 400;
+
+		font-style: normal;
+
+		@include font-size-responsive(19, 60);
+
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			top: responsive-size(-5, 50);
+
+			@include font-size-responsive(17, 19);
+		}
+
+		// # MEDIA QUERY 1601 # //
+		@include media(xxl, min) {
+			top: responsive-size(-30, -100);
+
+			left: 47%;
+			@include font-size-responsive(60, 65);
+		}
+	}
+
+	&__slider-pagination {
+		--swiper-navigation-size: 100%;
+		--swiper-pagination-bottom: -30px;
+
+
+		display: flex;
+		align-items: center;
+
+		height: 20px;
+
+		gap: responsive-size(40, 80);
+
+		span {
+			&::before {
+				display: none;
+			}
+		}
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			position: initial;
+			gap: 40px;
+		}
+	}
+
+	&__slider-swiper {
+		overflow: visible;
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			overflow: hidden;
+
+			margin-top: 20px;
+		}
+	}
+
+	&__slider-swiper > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+		left: 0;
+
+		max-width: unset;
+
+		// # Important for turn off js sets from library # //
+		/* stylelint-disable */
+		width: 100% !important;
+		/* stylelint-enable */
+
+		transform: translateX(0);
+
+		span {
+			transform: scale(1);
+		}
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 20px;
+		}
+	}
+
+	&__slider-slide {
+		display: flex;
+		flex-direction: column;
+
+		border-radius: 8px;
+
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			height: auto;
+			row-gap: responsive-size(20, 42.7);
+		}
+	}
+
+	&__slider-navigation {
+		z-index: 1;
+		bottom: 30px;
+		left: 30px;
+	}
+
+	&__image {
+		pointer-events: none;
+
+		img {
+			width: responsive-size(179, 320);
+			height: responsive-size(121, 216);
+
+			pointer-events: none;
+		}
+
+
+		// # MEDIA QUERY 1601 # //
+		@include media(xxl, min) {
+			img {
+				width: responsive-size(320, 620);
+				height: responsive-size(216, 416);
+			}
+		}
+	}
+
+	&__image-big {
+		width: 100%;
+		height: responsive-size(520, 740);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			//height: 520px;
+			object-fit: cover;
+		}
+
+		// # MEDIA QUERY 1601 # //
+		@include media(xxl, min) {
+			height: responsive-size(740, 1020);
+		}
+	}
+
+	&__picture-wrap {
+		z-index: 5;
+
+		margin-top: 60px;
+		padding: 90px 140px;
+
+		cursor: pointer;
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 20px;
+			padding: 20px 40px;
+		}
+	}
+
+	&__close-button-wrapper {
+		position: absolute;
+		top: 20px;
+		right: 20px;
+
+		cursor: pointer;
+
+		// # MEDIA QUERY 360 # //
+		@include media(md, min) {
+			display: none;
+		}
+	}
+
+	&__close-button {
+		width: 60px;
+		height: auto;
+
+		pointer-events: none;
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			width: 40px;
+		}
+	}
+
+	&__text {
+		@include font-size-responsive(1.6, 2);
+	}
+
+	&__open {
+		position: relative;
+
+		visibility: visible;
+
+		height: responsive-size(520, 740);
+
+		// # MEDIA QUERY 1601 # //
+		@include media(xxl, min) {
+			height: responsive-size(740, 1020);
+		}
+	}
+
+	&__close {
+		position: absolute;
+
+		opacity: 0;
+	}
+
+}
+

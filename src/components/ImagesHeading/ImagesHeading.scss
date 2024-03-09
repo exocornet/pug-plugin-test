@@ -1,0 +1,23 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.images-heading {
+	&__row-bottom {
+		margin-top: responsive-size(20);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 0;
+		}
+	}
+
+	&__image {
+		border-radius: 8px;
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			height: responsive-size(368, 1635);
+			object-fit: cover;
+		}
+	}
+}

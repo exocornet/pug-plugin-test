@@ -1,0 +1,13 @@
+@import "../../shared/styles/include-setings-styles";
+
+.modal-video-custom {
+	&__modal {
+		&.show {
+			@include media(xs) {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+}

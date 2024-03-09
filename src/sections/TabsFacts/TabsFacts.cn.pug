@@ -1,0 +1,17 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('tabs-facts')
+
+		return {
+			tabsFacts: BLOCK({}, [cn?.margin]),
+			tabsFactsButtons: BLOCK('tabs-buttons'),
+			tabsFactsContent: BLOCK('tabs-content'),
+			TabsFactsRow: BLOCK('row', {
+				[`${cn?.colCount}`]: ['two-cols'].includes(cn?.colCount),
+			}),
+			tabsFactsFact: BLOCK('fact', {
+				[`${cn?.factType}`]: ['text-desc'].includes(cn?.factType),
+			}),
+			tabsFactsFactText: BLOCK('fact-text'),
+		}
+	}

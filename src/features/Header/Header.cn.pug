@@ -1,0 +1,37 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('header');
+		const NO_BLOCK = CN('');
+
+		return {
+			header: BLOCK(),
+			headerNavigation: BLOCK('navigation', ['d-flex d-none@md', 'flex-direction-column align-items-center', 'cg-24', 'ml-auto mr-4']),
+			headerSearch: BLOCK('search'),
+			headerMenu: BLOCK('menu'),
+			headerBurgerButton: BLOCK('burger-button'),
+			headerPersonalAccount: BLOCK('personal-account'),
+			headerPersonalAccountButton: BLOCK('personal-account-button'),
+			headerLangButton: BLOCK('lang-button'),
+			headerLangsMenu: BLOCK('langs-menu'),
+			headerLangsMenuLang: BLOCK('langs-menu-lang'),
+			headerBurgerButtonLineTop: BLOCK('burger-button-line', {'top': true}),
+			headerBurgerButtonLineBottom: BLOCK('burger-button-line', {'bottom': true}),
+			headerNavLinks: BLOCK('nav-links', ['d-flex', 'cg-24', 'align-items-center', 'justify-content-end', 'w-100']),
+			headerMenuLinks: BLOCK('menu-links', ['d-flex', 'cg-24', 'align-items-center', 'ml-auto mt-32@md mt-16@xs']),
+			headerSearchLabel: BLOCK('search-label', ['position-relative', 'mt-40 mt-32@md', 'd-block']),
+			headerSearchInput: BLOCK('search-input'),
+			headerSearchButtonClear: BLOCK('search-button-clear', ['d-none']),
+			headerCatalogCard: BLOCK('catalog-card', ['h-100 h-auto@md']),
+			headerTabsContent: BLOCK('tabs-content', ['g-24 g-0@md', 'd-flex', 'justify-content-end', 'flex-direction-column']),
+			headerTabsContentCatalogLink: BLOCK('catalog-link'),
+			headerContentButton: BLOCK('content-button', ['mt-24 mt-0@md']),
+			headerHiddenBlock: BLOCK('hidden-block'),
+			headerSearchLink: BLOCK('search-link'),
+			headerNavTabsBack: BLOCK('nav-tabs-back'),
+			headerContactsImg: BLOCK('contacts-img'),
+			headerSearchResult: BLOCK('search-result', ['mt-40 mt-32@md', 'd-none']),
+
+			//- # NO_BLOCK VARIABLES CLASS CSS # -//
+			noBlockWrapper: "d-flex mt-auto g-12 h-100 flex-direction-column justify-content-end d-none@md",
+		}
+	}

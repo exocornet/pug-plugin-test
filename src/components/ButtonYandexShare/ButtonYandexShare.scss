@@ -1,0 +1,58 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.ya-share2 {
+	font-size: inherit;
+
+	&__popup {
+		position: absolute;
+
+		z-index: 1;
+
+		right: responsive-size(20, 40);
+
+		display: none;
+
+		margin-top: responsive-size(6, 8);
+
+		text-decoration: none;
+
+		border-radius: 4px;
+
+		background-color: $white;
+
+		box-shadow: 0 8px 24px $black-10, 0 0 4px $black-10;
+
+		&_visible {
+			display: block;
+		}
+	}
+
+	&__list {
+		margin: 0;
+		padding: responsive-size(8, 12);
+
+		list-style-type: none;
+	}
+
+	&__link {
+		transition: all 0.4s;
+
+		text-align: center;
+		white-space: nowrap;
+		text-decoration: none;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		text-wrap: nowrap;
+
+		font-family: var(--font-helvetica);
+		font-size: calc(1rem + (10 - 10) * ((100vw - 360px) / (1600 - 360)));
+		font-weight: 550;
+		line-height: 0.8;
+	}
+
+	&__input_copy {
+		display: none;
+	}
+}
+

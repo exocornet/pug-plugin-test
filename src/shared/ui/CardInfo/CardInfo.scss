@@ -1,0 +1,159 @@
+.card-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	min-height: responsive-size(280, 365);
+	padding: responsive-size(20, 28);
+
+	border-radius: responsive-size(8, 16);
+	background-color: var(--smoky-white);
+
+	&__header {
+		letter-spacing: responsive-size(-0.66, -0.4);
+
+		font-weight: 400;
+		font-style: normal;
+		line-height: responsive-size(24, 44);
+
+		@include font-size-responsive(2.2, 4);
+	}
+
+	&__text-block {
+		width: 78%;
+
+		letter-spacing: responsive-size(-0.16, -0.2);
+
+		font-weight: 400;
+		font-style: normal;
+		line-height: responsive-size(20, 27);
+
+		@include media(xs){
+			width: 100%;
+		}
+
+		@include font-size-responsive(1.6, 2);
+	}
+
+	&_default-width {
+		flex: 0 0 49%;
+
+		max-width: 49%;
+	}
+
+	&_fixed-height {
+		min-height: responsive-size(280, 450);
+	}
+
+	&.light-green {
+		background-color: $light-green;
+
+		.text_big {
+			@include font-size-responsive(2.2, 3);
+		}
+	}
+	
+	&__transport-header {
+		@include font-size-responsive(2.2, 3);
+	}
+
+	&__transport-info {
+		margin-bottom: auto;
+	}
+
+	&__circle {
+		top: 50%;
+		left: 50%;
+		
+		overflow: hidden;
+		
+		width: responsive-size(180, 250);
+		height: responsive-size(180, 250);
+
+		transform: translate(-50%, -50%);
+
+		border-radius: 50%;
+
+		background-color: $white;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+
+		@include media(xs) {
+			top: 50%;
+		}
+	}
+
+	&__icon {
+		width: auto;
+		height: responsive-size(40, 60);
+	}
+
+	&__branch-line {
+		display: flex;
+		align-items: center;
+		gap: 70px;
+
+		margin-bottom: 16px;
+		
+		.text:first-child {
+			flex-basis: 10%;
+		}
+
+		.link {
+			display: inline;
+
+			letter-spacing: responsive-size(-0.16, -0.2);
+			
+			font-family: inherit;
+			line-height: 1;
+
+			@include font-size-responsive(1.6, 2);
+		}
+		
+		.phone {
+			width: max-content;
+
+			padding: 5px 2px;
+
+			border-radius: 2px;
+
+			&:hover {
+				color: rgba(67, 189, 37, 1);
+				background-color: $black-04;
+			}
+		}
+
+		@include media(xs) {
+			align-items: normal;
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+
+	&__branch-line:last-child {
+		margin-bottom: 0;
+	}
+
+	&:hover {
+		cursor: default;
+
+		background-color: $light-green;
+	}
+
+	&:has(.card-info__circle) { // для страницы услуги транспорта
+		min-height: responsive-size(320, 450);	
+	}
+	
+	&:has(.card-info__circle + .card-info__text-block .text) { // мобильная версия catalog-detailed
+		min-height: responsive-size(450, 480);	
+
+		.card-info__circle {
+			@include media(xs) {
+				top: 35%;
+			}
+		}
+	}
+}

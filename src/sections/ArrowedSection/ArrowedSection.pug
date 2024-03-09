@@ -1,0 +1,28 @@
+mixin ArrowedSection(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ArrowedSection.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class = styles.arrowedSection)
+		if ELEM('Heading', false)
+			+Container
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+		div(class=styles.arrowedSectionRow)
+			div(class=styles.arrowedSectionFirstLine)
+			div(class=styles.arrowedSectionFactsWrapper)
+				for item in ELEM_ARR('ArrowedFactsArr')
+					//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+					include ../../shared/helpers/pug/shortcut-check-store
+					- const stylesItem = classes(item && item.cn);
+					div(class=stylesItem.arrowedSectionFact)
+						p(class=stylesItem.arrowedSectionText)
+							| !{I_DATA('text')}
+						if (I_DATA('description', false))
+							p(class=stylesItem.arrowedSectionDescription)
+								| !{I_DATA('description')}

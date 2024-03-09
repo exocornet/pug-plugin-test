@@ -1,0 +1,11 @@
+.container {
+	width: 100%;
+	//max-width: container-width(xxl);
+	margin-inline: auto;
+	padding-inline: responsive-size(20, 40);
+
+	//@include media(xs) {
+	//	max-width: container-width(xs);
+	//	padding-inline: 20px;
+	//}
+}

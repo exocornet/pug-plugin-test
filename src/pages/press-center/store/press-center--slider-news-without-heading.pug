@@ -1,0 +1,143 @@
+-
+	const SliderNewsWithoutHeading = {
+		includeSection: 'SliderNews',
+		data: {
+			id: 'news',
+		},
+		elem: {
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto'
+				},
+				opt: {
+					isSliderNavigation: true,
+				},
+			},
+			ColNewsSlider: {
+				cn: {
+					margin: 'pb-40 pb-0@xs'
+				}
+			},
+			SliderNewsArr: [
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/news/news-slide1.jpg'),
+								imageXs: require('IMAGES/sections/news/news-slide1xs.jpg'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '09.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Кемеровский «Азот» информирует о пусковых операциях в цехе гидроксиламинсульфата'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/news/news-slide2.jpg'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.03.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'На «Азоте» впервые прошёл региональный этап Всероссийского конкурса «Лучший газоспасатель»'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/news/news-slide3.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.03.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Повышение энергетической эффективности является одним из ключевых приоритетов глобальной и долгосрочной энергетической политики КАО «Азот»'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					}
+				}
+			],
+			PageLink: {
+				data: {
+					href: '#!',
+					text: 'перейти в раздел'
+				},
+				opt: {
+					icon: true
+				}
+			}
+		}
+	}

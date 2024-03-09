@@ -1,0 +1,100 @@
+-
+	const HeadingMap = {
+		includeSection: 'HeadingMap',
+		elem: {
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: '<span class="light-grey">Контакты</span>',
+				},
+				cn: {
+					size: 'h3',
+					textIndent: true,
+				},
+			},
+			Address: {
+				data: {
+					text: 'Кемерово, ул.&nbsp;Грузовая,&nbsp;стр.&nbsp;1'
+				},
+				cn: {
+					size: 'biggest'
+				}
+			},
+			Email: {
+				data: {
+					text: 'info@azot.kuzbass.net'
+				},
+			},
+			Phone: {
+				data: {
+					text: '+7 (3842) 57-22-99'
+				},
+			},
+			cityArr: [
+				{
+					data: {
+						key: 'Кемерово',
+						value: '16:15',
+						img: require('IMAGES/other/contacts-indicator.svg')
+					},
+					cn: {
+						style: 'cap',
+						textTransform: 'upper'
+					},
+					opt: {
+						img: true
+					}
+				},
+				{
+					data: {
+						key: 'Москва',
+						value: '12:15'
+					},
+					cn: {
+						style: 'cap',
+						textTransform: 'upper'
+					}
+				},
+				{
+					data: {
+						key: 'пн-чт',
+						value: '8:00-17:00'
+					},
+					cn: {
+						style: 'cap',
+						textTransform: 'upper'
+					}
+				},
+				{
+					data: {
+						key: 'пт',
+						value: '8:00-16:00'
+					},
+					cn: {
+						style: 'cap',
+						textTransform: 'upper'
+					}
+				},
+			],
+			socialButtonsArr: [
+				{
+					data: {
+						img: require('IMAGES/social/VK.svg'),
+						href: '#!'
+					}
+				},
+				{
+					data: {
+						img: require('IMAGES/social/Telegram.svg'),
+						href: '#!'
+					}
+				},
+				{
+					data: {
+						img: require('IMAGES/social/YouTube.svg'),
+						href: '#!'
+					}
+				}
+			]
+		}
+	}

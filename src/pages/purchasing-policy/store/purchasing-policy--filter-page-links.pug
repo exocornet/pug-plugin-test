@@ -1,0 +1,183 @@
+-
+	const FilterPageLinks = {
+		includeSection: 'FilterPageLinks',
+		cn: {
+			margin: 'mt-80 mt-48@xs'
+		},
+		elem: {
+			Advert: {
+				elem: {
+					Row: {
+						cn: {
+							margin: 'mt-120 mb-120 mt-80@xs mb-80@xs'
+						}
+					},
+					Heading: {
+						data: {
+							tag: "h3",
+							text: 'Получайте ежемесячные стипендии на предприятии «Азот»',
+							footnoteText: "образование"
+						},
+						cn: {
+							size: 'h3',
+							textIndent: true
+						},
+					},
+					Button: {
+						data: {
+							text: 'Подробнее',
+							href: '#!'
+						},
+						cn: {
+							size: 'large',
+							margin: 'mt-0 mt-20@xs',
+							width: 'auto'
+						},
+						opt: {
+							icon: true,
+						}
+					}
+				}
+			},
+			FiltersSelectControl: {
+				elem: {
+					SelectFilterArr: [
+						{
+							data: {
+								text: 'Выберите год',
+								nameSelect: 'year'
+							},
+							dataArr: {
+								optionArr: [
+									{
+										data: {
+											text: 'Год 1'
+										}
+									},
+									{
+										data: {
+											text: 'Год 2'
+										}
+									},
+									{
+										data: {
+											text: 'Год 3'
+										}
+									},
+									{
+										data: {
+											text: 'Год 4'
+										}
+									}
+								]
+							},
+						},
+						{
+							data: {
+								text: 'Тип закупок',
+								nameSelect: 'type'
+							},
+							dataArr: {
+								optionArr: [
+									{
+										data: {
+											text: 'конкурс'
+										}
+									},
+									{
+										data: {
+											text: 'аукцион'
+										}
+									},
+									{
+										data: {
+											text: 'запрос котировок'
+										}
+									},
+									{
+										data: {
+											text: 'запрос предложений'
+										}
+									},
+								]
+							},
+						},
+					],
+				}
+			},
+			PageLinkArr: [
+				{
+					data: {
+						extension: 'PDF',
+						href: '#',
+					},
+					elem: {
+						ColLink: {
+							cn: {
+								cols: 'col-9 col-4@xs',
+								display: 'd-flex',
+								direction: 'flex-direction-column@xs',
+								alignItems: 'align-items-start'
+							}
+						},
+						Text: {
+							data: {
+								text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+							},
+							cn: {
+								size: 'bigger',
+							},
+						},
+						TextDateRight: {
+							data: {
+								text: '01.06.2023-30.11.2023'
+							},
+							cn: {
+								style: 'cap',
+								order: 'order-3'
+							}
+						},
+					},
+					opt: {
+						download: true
+					},
+				},
+				{
+					data: {
+						extension: 'PDF',
+						href: '#',
+					},
+					elem: {
+						ColLink: {
+							cn: {
+								cols: 'col-9 col-4@xs',
+								display: 'd-flex',
+								direction: 'flex-direction-column@xs',
+								alignItems: 'align-items-start'
+							}
+						},
+						Text: {
+							data: {
+								text: 'продажа удобрений сельскохозяйственным производителям'
+							},
+							cn: {
+								size: 'bigger'
+							},
+						},
+						TextDateRight: {
+							data: {
+								text: '01.06.2023-30.11.2023'
+							},
+							cn: {
+								style: 'cap',
+								order: 'order-3'
+							}
+						},
+					},
+					opt: {
+						download: true
+					},
+				},
+			],
+		}
+	}

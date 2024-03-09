@@ -1,0 +1,15 @@
+mixin SelectFilter(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SelectFilter.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	select(class=styles.selectFilter name=DATA('nameSelect', false))
+		option(value="") #{DATA('text')}
+		for item in DATA_ARR('optionArr')
+			include ../../../shared/helpers/pug/shortcut-check-store
+			- const OPTION_VALUE = I_DATA('value', false) || I_DATA('text');
+			option(value=OPTION_VALUE) #{I_DATA('text')}

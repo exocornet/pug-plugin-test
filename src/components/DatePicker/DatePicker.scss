@@ -1,0 +1,74 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.date-picker {
+	position: absolute;
+
+	z-index: 9;
+	top: 100%;
+	right: 0;
+	left: 0;
+
+	display: none;
+
+	width: 100%;
+
+	padding: responsive-size(8);
+
+	background-color: $white;
+
+	&__date-items, &__time-items {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__text, &__item {
+		padding-top: responsive-size(10);
+		padding-bottom: responsive-size(8);
+		padding-inline: responsive-size(12);
+
+		@include media(xs) {
+			padding-top: responsive-size(10);
+			padding-bottom: responsive-size(8);
+			padding-inline: 12px;
+		}
+	}
+
+	&__item {
+		cursor: default;
+
+		border-radius: 4px;
+		background-color: $white;
+
+		&:hover {
+			background-color: $black-04;
+		}
+
+		&.active {
+			color: $white;
+			background-color: $black;
+		}
+	}
+
+	&__input {
+		position: relative;
+
+		cursor: pointer;
+
+		&::after {
+			position: absolute;
+			right: 0;
+
+			margin-left: auto;
+
+			content: "";
+
+			border: 6px solid transparent;
+			border-color: $black transparent transparent transparent;
+		}
+	}
+
+	@include media(xs) {
+		padding: 8px;
+	}
+}

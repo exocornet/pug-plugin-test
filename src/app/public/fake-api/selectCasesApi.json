@@ -1,0 +1,52 @@
+[
+	{
+		"name": "culture",
+		"title": "Культура",
+		"options": [
+			{
+				"value": "1",
+				"title": "Зерновые"
+			},
+			{
+				"value": "2",
+				"title": "Масличные"
+			},
+			{
+				"value": "33",
+				"title": "Зернобобовые"
+			}
+		]
+	},
+	{
+		"name": "fertilizers",
+		"title": "Удобрения",
+		"options": [
+			{
+				"value": "12",
+				"title": "азотные"
+			},
+			{
+				"value": "25",
+				"title": "фосфорные"
+			}
+		]
+	},
+	{
+		"name": "month",
+		"title": "Выберите месяц",
+		"options": [
+			{
+				"value": "1",
+				"title": "Январь"
+			},
+			{
+				"value": "2",
+				"title": "Февраль"
+			},
+			{
+				"value": "2r",
+				"title": "Март"
+			}
+		]
+	}
+]

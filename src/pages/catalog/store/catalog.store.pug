@@ -1,0 +1,42 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Каталог';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Продукция' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции HeadingDetailed # -//
+include catalog--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Подключение store секции CatalogItemsList # -//
+include catalog--catalog-items-list
+- pageStore.addSection(CatalogItemsList);
+
+//- # Подключение store секции ListContactLinks # -//
+include catalog--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- # Подключение store секции FeedbackForm # -//
+include catalog--feedback-form
+- pageStore.addSection(FeedbackForm);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include catalog--dialog
+- pageStore.addSection(HiddenDialogContent);

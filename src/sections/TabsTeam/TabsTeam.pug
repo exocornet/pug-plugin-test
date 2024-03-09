@@ -1,0 +1,30 @@
+mixin TabsTeam(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TabsTeam.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.tabsTeam)
+		+Container
+			+Tabs(ELEM('Tabs'))
+				div(class=`d-flex justify-content-between align-items-center g-8 flex-direction-column@xs align-items-start@xs mb-16 mb-20@xs`)
+					+Text(ELEM('Text'))(class=styles.tabsTeamHeading)
+					+TabsButtons(ELEM('TabsButtons'))(class=styles.tabsTeamTabsButtons)
+				+TabsBody
+					for item in ELEM_ARR('TabsContentArr')
+						//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+						include ../../shared/helpers/pug/shortcut-check-store
+
+						//- # ВЕРСТКА # -//
+						+TabsContent(item)
+							+Row
+								for item, index in I_ELEM_ARR('TeamArr')
+									if (index % 2)
+										+Col({cn: {cols: 'col-5 col-4@xs'}})(class=styles.tabsTeamCol)
+											+I('CardPersonal', item)
+									else
+										+Col({cn: {cols: 'col-5 col-4@xs', offset: 'offset-2 offset-0@xs'}})(class=styles.tabsTeamCol)
+											+I('CardPersonal', item)

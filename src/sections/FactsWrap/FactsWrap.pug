@@ -1,0 +1,22 @@
+mixin FactsWrap(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const TEXT_FOOTNOTE_FOOTNOTE_PROPS = {
+			cn: {
+				style: 'cap',
+				textTransform: 'upper',
+				margin: 'mt-20@xs mb-20@xs',
+			}
+		};
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FactsWrap.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.factsWrap)
+		+Container
+			+I('Facts', ELEM('Facts'))

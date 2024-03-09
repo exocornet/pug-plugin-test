@@ -1,0 +1,10 @@
+mixin ModalVideoCustom(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ModalVideoCustom.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.modalVideo)
+		+I('Modal', ELEM('Modal'))(class=styles.modalVideoModal)&attributes(attributes)

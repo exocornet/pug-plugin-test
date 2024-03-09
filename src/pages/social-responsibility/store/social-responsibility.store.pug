@@ -1,0 +1,55 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Страница «Социальная ответственность»';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Устойчивое развитие' } },
+						{ data: { text: 'Социальная ответственность'}}
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции HeadingDetailed # -//
+include social-responsibility--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Подключение store секции ImageFacts # -//
+include social-responsibility--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- # Подключени store секции TitleTextWrap # -//
+include social-responsibility--title-text-wrap
+- pageStore.addSection(TitleTextWrap);
+
+//- # Подключени store секции SliderEvents # -//
+include social-responsibility--slider-events
+- pageStore.addSection(SliderEvents);
+
+//- # Подключение store секции SliderAbout # -//
+include social-responsibility--slider-about
+- pageStore.addSection(SliderAbout);
+
+//- # Подключение store секции SliderNews # -//
+include social-responsibility--slider-news
+- pageStore.addSection(SliderNews);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include social-responsibility--dialog
+- pageStore.addSection(HiddenDialogContent)
+
+//- ## Подключение store секции ModalForm ## -//
+include social-responsibility--modal-form
+- pageStore.addSection(ModalForm)

@@ -1,0 +1,135 @@
+// # ПОДКЛЮЧЕНИЕ SCSS ПЕРЕМЕННЫХ ДЛЯ root.scss и default.scss # //
+@import "../../helpers/scss/swiss-knife-scss/variables";
+
+// # ОБЪЯВЛЕНИЕ CSS ПЕРЕМЕННЫХ ДЛЯ ROOT # //
+$variables-root: variables-root((
+	// ## Определение стилей для default (layer-elements) ## //
+	"body-font-family": ("PPRadioGrotesk", sans-serif),
+	"body-font-size": 2rem,
+	"body-font-weight": 400,
+	"body-font-color": hsla(0, 0%, 0%, 1),
+	"body-line-height": 1.35,
+	"body-font-letter-spacing": -0.01em,
+	"link-color": hsla(0, 0%, 0%, 1),
+	"link-hover-color": hsla(0, 0%, 0%, 0.6),
+	"selection-color": hsla(108, 67%, 44%, 1),
+	"hr-color":hsla(0, 0%, 66%, 1),
+
+	// ## Fonts ## //
+	"font-helvetica": ("HelveticaNeueCyr", serif),
+	"font-radio": ("PPRadioGrotesk", sans-serif),
+
+	// ## Colors standard ## //
+	"transparent": transparent,
+	"white": hsla(0, 0%, 100%, 1),
+	"white-15": hsla(0, 0%, 100%, 0.15),
+	"white-20": hsla(0, 0%, 100%, 0.2),
+	"white-30": hsla(0, 0%, 100%, 0.3),
+	"white-40": hsla(0, 0%, 100%, 0.4),
+	"white-60": hsla(0, 0%, 100%, 0.6),
+	"white-70": hsla(0, 0%, 100%, 0.7),
+	"white-80": hsla(0, 0%, 100%, 0.8),
+	"black": hsla(0, 0%, 0%, 1),
+	"black-02":hsla(0, 0%, 0%, 0.02),
+	"black-03":hsla(0, 0%, 0%, 0.03),
+	"black-04": hsla(0, 0%, 0%, 0.04),
+	"black-06": hsla(0, 0%, 0%, 0.06),
+	"black-10": hsla(0, 0%, 0%, 0.1),
+	"black-20": hsla(0, 0%, 0%, 0.2),
+	"black-40": hsla(0, 0%, 0%, 0.4),
+	"black-50": hsla(0, 0%, 0%, 0.5),
+	"main": hsla(0, 0%, 97%, 1),
+	"smoky-white": hsla(0, 0%, 93%, 1),
+	"light-green": hsla(101, 100%, 84%, 1),
+	"dark-green": hsla(133, 90%, 37%, 1),
+	"light-gray": hsla(0, 0%, 71%, 1),
+	"black-gray": hsla(210, 9%, 13%, 1),
+	"white-aluminum": hsla(0, 0%, 66%, 1),
+	"gainsborough": hsla(0, 0%, 85%, 1),
+	"red": hsla(0, 100%, 50%, 1),
+	"transport-red": hsla(0, 90%, 47%, 1),
+	"achromatic": hsla(220, 14%, 81%, 1),
+	"verdepomovy": hsla(108, 67%, 44%, 1),
+	"gray97-70": hsla(0, 0%, 97%, 0.7),
+	"contrast-gray": hsla(0, 0%, 43%, 1),
+	"gray11": hsla(0, 0%, 11%, 1),
+
+	// ## Font-size ## //
+	"fs10": 1rem,
+	"fs16": 1.6rem,
+	"fs20": 2rem,
+	"fs22": 2.2rem,
+	"fs24": 2.4rem,
+	"fs28": 2.8rem,
+	"fs38": 3.8rem,
+	"fs40": 4rem,
+	"fs64": 6.4rem,
+	"fs100": 10rem,
+	"fs120": 12rem,
+));
+
+// # ПЕРЕОПРЕДЕЛЕНИЕ ПЕРЕМЕННЫХ ДЛЯ МЕДИАЗАПРОСОВ # //
+$media-direction: "max";
+$breakpoints: (
+	xs: 360,
+	md: 768,
+	xxl: 1600,
+);
+
+// # ПЕРЕМЕННАЯ ДЛЯ ОТСТУПОВ MARGIN, PADDING, GAP # //
+$property-values-spacings: (auto, 0, 4, 8, 10, 12, 16, 20, 24, 26, 28, 30, 32, 40, 48, 50, 55, 56, 60, 64, 80, 85, 100, 120, 144, 160, 170, 180, 200);
+
+// # SCSS ПЕРЕМЕННЫЕ # //
+$column-gap: var(--column-gap, 0);
+
+// ## Fonts ## //
+$font-helvetica: var(--font-helvetica);
+$font-radio: var(--font-radio);
+
+// ## Colors standard ## //
+$transparent: var(--transparent);
+$white: var(--white);
+$white-15: var(--white-15);
+$white-20: var(--white-20);
+$white-30: var(--white-30);
+$white-40: var(--white-40);
+$white-60: var(--white-60);
+$white-70: var(--white-70);
+$white-80: var(--white-80);
+$black: var(--black);
+$black-02: var(--black-02);
+$black-03: var(--black-03);
+$black-04: var(--black-04);
+$black-10: var(--black-10);
+$black-20: var(--black-20);
+$black-40: var(--black-40);
+$black-50: var(--black-50);
+$black-06: var(--black-06);
+$main: var(--main);
+$light-green: var(--light-green);
+$dark-green: var(--dark-green);
+$light-gray: var(--light-gray);
+$smoky-white: var(--smoky-white);
+$black-gray: var(--black-gray);
+$white-aluminum: var(--white-aluminum);
+$gainsborough: var(--gainsborough);
+$red: var(--red);
+$transport-red: var(--transport-red);
+$achromatic: var(--achromatic);
+$verdepomovy: var(--verdepomovy);
+$gray97-70: var(--gray97-70);
+$contrast-gray: var(--contrast-gray);
+$gray11: var(--gray11);
+
+// ## Font-size ## //
+$fs10: var(--fs10);
+$fs16: var(--fs16);
+$fs20: var(--fs20);
+$fs22: var(--fs22);
+$fs24: var(--fs24);
+$fs28: var(--fs28);
+$fs38: var(--fs38);
+$fs40: var(--fs40);
+$fs64: var(--fs64);
+$fs100: var(--fs100);
+$fs120: var(--fs120);

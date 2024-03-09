@@ -1,0 +1,18 @@
+mixin Bio(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Bio.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.bio)
+		+Container
+			for item in DATA_ARR('bioArr')
+				include ../../shared/helpers/pug/shortcut-check-store
+				- const stylesItem = classes(item && item.cn);
+
+				div(class=stylesItem.bioGroup)&attributes({...I_DATA('moreAttributes', false)})
+					for item in I_DATA_ARR('listArr')
+						+I('BioData', item)(class=stylesItem.bioGroupData)

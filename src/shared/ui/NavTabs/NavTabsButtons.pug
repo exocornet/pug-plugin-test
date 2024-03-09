@@ -1,0 +1,11 @@
+mixin NavTabsButtons(props)
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include NavTabs.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.navTabsButtons)&attributes(attributes)
+		for item in DATA_ARR('Buttons')
+			include ../../../shared/helpers/pug/shortcut-check-store
+			+Button(item)(class=styles.navTabsLink data-nav-tabs-button=I_DATA('dataNavsBtn'))

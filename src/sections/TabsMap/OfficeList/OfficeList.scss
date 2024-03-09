@@ -1,0 +1,75 @@
+.office {
+	&__wrap {
+		padding: 20px;
+
+		cursor: pointer;
+
+		border-radius: 16px;
+
+		background-color: $smoky-white;
+
+		* {
+			pointer-events: none;
+		}
+
+		a {
+			pointer-events: all;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+
+		height: 100%;
+	}
+
+	&__image {
+		min-height: responsive-size(180, 288);
+		object-fit: cover;
+
+		border-radius: 8px;
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+
+		margin-top: 55px;
+
+		@include media(xxl, "min") {
+			margin-top: 24px;
+		}
+	}
+
+	&__line {
+		display: flex;
+		align-items: center;
+
+		span:first-child {
+			width: 20%;
+		}
+
+		@include media(xs) {
+			align-items: start;
+			flex-direction: column;
+
+			span:first-child {
+				width: auto;
+			}
+		}
+	}
+
+	&__link {
+		letter-spacing: -0.01rem;
+		text-transform: lowercase;
+
+		font-family: $font-radio;
+
+		@include font-size-responsive(1.6, 2);
+	}
+
+	&__phones {
+		display: inline-block;
+	}
+}

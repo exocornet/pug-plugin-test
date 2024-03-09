@@ -1,0 +1,11 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('images-heading')
+
+		return {
+			imagesHeading: BLOCK(),
+			imagesHeadingImage: BLOCK('image'),
+			imagesHeadingRowImages: BLOCK('row-top', ['order-1@xs', 'flex-nowrap', 'overflow-auto@xs']),
+			imagesHeadingRowHeading: BLOCK('row-bottom', [cn?.marginRowHeading])
+		}
+	}

@@ -1,0 +1,92 @@
+-
+	const StepsAnimatedCircle = {
+		includeSection: 'StepsAnimatedCircle',
+		cn: {
+			margin: 'mt-40 mt-80@xs',
+			theme: 'dark',
+		},
+		data: {
+			image1: require("IMAGES/sections/steps-animated-circle/mission-step-1-img.png"),
+			image2: require("IMAGES/sections/steps-animated-circle/mission-step-2-img.png"),
+			image3: require("IMAGES/sections/steps-animated-circle/mission-step-3-img.png")
+		},
+		elem: {
+			Row: {
+				cn: {
+					margin: 'mb-120 mb-40@xs',
+				}
+			},
+			Col: {
+				cn: {
+					cols: 'col-9',
+				}
+			},
+			Heading: {
+				data: {
+					tag: 'h2',
+					text: 'ДНК нашей компании состоит из трех главных составляющих',
+					footnoteText: 'Ценности',
+				},
+				cn: {
+					size: 'h3',
+				},
+			},
+			//- данные первого шага
+			ForeignObjectNumber1: {
+				data: { text: '1', x: 780, y: 35}
+			},
+			ForeignObjectName1: {
+				data: { tag: 'p', text: 'безопасность', x: 756, y: 0 }
+			},
+			ForeignObjectImage1: {
+				opt: { isBlock: true }
+			},
+			ForeignObjectTitle1: {
+				data: { tag: 'p', text: 'безопасность' }
+			},
+			ForeignObjectDescription1: {
+				data: {
+					tag: 'p',
+					text: 'Осознанно создаем безопасную среду<br>в компании и не пренебрегаем<br>безопасностью ради экономической<br>выгоды',
+				}
+			},
+			//- данные второго шага
+			ForeignObjectNumber2: {
+				data: { text: '2', x: 1162, y: 615 }
+			},
+			ForeignObjectName2: {
+				data: { tag: 'p', text: 'профессионализм', x: 1214, y: 625 }
+			},
+			ForeignObjectImage2: {
+				opt: { isBlock: true }
+			},
+			ForeignObjectTitle2: {
+				data: { tag: 'p', text: 'профессионализм' }
+			},
+			ForeignObjectDescription2: {
+				data: {
+					tag: 'p',
+					text: 'Совершенствуем навыки для решения<br>сложных задач, несем ответственность<br>за качество и результаты нашей работы ',
+				}
+			},
+			//- данные третьего шага
+			ForeignObjectNumber3: {
+				data: { text: '3', x: 399, y: 615 }
+			},
+			ForeignObjectName3: {
+				data: { tag: 'p', text: 'люди', x: 285, y: 625 }
+			},
+			ForeignObjectImage3: {
+				opt: { isBlock: true }
+			},
+			ForeignObjectTitle3: {
+				data: { tag: 'p', text: 'люди' }
+			},
+			ForeignObjectDescription3: {
+				data: {
+					tag: 'p',
+					text: 'Поощряем инициативу, развиваем<br>и воодушевляем сотрудников',
+				}
+			}
+		}
+	}

@@ -1,0 +1,12 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.press-center-kit {
+	&__container {
+		padding-inline: responsive-size(20, 40);
+
+		@include media(xs) {
+			padding: 0;
+		}
+	}
+}

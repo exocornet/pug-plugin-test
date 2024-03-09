@@ -1,0 +1,13 @@
+mixin Contact(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Contact.cn.pug
+	- const styles = classes({...props.cn, TEXT_INDENT});
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.contact)&attributes(attributes)
+		if DATA('label', false)
+			span(class=styles.contactLabel) !{DATA('labelText')}
+		| !{DATA('text')}

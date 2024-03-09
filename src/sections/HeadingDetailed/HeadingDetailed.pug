@@ -1,0 +1,14 @@
+mixin HeadingDetailed(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include HeadingDetailed.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.headingDetailed)
+		+Container
+			+Row
+				+Col(ELEM('Col'))
+					+Heading(ELEM('Heading'))

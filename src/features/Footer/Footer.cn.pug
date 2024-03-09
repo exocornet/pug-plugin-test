@@ -1,0 +1,15 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('footer')
+
+		return {
+			footer: BLOCK({}, [cn?.margin, cn?.padding]),
+			footerContactsRow: BLOCK('contacts-row'),
+			footerBorderTop: BLOCK('border-top'),
+			footerLinkPhone: BLOCK('link-phone'),
+			footerAddress: BLOCK('address', ['mt-4']),
+			footerSocialButtons: BLOCK('social-buttons', ['mt-12']),
+			footerSocialButton: BLOCK('social-button'),
+			footerMadeIn: BLOCK('made-in'),
+		}
+	}

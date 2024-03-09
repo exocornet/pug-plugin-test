@@ -1,0 +1,40 @@
+.search-result {
+	border-bottom: 1px solid $black-40;
+
+	&__theme {
+		display: flex;
+		justify-content: space-between;
+
+		text-decoration: none;
+
+		b {
+			vertical-align: initial;
+
+			color: $verdepomovy;
+		}
+
+		&_grey {
+			& * {
+				color: $black-40;
+			}
+
+			b {
+				color: $black;
+			}
+		}
+
+		@include media(md) {
+			flex-direction: column;
+		}
+	}
+
+	&__wrap-text {
+		display: flex;
+		flex-direction: column;
+		row-gap: 16px;
+	}
+
+	&__date {
+		color: $black-40;
+	}
+}

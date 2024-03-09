@@ -1,0 +1,24 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('steps-animated-circle');
+
+		return {
+			stepsAnimatedCircle: BLOCK({
+				[`${cn?.theme}`]: ["dark"].includes(cn?.theme)
+			}, [cn?.margin]),
+			// [START] ==> SVG
+			stepsAnimatedCircleSvg: BLOCK('svg', ['d-none@xs']),
+			stepsAnimatedCircleStepName: BLOCK('step-name'),
+			stepsAnimatedCircleStepNumber: BLOCK('step-number'),
+			stepsAnimatedCircleStepTitleForeign: BLOCK('step-title-foreign'),
+			stepsAnimatedCircleStepTitle: BLOCK('step-title'),
+			stepsAnimatedCircleStepDescriptionForeign: BLOCK('step-description-foreign'),
+			stepsAnimatedCircleStepDescription: BLOCK('step-description'),
+			stepsAnimatedCircleStepImageForeign: BLOCK('step-image-foreign'),
+			stepsAnimatedCircleStepImage: BLOCK('step-image'),
+			// SVG <== [END]
+			stepsAnimatedCircleContent: BLOCK('content', ['d-none d-flex@xs']),
+			stepsAnimatedCircleLine: BLOCK('line'),
+			stepsAnimatedCircleClonedElement: BLOCK('cloned-element'),
+		}
+	}

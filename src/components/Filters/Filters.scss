@@ -1,0 +1,166 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.filters {
+	width: 100%;
+
+	&__panel {
+		display: flex;
+		column-gap: 8px;
+
+		margin-bottom: responsive-size(16);
+
+		@include media(xs) {
+			flex-wrap: wrap;
+
+			margin-bottom: 24px;
+			row-gap: 16px;
+		}
+	}
+
+	&__form {
+		width: auto;
+
+		@include media(xs) {
+			width: 100%;
+		}
+	}
+
+	&__search {
+		width: 48px;
+		height: 32px;
+		padding: responsive-size(16) responsive-size(8);
+
+		cursor: pointer;
+		transition: width 300ms ease-in-out, opacity 300ms ease-in-out;
+		text-indent: -1000%;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+
+		border: none;
+		border-radius: 4px;
+		outline: none;
+		background: $black-04 url("IMAGES/search.svg") no-repeat left center;
+		background-position-x: 16px;
+
+		font-family: $font-radio;
+		font-weight: 600;
+		line-height: 1.4;
+		@include font-size-responsive(1);
+
+		// stylelint-disable-next-line order/order
+		&::placeholder {
+			text-indent: -1000%;
+		}
+
+		&:focus {
+			overflow: hidden;
+
+			width: responsive-size(750);
+			padding-left: 48px;
+
+			cursor: text;
+			text-indent: 0;
+
+
+			&::placeholder {
+				text-indent: 0;
+			}
+		}
+
+		&:not(:placeholder-shown):valid {
+			width: responsive-size(750);
+			padding-left: 48px;
+
+			text-indent: 0;
+		}
+
+		@include media(xs) {
+			width: 100%;
+			padding: 16px 8px 16px 35px;
+
+			background-position-x: 12px;
+
+			&::placeholder {
+				text-indent: 0;
+			}
+
+			&:focus {
+				width: 100%;
+				padding-left: 35px;
+			}
+
+			&:not(:placeholder-shown):valid {
+				width: 100%;
+				padding-left: 35px;
+			}
+		}
+	}
+
+	&__link-control-wrapper {
+		display: flex;
+		overflow-x: scroll;
+		align-items: center;
+
+		@include no-scrollbar;
+	}
+
+	&__link-control {
+		padding-inline: 0;
+
+		white-space: nowrap;
+	}
+
+	&__link-control-separator {
+		flex: 0 0 2px;
+
+		padding: 1px;
+
+		border-radius: 50%;
+		background-color: $black;
+		margin-inline: 8px;
+	}
+
+	&__select-wrapper {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+
+	&__select-button-clear {
+		padding-inline: 0;
+	}
+}
+
+.js-active-filters-link-control {
+	background-color: $black-04;
+	padding-inline: 12px;
+
+	&:hover:not([disabled]) {
+		background-color: $black-03;
+	}
+}
+
+.js-filters-preloader {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		z-index: 3;
+		top: -4px;
+		right: -4px;
+		bottom: -4px;
+		left: -4px;
+
+		content: "";
+		backdrop-filter: blur(4px);
+
+		background-color: $gray97-70;
+
+		background-image: url("IMAGES/other/catalog-loader.svg");
+		background-repeat: no-repeat;
+		background-position: center 210px;
+		background-size: 54px 12px;
+	}
+}

@@ -1,0 +1,44 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Детальная страница руководителя';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'О компании' } },
+						{ data: { text: 'Управление компанией' } },
+						{ data: { text: 'Вишневский Андрей Николаевич' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции Supervisor ## -//
+include supervisor--supervisor
+- pageStore.addSection(Supervisor);
+
+//- ## Подключение store секции Bio ## -//
+include supervisor--bio
+- pageStore.addSection(Bio);
+
+//- ## Подключение store секции Employees ## -//
+include supervisor--employees
+- pageStore.addSection(Employees);
+
+//- ## Подключение store секции SliderNews ## -//
+include supervisor--slider-news
+- pageStore.addSection(SliderNews);
+
+//- # Подключение store для секции PageLinks # -//
+include supervisor--page-links
+- pageStore.addSection(PageLinks);

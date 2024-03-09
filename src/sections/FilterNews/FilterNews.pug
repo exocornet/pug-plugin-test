@@ -1,0 +1,42 @@
+mixin FilterNews(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FilterNews.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.filterNews)
+		+Container
+			+I('Filters', {data: {dataIdComponent: '3333'}})
+				+FiltersPanel
+					+FiltersSearch({data: {action: '/news'}})
+					+FiltersLinkControl({
+						elem: {
+							ButtonFilterArr: [
+								{ data: { text: 'все года', href: '/news' }, cn: { jsActiveLinkControl: true } },
+								{ data: { text: 'поставщикам', href: '/news/suppliers' } },
+								{ data: { text: 'интервью', href: '/news/interview' } },
+								{ data: { text: 'экспертные материалы', href: '/news/expert-materials' } },
+								{ data: { text: 'технологии', href: '/news/technologies' } },
+							]
+						}
+					})
+					+FiltersSelectControl(ELEM('FiltersSelectControl'))
+				+FiltersContentContainer(class="row rg-20 rg-10@xs")
+					for item, pos in ELEM_ARR('NewsCardArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						//- # ЛОГИКА # -//
+						- const NEWS_COL = I_ELEM('Col', false) || {cn: {cols: 'col-3 col-4@xs'}}
+						+Col(NEWS_COL)
+							+NewsCard(I_ELEM('NewsCard'))
+						if (pos===6)
+							div(class=styles.filterNewsSubscriptionForm data-schema=DATA('schema', 'default') data-dialog-name=DATA('dialogName', false) id=DATA('id', false))
+								+Row
+									+Col(ELEM('Col'))
+										+Heading(ELEM('HeadingForm'))
+								+Row
+									+Col(ELEM('ColForm'))
+										+I('Form', ELEM('Form'))
+					+Button(ELEM('ButtonMore'))

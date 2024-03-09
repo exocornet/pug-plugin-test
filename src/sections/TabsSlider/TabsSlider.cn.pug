@@ -1,0 +1,19 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('tabs-slider')
+
+		return {
+			tabsSlider: BLOCK({}, [cn?.margin]),
+			tabsSliderSliderNavigation: BLOCK('slider-navigation'),
+			tabsSliderSliderPagination: BLOCK('slider-pagination', ['d-none@xs']),
+			tabsSliderSliderSwiper: BLOCK('slider-swiper', {
+				'border-bottom': cn?.isBorderBottom,
+				'padding-bottom': cn?.isPaddingBottom,
+			}),
+			tabsSliderLink: BLOCK('link', ['position-absolute position-static@xs']),
+			tabsSliderTabBody: BLOCK('tab-body'),
+			tabsSliderButtons: BLOCK('tab-buttons', ['d-none@xs']),
+			tabsSliderButton: BLOCK('tab-button'),
+			tabsSliderButtonSeparator: BLOCK('tab-button-separator', ['mb-20 d-none@xs']),
+		}
+	}

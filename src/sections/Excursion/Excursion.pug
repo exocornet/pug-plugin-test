@@ -1,0 +1,37 @@
+mixin Excursion(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const HEADING_PROPS = {
+				data: {tag: 'h2', ...ELEM('Heading').data},
+				cn: {
+						textIndent: true,
+						size: 'h3',
+						// position: 'position-static',
+						...ELEM('Heading').cn
+				}
+		};
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Excursion.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.excursion)
+		+Container(class=styles.excursionContainer)
+			div(class=styles.excursionWrapper)
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(HEADING_PROPS)
+				+Row
+					+Col({cn: {offset: 'offset-2 offset-0@md', cols: 'col-3 col-3@md col-4@xs', order: 'order-1@xs'}})
+						+Text(ELEM('InfoDescription'))(class=styles.excursionInfo)
+						+Text(ELEM('Description'))(class=styles.excursionDescription)
+						+Button(ELEM('Button'))(class=styles.excursionButton)
+					+Col({cn: {offset: 'offset-1 offset-0@md', cols: 'col-6 col-3@md col-4@xs'}})
+						div(class=styles.excursionVideoContainer)
+							if ELEM('Video')
+								+I('Video', ELEM('Video'))
+							else
+								div(class=styles.cardPersonalImage) Не видео

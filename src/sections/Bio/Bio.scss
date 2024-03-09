@@ -1,0 +1,12 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.bio {
+	&__group {
+		border-bottom: 1px solid $light-gray;
+
+		&:not(:last-child) {
+			margin-bottom: responsive-size(48, 64);
+		}
+	}
+}

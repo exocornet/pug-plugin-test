@@ -1,0 +1,67 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../styles/include-setings-styles.scss";
+
+.input-number {
+	$g: &;
+	align-self: center;
+
+	width: 100%;
+	padding: 15px 0;
+
+	text-align: center;
+
+	border: none $black-40;
+	border-bottom: 1px solid $black-40;
+	outline: none;
+	background-color: $main;
+
+	&[type="number"] {
+		appearance: textfield;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+		}
+	}
+
+	&::placeholder {
+		color: $black-40;
+	}
+
+	&__button {
+		position: absolute;
+
+		&-container {
+			display: flex;
+		}
+	}
+
+	&__button--left {
+		left: 0;
+	}
+
+	&__button--right {
+		right: 0;
+	}
+
+	@include font-size-responsive(2);
+
+	@include media(xs) {
+		padding: 8px;
+
+		border-bottom: none;
+		border-radius: 4px;
+
+		background-color: $black-04;
+
+		&_with-icon {
+			padding-left: 30px;
+
+			& + .input__image {
+				left: 8px;
+			}
+
+			@include font-size-responsive(1.6);
+		}
+	}
+}

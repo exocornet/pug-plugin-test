@@ -1,0 +1,16 @@
+mixin VideoFacts(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include VideoFacts.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.videoFacts)
+		+Container
+			div(class=styles.videoFactsWrapper)
+				+I('Video', ELEM('Video'))
+
+			if ELEM('Facts', false)
+				+I('Facts', ELEM('Facts'))

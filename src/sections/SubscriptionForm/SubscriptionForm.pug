@@ -1,0 +1,17 @@
+mixin SubscriptionForm(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SubscriptionForm.cn.pug
+	- const styles = classes(props && props.cn);
+
+		//- # ВЕРСТКА КОМПОНЕНТА # -//
+		section(class=styles.subscriptionForm data-schema=DATA('schema', 'default') data-dialog-name=DATA('dialogName', false) id=DATA('id', false))
+			+Container
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+				+Row
+					+Col(ELEM('ColForm'))
+						+I('Form', ELEM('Form'))

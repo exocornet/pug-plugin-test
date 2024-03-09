@@ -1,0 +1,52 @@
+-
+	const PageLinksServices = {
+		includeSection: 'PageLinks',
+		elem: {
+			Col2: {
+				cn: {
+					cols: 'col-2 col-6@md col-4@xs'
+				}
+			},
+			Col10: {
+				cn: {
+					cols: 'col-10 col-6@md col-4@xs'
+				}
+			},
+			PageLinkArr: [
+				{
+					data: {
+						href: '#!'
+					},
+					elem: {
+						Text: {
+							data: {
+								text: 'заказать транспорт'
+							},
+							cn: {
+								size: 'biggest'
+							},
+						}
+					},
+				},
+				{
+					data: {
+						href: '#!',
+					},
+					elem: {
+						Text: {
+							data: {
+								text: 'погрузка готовой продукции'
+							},
+							cn: {
+								size: 'biggest',
+							},
+						}
+					},
+				}
+			],
+			FootNote: {
+				data: {text: 'сервисы'},
+				cn: {style: 'cap', textTransform: 'upper'}
+			},
+		}
+	}

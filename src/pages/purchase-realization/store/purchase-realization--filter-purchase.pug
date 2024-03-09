@@ -1,0 +1,1645 @@
+-
+	const FilterPurchase = {
+		includeSection: 'FilterPurchase',
+		cn: {
+			margin: 'mt-40',
+		},
+		elem: {
+			FiltersSelectControl: {
+				elem: {
+					SelectFilterArr: [
+						{
+							data: {
+								text: 'Культура',
+								nameSelect: 'culture'
+							},
+							dataArr: {
+								optionArr: [
+									{
+										data: {
+											text: 'Зерновые'
+										}
+									},
+									{
+										data: {
+											text: 'Масличные'
+										}
+									},
+									{
+										data: {
+											text: 'Зернобобовые'
+										}
+									},
+									{
+										data: {
+											text: 'Овощные'
+										}
+									},
+									{
+										data: {
+											text: 'Корнеплоды/клубнеплоды'
+										}
+									},
+									{
+										data: {
+											text: 'Ягодные'
+										}
+									},
+									{
+										data: {
+											text: 'Зеленные'
+										}
+									},
+									{
+										data: {
+											text: 'Прядильные'
+										}
+									},
+								]
+							},
+						},
+						{
+							data: {
+								text: 'Удобрения',
+								nameSelect: 'fertilizers'
+							},
+							dataArr: {
+								optionArr: [
+									{
+										data: {
+											text: 'азотные'
+										}
+									},
+									{
+										data: {
+											text: 'фосфорные'
+										}
+									},
+									{
+										data: {
+											text: 'калийные'
+										}
+									},
+									{
+										data: {
+											text: 'комплексные'
+										}
+									},
+									{
+										data: {
+											text: 'водорастворимые'
+										}
+									},
+								]
+							},
+						},
+					],
+				}
+			},
+			ButtonMore: {
+				data: {
+					href: '/purchase',
+					text: 'Показать еще',
+				},
+				cn: {
+					margin: 'mr-auto ml-auto mt-40 mt-24@xs',
+					size: 'large',
+					isMoreButton: 'js-load-more-button',
+				},
+			},
+			TabsButtons: {
+				dataArr: {
+					buttonArr: [
+						{
+							data: {
+								dataTabsButton: 'материальные товары'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'материальные товары',
+									},
+									cn: {
+										color: 'transparent'
+									}
+								}
+							}
+						},
+						{
+							data: {
+								dataTabsButton: 'транспорт и обслуживание техники'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'транспорт и обслуживание техники',
+									},
+									cn: {
+										color: 'transparent'
+									}
+								}
+							}
+						},
+						{
+							data: {
+								dataTabsButton: 'закупка услуг'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'закупка услуг',
+									},
+									cn: {
+										color: 'transparent'
+									}
+								}
+							}
+						},
+					]
+				},
+			},
+			TabsContentArr: [
+				{
+					data: {
+						dataTabsContent: 'материальные товары',
+						moreAttributes: {
+							'data-more-desktop': 6,
+							'data-more-desktop-step': 6,
+							'data-more-mobile': 6,
+							'data-more-mobile-step': 6,
+							'data-button-text': 'Показать еще',
+						},
+					},
+					elem: {
+						FilterPurchaseItemArr: [
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8142',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Поставка кабеля ВБШВНГ(А)-LS 4*95 0,66',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											HiddenElemsArr: [
+												{
+													elem: {
+														Row: {cn: {margin: 'mb-32'}},
+														ColLeft: {cn: {cols: 'col-2 col-2@xs', margin: 'mt-8 mt-0@xs'}},
+														ColRight: {cn: {cols: 'col-10 col-2@xs'}},
+														TextLeft: {data: {text: 'формат торгов'}, cn: {style: 'cap'}},
+														TextsRightArr: [
+															{
+																elem: {
+																	Text: {
+																		data: {text: 'Запрос предложений'}
+																	}
+																}
+															}
+														]
+													}
+												},
+												{
+													elem: {
+														Row: {cn: {margin: 'mb-32'}},
+														ColLeft: {cn: {cols: 'col-2 col-2@xs', margin: 'mt-8 mt-0@xs'}},
+														ColRight: {cn: {cols: 'col-10 col-2@xs'}},
+														TextLeft: {data: {text: 'документация'}, cn: {style: 'cap'}},
+														TextsRightArr: [
+															{
+																elem: {
+																	Text: {
+																		data: {
+																			text: 'Документация №7982-ОЗПЗ.doc',
+																			href: '#!'
+																		},
+																		cn: {
+																			color: 'transparent'
+																		}
+																	}
+																},
+																data: {
+																	docType: 'doc'
+																}
+															},
+															{
+																elem: {
+																	Text: {
+																		data: {
+																			text: 'Документация №61982-ОEПУ.doc',
+																			href: '#!'
+																		},
+																		cn: {
+																			color: 'transparent'
+																		}
+																	}
+																},
+																data: {
+																	docType: 'doc'
+																}
+															}
+														]
+													}
+												},
+												{
+													elem: {
+														Row: {cn: {margin: 'mb-32'}},
+														ColLeft: {cn: {cols: 'col-2 col-2@xs', margin: 'mt-8 mt-0@xs'}},
+														ColRight: {cn: {cols: 'col-10 col-2@xs'}},
+														TextLeft: {data: {text: 'инструкция'}, cn: {style: 'cap'}},
+														TextsRightArr: [
+															{
+																elem: {
+																	Text: {
+																		data: {
+																			text: 'Заключение контракта на генеральный подряд.pdf',
+																			href: '#!'
+																		},
+																		cn: {
+																			color: 'transparent'
+																		}
+																	}
+																},
+																data: {
+																	docType: 'pdf'
+																}
+															}
+														]
+													}
+												},
+												{
+													elem: {
+														Row: {cn: {margin: 'mb-8'}},
+														ColLeft: {cn: {cols: 'col-2 col-2@xs', margin: 'mt-8 mt-0@xs'}},
+														ColRight: {cn: {cols: 'col-10 col-2@xs'}},
+														TextLeft: {data: {text: 'менеджер'}, cn: {style: 'cap'}},
+														TextsRightArr: [
+															{
+																elem: {
+																	Text: {
+																		data: {text: 'Паладионов Александр,<br> +7 916 000-01-10'}
+																	}
+																}
+															}
+														]
+													}
+												},
+												{
+													elem: {
+														ColLeft: {cn: {cols: 'col-2 col-2@xs', margin: 'mt-8 mt-0@xs'}},
+														ColRight: {cn: {cols: 'col-8 col-2@xs'}},
+														ColButton: {cn: {cols: 'col-4@xs', alignItems: 'text-align-right', display: 'd-none@xs'}},
+														TextLeft: {data: {text: 'общие вопросы'}, cn: {style: 'cap'}},
+														TextsRightArr: [
+															{
+																elem: {
+																	Text: {
+																		data: {text: 'Ахметдзянов Иван,<br> +7 916 000-01-10'}
+																	}
+																}
+															}
+														],
+														Button: {
+															data: {
+																text: 'запрос документации',
+																href: '#!'
+															},
+															opt: {
+																icon: true
+															}
+														}
+													}
+												},
+												{
+													elem: {
+														ButtonMobile: {
+															data: {
+																text: 'Заказать',
+																href: '#modal-procurement',
+																purchaseNumber: '8142',
+																modalInit: 'false'
+															},
+															cn: {
+																size: 'large',
+																display: 'd-none d-inline-block@md',
+																margin: 'ml-auto mr-auto'
+															},
+															opt: {
+																icon: true
+															},
+														}
+													}
+												}
+											],
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8142',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8140',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Проведение расчета допустимого уровня налива среды в хранилище серной кислоты объемом 610 м³',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'услуги',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.08.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8140',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+						],
+					},
+					dataArr: {
+						ColTableArr: [
+							{
+								data: {
+									text: 'публикация'
+								},
+								elem: {
+									Col: {
+										cn: {
+											cols: 'col-1 col-2@md'
+										}
+									}
+								}
+							},
+							{
+								data: {
+									text: 'номер'
+								},
+								elem: {
+									Col: {
+										cn: {
+											cols: 'col-1'
+										}
+									}
+								}
+							},
+							{
+								data: {
+									text: 'предмет'
+								},
+								elem: {
+									Col: {
+										cn: {
+											cols: 'col-6 col-5@md'
+										}
+									}
+								}
+							},
+							{
+								data: {
+									text: 'тип'
+								},
+								elem: {
+									Col: {
+										cn: {
+											cols: 'col-1'
+										}
+									}
+								}
+							},
+							{
+								data: {
+									text: 'статус'
+								},
+								elem: {
+									Col: {
+										cn: {
+											cols: 'col-1'
+										}
+									}
+								}
+							},
+							{
+								data: {
+									text: 'вскрытие'
+								},
+								elem: {
+									Col: {
+										cn: {
+											cols: 'col-1 col-2@md'
+										}
+									}
+								}
+							},
+							{
+								data: {
+									text: ''
+								},
+								elem: {
+									Col: {
+										cn: {
+											cols: 'col-1',
+											display: 'd-none@md'
+										}
+									}
+								}
+							},
+						],
+					}
+				},
+				{
+					data: {
+						dataTabsContent: 'транспорт и обслуживание техники',
+						moreAttributes: {
+							'data-more-desktop': 6,
+							'data-more-desktop-step': 6,
+							'data-more-mobile': 6,
+							'data-more-mobile-step': 6,
+							'data-button-text': 'Показать еще',
+						},
+					},
+					elem: {
+						FilterPurchaseItemArr: [
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8142',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Поставка кабеля ВБШВНГ(А)-LS 4*95 0,66',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8142',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8140',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Проведение расчета допустимого уровня налива среды в хранилище серной кислоты объемом 610 м³',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'услуги',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.08.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8140',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+						],
+						TableColArr: [
+				{
+					data: {
+						text: 'публикация'
+					}
+				},
+				{
+					data: {
+						text: 'номер'
+					}
+				},
+				{
+					data: {
+						text: 'предмет'
+					}
+				},
+				{
+					data: {
+						text: 'тип'
+					}
+				},
+				{
+					data: {
+						text: 'статус'
+					}
+				},
+				{
+					data: {
+						text: 'вскрытие'
+					}
+				},
+				{
+					data: {
+						text: ''
+					}
+				},
+			],
+					}
+				},
+				{
+					data: {
+						dataTabsContent: 'закупка услуг',
+						moreAttributes: {
+							'data-more-desktop': 6,
+							'data-more-desktop-step': 6,
+							'data-more-mobile': 6,
+							'data-more-mobile-step': 6,
+							'data-button-text': 'Показать еще',
+						},
+					},
+					elem: {
+						FilterPurchaseItemArr: [
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8142',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Поставка кабеля ВБШВНГ(А)-LS 4*95 0,66',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8142',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8140',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Проведение расчета допустимого уровня налива среды в хранилище серной кислоты объемом 610 м³',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'услуги',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.08.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8140',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+							{
+								elem: {
+									FilterPurchaseItem: {
+										elem: {
+											TextPublication: {
+												data: {
+													tag: 'span',
+													text: '25.06.2023',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextNumber: {
+												data: {
+													tag: 'span',
+													text: '8138',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextName: {
+												data: {
+													tag: 'span',
+													text: 'Заключение контракта на генеральный подряд с КАО «Азот» на проведение работ по протаскиванию полиэтиленовых труб Ø630мм, по устройству колодцев, монтажу запорной арматуры, восстановлению асфальтового покрытия на объекте капитального строительства «Замена водовода №3 от корп. 307 до К-384 (проезд 10–11/Ж-И)» (Раздел НВ, НВ1).',
+												},
+											},
+											TextType: {
+												data: {
+													tag: 'span',
+													text: 'прочее',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextStatus: {
+												data: {
+													tag: 'span',
+													text: 'текущий',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											TextOpening: {
+												data: {
+													tag: 'span',
+													text: '16.09.2024',
+												},
+												cn: {
+													style: 'cap',
+												}
+											},
+											Button: {
+												data: {
+													text: 'заказать',
+													href: '#modal-procurement',
+													purchaseNumber: '8138',
+													modalInit: 'false'
+												},
+												opt: {
+													icon: true
+												},
+											},
+										}
+									},
+								}
+							},
+						],
+						TableColArr: [
+				{
+					data: {
+						text: 'публикация'
+					}
+				},
+				{
+					data: {
+						text: 'номер'
+					}
+				},
+				{
+					data: {
+						text: 'предмет'
+					}
+				},
+				{
+					data: {
+						text: 'тип'
+					}
+				},
+				{
+					data: {
+						text: 'статус'
+					}
+				},
+				{
+					data: {
+						text: 'вскрытие'
+					}
+				},
+				{
+					data: {
+						text: ''
+					}
+				},
+			],
+					}
+				},
+			],
+		}
+	}

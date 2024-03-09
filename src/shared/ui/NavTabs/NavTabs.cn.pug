@@ -1,0 +1,19 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('nav-tabs')
+
+		return {
+			navTabs: BLOCK(),
+			navTabsBody: BLOCK('body'),
+			navTabsButtons: BLOCK('buttons'),
+			navTabsLink: BLOCK('link', ['text-transform-lower', 'd-flex', 'align-items-center justify-content-start', 'pr-0 pl-0']),
+			navTabsBack: BLOCK('back', ['d-none d-flex@xs','text-transform-upper@xs']),
+			navTabsPagesLink: BLOCK('page-link', [
+				'd-flex', 'flex-direction-column',
+				cn?.display,
+				cn?.gap,
+				cn?.flexDirection,
+				cn?.margin
+			])
+		}
+	}

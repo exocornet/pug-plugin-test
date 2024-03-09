@@ -1,0 +1,20 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('tabs');
+
+		return {
+			tabs: BLOCK({}, [cn?.position]),
+			tabsButtons: BLOCK('buttons', [cn?.justifyTabsButtons, cn?.marginTabsButtons]),
+			tabsButton: BLOCK('button', {
+				[`${cn?.buttonStyle}`]: ['none-stroke'].includes(cn?.buttonStyle)
+			}),
+			tabsBody: BLOCK('body'),
+			tabsContent: BLOCK('content', [
+				cn?.displayTabsContent,
+				cn?.directionTabsContent,
+				cn?.overflowTabsContent,
+				cn?.jsClass,
+			]),
+			tabsButtonSeparator: BLOCK('button-separator')
+		}
+	}

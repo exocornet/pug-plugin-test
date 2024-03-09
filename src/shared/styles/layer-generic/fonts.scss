@@ -1,0 +1,23 @@
+// # ПАРАМЕТРЫ ПОДКЛЮЧЕНИЯ ШРИФТОВ # //
+
+// # ------------ FONT PPRadioGrotesk ------------ # //
+// ## определение пути к подключаемому шрифту ## //
+$include-font-path: "FONTS/PPRadioGrotesk/";
+// ## определение типов подключаемых шрифтов ## //
+$include-font-types: ("otf": "opentype");
+// ## определение имени шрифта для вызова в проекте ## //
+$include-font-family: "PPRadioGrotesk";
+
+// # ВЫЗОВ МИКСИНА ПОДКЛЮЧЕНИЯ ШРИФТОВ # //
+@include includeFont("PPRadioGrotesk-Regular", 400);
+
+// # ------------ FONT HelveticaNeueCyr ------------ # //
+// ## определение пути к подключаемому шрифту ## //
+$include-font-path: "FONTS/HelveticaNeueCyr/";
+// ## определение типов подключаемых шрифтов ## //
+$include-font-types: ("otf": "opentype");
+// ## определение имени шрифта для вызова в проекте ## //
+$include-font-family: "HelveticaNeueCyr";
+
+// # ВЫЗОВ МИКСИНА ПОДКЛЮЧЕНИЯ ШРИФТОВ # //
+@include includeFont("HelveticaNeueCyr-Medium", 550);

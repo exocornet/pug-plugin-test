@@ -1,0 +1,53 @@
+mixin Search(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Search.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.search)
+		+Container
+			//- ## Инпут поиска ## -//
+			+Row
+				+Col
+					label(class=styles.searchLabel)
+						+Input(ELEM('Input'), {icon: true})(class=styles.searchInput)
+						button(class=styles.searchButtonClear)
+							img(src=require('IMAGES/other/close.svg') alt="")
+
+			//- ## Частые запросы ## -//
+			+Row({cn: {margin: 'mb-8 mt-40'}})(class=styles.searchFrequentQueries)
+				+Col({cn: {cols: 'col-4 col-4@xs'}})(class=styles.searchWrapHistory)
+					+Text({data: {text: 'Вы недавно искали'}, cn: {style: 'cap', textTransform: 'upper', margin: 'mb-16'}})
+
+				+Col({cn: {cols: 'col-4 col-4@xs', margin: 'mt-32@xs'}})(class=styles.searchWrapTop)
+					+Text({data: {text: 'Вы недавно искали'}, cn: {style: 'cap', textTransform: 'upper', margin: 'mb-16'}})
+
+			//- ## Рекламная продукция ## -//
+			+Row(class=styles.searchPromotionalProducts)
+				for item in ELEM_ARR('CardSearchMenuInfoArr')
+					//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+					include ../../shared/helpers/pug/shortcut-check-store
+					+Col(I_ELEM('Col'))
+						+CardSearchMenuInfo(I_ELEM('CardSearchMenuInfo'))
+
+			//- ## Результаты поиска ## -//
+			+Row(class=styles.searchResult)
+				+Col({cn: {cols: 'col-10 col-4@xs', offset: 'offset-2 offset-0@xs'}})
+					+Heading({data: {tag: 'h3'}, cn: { size: 'h3' }})
+						| Результаты поиска
+				//- ### вставляются кнопки с категориями поисковой выдачи (data-template="search-button-result") ### -//
+				+Col({cn: {cols: 'col-2 col-6@md col-4@xs'}})(class=styles.searchWrapButtonResult)
+				//- ### вставляются результаты по категориями ### -//
+				+Col({cn: {cols: 'col-10 col-6@md col-4@xs'}})
+					div(class=styles.searchWrapResult)
+					div(class=styles.searchWrapPagination)
+
+		//- ## Шаблоны для поиска ## -//
+		template(data-template="search-button-history-popular")
+			+Button({data: {text: 'карьера'}, cn: {color: 'transparent'}})(class=styles.searchButtonRequestHistory)
+
+		template(data-template="search-button-result")
+			+Button({data: {text: 'все результаты [124]'}})

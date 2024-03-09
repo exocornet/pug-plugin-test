@@ -1,0 +1,28 @@
+mixin ModalPractices(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ModalPractices.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.modalPractices data-dialog-name=DATA('dialogName', false))
+		+I('Modal', ELEM('Modal'))
+			if ELEM('Steps', false)
+				div(class=styles.modalPracticesStepsCount)
+					for item in ELEM('Steps')
+						include ../../shared/helpers/pug/shortcut-check-store
+						+Text(I_ELEM('Text'))(class=(styles.modalPracticesStep + ' ' + I_DATA('active', '')))
+			+ModalBody()
+				+I('Form', ELEM('Form'))(class=styles.modalPracticesForm)
+					div(class=`${styles.modalPracticesFormStep} step-1 active-step`)
+						for item in ELEM_ARR('Step1Fields')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+Field(I_ELEM("Field"))
+						+Button(ELEM("ButtonNext"))(class=styles.modalPracticesButtonNext)
+
+					div(class=`${styles.modalPracticesFormStep} step-2`)
+						for item in ELEM_ARR('Step2Fields')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+Field(I_ELEM("Field"))
+						+Button(ELEM("ButtonSubmit"))(class=styles.modalPracticesButtonSubmit)

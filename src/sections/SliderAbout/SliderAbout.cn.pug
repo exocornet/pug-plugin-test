@@ -1,0 +1,29 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-about')
+
+		return {
+			sliderAbout: BLOCK({}, [cn?.margin]),
+			sliderAboutSliderNavigation: BLOCK('slider-navigation'),
+			sliderAboutSliderSlide: BLOCK('slider-slide'),
+			sliderAboutSliderSwiper: BLOCK('slider-swiper', ['pb-56']),
+			sliderAboutLink: BLOCK('link', ['position-absolute position-static@xs']),
+			sliderAboutSlideImage: BLOCK('slide-image'),
+			sliderAboutSlideTitle: BLOCK('slide-title'),
+			sliderAboutSlideShortText: BLOCK('slide-short-text'),
+			sliderAboutSlideCardHiddenText: BLOCK('slide-card-hidden-text'),
+			sliderAboutSlideSubtitle: BLOCK('slide-subtitle'),
+			sliderAboutSlideBar: BLOCK('slide-bar'),
+			sliderAboutSlideBarItem: BLOCK('slide-bar-item'),
+			sliderAboutSlideBarItemTitle: BLOCK('slide-bar-item-title'),
+			sliderAboutSlideBarItemValue: BLOCK('slide-bar-item-value'),
+			sliderAboutSlideBarItemPercent: BLOCK('slide-bar-item-percent'),
+			sliderAboutSlidePie: BLOCK('slide-pie'),
+			sliderAboutSlidePieLegend: BLOCK('slide-pie-legend'),
+			sliderAboutSlidePieImage: BLOCK('slide-pie-image'),
+			sliderAboutSlidePieLegendTitle: BLOCK('slide-pie-legend-title'),
+			sliderAboutSlideCard: BLOCK('slide-card'),
+			sliderAboutSlideCardContent: BLOCK('slide-card-content'),
+			sliderAboutSlideCardText: BLOCK('slide-card-text')
+		}
+	}

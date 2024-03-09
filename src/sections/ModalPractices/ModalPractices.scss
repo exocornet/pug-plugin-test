@@ -1,0 +1,33 @@
+@import "../../shared/styles/include-setings-styles";
+
+.modal-practices {
+	&__steps-count {
+		position: absolute;
+		right: 0;
+		left: 0;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 40px;
+	}
+
+	&__form-step {
+		display: none;
+	}
+
+	&__step {
+		cursor: default;
+
+		color: $black-40;
+
+		&.active {
+			color: $black;
+		}
+	}
+
+	.active-step {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}

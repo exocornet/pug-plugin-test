@@ -1,0 +1,68 @@
+-
+	const PageLinksPurchasePolicy = {
+		includeSection: 'PageLinks',
+		elem: {
+			Col2: {
+				cn: {
+					cols: 'col-2 col-6@md col-4@xs'
+				}
+			},
+			Col10: {
+				cn: {
+					cols: 'col-10 col-6@md col-4@xs'
+				}
+			},
+			PageLinkArr: [
+				{
+					data: {
+						extension: 'PDF',
+						href: '#!',
+					},
+					elem: {
+						ColLink: {
+							cn: {
+								cols: 'col-9 col-4@xs'
+							}
+						},
+						Text: {
+							data: {
+								text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+							},
+							cn: {
+								size: 'bigger'
+							},
+						},
+						TextDateRight: {
+							data: {
+								text: '01.06.2023-30.11.2023'
+							},
+							cn: {
+								style: 'cap',
+								order: 'order-3'
+							}
+						}
+					},
+					opt: {
+						download: true
+					},
+				}
+			],
+			FootNote: {
+				data: {text: 'политика по закупкам'},
+				cn: {style: 'cap', textTransform: 'upper'}
+			},
+			Button: {
+				data: {
+					href: '#!',
+					text: 'перейти'
+				},
+				cn: {
+					size: 'large',
+					margin: 'ml-auto'
+				},
+				opt: {
+					icon: true
+				}
+			}
+		}
+	}

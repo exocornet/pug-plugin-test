@@ -1,0 +1,24 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.slider-stories {
+	&__slider-swiper {
+		padding-bottom: responsive-size(34.56, 72);
+
+		border-bottom: 1px solid var(--light-gray);
+
+		@include media(xs) {
+			padding-bottom: 0;
+
+			border-bottom: none;
+		}
+	}
+
+	&__slider-slides-wrapper {
+		margin-bottom: 40px;
+
+		@include media(xs) {
+			margin-bottom: 0;
+		}
+	}
+}

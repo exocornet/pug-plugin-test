@@ -1,0 +1,8 @@
+mixin NavTabsBody(props)
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	include NavTabs.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.navTabsBody)
+		block

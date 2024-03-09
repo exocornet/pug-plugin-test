@@ -1,0 +1,68 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.story-card {
+	$self: &;
+
+	&:hover {
+		cursor: pointer;
+
+		#{$self}__text-story, #{$self}__text-creator, #{$self}__arrow {
+			transition: all 0.4s;
+
+			color: $dark-green;
+		}
+	}
+
+	&__image {
+		display: block;
+		object-fit: cover;
+		object-position: top center;
+
+		height: responsive-size(368, 560);
+
+		border-radius: 8px;
+	}
+
+	&__card-text {
+		display: grid;
+
+		margin-top: responsive-size(8, 24);
+
+		grid-template-areas:
+			"story-text link"
+			"story-creator link";
+		grid-row-gap: 16px;
+	}
+
+	&__text-story {
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+
+		overflow: hidden;
+
+		text-overflow: ellipsis;
+
+	}
+
+	&__video-story {
+		height: responsive-size(496, 686);
+	}
+
+	&__video-player {
+		height: 100vh;
+		object-fit: cover;
+	}
+
+	&__arrow {
+		grid-area: link;
+
+		flex: 0 0 auto;
+
+		width: 9px;
+		height: 9px;
+
+		margin-left: auto;
+	}
+}

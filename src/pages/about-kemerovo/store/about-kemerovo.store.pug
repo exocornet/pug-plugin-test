@@ -1,0 +1,47 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Страница о Кемерово';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'О компании' } },
+						{ data: { text: 'О Кемерово'}},
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include about-kemerovo--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- ## Подключение store секции VideoFacts ## -//
+include about-kemerovo--video-facts
+- pageStore.addSection(VideoFacts);
+
+//- ## Подключение store секции SliderAbout ## -//
+include about-kemerovo--slider-about
+- pageStore.addSection(SliderAbout);
+
+//- ## Подключение store секции ListInfoCard ## -//
+include about-kemerovo--list-info-card
+- pageStore.addSection(ListInfoCard);
+
+//- ## Подключение store секции Career ## -//
+include about-kemerovo--career
+- pageStore.addSection(Career);
+
+//- ## Подключение store секции PageLinks ## -//
+include about-kemerovo--page-links
+- pageStore.addSection(PageLinks);

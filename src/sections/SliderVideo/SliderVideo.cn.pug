@@ -1,0 +1,14 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-video')
+
+		return {
+			sliderVideo: BLOCK({}, [cn?.margin]),
+			sliderVideoSliderSwiper: BLOCK('slider-swiper'),
+			sliderVideoSliderSlidesWrapper: BLOCK('slider-slides-wrapper'),
+			sliderVideoSliderSlide: BLOCK('slider-slide'),
+			sliderVideoSliderNavigation: BLOCK('slider-navigation', ['d-none@xs']),
+			sliderVideoLink: BLOCK('link', ['position-absolute position-static@xs']),
+			sliderVideoBottom: BLOCK('bottom'),
+		}
+	}

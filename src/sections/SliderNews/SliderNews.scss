@@ -1,0 +1,53 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.slider-news {
+	&__slider-swiper {
+		padding-bottom: responsive-size(40, 92);
+
+		border-bottom: 1px solid $light-gray;
+
+		@include media(xs) {
+			border-bottom: 0;
+		}
+	}
+
+	&__slider-navigation {
+		bottom: responsive-size(0, 40);
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__slider-slide {
+		flex: 1 0 auto;
+
+		width: responsive-size(320, 385);
+
+		&:nth-of-type(1) {
+			width: responsive-size(320, 782);
+		}
+	}
+
+	&__link {
+		z-index: 1;
+		right: responsive-size(20, 40);
+
+		margin-top: responsive-size(-20, -70);
+
+		@include media(xs) {
+			position: static;
+
+			width: 100%;
+
+			.button {
+				display: block;
+
+				width: 100%;
+				max-height: 64px;
+				padding: 28px 48px;
+			}
+		}
+	}
+}

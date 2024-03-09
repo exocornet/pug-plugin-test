@@ -1,0 +1,221 @@
+-
+	const ModalForm = {
+		includeContent: 'ModalForm',
+		elem: {
+			Modal: {
+				data: {
+					name: 'modal-form'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							img: require('IMAGES/modals/close.svg'),
+							type: 'button',
+						},
+						cn: {
+							color: 'transparent'
+						},
+						opt: {
+							withCloseIcon: true,
+						}
+					},
+					Footnote: {
+						data: {
+							tag: 'span',
+							text: 'регистрация на мероприятие'
+						},
+						cn: {
+							style: 'cap',
+							textTransform: 'upper',
+						}
+					}
+				},
+				opt: {
+					SwipeModal: true
+				}
+			},
+			Form: {
+				data: {
+					action: '/api/forms/callback'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'name',
+												type: 'name',
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "имя",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										DatePicker: {
+											data: {
+												event: 'excursion'
+											},
+											elem : {
+												Input: {
+													data: {
+														name: 'date',
+													}
+												},
+												TextDate: {
+													data: {
+														text: 'Дата'
+													},
+													cn: {
+														style: 'cap'
+													}
+												},
+												TextTime: {
+													data: {
+														text: 'Сеансы'
+													},
+													cn: {
+														style: 'cap'
+													},
+													ColDate: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													}
+												},
+												ColDate: {
+													cn: {
+														cols: 'col-6 col-4@xs',
+													}
+												}
+											}
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "выберите дату",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'email'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш email",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'phone'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "номер телефона",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'comment'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "оставьте комментарий",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						}
+					},
+					SubmitButton: {
+						data: {
+							text: 'Отправить',
+							type: 'submit',
+						},
+					},
+				},
+				cn: {
+					margin: 'mt-auto'
+				}
+			}
+		}
+	}

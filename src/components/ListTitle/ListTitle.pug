@@ -1,0 +1,15 @@
+mixin ListTitle(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ListTitle.cn.pug
+	- const styles = classes(props && props.cn)
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.listTitle)
+		+Text(ELEM('TitleText'))
+		+List(ELEM('List'))
+			for item in ELEM_ARR('ListTextArr')
+				include ../../shared/helpers/pug/shortcut-check-store
+				+Text(I_ELEM('Text'))

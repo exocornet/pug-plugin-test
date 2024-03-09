@@ -1,0 +1,53 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.image-facts {
+	&__picture {
+		display: block;
+		overflow: hidden;
+
+		border-radius: 16px;
+		margin-inline: responsive-size(-20, -28);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			border-radius: 8px;
+		}
+	}
+
+	&__wrapper {
+		row-gap: responsive-size(20, 40);
+	}
+
+	&__caption {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+
+		padding: 12px 14px 10px;
+
+		border-radius: 4px;
+		background-color: $white-30;
+		backdrop-filter: blur(6.5px);
+
+		@include media(xxl, "min") {
+			bottom: responsive-size(20);
+		}
+	}
+
+	&__caption-top-line {
+		display: block;
+
+		letter-spacing: 0.1em;
+
+		color: $white;
+	}
+
+	&__caption-bottom-line {
+		display: block;
+
+		letter-spacing: 0.1em;
+
+		color: $white-70;
+	}
+}

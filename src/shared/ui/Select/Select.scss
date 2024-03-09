@@ -1,0 +1,140 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../styles/include-setings-styles.scss";
+
+.custom-select {
+	position: relative;
+
+	select {
+		visibility: hidden;
+
+		height: 0;
+	}
+
+	select option {
+		&:first-child {
+			opacity: 0;
+		}
+	}
+
+	&__selected {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+
+		min-height: 30px;
+
+		padding: 5px 0;
+
+		cursor: pointer;
+		letter-spacing: -0.66px;
+
+		border-bottom: none;
+		background-color: transparent;
+
+		font-family: var(--font-radio);
+		font-size: calc(2.2rem + (40 - 22) * ((100vw - 360px) / (1600 - 360)));
+		font-weight: 400;
+		font-style: normal;
+		line-height: 24px;
+
+		&::after {
+			margin-left: auto;
+
+			content: "";
+
+			border: 6px solid transparent;
+			border-color: $black transparent transparent transparent;
+
+			@include media(xs) {
+				border: 4px solid transparent;
+				border-color: $black transparent transparent transparent;
+			}
+		}
+
+		@include media(xs){
+			display: flex;
+			align-items: center;
+		}
+
+		@media screen and (max-width: 1024px) {
+			top: -20px;
+		}
+		@include media(xs) {
+			top: -10px;
+		}
+	}
+
+	&_selected &_arrow-active::after {
+		top: 7px;
+
+		border-color: transparent transparent $black transparent;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+
+		height: 32px;
+		padding: 8px 12px;
+
+		cursor: pointer;
+		letter-spacing: 1px;
+
+		font-size: responsive-size(10, 16);
+
+		font-weight: 550;
+
+		font-style: normal;
+		line-height: 14px; /* 140% */
+		gap: 10px;
+	}
+
+	&__items {
+		position: absolute;
+		z-index: 99;
+		top: responsive-size(37, 69);
+		right: 0;
+		left: 0;
+
+		overflow-y: auto;
+
+		max-height: 300px;
+
+		background-color: $white;
+	}
+
+	&_hide {
+		display: none;
+	}
+
+	&__items &__item:hover, .same-as-selected {
+		background-color: rgba(0, 0, 0, 0.1);
+	}
+
+	&_float-label {
+		top: 15px !important; /* stylelint-disable selector-max-id, declaration-no-important */
+		left: 0;
+
+		opacity: 1;
+
+		font-size: 10px;
+
+		@include media(xxl, "min") {
+			font-size: 14px;
+		}
+	}
+
+	&_subscription {
+		height: responsive-size(49);
+	}
+
+	@media screen and (max-width: 1024px) {
+		height: 38px;
+	}
+}

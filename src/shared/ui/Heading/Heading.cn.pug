@@ -1,0 +1,26 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('heading');
+
+		return {
+			heading: BLOCK(
+				{
+					[`${cn?.size}`]: ['h1', 'h2','h3', 'h4'].includes(cn?.size),
+					'text-indent': !!cn?.TEXT_INDENT || !!cn?.textIndent
+				},
+				[
+					cn?.textAlign,
+					cn?.margin,
+					cn?.position,
+					cn?.width,
+					cn?.colorClass,
+					cn?.display,
+				]
+			),
+			headingFootnote: BLOCK('footnote', {
+				'top-0': !!cn?.top0Footnote,
+				'top-26': !!cn?.top26Footnote,
+			}, [cn?.positionFootnote, 'mb-12@xs', cn?.marginFootnote]),
+			headingTextSpan: BLOCK('text-span')
+		}
+	}

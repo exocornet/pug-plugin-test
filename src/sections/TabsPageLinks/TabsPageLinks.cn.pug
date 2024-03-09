@@ -1,0 +1,11 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('tabs-page-links')
+
+		return {
+			tabsPageLinks: BLOCK({}, [cn?.margin]),
+			tabsPageLinksWrapper: BLOCK('wrapper', ['d-flex', 'flex-direction-column']),
+			tabsPageLinksButtons: BLOCK('tabs-buttons'),
+			tabsPageLinksContent: BLOCK('tabs-content'),
+		}
+	}

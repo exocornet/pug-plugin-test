@@ -1,0 +1,13 @@
+mixin NavTabsContent(props)
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include NavTabs.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.navTabsPagesLink data-nav-tabs-links=DATA('dataNavTabsLinks', false))
+		+Text(class=styles.navTabsBack)
+			img(src=require('IMAGES/menu/arrow_left.svg') alt="" class="w-fit")
+			| !{DATA('parent')}
+		for link in DATA_ARR('LinkArr')
+			+Link(link)

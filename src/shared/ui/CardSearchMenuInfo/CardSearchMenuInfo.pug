@@ -1,0 +1,16 @@
+mixin CardSearchMenuInfo(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include CardSearchMenuInfo.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.cardSearchMenuInfo)
+		if OPT('background')
+			img(src=DATA('background') alt="" class=styles.cardSearchMenuInfoBackground)
+		+Text(ELEM('Text'))
+		if(OPT('button'))
+			div
+				+Button(ELEM('Button'))

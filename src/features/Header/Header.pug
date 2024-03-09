@@ -1,0 +1,147 @@
+mixin Header(props)
+	//- # ПОДКЛЮЧЕНИЕ СТАТИЧНОГО STORE ДЛЯ HEADER # -//
+	include Header.store.pug
+	//- # ФУНКЦИОНАЛ ДЛЯ ПЕРЕОПРЕДЕЛЕНИЯ СТАТИЧНОГО STORE СО STORE СТРАНИЦЫ # -//
+	- props = deepMerge(Header, props);
+
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Header.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	header(class=styles.header)
+		+Container
+			+Row({cn: {rowCols: 'row-cols-auto', justify: 'justify-content-between', alignItems: 'align-items-center'}})
+				//- логотип
+				+Logo
+				+BreadCrumbs(ELEM('BreadCrumbs'))
+
+				//- навигация
+				nav(class=styles.headerNavigation)
+					div(class=styles.headerNavLinks)
+						for item in DATA_ARR('linkNavArr')
+							//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+							include ../../shared/helpers/pug/shortcut-check-store
+							+Link(item)
+
+				//- Языки
+				div(class="position-relative ml-auto@md mr-12")
+					+Button(ELEM('ButtonLang'))(type="button" class=styles.headerLangButton data-lang="RU")
+					div(class=styles.headerLangsMenu)
+						span(class=styles.headerLangsMenuLang data-lang="ENG") ENG
+						span(class=styles.headerLangsMenuLang data-lang="CHN") CHN
+
+				//- Личный кабинет
+				div(class=styles.headerPersonalAccount)
+					+Button(ELEM('PersonButton'))(class=styles.headerPersonalAccountButton)
+
+				//- Burger button
+				div(class=styles.headerBurgerButton)
+					div(class=styles.headerBurgerButtonLineTop)
+					div(class=styles.headerBurgerButtonLineBottom)
+
+		//- Menu
+		div(class=styles.headerMenu)
+			+Container(class="h-100")
+				div(class="d-flex flex-direction-column h-100 pb-24")
+					div(class=styles.headerMenuLinks)
+						for item in DATA_ARR('headerMenuLinks')
+							+Link(item)
+
+					//- Строка поиска
+					+Row
+						+Col
+							label(class=styles.headerSearchLabel)
+								+Input(ELEM('Input'), {icon: true})(class=styles.headerSearchInput)
+								button(class=styles.headerSearchButtonClear)
+									img(src=require('IMAGES/other/close.svg') alt="")
+
+					//- Навигация
+					+Row({cn: {padding: 'pb-32', margin: 'mt-64 mt-32@xs'}})(data-when-search="hide" class="js-menu-search-main")
+						+Col({cn: {cols: 'col-6 col-6@md col-4@xs'}})
+							+Row({cn: {height: 'h-100'}})
+
+								//- NavTabs
+								+Col({cn: {cols: 'col-auto'}})
+									+NavTabs
+										+Row(class="overflow-hidden flex-nowrap")
+											+Col({cn: {cols: 'col-6 col-3@md col-4@xs'}})(class="js-nav-tabs-to-left")
+												+NavTabsButtons(ELEM('NavTabsButtons'))
+											+Col({cn: {cols: 'col-6 col-3@md col-4@xs'}})
+												+NavTabsBody
+													for item in ELEM_ARR('NavTabsContentArr')
+														include ../../shared/helpers/pug/shortcut-check-store
+														+NavTabsContent(item)
+
+								//- Контактные данные
+								+Col({cn: {cols: 'col-auto', margin: 'mt-auto mt-32@md'}})(class="js-header-contacts")
+									for item in DATA_ARR('contactsArr')
+										include ../../shared/helpers/pug/shortcut-check-store
+										div(class="d-flex justify-content-between mb-8")
+											+Text(item) !{I_DATA('key')}
+											if I_OPT('img')
+												+Text(item)(class="d-flex g-8 justify-content-end@xs")
+													img(src=I_DATA('img') alt="" width="18" height="10" class=styles.headerContactsImg)
+													| !{I_DATA('value')}
+											else
+												+Text(item)(class="text-align-left text-align-right@xs") !{I_DATA('value')}
+
+						//- Каталог
+						+Col({cn: {cols: 'col-6 col-6@md', margin: 'mt-64@md'}})(class="js-header-catalog")
+							+Row(class="flex-nowrap overflow-auto@xs pb-16@xs")
+								+Col({cn: {cols: 'col-6 col-3@md col-3@xs'}})(class="d-flex flex-grow-1 g-12 flex-direction-column pt-12")
+									+Text(ELEM('HeadingCatalog'))
+									div(class=styles.headerCatalogCard)
+										+Tabs
+											+TabsButtons(ELEM('TabsButtons'))(class="d-none@md")
+											+TabsBody
+												for item in ELEM_ARR('TabsContentArr')
+													include ../../shared/helpers/pug/shortcut-check-store
+													+TabsContent(item)(class=styles.headerTabsContent)
+														img(src=I_DATA('backgroundImage') alt="")
+														div(class=styles.noBlockWrapper)
+															for item in I_DATA_ARR('linksArr')
+																include ../../shared/helpers/pug/shortcut-check-store
+																+Link(item)(class=styles.headerTabsContentCatalogLink)
+														+Button({data: {text: 'Вся продукция'}})(class=styles.headerContentButton)
+
+								//- Свежие новости
+								+Col({cn: {cols: 'col-6 col-3@md col-4@xs'}})(class="d-flex flex-grow-1 g-12 flex-direction-column pt-12")
+									+Text(ELEM('HeadingNews'))
+									+NewsCard(ELEM('NewsCard'))(class="d-flex@md flex-direction-column h-100@md")
+
+					//- Частые запросы
+					+Row({cn: {margin: 'mb-8 mt-40'}})(data-when-search="show" class="js-menu-search-main")
+						+Col({cn: {cols: 'col-4 col-4@xs'}})(data-url-search-history)
+							+Text(ELEM('HeaderSearched'))
+
+						+Col({cn: {cols: 'col-4 col-4@xs', margin: 'mt-32@xs'}})(data-url-search-popular)
+							+Text(ELEM('HeaderQueries'))
+
+					//- Рекламная продукция
+					+Row(data-when-search="show" class="mt-auto flex-nowrap overflow-auto@md pb-16@md js-menu-search-main")
+						+Col({cn: {cols: 'col-2 col-2@md col-3@xs'}})
+							+CardSearchMenuInfo(ELEM('Card_1'))
+						+Col({cn: {cols: 'col-2 col-2@md col-3@xs'}})
+							+CardSearchMenuInfo(ELEM('Card_2'))
+						+Col({cn: {cols: 'col-4  col-3@md col-4@xs'}})
+							+CardSearchMenuInfo(ELEM('Card_3'))
+						+Col({cn: {cols: 'col-4  col-3@md col-4@xs'}})
+							+CardSearchMenuInfo(ELEM('Card_4'))
+
+					//- Результаты поиска
+					+Row(class=styles.headerSearchResult)
+						+Col({cn: {cols: 'col-2 col-6@md col-4@xs', margin: 'mb-32@md'}})(class="js-button-wrapper")
+							//- вставляются кнопки с категориями поисковой выдачи (data-template="search-button-result")
+						+Col({cn: {cols: 'col-10 col-6@md col-4@xs'}})(class="js-search")
+							//- вставляются результаты по категориями
+
+		//- Шаблоны для хедера
+		template(data-template="search-button-history-popular")
+			+Button({data: {text: 'карьера'}, cn: {color: 'transparent'}})(class=styles.headerSearchLink)
+
+		template(data-template="search-button-result")
+			+Button({data: {text: 'все результаты [124]'}})

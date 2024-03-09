@@ -1,0 +1,27 @@
+mixin Requisites(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Requisites.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.requisites)
+		+Container
+			div(class=styles.requisitesWrapper)
+				+Row
+					+Text(ELEM('Footnote'))(class=styles.requisitesFootnote)
+					+Text(ELEM('Header'))(class=styles.requisitesHeader)
+				+Row
+					div(class=styles.requisitesFooterWrapper)
+						div(class=styles.requisitesFooterBordered)&attributes(attributes)
+							for item in ELEM_ARR('RequisitesArr')
+								p(class=styles.requisitesLine)
+									include ../../shared/helpers/pug/shortcut-check-store
+									+Text(I_ELEM('Key'))(class="gray")
+									+Text(I_ELEM('Value'))
+									+Button({opt:{"icon-copy": true}})(class=styles.requisitesCopyButton)
+				+Row
+					+Col(class="d-flex justify-content-end position-relative")
+						+Button(ELEM('Button'), false)(class=styles.requisitesButton)

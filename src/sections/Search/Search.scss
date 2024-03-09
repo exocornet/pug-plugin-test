@@ -1,0 +1,60 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.search {
+	&__button-clear {
+		position: absolute;
+		top: 50%;
+		right: 0;
+
+		padding: 7px 14px;
+
+		transform: translateY(-50%);
+
+		line-height: 0;
+	}
+
+	&__button-request-history {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+
+		max-height: max-content;
+		padding: 7px 0;
+
+		transition: padding-left 0.4s, color 0.4s;
+		letter-spacing: -0.04em;
+		text-transform: lowercase;
+
+		color: $black-40;
+
+		font-family: $font-radio;
+
+		font-weight: 400;
+		line-height: 0.9;
+
+		@include font-size-responsive(2.2, 3.2);
+	}
+
+	&__result {
+		margin-top: 40px;
+		row-gap: responsive-size(32, 40);
+	}
+
+	&__wrap-button-result {
+		display: flex;
+		flex-direction: column;
+		row-gap: 8px;
+
+		& > * {
+			white-space: nowrap;
+		}
+
+		@include media(xs) {
+			overflow: scroll;
+			flex-direction: row;
+
+			@include no-scrollbar
+		}
+	}
+}

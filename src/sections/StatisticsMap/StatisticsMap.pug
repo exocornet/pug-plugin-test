@@ -1,0 +1,31 @@
+mixin StatisticsMap(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include StatisticsMap.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.statisticsMap)
+		+Container
+			div(class=styles.statisticsMapContainer)
+				include include-svg/world-map
+				+Text({data: {text: 'ФАКТЫ'}, cn: {style: 'cap'}})(class=styles.statisticsMapText)
+				div(class=styles.statisticsMapKemerovoText) Кемерово
+				div(class="d-flex justify-content-between flex-wrap")
+					div(class=styles.statisticsMapWrapNumber)
+						p(class=styles.statisticsMapBigNumber) 40
+						+Text({data: {text: 'стран-импортёров<br> продукции'}})
+					+Button({
+						data: {text: 'о компании', href: '#!'},
+						cn: {margin: 'ml-auto mt-85@xs', order: 'order-1@xs', width: 'w-100@xs', size: 'large'}, opt: {icon: true}
+					})
+					div(class=styles.statisticsMapNumbersBottom)
+						for item in DATA_ARR('bigNumberArr')
+							//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+							include ../../shared/helpers/pug/shortcut-check-store
+							- const stylesItem = classes(item && item.cn);
+							div(class=stylesItem.statisticsMapWrapNumber)
+								p(class=stylesItem.statisticsMapBigNumber) !{I_DATA('textBigNumber')}
+								+Text(I_ELEM('Text'))

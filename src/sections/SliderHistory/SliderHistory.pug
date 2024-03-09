@@ -1,0 +1,36 @@
+mixin SliderHistory(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderHistory.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderHistory)
+		+Container(class=styles.sliderHistoryContainer)
+			if ELEM('Heading')
+				+Heading(ELEM('Heading'))
+
+				+Slider(ELEM('Slider'))&attributes({ SliderPagination: {class: styles.sliderHistorySliderPagination}, SliderSwiper: {class: styles.sliderHistorySliderSwiper}, SliderNavigation: {class: styles.sliderHistorySliderNavigation} })
+					each item in ELEM_ARR('SliderSlideArr')
+						//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+						include ../../shared/helpers/pug/shortcut-check-store
+
+						//- # ВЕРСТКА # -//
+						+SliderSlide(class=styles.sliderHistorySliderSlide)
+							div(class=styles.sliderHistoryWrapBigPicture)
+								div(class=styles.sliderHistoryCloseButtonWrapper)
+									include include-svg/close-button
+								picture
+									img(class=styles.sliderHistoryImageBig src=I_DATA('image') alt="")
+							div(class=styles.sliderHistoryBgWrap)
+								div(class=styles.sliderHistoryImageBg)
+									+Text(I_ELEM('Date'))(class=styles.sliderHistoryDate)
+									div(class=styles.sliderHistoryPictureWrap)
+										picture(class=styles.sliderHistoryImage)
+											source(srcset=I_DATA('imageXs'))
+											img(src=I_DATA('imageXs') alt="")
+									+Row({cn: {margin: 'mt-auto', gap: 'rg-20@xs'}})
+										+Col({cn: {cols: 'col-6 col-4@xs', offset: 'offset-6 offset-0@xs', margin: 'mb-20 mt-20@xs'}})
+											+Text(I_ELEM('Text'))(class=styles.sliderHistoryText)

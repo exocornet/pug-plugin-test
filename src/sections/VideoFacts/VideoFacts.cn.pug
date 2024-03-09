@@ -1,0 +1,10 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('video-facts')
+		const flexDirection = cn?.isReverse ? "flex-direction-column-reverse" : "flex-direction-column"
+
+		return {
+			videoFacts: BLOCK({}, [cn?.margin, 'position-relative']),
+			videoFactsWrapper: BLOCK('wrapper', ["d-flex", flexDirection]),
+		}
+	}

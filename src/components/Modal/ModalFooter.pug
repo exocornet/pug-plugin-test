@@ -1,0 +1,14 @@
+mixin ModalFooter(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Modal.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.modalFooter)&attributes(attributes)
+		block
+
+		if (OPT('close-button'))
+			+Button(ELEM('ButtonCloseModal'))(class=styles.modalFooterButtonClose)

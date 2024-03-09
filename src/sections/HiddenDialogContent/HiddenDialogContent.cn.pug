@@ -1,0 +1,12 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('hidden-dialog-content');
+
+		return {
+			hiddenDialogContent: BLOCK({}, [cn?.margin]),
+			hiddenDialogContentBody: BLOCK('body'),
+			hiddenDialogContentBodyDateFootnote: BLOCK('body-date-footnote'),
+			hiddenDialogContentBodyDate: BLOCK('body-date'),
+			hiddenDialogContentFooter: BLOCK('footer')
+		}
+	}

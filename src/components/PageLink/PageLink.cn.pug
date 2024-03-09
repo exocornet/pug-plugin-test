@@ -1,0 +1,18 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('page-link')
+
+		return {
+			pageLink: BLOCK({}),
+			pageLinkItem: BLOCK('item', ['align-items-center@xs']),
+			pageLinkWrapper: BLOCK('wrapper'), // ['d-flex@xs', 'flex-direction-column-reverse@xs'] ломает на странице О Кемерово
+			pageLinkText: BLOCK('text', ['order-2 order-1@xs']),
+			pageLinkExtension: BLOCK('extension', ['order-1 order-2@xs', 'mr-8 mt-8', 'text text_cap']),
+			pageLinkDateRight: BLOCK('date-right', ['position-relative@xs', 'mt-8 mt-0@xs']),
+			pageLinkSalary: BLOCK('salary'),
+			pageLinkExperience: BLOCK('experience'),
+			pageLinkDate: BLOCK('date', ['mt-8']),
+			pageLinkArrow: BLOCK('arrow'),
+			pageLinkDownloadIcon: BLOCK('download-icon')
+		}
+	}

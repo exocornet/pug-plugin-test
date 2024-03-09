@@ -1,0 +1,72 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'История успеха. Детальная страница';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Карьера' } },
+						{ data: { text: 'История успеха' } },
+						{ data: { text: 'Бригада Саламатова' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции HeadingDetailed # -//
+include success-story-detailed--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Подключение store секции ImageFacts # -//
+include success-story-detailed--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- # Подключение store секции TitleTextWrap # -//
+include success-story-detailed--title-text-wrap
+- pageStore.addSection(TitleTextWrap);
+
+//- # Подключение store секции Career # -//
+include success-story-detailed--career-article
+- pageStore.addSection(CareerArticle);
+
+//- # Подключение store секции TitleTextWrapWork # -//
+include success-story-detailed--title-text-wrap-work
+- pageStore.addSection(TitleTextWrapWork);
+
+//- # Подключение store секции FactsWrap # -//
+include success-story-detailed--facts-wrap
+- pageStore.addSection(FactsWrap);
+
+//- # Подключение store секции CardQuoteWrap # -//
+include success-story-detailed--card-quote-wrap
+- pageStore.addSection(CardQuoteWrap);
+
+//- # Подключение store секции TitleTextWrapQuote # -//
+include success-story-detailed--title-text-wrap-quote
+- pageStore.addSection(TitleTextWrapQuote);
+
+//- # Подключение store секции SliderStories # -//
+include success-story-detailed--slider-stories
+- pageStore.addSection(SliderStories);
+
+//- # Подключение store секции Career # -//
+include success-story-detailed--career
+- pageStore.addSection(Career);
+
+//- # Подключение store секции Career # -//
+include success-story-detailed--page-links
+- pageStore.addSection(PageLinks);
+
+//- ## Подключение store секции ListContactLinks ## -//
+include success-story-detailed--list-contact-links
+- pageStore.addSection(ListContactLinks);

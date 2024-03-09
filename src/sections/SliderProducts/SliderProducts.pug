@@ -1,0 +1,41 @@
+mixin SliderProducts(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderProducts.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderProducts)
+		+Container
+			div(class=styles.sliderProductsBgWrap)
+				+Slider(ELEM('Slider'))&attributes({ SliderPagination: {class: styles.sliderProductsSliderPagination}, SliderSwiper: {class: styles.sliderProductsSliderSwiper}, SliderNavigation: {class: styles.sliderProductsSliderNavigation} })
+					for item in ELEM_ARR('SliderSlideArr')
+						//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+						include ../../shared/helpers/pug/shortcut-check-store
+						//- # ЛОГИКА # -//
+						- const HEADING_PROPS = { data: { tag: 'h2', ...I_ELEM('Heading').data }, cn: { size: 'h1' } };
+
+						//- # ВЕРСТКА # -//
+						+SliderSlide(class=styles.sliderProductsSliderSlide)
+							+Row({ cn: { gap: 'rg-20@xs' } })
+								+Col({cn: {cols: 'col-7 col-4@xs'}})
+									+Heading(HEADING_PROPS)
+								+Col({ cn: { cols: 'col-5 col-4@xs', display: 'd-flex', justify: 'justify-content-end justify-content-start@xs' } })
+									if(ELEM('CornerText', false))
+										+Text(ELEM('CornerText'))
+									if(ELEM('CornerButton', false))
+										+Button(ELEM('CornerButton'))
+							+Row
+								picture(class="d-flex@xs")
+									source(srcset=I_DATA('imageXs') media=`(max-width: ${media.xs})`)
+									img(class=styles.sliderProductsImage src=I_DATA('image') alt="")
+							+Row({cn: {margin: 'mt-auto', gap: 'rg-20@xs'}})
+								+Col({cn: {cols: 'col-4 col-4@xs'}})
+									+Text(I_ELEM('Text'))(class=styles.sliderProductsSliderSlideText)
+								+Col({cn: {cols: 'col-8 col-4@xs', display: 'd-flex', justify: 'justify-content-end', alignItems: 'align-items-end'}})
+									+Button(ELEM('Button'))
+
+			if(OPT('isLinkButton', false))
+				+Button({data: {text: 'ВСЯ ПРОДУКЦИЯ', href: '#!'}, cn: {size: 'large', display: 'd-none d-inline-block@xs'}, opt: {icon: true}})(class="slider-products__link")

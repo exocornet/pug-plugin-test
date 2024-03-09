@@ -1,0 +1,23 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('arrowed-section')
+
+		return {
+			arrowedSection: BLOCK({}, [
+				cn?.margin,
+			]),
+			arrowedSectionText: BLOCK('text', {
+				[`${cn?.textSize}`]: ['big', 'medium'].includes(cn?.textSize),
+				[`${cn?.textLine}`]: ['line', 'arrow'].includes(cn?.textLine),
+			}, [cn?.textColor]),
+			arrowedSectionRow: BLOCK('row'),
+			arrowedSectionFactsWrapper: BLOCK('facts-wrapper'),
+			arrowedSectionDescription: BLOCK('description', [
+				cn?.descriptionMargin,
+			]),
+			arrowedSectionFact: BLOCK('fact'),
+			arrowedSectionFirstLine: BLOCK('first-line', {
+				[`${cn?.firstLineMargin}`]: ['description-medium'].includes(cn?.firstLineMargin),
+			}),
+		}
+	}

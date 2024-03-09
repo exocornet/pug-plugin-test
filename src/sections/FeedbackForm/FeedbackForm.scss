@@ -1,0 +1,35 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.feedback {
+	$g: &;
+
+	&__container {
+		margin-right: responsive-size(0,12);
+		margin-left: responsive-size(0,12);
+		padding: responsive-size(20, 28);
+
+		border-radius: responsive-size(8, 16);
+		background: $light-green;
+	}
+
+	&__footnote {
+		display: flex;
+
+		margin-bottom: responsive-size(37, 96);
+
+		letter-spacing: 1px;
+
+		text-transform: uppercase;
+
+		font-family: $font-helvetica;
+		font-size: 10px;
+		font-weight: 550;
+		font-style: normal;
+		line-height: 14px;
+
+		@include media(xxl, "min") {
+			@include font-size-responsive(1,1.2);
+		}
+	}
+}

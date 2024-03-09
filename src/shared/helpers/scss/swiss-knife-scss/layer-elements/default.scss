@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+	box-sizing: $box-sizing;
+}
+
+::selection {
+	background: $selection-color;
+}
+
+html {
+	font-size: $html-font-size;
+	scroll-behavior: smooth;
+}
+
+body {
+	letter-spacing: $body-font-letter-spacing;
+
+	color: $body-font-color;
+
+	font-family: $body-font-family;
+	font-size: $body-font-size;
+	font-weight: $body-font-weight;
+	font-style: $body-font-style;
+	line-height: $body-font-line-height;
+	-webkit-text-size-adjust: none;
+}
+
+a {
+	transition: $link-transition-color;
+
+	text-decoration: none;
+
+	color: $link-color;
+
+	&:hover {
+		color: $link-hover-color;
+	}
+}
+
+img {
+	width: 100%;
+}
+
+hr {
+	height: 1px;
+
+	background-color: $hr-color;
+}

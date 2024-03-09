@@ -1,0 +1,25 @@
+mixin Facts(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const TEXT_FOOTNOTE_FOOTNOTE_PROPS = {
+			cn: {
+				style: 'cap',
+				textTransform: 'upper',
+			}
+		};
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Facts.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	+Row(ELEM('Row'))
+		if ELEM('TextFootnote', false)
+			+Col({ cn: { cols: 'col-2 col-4@xs' } })
+				+Text(deepMerge(TEXT_FOOTNOTE_FOOTNOTE_PROPS, ELEM('TextFootnote')))
+					| !{DATA('footnote')}
+		for item in ELEM_ARR('TitleTextArr')
+			+TitleText(item)

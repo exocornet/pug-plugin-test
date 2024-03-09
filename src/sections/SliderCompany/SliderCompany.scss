@@ -1,0 +1,130 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.slider-company {
+	&__slider-swiper {
+		margin-right: responsive-size(-20, -40);
+		padding-bottom: 56px;
+
+		@include media(xxl, min) {
+			padding-bottom: responsive-size(56);
+		}
+
+		// stylelint-disable-next-line order/order
+		&::before {
+			position: absolute;
+			right: responsive-size(20, 40);
+			bottom: 56px;
+			left: 0;
+
+			height: 1px;
+
+			content: "";
+
+			background: $light-gray;
+
+			@include media(xxl, min) {
+				bottom: responsive-size(56);
+			}
+		}
+
+		&::after {
+			position: absolute;
+			z-index: 1;
+			right: 0;
+			bottom: 56px;
+
+			width: responsive-size(20, 40);;
+			height: responsive-size(16, 24);
+
+			content: "";
+
+			background: $main;
+
+			@include media(xxl, min) {
+				bottom: responsive-size(56);
+			}
+		}
+	}
+
+	&__slider-slide {
+		width: responsive-size(140, 345);
+		height: auto;
+		padding-bottom: responsive-size(32, 74);
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+
+			width: 1px;
+			height: responsive-size(16, 24);
+
+			content: "";
+			transform: translateX(-50%);
+
+			background: $light-gray;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		text-decoration: none;
+
+		color: $black-gray;
+
+		&:hover {
+			color: $dark-green;
+		}
+	}
+
+	&__image {
+		width: 100%;
+
+		height: responsive-size(44, 74);
+		max-height: 100%;
+		margin-bottom: responsive-size(12, 48);
+
+		transition: all 0.4s;
+	}
+
+	&__text {
+		transition: all 0.4s;
+
+		text-align: center;
+
+		color: inherit;
+	}
+
+	&__slider-navigation {
+		bottom: 0;
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__link {
+		z-index: 1;
+		right: responsive-size(20, 40);
+
+		margin-top: responsive-size(-36, -31);
+
+		@include media(xs) {
+			position: static;
+
+			width: 100%;
+
+			.button {
+				display: block;
+
+				width: 100%;
+				max-height: 64px;
+				padding: 28px 48px;
+			}
+		}
+	}
+}

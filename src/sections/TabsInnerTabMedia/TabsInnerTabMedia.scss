@@ -1,0 +1,88 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.tabs-inner-tab-media {
+	&__download {
+		position: absolute;
+		right: responsive-size(20, 40);
+
+		margin-top: responsive-size(-48, -80);
+
+		@include media(xs) {
+			margin-top: -72px;
+		}
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__tabs-buttons {
+		overflow: auto;
+
+		margin-bottom: responsive-size(20, 24);
+		padding-bottom: responsive-size(20, 24);
+
+		border-bottom: 1px solid $black-gray;
+
+		@include no-scrollbar;
+
+		@include media(xs) {
+			width: 85%;
+		}
+	}
+
+	&__inner-tabs-buttons {
+		overflow: auto;
+
+		margin-bottom: responsive-size(16, 40);
+
+		@include no-scrollbar;
+	}
+
+	&__tabs-content {
+		display: flex;
+
+		&_image {
+			flex-wrap: wrap;
+			gap: responsive-size(2, 15);
+		}
+
+		&_video {
+			flex-wrap: wrap;
+			gap: responsive-size(2, 15);
+
+			@include media(xs) {
+				row-gap: 32px;
+			}
+		}
+	}
+
+	&__image {
+		display: block;
+		object-fit: cover;
+
+		width: responsive-size(170, 364, md);
+		height: responsive-size(170, 364, md);
+
+		border-radius: 8px;
+
+		@include media(xs){
+			width: responsive-size(105, 485);
+			height: responsive-size(105, 485);
+		}
+	}
+
+	&__story-card {
+		width: 32%;
+
+		@include media(md) {
+			width: 49%;
+		}
+
+		@include media(xs) {
+			width: responsive-size(320, 370);
+		}
+	}
+}

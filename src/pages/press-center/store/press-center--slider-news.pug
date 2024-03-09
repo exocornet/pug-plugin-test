@@ -1,0 +1,167 @@
+-
+	const SliderNews = {
+		includeSection: 'SliderNews',
+		cn: {},
+		data: {
+			id: 'media',
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-8 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Высококачественные фото и видео материалы в нашем медиа",
+				},
+				cn: {
+					size: "h3",
+					margin: 'mt-20 mb-40 mb-20@md',
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto'
+				},
+				opt: {
+					isSliderNavigation: true,
+				},
+			},
+			ColNewsSlider: {
+				cn: {
+					cols: 'col-12 col-4@xs',
+					margin: 'pb-40 pb-0@xs',
+					slider: 'h-auto'
+				}
+			},
+			SliderNewsArr: [
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-1.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-1xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'перейти'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: 'Видео и фотоматериалы'
+									},
+									cn: {
+										style: 'cap',
+										textTransform: 'upper',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Промышленные строения'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'перейти'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: 'Видео и фотоматериалы'
+									},
+									cn: {
+										style: 'cap',
+										textTransform: 'upper',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-3.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-3xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'смотреть'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: 'Видео и фотоматериалы'
+									},
+									cn: {
+										style: 'cap',
+										textTransform: 'upper',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Бренд-бук'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					}
+				}
+			],
+			PageLink: {
+				data: {
+					href: '#!',
+					text: 'все материалы'
+				},
+				opt: {
+					icon: true
+				}
+			}
+		}
+	}

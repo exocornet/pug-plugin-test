@@ -1,0 +1,91 @@
+-
+	const SliderAbout = {
+		includeSection: 'SliderAbout',
+		cn: {
+			margin: 'mt-24 mt-40@xs'
+		},
+		elem: {
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Предприятие является не только ключевым звеном целой агросистемы, но так же поставщиком химических веществ для промышленности всего мира",
+					footnoteText: "о компании"
+				},
+				cn: {
+					size: "h3",
+					margin: "mb-40 mb-20@xs"
+				}
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto',
+					dataSlidesResizeable: 'true',
+					id: 'slider-about',
+					dataSliderSpeed: 800,
+				},
+				opt: {
+					isSliderNavigation: true,
+				},
+				settings: {
+
+				}
+			},
+			SliderSlideArr: [
+				{
+					type: 'bar',
+					title: 'объём производства за 2022',
+					subtitle: 'тыс. тонн в год<br/>% увеличения к 2021 году',
+					showPercentageDifference: true,
+					data: [
+						{
+							id: '1',
+							value: 612,
+							percent: '+2,6',
+							title: 'карбамид'
+						},
+						{
+							id: '2',
+							value: 1221,
+							percent: '+2,4',
+							title: 'аммиак'
+						},
+						{
+							id: '3',
+							value: 1356,
+							percent: '+7,2',
+							title: 'аммиачная селитра'
+						},
+						{
+							id: '4',
+							value: 1753,
+							percent: '+9,1',
+							title: 'капролактам'
+						},
+					]
+				}, {
+					type: 'pie',
+					title: 'доля на внутреннем рынке',
+					img: require('IMAGES/sections/slider-about/slider-about-pie.svg'),
+					legend: [
+						{
+							id: '1',
+							title: '«Азот»',
+						}, {
+							id: '2',
+							title: 'другие компании',
+						}
+					],
+				}
+			],
+			PageLink: {
+				data: {
+					href: '#!',
+					text: 'цели и стратегия'
+				},
+				opt: {
+					icon: true
+				}
+			}
+		}
+	}

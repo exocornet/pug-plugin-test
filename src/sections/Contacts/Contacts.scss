@@ -1,0 +1,27 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+
+.contacts {
+	&__wrapper {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			padding-top: 1px;
+		}
+	}
+
+	&__row-top {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 19px;
+		}
+	}
+
+	&__row-bottom {
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 20px;
+		}
+	}
+}
+

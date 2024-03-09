@@ -1,0 +1,14 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('nvi-item')
+
+		return {
+			testItem: BLOCK({}, [cn?.margin, cn?.cols]),
+			testItemNumber: BLOCK('number'),
+			testItemCode: BLOCK('code'),
+			testItemName: BLOCK('name'),
+			testItemCount: BLOCK('count'),
+			testItemPrice: BLOCK('price'),
+			testItemButton: BLOCK('button'),
+		}
+	}

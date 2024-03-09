@@ -1,0 +1,16 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('calculator')
+
+		return {
+			calculator: BLOCK({}, [cn?.margin]),
+			calculatorContainer: BLOCK('container'),
+			calculatorFormsWrapper: BLOCK('forms-wrapper'),
+			calculatorFormContainer: BLOCK('form-container'),
+			calculatorFootnoteContainer: BLOCK('footnote-container'),
+			calculatorFootnoteSteps: BLOCK('footnote-steps'),
+			calculatorFootnote: BLOCK('footnote'),
+			calculatorFootnoteGrowOneHalf: BLOCK('footnote-grow-one-half'),
+			calculatorFootnoteStep: BLOCK('footnote-step'),
+		}
+	}

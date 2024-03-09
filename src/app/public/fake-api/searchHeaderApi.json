@@ -1,0 +1,141 @@
+{
+	"status": 200,
+	"groups": [
+		{
+			"code":"news",
+			"id": 5,
+			"name": "новости",
+			"elements": [
+				{
+					"id": 5,
+					"title": "Повышение энерге<b>т</b>ической эффек<b>т</b>ивнос<b>т</b>и являе<b>т</b>ся одним из ключевых приори<b>т</b>е<b>т</b>ов глобальной и долгосрочной энерге<b>т</b>ической поли<b>т</b>ики КАО «Азо<b>т</b>»",
+					"body": "Повышение энерге<b>т</b>ической эффек<b>т</b>ивнос<b>т</b>и являе<b>т</b>ся одним из ключевых приори<b>т</b>е<b>т</b>ов глобальной и долгосрочной энерге<b>т</b>ической поли<b>т</b>ики КАО «Азо<b>т</b>»",
+					"iblockId": 4,
+					"tags": null,
+					"date": "12.12.2020"
+				},
+				{
+					"id": 33,
+					"title": "Пусковые операции в цехе гидроксиламинсульфа<b>т</b>а",
+					"body": "Кемеровский «Азо<b>т</b>» информируе<b>т</b> о пусковых операциях в цехе гидроксиламинсульфа<b>т</b>а",
+					"detailPageUrl": "/news/puskovye-operatsii-v-tsekhe-gidroksilaminsulfata/",
+					"iblockId": 4,
+					"tags": null,
+					"date": "12.12.2020"
+				},
+				{
+					"id": 34,
+					"title": "Конкурс &quot;Лучший газоспаса<b>т</b>ель&quot;",
+					"body": "На «Азо<b>т</b>е» впервые прошёл региональный э<b>т</b>ап Всероссийского конкурса «Лучший газоспаса<b>т</b>ель»",
+					"detailPageUrl": "/news/konkurs-luchshiy-gazospasatel/",
+					"iblockId": 4,
+					"tags": null,
+					"date": "12.12.2020"
+				}
+			]
+		},
+		{
+			"sectionCode": "articles",
+			"id": 5,
+			"name": "статьи",
+			"elements": [
+				{
+					"id": 23,
+					"title": "Влияние минеральных удобрений на биохимический сос<b>т</b>ав и качес<b>т</b>во плодов",
+					"body": null,
+					"detailPageUrl": "/articles/vliyanie-mineralnykh-udobreniy-na-biokhimicheskiy-sostav-i-kachestvo-plodov/",
+					"iblockId": 10,
+					"tags": null,
+					"date": "12.12.2020"
+				}
+			]
+		},
+		{
+			"sectionCode": "catalog",
+			"id": 5,
+			"name": "продукция",
+			"elements": [
+				{
+					"id": 12,
+					"title": "азо<b>т</b>ная кисло<b>т</b>а",
+					"body": "Гаран<b>т</b>ируем высокую чис<b>т</b>о<b>т</b>у и с<b>т</b>абильнос<b>т</b>ь концен<b>т</b>рации аммиачной сели<b>т</b>ры в каждой пар<b>т</b>ии продукции. Мы используем первоклассные сырьевые ... ",
+					"detailPageUrl": "/catalog/azotnaya-kislota/",
+					"iblockId": 7,
+					"tags": null,
+					"formula": "NH₄NO₃",
+					"type": "кас-32, кас-30, кас-28, кас-23s",
+					"price": "19 567 ₽",
+					"image": "https://lh3.bunny.novaskin.me/vDTL_NUWoskmp4rVFSxMR1xIab2hNmeF0VTYqhsbTGq6A2hJu8hJePGCWhcQ7vZz1ti30zwIzT09aJu_YGgab8cLQg_gw4gzy0c=s500"
+				},
+				{
+					"id": 13,
+					"title": "аммиачная сели<b>т</b>ра",
+					"body": "Гаран<b>т</b>ируем высокую чис<b>т</b>о<b>т</b>у и с<b>т</b>абильнос<b>т</b>ь концен<b>т</b>рации аммиачной сели<b>т</b>ры в каждой пар<b>т</b>ии продукции. Мы используем первоклассные сырьевые ма<b>т</b>ериалы ... ",
+					"detailPageUrl": "/catalog/ammiachnaya-selitra/",
+					"iblockId": 7,
+					"tags": null,
+					"formula":  "NH₄NO₃",
+					"type":  "кас-32, кас-30, кас-28, кас-23s",
+					"price":  "19 567 ₽",
+					"image": "https://lh3.bunny.novaskin.me/vDTL_NUWoskmp4rVFSxMR1xIab2hNmeF0VTYqhsbTGq6A2hJu8hJePGCWhcQ7vZz1ti30zwIzT09aJu_YGgab8cLQg_gw4gzy0c=s500"
+				},
+				{
+					"id": 17,
+					"title": "азо<b>т</b>ная кисло<b>т</b>а 2",
+					"body": "Гаран<b>т</b>ируем высокую чис<b>т</b>о<b>т</b>у и с<b>т</b>абильнос<b>т</b>ь концен<b>т</b>рации аммиачной сели<b>т</b>ры в каждой пар<b>т</b>ии продукции. Мы используем первоклассные сырьевые ... ",
+					"detailPageUrl": "/catalog/azotnaya-kislota-2/",
+					"iblockId": 7,
+					"tags": null,
+					"formula":  "NH₄NO₃",
+					"type":  "кас-32, кас-30, кас-28, кас-23s",
+					"price":  "19 567 ₽",
+					"image": "https://lh3.bunny.novaskin.me/vDTL_NUWoskmp4rVFSxMR1xIab2hNmeF0VTYqhsbTGq6A2hJu8hJePGCWhcQ7vZz1ti30zwIzT09aJu_YGgab8cLQg_gw4gzy0c=s500"
+				},
+				{
+					"id": 18,
+					"title": "азо<b>т</b>ная кисло<b>т</b>а 3",
+					"body": "Гаран<b>т</b>ируем высокую чис<b>т</b>о<b>т</b>у и с<b>т</b>абильнос<b>т</b>ь концен<b>т</b>рации аммиачной сели<b>т</b>ры\r\nв каждой пар<b>т</b>ии продукции. Мы используем первоклассные сырьевые ма<b>т</b>ериалы ... ",
+					"detailPageUrl": "/catalog/azotnaya-kislota-3/",
+					"iblockId": 7,
+					"tags": null,
+					"formula":  "NH₄NO₃",
+					"type":  "кас-32, кас-30, кас-28, кас-23s",
+					"price":  "19 567 ₽",
+					"image": "https://lh3.bunny.novaskin.me/vDTL_NUWoskmp4rVFSxMR1xIab2hNmeF0VTYqhsbTGq6A2hJu8hJePGCWhcQ7vZz1ti30zwIzT09aJu_YGgab8cLQg_gw4gzy0c=s500"
+				},
+				{
+					"id": 19,
+					"title": "аммиачная сели<b>т</b>ра 2",
+					"body": "Гаран<b>т</b>ируем высокую чис<b>т</b>о<b>т</b>у и с<b>т</b>абильнос<b>т</b>ь концен<b>т</b>рации аммиачной сели<b>т</b>ры в каждой пар<b>т</b>ии продукции. Мы используем первоклассные сырьевые ма<b>т</b>ериалы ... ",
+					"detailPageUrl": "/catalog/ammiachnaya-selitra-2/",
+					"iblockId": 7,
+					"tags": null,
+					"formula":  "NH₄NO₃",
+					"type":  "кас-32, кас-30, кас-28, кас-23s",
+					"price":  "19 567 ₽",
+					"image": "https://lh3.bunny.novaskin.me/vDTL_NUWoskmp4rVFSxMR1xIab2hNmeF0VTYqhsbTGq6A2hJu8hJePGCWhcQ7vZz1ti30zwIzT09aJu_YGgab8cLQg_gw4gzy0c=s500"
+				},
+				{
+					"id": 35,
+					"title": "<b>Т</b>ес<b>т</b>овый продук<b>т</b> 1",
+					"body": "<b>Т</b>ес<b>т</b>овое описание Создаю<b>т</b>ся на основе одного или нескольких сложных макроэлемен<b>т</b>ов. Они подразделяю<b>т</b>ся на минеральные жидкие фосфорные ... ",
+					"detailPageUrl": "/catalog/testovyy-produkt-1/",
+					"iblockId": 7,
+					"tags": null,
+					"formula":  "NH₄NO₃",
+					"type":  "кас-32, кас-30, кас-28, кас-23s",
+					"price":  "19 567 ₽",
+					"image": "https://lh3.bunny.novaskin.me/vDTL_NUWoskmp4rVFSxMR1xIab2hNmeF0VTYqhsbTGq6A2hJu8hJePGCWhcQ7vZz1ti30zwIzT09aJu_YGgab8cLQg_gw4gzy0c=s500"
+				}
+			]
+		}
+	],
+	"sections": [
+		{
+			"id": 0,
+			"name": "Все результаты",
+			"count": 5,
+			"code": "all"
+		}
+	]
+}

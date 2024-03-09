@@ -1,0 +1,10 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('filter-vacancies');
+
+		return {
+			block: BLOCK({}, [cn?.margin]),
+			elementContentContainer: BLOCK('content-container'),
+			elementFilterPanel: BLOCK('filter-panel'),
+		}
+	}

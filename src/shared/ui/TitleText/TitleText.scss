@@ -1,0 +1,10 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../styles/include-setings-styles";
+
+.title-text{
+	&__sup {
+		margin-left: responsive-size(4, 6);
+
+		letter-spacing: -0.04em;
+	}
+}

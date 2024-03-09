@@ -1,0 +1,31 @@
+-
+	function classes(cn) {
+		//- # ЛОГИКА ДЛЯ ОПРЕДЕЛЕНИЯ КЛАССОВ # -//
+		const WIDTH_LARGE = cn?.size === 'large' ? 'w-100@xs' : false;
+
+		//- # ОПРЕДЕЛЕНИЕ БЛОКА ПО BEM # -//
+		const BLOCK = CN('button')
+
+		//- # СОЗДАНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+		return {
+			button: BLOCK({
+				[`${cn?.size}`]: ['large'].includes(cn?.size),
+				[`${cn?.color}`]: ['white', 'transparent'].includes(cn?.color),
+				'with-icon': !!cn?.isWithIcon
+			}, [
+				cn?.margin,
+				cn?.padding,
+				cn?.order,
+				cn?.width,
+				cn?.display,
+				cn?.textOverflow,
+				WIDTH_LARGE,
+				cn?.isMoreButton,
+			]),
+			buttonText: BLOCK('text'),
+			buttonArrow: BLOCK('arrow', ['ml-8']),
+			buttonDownload: BLOCK('download', [
+				cn?.marginSvg || 'ml-8'
+			])
+		}
+	}

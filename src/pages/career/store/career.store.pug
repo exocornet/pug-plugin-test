@@ -1,0 +1,82 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Карьера';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Карьера' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции HeadingDetailed # -//
+include career--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Подключение store секции VideoFacts # -//
+include career--video-facts
+- pageStore.addSection(VideoFacts);
+
+//- ## Подключение store секции SliderCompany ## -//
+include career--slider-company
+- pageStore.addSection(SliderCompany);
+
+//- ## Подключение store секции SliderPictures ## -//
+include career--slider-pictures
+- pageStore.addSection(SliderPictures);
+
+//- # Подключение store секции Employees # -//
+include career--employees
+- pageStore.addSection(Employees);
+
+//- # Подключение store секции Career # -//
+include career--career
+- pageStore.addSection(Career);
+
+//- # Подключение store секции FormSearchWork # -//
+include career--form-search-work
+- pageStore.addSection(FormSearchWork);
+
+//- # Подключение store секции HeadingDetailed # -//
+include career--heading-detailed-image
+- pageStore.addSection(HeadingDetailedImage);
+
+//- # Подключение store секции ImageFacts # -//
+include career--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- ## Подключение store секции SliderInfoCard ## -//
+include career--slider-info-card-programs
+- pageStore.addSection(SliderInfoCardPrograms);
+
+//- ## Подключение store секции SliderInfoCard ## -//
+include career--slider-info-card-education
+- pageStore.addSection(SliderInfoCardEducation);
+
+//- ## Подключение store секции ArrowedSection ## -//
+include career--arrowed-section
+- pageStore.addSection(ArrowedSection);
+
+//- ## Подключение store секции ResumeForm ## -//
+include career--resume-form
+- pageStore.addSection(ResumeForm);
+
+//- ## Подключение store секции ListContactLinks ## -//
+include career--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include career--dialog
+- pageStore.addSection(HiddenDialogContent)

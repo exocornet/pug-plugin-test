@@ -1,0 +1,20 @@
+mixin NewsCard(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include NewsCard.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.newsCard)&attributes(attributes)
+		div
+			picture(class=styles.newsCardPicture)
+				if DATA('imageXs', false)
+					source(srcset=DATA('imageXs') media="(max-width: 768px)")
+				img(class=styles.newsCardImage src=DATA('image') alt="")
+			div(class=styles.newsCardTextBlock)
+				+Text(ELEM('TextDate'))
+				+Text(ELEM('Text'))(class=styles.newsCardText)
+		div(class=styles.newsCardButton)
+			+Button(ELEM('Button'))(type="button")

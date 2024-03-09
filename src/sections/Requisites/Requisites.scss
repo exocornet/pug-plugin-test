@@ -1,0 +1,91 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.requisites {
+	$self: &;
+
+	&__copy-button {
+		margin-left: 12px;
+		padding: 7px 10px;
+
+		transition: opacity .3s ease-in-out;
+
+		vertical-align: middle;
+
+		opacity: 0;
+
+		svg {
+			width: 15px;
+		}
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__line:hover {
+		.button {
+			opacity: 1;
+		}
+	}
+
+	&__footer {
+		&_bordered {
+			border-bottom: 1px solid var(--smoky-white);
+		}
+
+		&:not(.requisites__footer_bordered) .requisites__line:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&__button {
+		position: absolute;
+
+		@include media(xs) {
+			position: static;
+
+			display: block;
+
+			width: 100%;
+			max-height: 64px;
+			padding: 28px 48px;
+		}
+	}
+
+	&__wrapper {
+		#{$self}__button {
+			top: -50px;
+		}
+
+		&_bg-green {
+			padding: 28px;
+
+			border-radius: 16px;
+
+			background-color: var(--smoky-white);
+
+			&:hover {
+				background-color: var(--light-green);
+			}
+
+			#{$self}__button {
+				top: -32px;
+			}
+		}
+	}
+
+	&__footnote {
+		font-family: $font-helvetica;
+	}
+
+	&__header {
+		line-height: 1.35;
+
+		@include font-size-responsive(2.0, 4.0);
+	}
+
+	.gray {
+		color: var(--light-gray);
+	}
+}

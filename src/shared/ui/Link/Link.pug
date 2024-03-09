@@ -1,0 +1,17 @@
+mixin Link(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const HREF = DATA('linkHref') || '#!';
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Link.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	a(class=styles.link href=HREF aria-label=DATA('ariaLink') tabindex="0" title=DATA('title'))&attributes(attributes)
+		| !{DATA('text')}
+		if OPT('icon')
+			include include-svg/arrow

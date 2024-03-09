@@ -1,0 +1,26 @@
+mixin Field(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Field.cn.pug
+	- const styles = classes(props && props.cn);
+	- const fieldContainerClass = styles.fieldContainer + ' ' + (ELEM('DatePicker', false) ? styles.fieldContainerDatePicker : '') + (ELEM('InputNumber', false) ? styles.fieldContainerNumberWrapper : '')
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	+Col(ELEM('Col'))(class=styles.field)&attributes(attributes)
+		div(class=fieldContainerClass)
+			if (ELEM('Input', false))
+				+Input(ELEM('Input'))(class=styles.fieldInput)
+			if (ELEM('InputNumber', false))
+				+InputNumber(ELEM('InputNumber'))(class=styles.fieldInput)
+			if (ELEM('Select', false))
+				+Select(ELEM('Select'))(class=styles.fieldInput)
+			if (ELEM('DatePicker', false))
+				+I('DatePicker', ELEM('DatePicker'))(class=styles.fieldInput)
+			+Text(ELEM('Label'))(class=styles.fieldFloatingLabel)
+			div(class=styles.fieldErrorMessage)
+			if (ELEM('RequiredText', false))
+				+Text(ELEM('RequiredText'))(class=styles.fieldRequiredTypes)
+			if OPT('withIcon')
+				include include-svg/download

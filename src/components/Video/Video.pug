@@ -1,0 +1,29 @@
+mixin Video(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Video.cn.pug
+	- const styles = classes(props && props.cn)
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.video width=DATA('width', false) data-modal-video=DATA('data-modal-video', false) height=DATA('height', false) data-video-settings=DATA('settings', false))&attributes(attributes.Video)
+		if OPT('iframe')
+			div(class=styles.videoIframePopupCaller)
+			iframe(class=styles.videoIframe src=DATA('iframeSrc') allowfullscreen)
+		else
+			video(class=styles.videoPlayer poster=DATA('poster', false) controls=DATA('controls', false))&attributes(attributes.Player)
+				source(src=DATA('videoMp4') type="video/mp4")
+				if DATA('video-webm')
+					source(src=DATA('video-webm') type="video/webm")
+				if DATA('video-ogv')
+					source(src=DATA('video-ogv') type="video/ogg")
+
+			div(class=styles.videoControls)
+				input(type="range" min="0" max="100" value="0" class=styles.videoRange step="0.1")
+				div(class=styles.videoControlTimeLine)
+					div(class=styles.videoScrollBar)
+					div(class=styles.videoTimer) 00:00
+
+			if DATA('caption')
+				+Text({cn: {style: 'cap', textTransform: 'upper'}})(class=styles.videoCaption) !{DATA('caption')}

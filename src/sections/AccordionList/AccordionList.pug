@@ -1,0 +1,41 @@
+mixin AccordionList(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const TEXT_FOOTNOTE_PROPS = {
+			cn: {
+				style: 'cap',
+				textTransform: 'upper',
+				margin: 'mt-20@xs mb-20@xs',
+			}
+		};
+
+		const COL_PROPS = {
+			cn: {
+				cols: 'col-10 col-4@xs'
+			}
+		}
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include AccordionList.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class = styles.accordionSection)
+		+Container
+			+Row
+				if ELEM('TextFootnote', false)
+					+Col({ cn: { cols: 'col-2 col-4@xs' } })
+						+Text(deepMerge(TEXT_FOOTNOTE_PROPS, ELEM('TextFootnote')))
+							| !{DATA('footnote')}
+				+Col(deepMerge(COL_PROPS, ELEM('Col')))
+					for item in ELEM_ARR('AccordionArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+
+						+Accordion(I_ELEM('AccordionList'))
+							+AccordionBody(class=styles.accordionListAccordionBody)
+								+Text(I_ELEM('AccordionText'))
+								if (I_ELEM('ListTitle', false))
+									+I('ListTitle', I_ELEM('ListTitle'))

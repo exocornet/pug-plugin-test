@@ -1,0 +1,14 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('modal-practices')
+
+		return {
+			modalPractices: BLOCK({}, [cn?.margin, cn?.padding]),
+			modalPracticesForm: BLOCK('form'),
+			modalPracticesFormStep: BLOCK('form-step'),
+			modalPracticesStepsCount: BLOCK('steps-count'),
+			modalPracticesStep: BLOCK('step'),
+			modalPracticesButtonNext: BLOCK('button-next'),
+			modalPracticesButtonSubmit: BLOCK('button-submit')
+		}
+	}

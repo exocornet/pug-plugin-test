@@ -1,0 +1,107 @@
+@import "../../styles/include-setings-styles";
+
+.tabs {
+	$g: &;
+	display: flex;
+	flex-direction: column;
+
+	height: 100%;
+
+	&__buttons {
+		display: flex;
+		overflow-x: auto;
+		align-items: center;
+
+		@include no-scrollbar;
+	}
+
+	&__button {
+		padding-inline: 0;
+
+		&_none-stroke {
+			@include media(xs) {
+				padding-inline: 0;
+			}
+		}
+	}
+
+	&__button-separator {
+		flex: 0 0 2px;
+
+		padding: 1px;
+
+		border-radius: 50%;
+		background-color: $black;
+		margin-inline: responsive-size(8, 10);
+	}
+
+	&__body {
+		flex: 1 0 auto;
+	}
+
+	&__content {
+		overflow: hidden;
+
+		height: 0;
+
+		opacity: 0;
+	}
+
+	&[data-mode="transport"] {
+		#{$g}__button {
+			padding-inline: 0;
+
+			&:hover {
+				color: $dark-green;
+			}
+		}
+	}
+}
+
+.js-tabs-button-active {
+	background-color: $black-04;
+	padding-inline: 12px;
+
+	&:hover:not([disabled]) {
+		background-color: $black-03;
+	}
+
+	&.tabs__button {
+		&_none-stroke {
+			padding-inline: 0;
+
+			color: $dark-green;
+			background-color: transparent;
+
+			&:hover {
+				background-color: unset;
+			}
+		}
+	}
+}
+
+.js-tabs-content-active {
+	height: 100%;
+
+	transition: opacity 0.4s;
+
+	opacity: 1;
+}
+
+.js-tabs-button-active-transport {
+	padding-right: 0;
+	padding-left: 0;
+
+	color: $dark-green;
+	background-color: transparent;
+
+	&:hover:not([disabled]) {
+		background-color: transparent;
+	}
+}
+
+.js-tabs-content-active-transport {
+	@include media(xs) {
+		height: 80%;
+	}
+}

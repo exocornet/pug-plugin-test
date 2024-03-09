@@ -1,0 +1,23 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.tabs-team {
+	margin-top: responsive-size(80, 40);
+
+	@include media(xxl, min) {
+		margin-top: responsive-size(40);
+	}
+
+	// stylelint-disable-next-line order/order
+	&__col {
+		&:nth-child(n+3) {
+			margin-top: responsive-size(64, 80);
+		}
+
+		@include media(xs) {
+			&:nth-child(n+2) {
+				margin-top:  responsive-size(64, 80);
+			}
+		}
+	}
+}

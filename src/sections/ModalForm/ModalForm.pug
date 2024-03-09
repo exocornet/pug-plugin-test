@@ -1,0 +1,12 @@
+mixin ModalForm(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ModalForm.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.modalForm data-dialog-name=DATA('dialogName', false))
+		+I('Modal', ELEM('Modal'))
+			+ModalBody()
+				+I('Form', ELEM('Form'))(class=styles.modalFormForm)

@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('subscription-form');
+
+		return {
+			subscriptionForm: BLOCK({}, [cn?.margin]),
+			subscriptionFormContainer: BLOCK('container'),
+			subscriptionFormFootnote: BLOCK('footnote'),
+			subscriptionFormField: BLOCK('field'),
+			subscriptionFormAgreement: BLOCK('agreement'),
+			subscriptionFormWrapper: BLOCK('wrapper', ['position-relative']),
+			subscriptionFormRowTop: BLOCK('row-top'),
+			subscriptionFormRowBottom: BLOCK('row-bottom'),
+			subscriptionFormContent: BLOCK('content'),
+			subscriptionFormDescription: BLOCK('agreement'),
+			subscriptionFormColButton: BLOCK('col-button'),
+			subscriptionFormButton: BLOCK('button'),
+			subscriptionFormSuccess: BLOCK('success'),
+			subscriptionFormMessageSuccess: BLOCK('message-success'),
+		}
+	}

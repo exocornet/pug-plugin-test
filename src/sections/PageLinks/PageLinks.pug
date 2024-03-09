@@ -1,0 +1,35 @@
+mixin PageLinks(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include PageLinks.cn.pug
+	-
+		const styles = classes(props && props.cn);
+		const OFFSET = ELEM('FootNote', false) ? '': 'offset-2 offset-0@md';
+
+		const PAGE_LINKS_HEADING_PROPS = {
+			cn: {
+				cols: 'col-9 col-4@xs'
+			}
+		}
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.pageLinks id=DATA('id', false))
+		+Container
+			+Row
+				if ELEM('FootNote', false)
+					+Col(ELEM('Col2'))
+						+Text(ELEM('FootNote'), false)
+				if ELEM('Heading', false)
+					+Col(PAGE_LINKS_HEADING_PROPS)
+						+Heading(ELEM('Heading'))
+
+				+Col(ELEM('Col10'))(class=OFFSET)
+					for item in ELEM_ARR('PageLinkArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						+I('PageLink', item)
+
+				if ELEM('Button', false)
+					+Col({cn: {alignItems: 'text-align-right', margin: 'mt-40'}})
+						+Button(ELEM('Button'))

@@ -1,0 +1,17 @@
+mixin FiltersSelectControl(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ СЕКЦИИ # -//
+	include Filters.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА СЕКЦИИ # -//
+	div(class=styles.elementSelectWrapper)&attributes(attributes)
+		for item in ELEM_ARR('SelectFilterArr')
+			//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+			include ../../shared/helpers/pug/shortcut-check-store
+			+SelectFilter(item)
+
+		if ELEM_ARR('SelectFilterArr').length > 1
+			+Button({data: {text: 'сбросить все'}, cn: {color: 'transparent'}})(class=styles.elementSelectButtonClear)

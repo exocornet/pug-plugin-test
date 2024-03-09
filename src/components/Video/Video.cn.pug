@@ -1,0 +1,17 @@
+-
+	function classes (cn) {
+		const BLOCK = CN('video');
+
+		return {
+			video: BLOCK({}, ['position-relative']),
+			videoRange: BLOCK('range', ['position-relative']),
+			videoIframePopupCaller: BLOCK('iframe-popup-caller'),
+			videoIframe: BLOCK('iframe'),
+			videoPlayer: BLOCK('player'),
+			videoControls: BLOCK('controls', ['position-absolute']),
+			videoTimer: BLOCK('timer', ['position-absolute']),
+			videoScrollBar: BLOCK('scroll-bar', ['position-absolute']),
+			videoControlTimeLine: BLOCK('control-timeline'),
+			videoCaption: BLOCK('caption')
+		}
+	}

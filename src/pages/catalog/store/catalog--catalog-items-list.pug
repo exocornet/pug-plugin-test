@@ -1,0 +1,596 @@
+-
+	const CatalogItemsList = {
+		includeSection: 'CatalogItemsList',
+		cn: {
+			margin: 'mt-80 mt-20@xs',
+		},
+		dataArr: {
+			TableColArr: [
+				{
+					data: {
+						text: ''
+					}
+				},
+				{
+					data: {
+						text: 'Название'
+					}
+				},
+				{
+					data: {
+						text: 'Марка'
+					}
+				},
+				{
+					data: {
+						text: 'Состояние'
+					}
+				},
+				{
+					data: {
+						text: 'Тип'
+					}
+				},
+				{
+					data: {
+						text: 'Описание'
+					}
+				},
+				{
+					data: {
+						text: 'Наличие'
+					}
+				},
+			],
+		},
+		elem: {
+			Advert: {
+				elem: {
+					Row: {
+						cn: {
+							margin: 'mt-40 mb-40 mt-60@xs mb-60@xs'
+						}
+					},
+					Heading: {
+						data: {
+							tag: "h3",
+							text: 'Арендуйте автотранспорт и спецтехнику для перевозки грузов',
+							footnoteText: "услуги"
+						},
+						cn: {
+							size: 'h3',
+							textIndent: true
+						},
+					},
+					Button: {
+						data: {
+							text: 'Подробнее',
+							href: '#!'
+						},
+						cn: {
+							size: 'large',
+							margin: 'mt-0 mt-20@xs',
+							width: 'auto'
+						},
+						opt: {
+							icon: true,
+						}
+					}
+				}
+			},
+			CatalogItemsArr: [
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'двуокись углерода жидкая низкотемпературная',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [а]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Нитратное',
+								description: 'Прозрачная, бесцветная жидкость, которая используется в качестве сырья для производства резино-технических и полимерных материалов, а также в качестве растворителя в химической промышленности. Ее характерной особенностью является низкая температура кипения, что облегчает ее использование в производстве',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'кислота серная техническая',
+								image: require('IMAGES/sections/catalog/balls2.png'),
+								imageXs: require('IMAGES/sections/catalog/balls2xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [а]',
+								condition: 'твердое',
+								type: 'Аммонийное',
+								description: 'Качественный продукт, который применяется в различных отраслях промышленности для производства удобрений, растворителей, синтетических волокон, жидкостей для торможения и многих других веществ. Ее характеристика - сильнокислотная жидкость, которая способна реагировать с большинством металлов.',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'аммиак водный',
+								image: require('IMAGES/sections/catalog/balls2.png'),
+								imageXs: require('IMAGES/sections/catalog/balls2xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ч.д.а]',
+								markTooltip: 'чистый',
+								condition: 'газообразное',
+								type: 'Аммонийное',
+								description: 'Химическое соединение, которое получают из нитратов аммония. Оно используется в качестве удобрения для почвы, а также в производстве различных химических веществ и лекарственных средств. Его преимущество - высокая концентрация, благодаря которой этот продукт становится незаменимым в промышленности',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'ожидается',
+										href: '#!',
+									},
+									opt: {
+										icon: false,
+										disabled: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'аммиак водный',
+								image: require('IMAGES/sections/catalog/balls2.png'),
+								imageXs: require('IMAGES/sections/catalog/balls2xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ч.д.а]',
+								markTooltip: 'чистый для анализа',
+								condition: 'газообразное',
+								type: 'Аммонийное',
+								description: 'Химическое соединение, которое получают из нитратов аммония. Оно используется в качестве удобрения для почвы, а также в производстве различных химических веществ и лекарственных средств. Его преимущество - высокая концентрация, благодаря которой этот продукт становится незаменимым в промышленности',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'ожидается',
+										href: '#!',
+									},
+									opt: {
+										icon: false,
+										disabled: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'капролактам',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Нитратное',
+								description: 'Это органическое соединение, которое широко применяется в производстве нейлонов и полиамидов. Он представляет собой кристаллы белого цвета, которые легко растворяются в воде и других растворителях. Он отличается высокой пластичностью и стабильностью, что делает его незаменимым в производственной деятельности',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'сульфат аммония',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Аммонийное',
+								description: 'Необходимый элемент для почвы, который способствует улучшению урожайности и качества продуктов растениеводства. Он используется в промышленности при производстве бумаги, стекла и других веществ. Его преимущество - высокая концентрация и экономичная стоимость.',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'раствор селитры аммиачной концентрированный',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Аммонийное',
+								description: 'Удобрение, которое используется для повышения плодородия почвы. Он содержит в себе необходимые элементы, которые обеспечивают здоровый рост культурных растений. Его преимущество - легкость в применении и широкий спектр действия.\n',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'ожидается',
+										href: '#!',
+									},
+									opt: {
+										icon: false,
+										disabled: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'олеум',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Нитратное',
+								description: 'Химическое соединение, которое используется в качестве катализатора при производстве различных продуктов химической промышленности. Он необходим при получении свинца, серной кислоты и других веществ. Его характеристика - высокая концентрация и обеспечение высокого качества производства.',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'двуокись углерода жидкая низкотемпературная',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [а]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Нитратное',
+								description: 'Прозрачная, бесцветная жидкость, которая используется в качестве сырья для производства резино-технических и полимерных материалов, а также в качестве растворителя в химической промышленности. Ее характерной особенностью является низкая температура кипения, что облегчает ее использование в производстве',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'кислота серная техническая',
+								image: require('IMAGES/sections/catalog/balls2.png'),
+								imageXs: require('IMAGES/sections/catalog/balls2xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [а]',
+								markTooltip: 'чистый',
+								condition: 'твердое',
+								type: 'Аммонийное',
+								description: 'Качественный продукт, который применяется в различных отраслях промышленности для производства удобрений, растворителей, синтетических волокон, жидкостей для торможения и многих других веществ. Ее характеристика - сильнокислотная жидкость, которая способна реагировать с большинством металлов.',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'аммиак водный',
+								image: require('IMAGES/sections/catalog/balls2.png'),
+								imageXs: require('IMAGES/sections/catalog/balls2xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ч.д.а]',
+								markTooltip: 'чистый',
+								condition: 'газообразное',
+								type: 'Аммонийное',
+								description: 'Химическое соединение, которое получают из нитратов аммония. Оно используется в качестве удобрения для почвы, а также в производстве различных химических веществ и лекарственных средств. Его преимущество - высокая концентрация, благодаря которой этот продукт становится незаменимым в промышленности',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'ожидается',
+										href: '#!',
+									},
+									opt: {
+										icon: false,
+										disabled: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'аммиак водный',
+								image: require('IMAGES/sections/catalog/balls2.png'),
+								imageXs: require('IMAGES/sections/catalog/balls2xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ч.д.а]',
+								markTooltip: 'чистый для анализа',
+								condition: 'газообразное',
+								type: 'Аммонийное',
+								description: 'Химическое соединение, которое получают из нитратов аммония. Оно используется в качестве удобрения для почвы, а также в производстве различных химических веществ и лекарственных средств. Его преимущество - высокая концентрация, благодаря которой этот продукт становится незаменимым в промышленности',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'ожидается',
+										href: '#!',
+									},
+									opt: {
+										icon: false,
+										disabled: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'капролактам',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Нитратное',
+								description: 'Это органическое соединение, которое широко применяется в производстве нейлонов и полиамидов. Он представляет собой кристаллы белого цвета, которые легко растворяются в воде и других растворителях. Он отличается высокой пластичностью и стабильностью, что делает его незаменимым в производственной деятельности',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						},
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'сульфат аммония',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Аммонийное',
+								description: 'Необходимый элемент для почвы, который способствует улучшению урожайности и качества продуктов растениеводства. Он используется в промышленности при производстве бумаги, стекла и других веществ. Его преимущество - высокая концентрация и экономичная стоимость.',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'раствор селитры аммиачной концентрированный',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Аммонийное',
+								description: 'Удобрение, которое используется для повышения плодородия почвы. Он содержит в себе необходимые элементы, которые обеспечивают здоровый рост культурных растений. Его преимущество - легкость в применении и широкий спектр действия.\n',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'ожидается',
+										href: '#!',
+									},
+									opt: {
+										icon: false,
+										disabled: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CatalogItem: {
+							data: {
+								title: 'олеум',
+								image: require('IMAGES/sections/catalog/balls1.png'),
+								imageXs: require('IMAGES/sections/catalog/balls1xs.png'),
+								formula: 'NH₄NO₃',
+								mark: 'марка [ а ]',
+								markTooltip: 'чистый для анализа',
+								condition: 'жидкое',
+								type: 'Нитратное',
+								description: 'Химическое соединение, которое используется в качестве катализатора при производстве различных продуктов химической промышленности. Он необходим при получении свинца, серной кислоты и других веществ. Его характеристика - высокая концентрация и обеспечение высокого качества производства.',
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'заказать',
+										href: '#!',
+									},
+									opt: {
+										icon: true
+									},
+									cn: {
+										margin: 'mt-20'
+									}
+								},
+							}
+						},
+					}
+				},
+			],
+			ButtonMore: {
+				data: {
+					href: '/catalog',
+					text: 'Показать еще',
+				},
+				cn: {
+					margin: 'mr-auto ml-auto',
+					size: 'large',
+					isMoreButton: 'js-load-more-button',
+				},
+			},
+		}
+	}

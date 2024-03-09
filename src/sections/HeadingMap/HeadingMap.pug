@@ -1,0 +1,41 @@
+mixin HeadingMap(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include HeadingMap.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.headingMap)
+		script.
+			window.coords = { center: [85.997938, 55.347793], zoom: 12};
+		+Container
+			+Row
+				+Col(ELEM('Col'))
+					+Heading(ELEM('Heading'))
+				+Col
+					div(class="d-flex justify-content-between flex-direction-column@xs g-20")
+						div(class="d-flex flex-direction-column g-8")
+							+Text(ELEM('Address'))
+							+Link(ELEM('Email'))(class=styles.mapHeaderLink)
+							+Link(ELEM('Phone'))(class=styles.mapHeaderLink)
+						div(class=styles.mapHeaderRight)
+							div(class="w-50@xs")
+								for item in ELEM('cityArr')
+									include ../../shared/helpers/pug/shortcut-check-store
+									div(class="d-flex justify-content-between mb-16 mb-8@xs")
+										+Text(item) !{I_DATA('key')}
+										if I_OPT('img')
+											+Text(item)
+												img(src=I_DATA('img') alt="" width="18" height="10" class="w-fit mr-4")
+												| !{I_DATA('value')}
+										else
+											+Text(item) !{I_DATA('value')}
+							div(class="d-flex g-4 justify-content-end align-items-start")
+								for item in ELEM('socialButtonsArr')
+									include ../../shared/helpers/pug/shortcut-check-store
+									+Button(item)(class=styles.mapHeaderSocial)
+			+Row(class=styles.headingMapWrapper)
+				+Col(class="p-0@xs")
+					+Map()

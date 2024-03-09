@@ -1,0 +1,22 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('press-card')
+
+		return {
+			pressCard: BLOCK({}, [
+				cn?.margin,
+			]),
+			pressCardBody: BLOCK('body', [
+				cn?.marginBody,
+			]),
+			pressCardTextContainer: BLOCK('text-container', {
+					[`${cn?.fixHeightAndBlur}`]: ['fix-height-and-blur'].includes(cn?.fixHeightAndBlur),
+				}),
+			pressCardText: BLOCK('text'),
+			pressCardLink: BLOCK('link', {
+				[`${cn?.buttonSlider}`]: ['buttonSlider'].includes(cn?.buttonSlider),
+			}),
+			pressCardSliderFootnote: BLOCK('footnote'),
+			pressCardSliderHeaderRow: BLOCK('slider-header-row'),
+		}
+	}

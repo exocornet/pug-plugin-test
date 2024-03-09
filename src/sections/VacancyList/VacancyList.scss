@@ -1,0 +1,14 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.vacancy-list {
+	&__row {
+		padding-top: 64px;
+
+		@include media(xs) {
+			gap: 20px;
+			
+			padding-top: 48px;
+		}
+	}
+}

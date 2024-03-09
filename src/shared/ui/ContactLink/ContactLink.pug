@@ -1,0 +1,14 @@
+mixin ContactLink(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ContactLink.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.contactLink)&attributes(attributes)
+		+Text(ELEM('Header'))(class=styles.contactLinkHeader)
+		div(class=styles.contactLinkBlock)
+			+Link(ELEM('Email'))(class=styles.contactLinkEmail)
+			+Link(ELEM('Phone'))(class=styles.contactLinkPhone)

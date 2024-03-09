@@ -1,0 +1,550 @@
+-
+	const Calculator = {
+		includeSection: 'Calculator',
+		data: {
+			schema: 'default',
+		},
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Расчёт стоимости аренды автотранспорта и спецтехники",
+					footnoteText: "калькулятор"
+				},
+				cn: {
+					size: "h3",
+					margin: 'mb-40 mb-20@xs',
+					textIndent: true,
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			Footnote: {
+				data: {
+					tag: 'span',
+					text: "предварительный расчет",
+					textTransform: 'upper',
+				},
+			},
+			FootnoteSteps: [
+				{
+					elem: {
+						StepFootnote: {
+							data: {
+								tag: 'span',
+								text: "шаг 1",
+								textTransform: 'upper',
+							},
+						}
+					}
+				},
+				{
+					elem: {
+						StepFootnote: {
+							data: {
+								tag: 'span',
+								text: "шаг 2",
+								textTransform: 'upper',
+							},
+						}
+					}
+				},
+			],
+			Steps: [
+				{
+					elem: {
+						Form: {
+							data: {
+								schema: 'transport',
+								name: 'transportFirstStep',
+								action: '/api/calculator/'
+							},
+							elem: {
+								FromFieldsArr: [
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPr: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													Select: {
+														data: {
+															name: 'transportType'
+														},
+														elem: {
+															OptionsArr: [
+																{
+																	elem: {
+																		Text: {
+																			data: {
+																				tag: 'span',
+																				text: "",
+																				textTransform: 'upper'
+																			},
+																		}
+																	}
+																},
+															]
+														},
+														cn: {
+															subscription: 'subscription'
+														}
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "тип транспорта",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPr: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													Select: {
+														data: {
+															name: 'transportModel'
+														},
+														elem: {
+															OptionsArr: [
+																{
+																	elem: {
+																		Text: {
+																			data: {
+																				tag: 'span',
+																				text: "",
+																				textTransform: 'upper'
+																			},
+																		}
+																	}
+																},
+															]
+														},
+														cn: {
+															subscription: 'subscription'
+														}
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "выберите модель",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPl: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													InputNumber: {
+														data: {
+															max: 10,
+															min: 1,
+															type: 'number',
+															name: 'numberOfCars',
+															dataType: 'numberOfCars',
+														},
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "количество машин",
+															textTransform: 'upper'
+														},
+													}
+												},
+											}
+										}
+									},
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPr: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													InputNumber: {
+														data: {
+															max: 10,
+															min: 1,
+															name: 'numberOfHours',
+															dataType: 'numberOfHours'
+														},
+														opt: {
+															number: true
+														}
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "количество часов",
+															textTransform: 'upper'
+														},
+													}
+												}
+											},
+										}
+									},
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPr: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-12 col-4@xs',
+														}
+													},
+													Select: {
+														data: {
+															name: 'transportRegion'
+														},
+														elem: {
+															OptionsArr: [
+																{
+																	elem: {
+																		Text: {
+																			data: {
+																				tag: 'span',
+																				text: "",
+																				textTransform: 'upper'
+																			},
+																		}
+																	}
+																},
+																{
+																	elem: {
+																		Text: {
+																			data: {
+																				tag: 'span',
+																				text: "город",
+																				textTransform: 'upper'
+																			},
+																		}
+																	},
+																	data: {
+																		key: 'city',
+																	}
+																},
+																{
+																	elem: {
+																		Text: {
+																			data: {
+																				tag: 'span',
+																				text: "загород",
+																				textTransform: 'upper'
+																			},
+																		}
+																	},
+																	data: {
+																		key: 'region',
+																	}
+																},
+															]
+														},
+														cn: {
+															subscription: 'subscription'
+														}
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "зона аренды",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+								],
+								Estimated: {
+									data: {
+										text: ''
+									}
+								},
+								EstimatedFrom: {
+									data: {
+										text: 'от'
+									}
+								},
+								EstimatedCurrency: {
+									data: {
+										text: '₽'
+									}
+								},
+								EstimatedAgreement: {
+									data: {
+										text: 'предварительная сумма'
+									}
+								},
+								SubmitButton: {
+									data: {
+										text: 'далее',
+										type: 'submit',
+									},
+								},
+							},
+							cn: {
+								button: 'js-button-next mt-24'
+							}
+						}
+					},
+				},
+				{
+					elem: {
+						Form: {
+							data: {
+								schema: 'default',
+								dialogName: 'feedBackFormDialog',
+								action: '/api/forms/callback',
+								name: 'transportSecondStep'
+							},
+							elem: {
+								FromFieldsArr: [
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPr: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													Input: {
+														data: {
+															name: 'name'
+														},
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "имя",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPr: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													Input: {
+														data: {
+															name: 'company'
+														},
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "компания",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPr: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													Input: {
+														data: {
+															type: 'text',
+															name: 'email'
+														},
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "email",
+															textTransform: 'upper'
+														},
+													}
+												}
+											},
+										}
+									},
+									{
+										elem: {
+											Field: {
+												cn: {
+													isPl: true
+												},
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-6 col-4@xs',
+														}
+													},
+													Input: {
+														data: {
+															name: 'phone'
+														},
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "телефон",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+									{
+										elem: {
+											Field: {
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-12 col-4@xs',
+														}
+													},
+													DatePicker: {
+														data: {
+															event: 'excursion'
+														},
+														elem: {
+															Input: {
+																data: {
+																	name: 'date',
+																	dataType: "transportDate"
+																}
+															},
+															TextDate: {
+																data: {
+																	text: 'Дата'
+																},
+																cn: {
+																	style: 'cap'
+																}
+															},
+															ColDate: {
+																cn: {
+																	cols: 'col-12 col-4@xs',
+																}
+															}
+														}
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "выберите дату",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+									{
+										elem: {
+											Field: {
+												elem: {
+													Col: {
+														cn: {
+															cols: 'col-12 col-4@xs',
+														}
+													},
+													Input: {
+														data: {
+															name: 'comment'
+														},
+													},
+													Label: {
+														data: {
+															tag: 'span',
+															text: "ваш комментарий",
+															textTransform: 'upper'
+														},
+													}
+												}
+											}
+										}
+									},
+								],
+								Agreement: {
+									data: {
+										text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+									}
+								},
+								SubmitButton: {
+									data: {
+										text: 'Отправить',
+										type: 'submit',
+									},
+								},
+							}
+						}
+					},
+				}
+			],
+		},
+	}

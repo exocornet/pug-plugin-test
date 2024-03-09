@@ -1,0 +1,15 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.filter-vacancies {
+	&__filter-panel {
+		padding-bottom: responsive-size(20);
+
+		border-bottom: $light-gray 1px solid;
+	}
+
+	&__content-container {
+		display: flex;
+		flex-direction: column;
+	}
+}

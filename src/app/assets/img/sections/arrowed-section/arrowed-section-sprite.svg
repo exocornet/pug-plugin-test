@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+		<symbol id="line" viewBox="0 0 276 2" fill="none">
+				<path d="M275.523 1H-239.477" stroke="#43BD25"/>
+		</symbol>
+		<symbol id="arrow" viewBox="0 0 545 19" fill="none">
+				<path d="M0.523438 10H532.523" stroke="#43BD25"/>
+				<path d="M544.523 9.5L530.273 17.7272L530.273 1.27276L544.523 9.5Z" fill="#43BD25"/>
+		</symbol>
+</svg>

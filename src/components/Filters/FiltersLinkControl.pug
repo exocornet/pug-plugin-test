@@ -1,0 +1,20 @@
+mixin FiltersLinkControl(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ СЕКЦИИ # -//
+	include Filters.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА СЕКЦИИ # -//
+	div(class=styles.elementLinkControlWrapper)&attributes(attributes)
+		for item, idx in ELEM_ARR('ButtonFilterArr')
+			//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+			include ../../shared/helpers/pug/shortcut-check-store
+			- const stylesItem = classes(item && item.cn);
+
+			+Button({data: item.data, cn: {color: 'transparent'}})(class=stylesItem.elementLinkControl data-tab-select=I_DATA('dataTabSelect', false))
+
+			//- ## Добавление разделителя ## -//
+			if idx < ELEM_ARR('ButtonFilterArr').length - 1
+				div(class=styles.elementLinkControlSeparator)

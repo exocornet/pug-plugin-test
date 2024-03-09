@@ -1,0 +1,22 @@
+mixin NewspaperCard(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const TAG = OPT('isLink') ? 'a' : 'div';
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include NewspaperCard.cn.pug
+	- const styles = classes(props && props.cn)
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.newspaperCard)&attributes(attributes)
+		div(class=styles.newspaperCardTop)
+			+Text(ELEM('TextNumber'))
+			+Text(ELEM('TextDate'))
+		div(class=styles.newspaperCardCenter)
+			+Text({ data: { text: 'в этом выпуске:' }, cn: { style: 'cap', textTransform: 'upper' } })
+			+Text(ELEM('TextContent'))(class=styles.newspaperCardCenterText)
+		div(class=styles.newspaperCardBottom)
+			+Button({ data: { href: '#', text: 'читать' }, opt: { icon: true } })

@@ -1,0 +1,16 @@
+mixin NviItem(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include NviItem.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.testItem)&attributes(attributes)
+		+Text(ELEM('TextNumber'))(class=styles.testItemNumber)
+		+Text(ELEM('TextCode'))(class=styles.testItemCode)
+		+Text(ELEM('TextName'))(class=styles.testItemName)
+		+Text(ELEM('TextCount'))(class=styles.testItemCount)
+		+Text(ELEM('TextPrice'))(class=styles.testItemPrice)
+		+Button(ELEM('Button'))(class=styles.testItemButton type="button")

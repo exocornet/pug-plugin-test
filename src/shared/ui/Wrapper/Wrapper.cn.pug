@@ -1,0 +1,16 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('wrapper');
+
+		return {
+				reverse: BLOCK({
+						[`${cn?.style}`]: ['cap', 'cap-small'].includes(cn?.style),
+				}, [
+						cn?.margin,
+						cn?.padding,
+						cn?.width,
+						cn?.align,
+						cn?.flexGrow
+				]),
+		}
+	}

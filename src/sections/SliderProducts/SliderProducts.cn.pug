@@ -1,0 +1,17 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-products')
+
+		return {
+			sliderProducts: BLOCK({}, [cn?.margin]),
+			sliderProductsBgWrap: BLOCK('bg-wrap'),
+			sliderProductsSliderSwiper: BLOCK('slider-swiper'),
+			sliderProductsSliderSlide: BLOCK('slider-slide', {
+				[`${cn?.background}`]: ['transparent'].includes(cn?.background),
+			}),
+			sliderProductsSliderPagination: BLOCK('slider-pagination', ['d-none@xs']),
+			sliderProductsSliderNavigation: BLOCK('slider-navigation', ['d-none@xs']),
+			sliderProductsImage: BLOCK('image'),
+			sliderProductsSliderSlideText: BLOCK('slider-slide-text')
+		}
+	}

@@ -1,0 +1,32 @@
+mixin Calculator(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Calculator.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.calculator)
+		+Container
+			if ELEM('Heading')
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+		div(class=styles.calculatorFormsWrapper)
+			div(class=styles.calculatorContainer)
+				div(class=styles.calculatorFormContainer)
+					div(class=styles.calculatorFootnoteContainer)
+						+Text(ELEM('Footnote'))(class=`${styles.calculatorFootnote} ${styles.calculatorFootnoteGrowOneHalf}`)
+						div(class=styles.calculatorFootnoteSteps)
+							for item in ELEM_ARR('FootnoteSteps')
+								include ../../shared/helpers/pug/shortcut-check-store
+								+Text(I_ELEM('StepFootnote'))(class=`${styles.calculatorFootnote} ${styles.calculatorFootnoteStep}`)
+					+Slider(ELEM('Slider'))&attributes({
+						SliderSwiper: {class: 'swiper-no-swiping'}
+					})
+						for item in ELEM_ARR('Steps')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+SliderSlide(class=styles.sliderCompanySliderSlide)
+								if(I_ELEM('Form', false))
+									+I('Form', I_ELEM('Form'))

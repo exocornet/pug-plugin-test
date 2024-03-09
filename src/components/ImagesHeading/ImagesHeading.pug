@@ -1,0 +1,42 @@
+mixin ImagesHeading(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const HEADING_PROPS = {
+			data: { tag: 'h3', ...ELEM('Heading').data },
+			cn: {
+				textIndent: true,
+				size: 'h3',
+				position: 'position-static',
+				...ELEM('Heading').cn
+			}
+		};
+
+		const COL_BUTTON_PROPS = ELEM('ColButton', false) || {
+			cn: {
+				cols: 'col-3',
+				display: 'd-flex d-none@xs',
+				justify: 'justify-content-end'
+			}
+		}
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ImagesHeading.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	//- TODO FIX ORDER
+	+Row(class=styles.imagesHeadingRowImages)&attributes(attributes.RowTop)
+		for item in DATA_ARR('imageArr')
+			//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+			include ../../shared/helpers/pug/shortcut-check-store
+			+Col(I_ELEM('Col'))
+				img(class=styles.imagesHeadingImage src=I_DATA('image') alt="")
+	+Row(class=styles.imagesHeadingRowHeading)&attributes(attributes.RowBottom)
+		+Col({ cn: { cols: 'col-9 col-4@xs' } })
+			+Heading(HEADING_PROPS)
+		if ELEM('Button', false)
+			+Col(COL_BUTTON_PROPS)
+				+Button(ELEM('Button'))

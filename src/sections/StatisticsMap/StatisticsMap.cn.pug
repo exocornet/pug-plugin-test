@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('statistics-map')
+
+		return {
+			statisticsMap: BLOCK({}, ['mt-200 mt-80@xs']),
+			statisticsMapContainer: BLOCK('container', ['d-flex', 'flex-direction-column@xs']),
+			statisticsMapWorldMap: BLOCK('world-map'),
+			statisticsMapCircle: BLOCK('circle', ['js-animation-radius-start']),
+			statisticsMapPath: BLOCK('path'),
+			statisticsMapText: BLOCK('text'),
+			statisticsMapWrapNumber: BLOCK('wrap-number', {
+				'mini': !!cn?.isBigNumberMini
+			}, [cn?.marginBigNumber]),
+			statisticsMapBigNumber: BLOCK('big-number'),
+			statisticsMapNumbersBottom: BLOCK('numbers-bottom', ['d-flex d-contents@xs', 'w-100', 'mt-auto']),
+			statisticsMapKemerovo: BLOCK('kemerovo'),
+			statisticsMapKemerovoText: BLOCK('kemerovo-text', ['position-absolute d-none']),
+			// statisticsMapNumbersBottom: BLOCK('numbers-bottom', ['d-flex d-contents@xs', 'w-100', 'mt-auto']),
+		}
+	}

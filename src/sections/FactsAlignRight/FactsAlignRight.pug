@@ -1,0 +1,28 @@
+mixin FactsAlignRight(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FactsAlignRight.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.factsAlignRight)
+		+Container
+			if ELEM('Heading', false)
+				+Row
+					+Col(ELEM('ColHeading'))
+						+Heading(ELEM('Heading'))
+			+Row(class=styles.factAlignRightFactsBlock)
+				if(ELEM('Footnote', false))
+					+Col({ cn: { cols: 'col-2 col-4@xs', margin: 'mb-180 mb-55@xs' } })
+						+Text(ELEM('Footnote'))(class=styles.factsAlignRightFootnote)
+				+Col({ cn: { cols: 'col-10 col-4@xs', offset: 'offset-2 offset-0@xs', display: 'd-flex' } })(class=styles.factsAlignRightWrapper)
+					for item in ELEM_ARR('FactsAlignRight')
+						include ../../shared/helpers/pug/shortcut-check-store
+						div(class=styles.factsAlignRightFact)
+							p(class=styles.factsAlignRightFactText)
+								| !{I_DATA('factText')}
+							p(class=styles.factsAlignRightFactNumber)
+								| !{I_DATA('factNumber')}

@@ -1,0 +1,100 @@
+-
+	const ListContactLinks = {
+		includeSection: 'ListContactLinks',
+		cn: {
+			margin: 'mt-200 mt-80@xs',
+			linkMargin: 'justify-content-end'
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Свяжитесь с нами, чтобы получить больше информации",
+					footnoteText: "если остались вопросы"
+				},
+				cn: {
+					size: "h3",
+					margin: 'mb-80 mb-32@xs',
+					textIndent: true,
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			ListContactLinksArr: [
+				{
+					elem: {
+						ContactLink: {
+							elem: {
+								Header: {
+									data: {
+										text: 'менеджер',
+									},
+								},
+								Email: {
+									data: {
+										text: 'ivan_manager@azot.kuzbass.net',
+										ariaLink: 'ivan_manager@azot.kuzbass.net',
+										title: 'ivan_manager@azot.kuzbass.net',
+										linkHref: 'mail:ivan_manager@azot.kuzbass.net'
+									},
+									cn: {
+										textTransform: 'text-transform-none',
+									}
+								},
+								Phone: {
+									data: {
+										text: '+7 (3842) 57-07-70',
+										ariaLink: '+7 3842 57 07 70',
+										title: '+7 3842 57 07 70',
+										linkHref: 'tel:+7 3842 57 07 70'
+									},
+								}
+							},
+							cn: {
+								margin: 'mb-32 mb-32@xs pb-32 pb-20@xs',
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						ContactLink: {
+							elem: {
+								Header: {
+									data: {
+										text: 'номер отдела',
+									},
+								},
+								Email: {
+									data: {
+										text: 'rent@azot.kuzbass.net',
+										ariaLink: 'rent@azot.kuzbass.net',
+										title: 'rent@azot.kuzbass.net',
+										linkHref: 'mail:rent@azot.kuzbass.net'
+									},
+									cn: {
+										textTransform: 'text-transform-none',
+									}
+								},
+								Phone: {
+									data: {
+										text: '+7 (3842) 57-19-37',
+										ariaLink: '+7 3842 57 19 37',
+										title: '+7 3842 57 19 37',
+										linkHref: 'tel:+7 3842 57 19 37'
+									},
+								}
+							},
+							cn: {
+								margin: 'mb-32 mb-32@xs pb-32 pb-20@xs',
+							}
+						}
+					}
+				},
+			],
+		}
+	}

@@ -1,0 +1,19 @@
+{
+	"status": 200,
+	"data": {
+		"147": {
+			"title": "Chetra",
+			"price": {
+				"city": 2600,
+				"region": 3500
+			}
+		},
+		"274": {
+			"title": "Chetra 12",
+			"price": {
+				"city": 2500,
+				"region": 3500
+			}
+		}
+	}
+}

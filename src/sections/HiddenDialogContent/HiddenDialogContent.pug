@@ -1,0 +1,16 @@
+mixin HiddenDialogContent(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include HiddenDialogContent.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.hiddenDialogContent)
+		+I('Modal', ELEM('Modal'))
+			if ELEM('TextDate', false)
+				+ModalBody(ELEM('Modal'))(class=styles.hiddenDialogContentBody)
+					+Text({ data: { text: 'куда' }, cn: { textTransform: 'upper', style: 'cap' } })(class=styles.hiddenDialogContentBodyDateFootnote)
+					+Text(ELEM('TextDate'))(class=styles.hiddenDialogContentBodyDate)
+			+ModalFooter(ELEM('Modal'))(class=styles.hiddenDialogContentFooter)

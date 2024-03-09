@@ -1,0 +1,25 @@
+mixin SliderVideo(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderVideo.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderVideo)
+		+Container
+			+Row
+				+Col(ELEM('Col'))
+					+Heading(ELEM('Heading'))
+			+Row
+				+Col(ELEM('ColVideoSlider'))
+					+Slider(ELEM('Slider'))&attributes({ SliderSwiper: { class: styles.sliderVideoSliderSwiper }, SliderNavigation: { class: styles.sliderVideoSliderNavigation }, SliderSlidesWrapper: { class: styles.sliderVideoSliderSlidesWrapper } })
+						for item in ELEM_ARR('SliderVideoSlideArr')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+SliderSlide(class=styles.sliderVideoSliderSlide)
+								+I('StoryCard', item)
+					//- ## Ссылка на страницу  ## -//
+					if ELEM('PageLink', false)
+						div(class=styles.sliderVideoLink)
+							+Button(ELEM('PageLink'))

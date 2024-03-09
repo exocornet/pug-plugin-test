@@ -1,0 +1,222 @@
+-
+	const SubscriptionForm = {
+		includeSection: 'SubscriptionForm',
+		cn: {
+			margin: 'mt-200 mt-80@xs',
+		},
+		elem: {
+			Form: {
+				data: {
+					action: '/api/forms/callback'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'email'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш email",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-4 col-4@xs',
+												zIndex: 'z-1'
+											}
+										},
+										Select: {
+											data: {
+												name: 'theme'
+											},
+											elem: {
+												OptionsArr: [
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "новости",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "газета",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "медиа",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "рассылка",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "сми о нас",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "пресс-релизы",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "пресс-кит",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "контакты",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+												]
+											},
+											cn: {
+												subscription: 'subscription'
+											}
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "выберите тему",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						},
+						cn: {
+							margin: 'mt-24 mt-0@xs'
+						}
+					},
+					ColButtonSubscribe: {
+						cn: {
+							cols: 'col-2 col-4@xs'
+						}
+					},
+					ButtonSubscribe: {
+						data: {
+							text: 'Подписаться',
+							type: 'submit',
+						},
+						opt: {
+							icon: true
+						}
+					},
+				},
+				cn: {
+					margin: 'mt-0'
+				}
+			},
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			ColForm: {
+				cn: {
+					cols: 'col-10 col-4@xs',
+					offset: 'offset-2 offset-0@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: 'Подпишитесь на рассылку свежих новостей и важной информации',
+					footnoteText: 'рассылка'
+				},
+				cn: {
+					size: 'h3',
+				}
+			},
+		},
+	}

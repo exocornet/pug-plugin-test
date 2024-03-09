@@ -1,0 +1,125 @@
+-
+	const EmployeesMaterials = {
+		includeSection: 'Employees',
+		cn: {
+			margin: 'mt-200 mt-80@xs',
+			rowSlideMobile: 'slide',
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Row: {
+				cn: {
+					margin: 'mt-40 mt-20@xs'
+				}
+			},
+			PageLink: {
+				data: {
+					href: '#!',
+					text: 'скачать все'
+				},
+				cn: {
+					size: 'large'
+				},
+				opt: {
+					"icon-download": true
+				}
+			},
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: 'Материалы для использования в СМИ и новостных подборках',
+					footnoteText: 'материалы'
+				},
+				cn: {
+					size: 'h3',
+					margin: 'mt-20 mb-40 mb-20@xs'
+				}
+			},
+		},
+		dataArr: {
+			cardPersonalColArr: [
+				{
+					elem: {
+						Col: {
+							cn: {
+								offset: 'offset-2 offset-0@xs'
+							}
+						},
+						CardPersonal: {
+							data: {
+								image: require('IMAGES/sections/press-kit/Azot-green.png'),
+							},
+							elem: {
+								TextName: {
+									data: {
+										text: 'Логотип КАО «Азот»',
+									},
+									cn: {
+										size: 'big',
+									}
+								},
+								TextPosition: {
+									data: {
+										text: 'Архив с файлами. PNG, SVG, JPG'
+									},
+									cn: {
+										size: 'small',
+									}
+								},
+								Button: {
+									data: {
+										text: 'скачать',
+										href: '#'
+									},
+									opt: {
+										'icon-download': true
+									},
+									cn: {
+										color: 'transparent'
+									}
+								}
+							},
+							opt: {
+								isMaterialIcon: true,
+								isDownloadButton: true
+							},
+							cn: {
+								bgColor: 'grey',
+								withButton: 'with-button'
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						CardPersonal: {
+							data: {
+								image: require('IMAGES/sections/press-kit/Azot-white.png'),
+								text: 'брендбук компании',
+							},
+							elem: {
+								TextName: {
+									data: {
+										text: 'Брендбук КАО «Азот»',
+									},
+									cn: {
+										size: 'big',
+									}
+								},
+							},
+							opt: {
+								isMaterialIcon: true
+							},
+							cn: {
+								bgColor: 'green'
+							}
+						}
+					}
+				},
+			]
+		}
+	}

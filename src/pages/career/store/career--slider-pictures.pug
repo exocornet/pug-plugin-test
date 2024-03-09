@@ -1,0 +1,67 @@
+-
+	const SliderPictures = {
+		includeSection: 'SliderPictures',
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+			underline: 'underlined',
+		},
+		elem: {
+			Button: {
+				data: { text: 'О Кемерово', href: '#!' },
+				cn: { size: 'large' },
+				opt: { icon: true }
+			},
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: 'В окружении природных пейзажей и возможностей нашего города Кемерово',
+					footnoteText: 'где мы работаем?'
+				},
+				cn: {
+					size: 'h3',
+					margin: 'mb-40 mb-20@xs'
+				}
+			},
+			HeadingBottom: {
+				data: {
+					tag: 'h4',
+					text: 'Кемерово — один из крупнейших промышленных, административных и культурных центров Кузбасса. Областной центр Кемеровской области, на юге Сибири, с развитой инфраструктурой для комфортной жизни',
+				},
+				cn: {
+					textIndent: true,
+					size: 'h4',
+				}
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto',
+				},
+				opt: {
+					isSliderNavigation: true,
+				}
+			},
+			SliderPicturesSlideArr: [
+				{
+					data: {
+						image: require('IMAGES/sections/slider-pictures/slide-1.png'),
+					},
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-pictures/slide-2.png'),
+					},
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-pictures/slide-3.png'),
+					},
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-pictures/slide-4.png'),
+					},
+				},
+			]
+		}
+	}

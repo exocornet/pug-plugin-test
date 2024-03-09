@@ -1,0 +1,46 @@
+mixin TabsSlider(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TabsSlider.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.tabsSlider id=DATA('id', false))
+		+Container
+			if ELEM('Heading')
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			+Row
+				+Col(ELEM('ColCardSlider'))
+					+Tabs(ELEM('Tabs'))
+						+TabsBody(class=styles.tabsSliderTabBody)
+							for item in ELEM_ARR('TabsContentArr')
+								//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+								include ../../shared/helpers/pug/shortcut-check-store
+
+								//- # ВЕРСТКА # -//
+								+TabsContent(item)
+									+Row
+										+Col(I_ELEM('ColCardSlider'))
+											+Slider(I_ELEM('Slider'))&attributes({
+												SliderPagination: {class: styles.tabsSliderSliderPagination},
+												SliderNavigation: {class: styles.tabsSliderSliderNavigation},
+												SliderSwiper: {class: styles.tabsSliderSliderSwiper}
+											})
+												for item in I_ELEM_ARR('SliderInfoArr')
+													include ../../shared/helpers/pug/shortcut-check-store
+													+CardInfo(I_ELEM('CardInfo'))
+							div(class=styles.tabsSliderLink)
+								+TabsButtons(ELEM('TabsButtons'))(class=styles.tabsSliderButtons)
+								div(class=styles.tabsSliderButtonSeparator)
+								+Button({
+									data: {text: 'СКАЧАТЬ ВЕСЬ ПЕРЕЧЕНЬ', href: '#!'},
+									cn: {
+										display: 'd-inline-block@xs',
+										margin: 'mb-20'
+									},
+									opt: {"icon-download": true}
+								})(class=styles.tabsSliderButton)

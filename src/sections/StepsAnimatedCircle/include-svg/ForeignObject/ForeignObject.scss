@@ -1,0 +1,10 @@
+.foreign-object {
+	overflow: visible;
+
+	width: 1px;
+	height: 1px;
+
+	* {
+		width: max-content;
+	}
+}

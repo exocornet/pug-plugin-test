@@ -1,0 +1,239 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.card-personal {
+	$self: &;
+
+	text-decoration: none;
+
+	&:hover {
+		cursor: pointer;
+
+		#{$self}__name, #{$self}__position, #{$self}__link-arrow, #{$self}__button-wrap a, #{$self}__button-wrap a svg {
+			transition: all 0.4s;
+
+			color: $dark-green;
+		}
+
+		.card-personal__product-wrap {
+			opacity: 1;
+		}
+	}
+
+	&__video-container {
+		height: responsive-size(404, 560);
+
+		border-radius: 16px;
+	}
+
+	&__video {
+		height: 100%;
+	}
+
+	&__player {
+		position: relative;
+		left: 50%;
+
+		width: auto;
+		min-width: 100%;
+		max-width: none;
+		height: 100%;
+
+		transform: translateX(-50%);
+	}
+
+	&__image-container {
+		position: relative;
+	}
+
+	&__image-container,
+	&__material-image-container {
+		aspect-ratio: 1.11;
+
+		@include media(xs) {
+			aspect-ratio: 0.79;
+		}
+	}
+
+	&__picture {
+		display: block;
+
+		width: 100%;
+		height: 100%;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top center;
+
+		border-radius: responsive-size(8, 16);
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-template-areas:
+			"name link"
+			"position link";
+		row-gap: 16px;
+
+		&_with-button {
+			@include media(xs) {
+				grid-template-areas:
+					"name"
+					"position"
+					"link";
+			}
+		}
+
+		@include media(xxl, min) {
+			margin-bottom: responsive-size(16);
+		}
+	}
+
+	&__download-button {
+		padding: 5px 0;
+
+		@include media(xs) {
+			padding: 13px 12px 11px;
+		}
+	}
+
+	&__name {
+		grid-area: name;
+	}
+
+	&__position {
+		grid-area: position;
+	}
+
+	&__link-arrow {
+		grid-area: link;
+
+		width: responsive-size(9);
+		min-width: 9px;
+
+		color: $black;
+	}
+
+	&__material-icon-wrap {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+
+		gap: 16px;
+
+		width: responsive-size(175, 330);
+		height: responsive-size(50, 86);
+	}
+
+	&__material-image-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		border-radius: responsive-size(8, 16);
+
+		&_grey {
+			background-color: $smoky-white;
+		}
+
+		&_green {
+			background-color: var(--selection-color);
+
+			.card-personal__material-icon {
+				width: responsive-size(175, 203);
+			}
+
+			p {
+				text-align: center;
+
+				color: $white;
+
+				@include font-size-responsive(1.6, 2);
+			}
+		}
+	}
+
+	&__button-wrap {
+		grid-area: link;
+
+		display: flex;
+
+		gap: 8px;
+
+		font-size: 10px;
+
+		@include media(xs) {
+			width: fit-content;
+
+			border-radius: 4px;
+
+			background-color: $black-04;
+		}
+	}
+	// stylelint-disable-next-line no-descending-specificity
+	&__product-wrap {
+		position: absolute;
+		z-index: 1;
+		bottom: 20px;
+		left: 20px;
+
+		display: flex;
+		align-items: center;
+
+		max-width: 208px;
+
+		padding: 8px;
+
+		transition: opacity .2s ease-in-out;
+
+		opacity: 0;
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__product-image-wrap {
+		margin-right: 8px;
+		padding: 8px;
+
+		border-radius: 8px;
+
+		background-color: $smoky-white;
+	}
+
+	&__product-info {
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+
+		color: $white;
+
+		font-size: 10px;
+		line-height: 1.4;
+	}
+
+	&__product-link {
+		position: absolute;
+		z-index: 2;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+	}
+
+	&__product-image {
+		width: 34px;
+	}
+
+	&_no-hover {
+		&:hover {
+			cursor: default;
+		}
+	}
+}

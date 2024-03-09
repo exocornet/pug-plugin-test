@@ -1,0 +1,24 @@
+mixin BannerSlider(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include BannerSlider.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.bannerSlider)
+		+Container
+			+Slider(ELEM('Slider'))&attributes({ SliderPagination: {class: styles.bannerSliderSliderPagination} })
+				for item in ELEM_ARR('SliderSlideArr')
+					//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+					include ../../shared/helpers/pug/shortcut-check-store
+
+					+SliderSlide(class=styles.bannerSliderSlide)
+						picture(class=styles.bannerSliderPicture)
+							source(srcset=I_DATA('imgSlideXs') media=`(max-width: ${media.xs})`)
+							img(class=styles.bannerSliderImageSlide src=I_DATA('imgSlide') alt="")
+						+Heading(I_ELEM('HeadingTop'))
+						div(class=styles.bannerSliderContentBottom)
+							+Link({data: {text: 'узнайте больше <br>о компании «Азот»'}})(class=styles.bannerSliderLink)
+							+Heading(I_ELEM('HeadingBottom'))

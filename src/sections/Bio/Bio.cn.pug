@@ -1,0 +1,10 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('bio')
+
+		return {
+			bio: BLOCK({}, ['mt-200 mt-80@xs']),
+			bioGroup: BLOCK('group', ['pb-64', cn?.jsClass]),
+			bioGroupData: BLOCK('group-data', [cn?.jsClassItem]),
+		}
+	}

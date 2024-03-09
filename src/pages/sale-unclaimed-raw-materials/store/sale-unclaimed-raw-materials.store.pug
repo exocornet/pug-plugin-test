@@ -1,0 +1,43 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Продажа невостребованного сырья компании';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Покупателям' } },
+						{ data: { text: 'Продажа невостребованного сырья компании' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Добавление store для секции HeadingDetailed # -//
+include sale-unclaimed-raw-materials--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- # Добавление store для секции ImageFacts # -//
+include sale-unclaimed-raw-materials--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- # Добавление store для секции PageLinks # -//
+include sale-unclaimed-raw-materials--page-links
+- pageStore.addSection(PageLinks);
+
+//- ## Подключение store секции FeedbackForm ## -//
+include sale-unclaimed-raw-materials--feedback-form
+- pageStore.addSection(FeedbackForm);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include sale-unclaimed-raw-materials--dialog
+- pageStore.addSection(HiddenDialogContent);

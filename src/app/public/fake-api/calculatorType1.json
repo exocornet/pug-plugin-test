@@ -1,0 +1,19 @@
+{
+	"status": 200,
+	"data": {
+		"280": {
+			"title": "Belarus 12",
+			"price": {
+				"city": 3000,
+				"region": 3400
+			}
+		},
+		"282": {
+			"title": "Belarus 15",
+			"price": {
+				"city": 2900,
+				"region": 3300
+			}
+		}
+	}
+}

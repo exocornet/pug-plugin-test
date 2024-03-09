@@ -1,0 +1,21 @@
+mixin SliderStories(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderStories.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderStories)
+		+Container
+			if ELEM('TextFootnote', false)
+				+Row
+					+Col(ELEM('Col'))
+						+Text(ELEM('TextFootnote'))
+			+Row
+				+Slider(ELEM('Slider'))&attributes({ SliderSwiper: { class: styles.sliderStoriesSliderSwiper }, SliderNavigation: { class: styles.sliderStoriesSliderNavigation }, SliderSlidesWrapper: { class: styles.sliderStoriesSliderSlidesWrapper } })
+					for item in ELEM_ARR('SliderStoriesSlideArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						+SliderSlide(class=styles.sliderStoriesSliderSlide)
+							+I('StoryCard', item)

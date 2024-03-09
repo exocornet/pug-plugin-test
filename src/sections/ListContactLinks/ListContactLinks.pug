@@ -1,0 +1,20 @@
+mixin ListContactLinks(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ListContactLinks.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.listContactLinks id=DATA('id', false))
+		+Container
+			if ELEM('Heading', false)
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			+Row
+				+Col({cn: {cols: 'col-12 col-4@xs'}})
+					for item in ELEM_ARR('ListContactLinksArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						+ContactLink(I_ELEM('ContactLink'))

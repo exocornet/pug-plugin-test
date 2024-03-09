@@ -1,0 +1,40 @@
+mixin TabsInnerTab(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TabsInnerTab.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.tabsInnerTab)
+		+Container
+			div(class=styles.tabsInnerTabWrapper)
+				+Row
+					+Col({ cn: { cols: 'col-9 col-4@xs' } })
+						+Heading(ELEM('Heading'))
+				+Row
+					+Col
+						+Tabs(ELEM('Tabs'))
+							+TabsButtons(ELEM('TabsButtons'))(class=styles.tabsInnerTabButtons)
+							+TabsBody
+								for item in ELEM_ARR('TabsContentArr')
+									//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+									include ../../shared/helpers/pug/shortcut-check-store
+									- const stylesItem = classes(item && item.cn);
+
+									//- # ВЕРСТКА # -//
+									+TabsContent(item)(class=styles.tabsInnerTabContent)
+										+Tabs(I_ELEM('Tabs'))
+											+TabsButtons(I_ELEM('TabsInnerButtons'))
+											+TabsBody
+												for item in I_ELEM_ARR('TabsInnerContentArr')
+													//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+													include ../../shared/helpers/pug/shortcut-check-store
+													- const stylesItem = classes(item && item.cn);
+
+													//- # ВЕРСТКА # -//
+													+TabsContent(item)(class=styles.tabsInnerTabContent)
+														for item in I_ELEM_ARR('PageLinksArr')
+															include ../../shared/helpers/pug/shortcut-check-store
+															+I('PageLink', item)

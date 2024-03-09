@@ -1,0 +1,56 @@
+-
+	const SliderPictures = {
+		includeSection: 'SliderPictures',
+		cn: {
+			margin: 'mt-200 mt-80@xs'
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs',
+				}
+			},
+			Button: {
+				data: { text: 'история компании', href: '#!' },
+				cn: { size: 'medium' },
+				opt: { icon: true }
+			},
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: '«Азот» существует с 1956 года, когда была получена первая продукция предприятия. За 67 лет мы стали одним из лидеров в производстве минеральных и азотных удобрений',
+				},
+				cn: {
+					textIndent: 'true',
+					size: 'h3',
+					margin: 'mb-40 mb-20@xs'
+				}
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto',
+				},
+				opt: {
+					isSliderNavigation: true,
+				}
+			},
+			SliderPicturesSlideArr: [
+				{
+					data: {
+						image: require('IMAGES/sections/slider-info/slider-info-slide-1.jpg')
+					},
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-info/slider-info-slide-2.jpg')
+					},
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-info/slider-info-slide-3.jpg')
+					},
+				},
+			]
+		}
+	}

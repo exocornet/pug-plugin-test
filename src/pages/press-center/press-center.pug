@@ -1,0 +1,52 @@
+//- # ПОДКЛЮЧЕНИЕ LAYOUT # -//
+extends ../../shared/helpers/pug/layout
+
+//- # ПОДКЛЮЧЕНИЕ STORE СТРАНИЦЫ # -//
+block variables
+	include store/press-center.store.pug
+
+//- # ПОДКЛЮЧЕНИЕ CSS СТРАНИЦЫ # -//
+append include-css
+	include styles-and-scripts/press-center.link.pug
+
+//- # ПОДКЛЮЧЕНИЕ HEADER СТРАНИЦЫ # -//
+block header
+	include ../../features/Header/Header
+	+Header(Header)
+
+//- # ПОДКЛЮЧЕНИЕ MAIN СТРАНИЦЫ # -//
+block main
+	main
+		+S('HeadingDetailed', {
+			elem: {
+				Col: {
+					cn: {
+						cols: 'col-9 col-4@xs',
+					}
+				},
+				Heading: {
+					data: {
+						tag: 'h1',
+						text: `<span class=\"light-grey\">Пресс-центр.</span> Информационный хаб для актуальных новостей и медиа-материалов`
+					},
+					cn: {
+						size: "h3",
+						textIndent: true
+					}
+				},
+			}
+		})
+		div(class="d-flex flex-direction-column@xs mt-40 mt-20@xs")
+			+S('AsidePageNav', pageStore.getSections[0])
+			div(class="press-center-main__wrapper col-10 col-4@xs")
+				for sectionStore, idx in pageStore.getSections
+					+S(`${pageStore.getSections[idx].includeSection}`, sectionStore)
+
+//- # ПОДКЛЮЧЕНИЕ FOOTER СТРАНИЦЫ # -//
+block footer
+	include ../../features/Footer/Footer
+	+Footer(Footer)
+
+//- # ПОДКЛЮЧЕНИЕ JAVASCRIPT СТРАНИЦЫ # -//
+append include-js
+	include styles-and-scripts/press-center.script.pug

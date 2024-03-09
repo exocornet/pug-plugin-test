@@ -1,0 +1,277 @@
+-
+	const SliderHistory = {
+		includeSection: 'SliderHistory',
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+				Heading: {
+						data: {
+								tag: 'h2',
+								text: '<span class="light-grey">Наша история.</span> Прошлое <br/> и настоящее в едином ритме. История <br/> нашего предприятия, которая вдохновляет',
+						},
+						cn: {
+								textIndent: true,
+								size: 'h3',
+								margin: 'mt-20 mb-40 mb-20@md mb-0@xs mr-20@xs ml-20@xs',
+						}
+				},
+				//- данные компонента Slider
+				Slider: {
+						data: {
+								dataCustomPagination: '1945;1956;1958;1959;1960;1962;1964;1972;1975;1979;1980;1989;1998;2005;2021',
+								dataDynamicBullets: 'true',
+						},
+						opt: {
+								isSliderPagination: true,
+								isSliderNavigation: true,
+						},
+				},
+				//- массив данных компонента SliderSlide
+				SliderSlideArr: [
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/images-big-1949.jpeg'),
+										imageXs: require('IMAGES/sections/slider-history/image_1945.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1945'
+												}
+										},
+										Text: {
+												data: {text: 'Комитет Государственной Обороны принимает решение о строительстве нового химического завода в городе Кемерово.\n' +
+																		'Новый завод получает название Новокемеровский химический комбинат (НКХК). Он будет производить аммиак, аммиачную селитру, карбамид, азотную кислоту и капролактам и входить в программу восстановления химической отрасли СССР, как наиболее пострадавшей в годы ВОВ.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/images-big-1949.jpeg'),
+										imageXs: require('IMAGES/sections/slider-history/image_1956.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1956'
+												}
+										},
+										Text: {
+												data: {text: 'В 1956 году 5 ноября на комбинате получена первая химическая продукция, которая никак не была отражена в проектном задании, — диметиламин — компонент ракетного топлива.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/images-big-1949.jpeg'),
+										imageXs: require('IMAGES/sections/slider-history/image_1958.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1958'
+												}
+										},
+										Text: {
+												data: {text: 'В 1958 году строится цех по производству неконцентрированной азотной кислоты — основного полупродукта для получения аммиачной селитры.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/images-big-1949.jpeg'),
+										imageXs: require('IMAGES/sections/slider-history/image_1959.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1959'
+												}
+										},
+										Text: {
+												data: {text: 'В 1959 году вводится в эксплуатацию цех аммиачной селитры.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/images-big-1949.jpeg'),
+										imageXs: require('IMAGES/sections/slider-history/image_1960.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1960'
+												}
+										},
+										Text: {
+												data: {text: 'В 1960 году запущено большое производство аммиака и метанола'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/images-big-1949.jpeg'),
+										imageXs: require('IMAGES/sections/slider-history/image_1962.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1962'
+												}
+										},
+										Text: {
+												data: {text: 'С 1962 года строится производство капролактама первой очереди из анилина. Первое производство этого вещества в Советском Союзе. В 1968 году достраивается вторая очередь производства капролактама из бензола.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_1964.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_1964.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1964'
+												}
+										},
+										Text: {
+												data: {text: 'В 1964 году для целинной кампании строится первый цех карбамида кристаллического по советской технологии.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_1972.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_1972.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1972'
+												}
+										},
+										Text: {
+												data: {text: 'В 1972 году на комбинате построена третья линия капролактама по голландской технологии.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_1975.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_1975.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1975'
+												}
+										},
+										Text: {
+												data: {text: 'В 1975 году Новокемеровский химкомбинат переименовывают в Производственное объединение «Азот». Это связано с унификацией азотной промышленности СССР: все заводы, производящие аммиак, получили наименование «Азот» с припиской места нахождения. Так появился Кемеровский Азот (КПО «Азот»).'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_1979.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_1979.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1979'
+												}
+										},
+										Text: {
+												data: {text: 'В 1979 году на КПО «Азот» вводится в эксплуатацию первый крупнотоннажный агрегат по синтезу аммиака АМ-70.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_1980.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_1980.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1980'
+												}
+										},
+										Text: {
+												data: {text: 'С 1979–1987 годах строятся крупнотоннажные агрегаты производства аммиака, азотной кислоты, селитры и карбамида. Выпуск продукции кемеровского «Азота» увеличился почти в 10 раз.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_1989.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_1989.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1989'
+												}
+										},
+										Text: {
+												data: {text: 'В 1989 году «Азот» выходит на максимальные производственные мощности. После распада СССР завод проходит процедуру акционирования и долгое время находится под народным управлением.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_1998.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_1998.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '1998'
+												}
+										},
+										Text: {
+												data: {text: 'К 1998 году на заводе наступают кризисные времена: цеха работают с перебоями. Один крупнотоннажный агрегат аммиака останавливают и разбирают на запчасти. А крупнотоннажная химия не находит сбыта среди оптовых потребителей, и на заводе начинается выпуск мелкой фасовки минеральных удобрений. К середине 2000-х обстановка на предприятии стабилизируется и завод начинает выходить из кризиса.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_2005.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_2005.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '2005'
+												}
+										},
+										Text: {
+												data: {text: 'С 2005 по 2015 годы на «Азоте» проходит ряд модернизаций основных производств.'}
+										}
+								}
+						},
+						{
+								data: {
+										image: require('IMAGES/sections/slider-history/image_2021.png'),
+										imageXs: require('IMAGES/sections/slider-history/image_2021.png')
+								},
+								elem: {
+										Date: {
+												data: {
+														text: '2021'
+												}
+										},
+										Text: {
+												data: {text: 'В 2021 году в строй вводятся 3 новых производства: аппарат по производству азотной кислоты, аммиачной селитры и цех по производству водорода.'}
+										}
+								}
+						},
+				]
+		}
+	}

@@ -1,0 +1,64 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.filter-cases {
+	&__filters-select-control {
+		margin-left: auto;
+
+		@include media(xs) {
+			margin-left: 0;
+		}
+	}
+
+	&__cards {
+		position: relative;
+
+		display: flex;
+		flex-wrap: wrap;
+		gap: responsive-size(64, 80) responsive-size(0, 10);
+
+		width: 100%;
+
+		padding: 0;
+	}
+
+	&__card-wrap {
+		&_wide {
+			width: responsive-size(461, 993, md);
+
+			@include media(xs){
+				width: 100%
+			}
+		}
+
+		&_narrow {
+			width: responsive-size(229, 493, md);
+
+			@include media(xs){
+				width: 100%
+			}
+		}
+
+		picture {
+			height: responsive-size(404, 560);
+		}
+
+		.card-personal__image-container {
+			aspect-ratio: auto;
+		}
+
+		@media (max-width: 991px) {
+			&.wide,
+			&.narrow {
+				width: calc(50% - 10px);
+			}
+		}
+
+		@include media(xs) {
+			&.wide,
+			&.narrow {
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,190 @@
+-
+	const SliderVideo = {
+		includeSection: 'SliderVideo',
+		cn: {
+			margin: 'mt-200 mt-80@xs'
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Репортажи и интервью",
+					footnoteText: "видео"
+				},
+				cn: {
+					size: "h3",
+					margin: 'mb-40 mb-20@md',
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			ColVideoSlider: {
+				cn: {
+					cols: 'col-12 col-4@xs',
+					slider: 'h-auto'
+				}
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: '3;2;1.1',
+				},
+				opt: {
+					isSliderNavigation: true,
+				}
+			},
+			SliderVideoSlideArr: [
+				{
+					elem: {
+						Video: {
+							data: {
+								'data-modal-video': 'modal-video-news-slider',
+								videoMp4: '/public/static-files/video/sample-30s.mp4',
+								settings: {
+									controls: true,
+									muted: false,
+								},
+							},
+						},
+						TextStory: {
+							data: {
+								text: 'Репортаж о станции УФ обеззараживания сточных вод в г.Кемерово',
+							},
+							cn: {
+								size: 'big',
+							}
+						},
+						TextCreator: {
+							data: {
+								text: '09.06.2023'
+							},
+							cn: {
+								size: 'small',
+							}
+						},
+					},
+					opt: {
+						isLink: true
+					}
+				},
+				{
+					elem: {
+						Video: {
+							data: {
+								'data-modal-video': 'modal-video-news-slider',
+								iframeSrc: "https://www.youtube.com/embed/rUxij4oVCzE?rel=0&enablejsapi=1",
+								settings: {
+									controls: false,
+									muted: false,
+								},
+								caption: "«азот» - вклад в надежное будущее"
+							},
+							opt: {
+								'iframe': true,
+							}
+						},
+						TextStory: {
+							data: {
+								text: 'День предприятия на большой сцене. «Вести. Кузбасс»',
+							},
+							cn: {
+								size: 'big',
+							}
+						},
+						TextCreator: {
+							data: {
+								text: '09.06.2023'
+							},
+							cn: {
+								size: 'small',
+							}
+						},
+					},
+					opt: {
+						isLink: true
+					}
+				},
+				{
+					elem: {
+						Video: {
+							data: {
+								'data-modal-video': 'modal-video-news-slider',
+								videoMp4: '/public/static-files/video/sample-30s.mp4',
+								settings: {
+									controls: true,
+									muted: false
+								},
+								caption: "«азот» - вклад в надежное будущее"
+							},
+						},
+						TextStory: {
+							data: {
+								text: 'Кемеровский «Азот» сообщает о проводимых мероприятиях',
+							},
+							cn: {
+								size: 'big',
+							}
+						},
+						TextCreator: {
+							data: {
+								text: '09.06.2023'
+							},
+							cn: {
+								size: 'small',
+							}
+						},
+					},
+					opt: {
+						isLink: true
+					}
+				},
+				{
+					elem: {
+						Video: {
+							data: {
+								'data-modal-video': 'modal-video-news-slider',
+								videoMp4: '/public/static-files/video/sample-30s.mp4',
+								settings: {
+									controls: true,
+									muted: false
+								},
+								caption: "«азот» - вклад в надежное будущее"
+							},
+						},
+						TextStory: {
+							data: {
+								text: 'Кемеровский «Азот» сообщает о проводимых мероприятиях',
+							},
+							cn: {
+								size: 'big',
+							}
+						},
+						TextCreator: {
+							data: {
+								text: '09.06.2023'
+							},
+							cn: {
+								size: 'small',
+							}
+						},
+					},
+					opt: {
+						isLink: true
+					}
+				},
+			],
+			PageLink: {
+				data: {
+					href: '#!',
+					text: 'все видео'
+				},
+				opt: {
+					icon: true
+				}
+			}
+		}
+	}

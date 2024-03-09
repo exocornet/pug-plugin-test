@@ -1,0 +1,12 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-news')
+
+		return {
+			sliderNews: BLOCK({}, [cn?.margin]),
+			sliderNewsSliderNavigation: BLOCK('slider-navigation'),
+			sliderNewsSliderSwiper: BLOCK('slider-swiper'),
+			sliderNewsSliderSlide: BLOCK('slider-slide'),
+			sliderNewsLink: BLOCK('link', ['position-absolute position-static@xs']),
+		}
+	}

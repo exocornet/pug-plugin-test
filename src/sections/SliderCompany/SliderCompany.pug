@@ -1,0 +1,28 @@
+mixin SliderCompany(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderCompany.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderCompany)
+		+Container
+			if ELEM('Heading')
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			+Slider(ELEM('Slider'))&attributes({ SliderNavigation: { class: styles.sliderCompanySliderNavigation }, SliderSwiper: { class: styles.sliderCompanySliderSwiper } })
+				for item in ELEM_ARR('SliderSlideArr')
+					include ../../shared/helpers/pug/shortcut-check-store
+					+SliderSlide(class=styles.sliderCompanySliderSlide)
+						- const HREF = I_DATA('ItemLink') || '#!'
+							a(class=styles.sliderCompanyWrapper href=HREF)
+								+Sprite(I_DATA('spriteId'))(class=styles.sliderCompanyImage)
+								+Text(I_ELEM('Text'))(class=styles.sliderCompanyText)
+
+			//- ## Ссылка на страницу  ## -//
+			if ELEM('PageLink', false)
+				div(class=styles.sliderCompanyLink)
+					+Button(ELEM('PageLink'))

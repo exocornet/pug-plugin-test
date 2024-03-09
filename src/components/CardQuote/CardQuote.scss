@@ -1,0 +1,21 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.card-quote {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	padding: responsive-size(20, 28);
+
+	border-radius: responsive-size(8, 16);
+	background-color: var(--smoky-white);
+
+	&__text-quote {
+		line-height: 1.15;
+
+		@include media(xs) {
+			line-height: 1.1;
+		}
+	}
+}

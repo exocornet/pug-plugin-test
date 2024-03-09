@@ -1,0 +1,18 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('field')
+
+		return {
+			field: BLOCK({[cn?.placeholder]: ['shown-placeholder'].includes(cn?.placeholder)}, [cn?.margin]),
+			fieldContainer: BLOCK('container'),
+			fieldContainerDatePicker: BLOCK('container-date-picker'),
+			fieldContainerNumberWrapper: BLOCK('container-number-wrapper'),
+			fieldContainerSelect: BLOCK('container-select'),
+			fieldInput: BLOCK('input', [cn?.paddingInput]),
+			fieldFloatingLabel: BLOCK('floating-label'),
+			fieldError: BLOCK('error'),
+			fieldErrorMessage: BLOCK('error-message'),
+			fieldRequiredTypes: BLOCK('required-types'),
+			fieldDownloadIcon: BLOCK('download-icon')
+		}
+	}

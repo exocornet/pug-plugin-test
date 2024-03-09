@@ -1,0 +1,52 @@
+-
+	const HiddenDialogContent = {
+		// includeContent: 'HiddenDialogContent',
+		elem: {
+			Modal: {
+				data: {
+					name: 'dialog-content'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							img: require('IMAGES/modals/close.svg'),
+							type: 'button',
+						},
+						cn: {
+							color: 'transparent'
+						},
+						opt: {
+							withCloseIcon: true,
+						}
+					},
+					Heading: {
+						data: {
+							tag: "h3",
+							text: "Произошла ошибка, обратитесь к администратору",
+							footnoteText: "форма обратной связи"
+						},
+						cn: {
+							size: "h3",
+							textIndent: true,
+							cols: 'col-10 col-4@xs',
+							margin: 'mb-120@xs',
+							marginFootnote: 'mb-24@xs'
+						},
+					},
+					ButtonCloseModal: {
+						data: {
+							type: 'button',
+							text: 'Закрыть',
+						},
+						cn: {
+							size: 'large',
+						}
+					}
+				},
+				opt: {
+					SwipeModal: true,
+					'close-button': true
+				}
+			}
+		}
+	}

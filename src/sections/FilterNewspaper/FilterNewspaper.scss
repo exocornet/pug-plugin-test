@@ -1,0 +1,15 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.filter-newspaper {
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		gap: responsive-size(10, 15);
+
+		@include media(xs) {
+			overflow-x: scroll;
+			flex-wrap: nowrap;
+		}
+	}
+}

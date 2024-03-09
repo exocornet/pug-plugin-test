@@ -1,0 +1,89 @@
+-
+	const Requisites = {
+		includeSection: 'Requisites',
+		cn: {
+			border: true
+		},
+		elem: {
+			Footnote: {
+				data: {
+					text: 'реквизиты компании',
+				},
+				cn: {
+					margin: 'mb-32 mb-20@xs',
+					style: 'cap',
+					textTransform: 'upper'
+				}
+			},
+			Header: {
+				data: {
+					text: 'КАО «Азот»',
+				},
+				cn: {
+					margin: 'mb-20 mb-16@xs',
+					size: 'bigger'
+				}
+			},
+			Button: {
+				data: {
+					href: '#!',
+					text: 'скачать реквизиты',
+					tag: 'a'
+				},
+				opt: {
+					"icon-download": true
+				}
+			},
+			RequisitesArr: [
+				{
+					elem: {
+						Key: {
+							data: {
+								text: 'ИНН/КПП:',
+								tag: 'span',
+							},
+							cn: {
+								size: 'bigger'
+							},
+						},
+						Value: {
+							data: {
+								text: '7736610311 / 770901001',
+								tag: 'span',
+							},
+							cn: {
+								margin: 'ml-12',
+								size: 'bigger'
+							},
+						}
+					},
+				},
+				{
+					elem: {
+						Key: {
+							data: {
+								text: 'ОГРН:',
+								tag: 'span',
+							},
+							cn: {
+								size: 'bigger'
+							},
+						},
+						Value: {
+							data: {
+								text: '1097746709213',
+								tag: 'span',
+							},
+							cn: {
+								margin: 'ml-12',
+								size: 'bigger'
+							},
+						}
+					},
+					//- cn: {
+					//- 	margin: 'pb-20@xs',
+					//- }
+				},
+			],
+		}
+	}

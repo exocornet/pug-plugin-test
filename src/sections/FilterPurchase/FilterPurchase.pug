@@ -1,0 +1,44 @@
+include FilterPurchaseItem
+
+mixin FilterPurchase(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FilterPurchase.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.filterPurchase)
+		+Container
+			+I('Filters', {data: {dataIdComponent: '5555'}})
+				+FiltersPanel
+					+FiltersSearch({data: {action: '/nvi'}})
+					+FiltersLinkControl({
+						elem: {
+							ButtonFilterArr: [
+								{ data: { text: 'закупка', href: '/purchase-realization/purchase' }, cn: { jsActiveLinkControl: true } },
+								{ data: { text: 'реализация', href: '/purchase-realization/production' } },
+								{ data: { text: 'архив', href: '/purchase-realization/archive' } },
+							]
+						}
+					})
+					+FiltersSelectControl(ELEM('FiltersSelectControl'))(class="ml-auto ml-0@xs")
+
+				+FiltersContentContainer(class=styles.filterPurchaseContainer)
+					+Tabs
+						+TabsButtons(ELEM('TabsButtons'))(class=styles.filterPurchaseTabsButtons)
+						+TabsBody
+							for item in ELEM_ARR('TabsContentArr')
+								include ../../shared/helpers/pug/shortcut-check-store
+								+TabsContent(item)(class=styles.filterPurchaseTabsContent)
+									div(class="js-more")&attributes({...I_DATA('moreAttributes', false)})
+										div(class=styles.filterPurchaseTableHeading)
+											for item, index in I_DATA_ARR('ColTableArr')
+												include ../../shared/helpers/pug/shortcut-check-store
+												+Col(I_ELEM('Col'))
+													span !{I_DATA('text')}
+
+										for item in I_ELEM_ARR('FilterPurchaseItemArr')
+											include ../../shared/helpers/pug/shortcut-check-store
+											+FilterPurchaseItem(I_ELEM('FilterPurchaseItem'))(class="js-more-item")

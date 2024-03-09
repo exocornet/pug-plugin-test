@@ -1,0 +1,24 @@
+mixin FormSearchWork(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FormSearchWork.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.formSearchWork)
+		if ELEM('Heading', false)
+			+Heading(ELEM('Heading'))(class=styles.formSearchWorkHeader)
+		form(
+			class=styles.formSearchWorkForm
+			action="#"
+			data-required="Обязательное поле"
+			data-min="минимум 3 символа"
+			)
+			+Row
+				+Field(ELEM('Field'))
+				+Col(ELEM('ColDropList'))(class=styles.formSearchWorkWrapper)
+					+DropList(ELEM('DropList'))(class=styles.formSearchWorkButton)
+					div(class=styles.formSearchWorkButton)
+						+Button({data: {text: 'искать'}, cn: {size: 'large'}})(class=styles.formSearchWorkButtonSubmit)

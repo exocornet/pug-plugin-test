@@ -1,0 +1,37 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'О нас';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции TitleSlider ## -//
+include about--title-slider
+- pageStore.addSection(TitleSlider);
+
+//- ## Подключение store секции SliderAbout ## -//
+include about--arrowed-section
+- pageStore.addSection(ArrowedSection);
+
+//- ## Подключение store секции SliderAbout ## -//
+include about--slider-about
+- pageStore.addSection(SliderAbout);
+
+//- ## Подключение store секции Employees ## -//
+include about--employees
+- pageStore.addSection(Employees);
+
+//- ## Подключение store секции SliderPictures ## -//
+include about--slider-pictures
+- pageStore.addSection(SliderPictures);
+
+//- ## Подключение store секции PageLinks ## -//
+include about--page-links
+- pageStore.addSection(PageLinks);
+
+//- ## Подключение store секции ModalVideoCustom ## -//
+include about--modal-video-custom
+- pageStore.addSection(ModalVideoCustom);

@@ -1,0 +1,13 @@
+mixin ForeignObject(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	- const TAG = DATA('tag', false) || 'div';
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	foreignobject(class="foreign-object" x=DATA('x', false) y=x=DATA('y', false))&attributes(attributes.ForeignObject)
+		if OPT('isBlock')
+			block
+		else
+			#{TAG}&attributes(attributes.Text) !{DATA('text')}

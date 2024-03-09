@@ -1,0 +1,25 @@
+mixin CatalogItem(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	- const HREF = DATA('ItemLink') || '#!';
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include CatalogItem.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	a(class=styles.catalogItem href=HREF)&attributes(attributes)
+		span(class=styles.catalogItemFormula) !{DATA('formula', false)}
+		span(class=styles.catalogItemMark data-tooltip=DATA('markTooltip', false)) !{DATA('mark', false)}
+		picture(class=styles.catalogItemImage)
+			source(srcset=DATA('imageXs') media=`(max-width: ${media.xs})`)
+			img(src=DATA('image') alt=DATA('title'))
+		span(class=styles.catalogItemTitle) !{DATA('title', false)}
+		span(class=styles.catalogItemCondition) !{DATA('condition', false)}
+		span(class=styles.catalogItemType) !{DATA('type', false)}
+		span(class=styles.catalogItemDescription) !{DATA('description', false)}
+		div(class=styles.catalogItemButton)
+			object
+				+Button(ELEM('Button'))(type="button")

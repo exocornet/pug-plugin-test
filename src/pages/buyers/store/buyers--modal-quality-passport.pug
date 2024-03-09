@@ -1,0 +1,204 @@
+-
+	const ModalQualityPassport = {
+		includeContent: 'ModalQualityPassport',
+		data: {
+			icon: require('IMAGES/modals/load_button.png'),
+			defaultTransportLabel: '№ транспорта',
+			containerLabel: 'containerLabel',
+			carLabel: 'carLabel',
+			carriageLabel: 'carriageLabel'
+		},
+		elem: {
+			Modal: {
+				data: {
+					name: 'modal-quality-passport'
+				},
+				elem: {
+					ButtonClose: {
+						data: {
+							img: require('IMAGES/modals/close.svg'),
+							type: 'button',
+						},
+						cn: {
+							color: 'transparent'
+						},
+						opt: {
+							withCloseIcon: true,
+						}
+					},
+					Footnote: {
+						data: {
+							text: "получить «паспорт качества»",
+						},
+						cn: {
+							style: 'cap',
+							margin: 'mb-120@xs',
+						},
+					},
+					ButtonCloseModal: {
+						data: {
+							type: 'button',
+							text: 'Закрыть',
+						},
+						cn: {
+							size: 'large',
+						}
+					}
+				},
+				opt: {
+					SwipeModal: true,
+					'close-button': true
+				}
+			},
+			Form: {
+				data: {
+					action: '/api/forms/callback'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Select: {
+											data: {
+												name: 'transport'
+											},
+											elem: {
+												OptionsArr: [
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "автомобиль",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "вагон",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "контейнер",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+												]
+											},
+											cn: {
+												subscription: 'subscription'
+											}
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "тип транспорта",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									cn: {
+										isPl: true
+									},
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'number'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'invoice'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "№ накладной",
+											},
+										}
+									}
+								},
+							}
+						}
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						}
+					},
+					SubmitButton: {
+						data: {
+							text: 'получить',
+							type: 'submit',
+						},
+					},
+				},
+				cn: {
+					margin: 'mt-auto'
+				}
+			}
+		}
+	}

@@ -1,0 +1,12 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('list-info-card')
+
+		return {
+			listInfoCard: BLOCK({}, [cn?.margin]),
+			listInfoCardContent: BLOCK('content', [cn?.jsClass,]),
+			listInfoCardCard: BLOCK('card', [cn?.jsClassItem]),
+			listInfoCardLinkWrapper: BLOCK('link-wrapper', ['d-flex justify-content-end', cn?.linkMargin]),
+			listInfoCardLinkButton: BLOCK('button'),
+		}
+	}

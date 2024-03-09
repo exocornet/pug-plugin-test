@@ -1,0 +1,18 @@
+mixin CardQuote(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include CardQuote.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	+Row
+		+Col(ELEM('Col'))
+			blockquote(class=styles.cardQuote cite=DATA('cite', false))
+				+Text(ELEM('TextQuote'))(class=styles.cardTextQuote)
+				footer
+					+Text(ELEM('TextQuoteBy'))
+		if OPT('isHR')
+			+Col({cn: {cols: 'col-8 col-4@xs', offset: 'offset-2 offset-0@xs', margin: 'mt-120 mt-80@xs'}})
+				hr

@@ -1,0 +1,20 @@
+mixin DatePicker(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include DatePicker.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.datePicker data-event=DATA('event', false))
+		+Row
+			+Col(ELEM('ColDate'))
+				+Text(ELEM('TextDate'))(class=styles.datePickerText)
+				div(class=styles.datePickerDateItems)
+			if ELEM('TextTime', false)
+				+Col({cn: {cols: 'col-6 col-4@xs'}})
+					+Text(ELEM('TextTime'))(class=styles.datePickerText)
+					div(class=styles.datePickerTimeItems)
+
+	+Input(ELEM('Input'))(class=styles.datePickerInput readonly)&attributes(attributes)

@@ -1,0 +1,17 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('excursion');
+
+		return {
+			excursion: BLOCK({}, [cn?.margin]),
+			excursionContainer: BLOCK('container'),
+			excursionWrapper: BLOCK('wrapper', ['position-relative']),
+			excursionRowTop: BLOCK('row-top'),
+			excursionRowBottom: BLOCK('row-bottom'),
+			excursionInfo: BLOCK('info'),
+			excursionDescription: BLOCK('description'),
+			excursionButton: BLOCK('button'),
+			excursionVideoContainer: BLOCK('video-container'),
+			excursionHeader: BLOCK('header'),
+		}
+	}

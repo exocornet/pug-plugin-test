@@ -1,0 +1,141 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.resume-form {
+	$self: &;
+
+	&__step-counter {
+		position: absolute;
+		top: responsive-size(20, 28);
+		right: responsive-size(20, 28);
+		left: responsive-size(20, 28);
+		padding-inline: responsive-size(20, 40);
+
+		@include media(xs) {
+			padding-inline: 0;
+		}
+	}
+
+	&__file-loader {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		padding-inline: responsive-size(20, 40);
+		padding-block: responsive-size(200, 240);
+
+		border-radius: 16px;
+
+		background-color: $smoky-white;
+	}
+
+	&__file-loader-inner {
+		gap: 40px;
+	}
+
+	&__hidden-input {
+		position: absolute;
+
+		visibility: hidden;
+
+		opacity: 0;
+	}
+
+	&__added-icon {
+		display: flex;
+		align-items: center;
+		flex-grow: 0;
+		justify-content: center;
+
+		width: responsive-size(48, 64);
+		height: responsive-size(48, 64);
+
+		padding: responsive-size(12, 18);
+
+		border-radius: 8px;
+
+		background-color: $black-06;
+
+		&::before{
+			content: url("IMAGES/resume-form/add.svg");
+
+			line-height: 0;
+		}
+	}
+
+	&__step {
+		&:not(.active) {
+			color: $black-40;
+		}
+	}
+
+	&__green-text {
+		vertical-align: baseline;
+
+		color: $dark-green;
+	}
+
+	&__error-text {
+		display: none;
+
+		text-align: center;
+	}
+
+	&__success-text {
+		display: none;
+
+		text-align: center;
+	}
+
+	&__form {
+		padding: responsive-size(20, 28);
+
+		border-radius: 16px;
+		background-color: $smoky-white;
+	}
+
+	.success {
+		background-color: $light-green;
+
+		#{$self}__added-icon {
+			border-radius: 50%;
+			background-color: $selection-color;
+
+			&::before {
+				content: url("IMAGES/resume-form/success.svg");
+			}
+		}
+
+		#{$self}__added-text {
+			display: none;
+		}
+
+		#{$self}__success-text {
+			display: block;
+
+			.text {
+				color: $dark-green;
+			}
+		}
+	}
+
+	.error {
+		#{$self}__added-icon {
+			&::before {
+				content: url("IMAGES/resume-form/error.svg");
+			}
+		}
+
+		#{$self}__added-text {
+			display: none;
+		}
+
+		#{$self}__error-text {
+			display: block;
+
+			.text {
+				color: $transport-red;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+//- # ПОДКЛЮЧЕНИЕ ВСПОМОГАТЕЛЬНЫХ БЛОКОВ СЛАЙДЕРА # -//
+include ./SliderSlide
+include ./SliderPagination
+
+mixin Slider(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Slider.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(
+		class=styles.slider
+		data-custom-pagination=DATA('dataCustomPagination', false)
+		data-slider-effect=DATA('dataSlideEffect', false)
+		data-slides-per-view=DATA('dataSlidesPerView', false)
+		data-dynamic-bullets=DATA('dataDynamicBullets', false)
+		data-slides-loop=DATA('dataSlidesLoop', false)
+		data-slides-resizeable=DATA('dataSlidesResizeable', false)
+		data-slider-speed=DATA('dataSliderSpeed', false)
+		id=DATA('id', false)
+		)&attributes(attributes.Slider)
+		//- ## Инициализация слайдера ## -//
+		div(class=styles.sliderSwiper)&attributes(attributes.SliderSwiper)
+			//-
+				обертка для слайдов
+				для определения колличества слайдов вызываем SliderSlide и вкладываем в них содержимое
+			div(class=styles.sliderSlidesWrapper)&attributes(attributes.SliderSlidesWrapper)
+				block
+
+			//- ## Пагинация слайдера ## //
+			if OPT('isSliderPagination')
+				+SliderPagination(props)&attributes(attributes.SliderPagination)
+
+			//- ## Навигация слайдера ## //
+			if OPT('isSliderNavigation')
+				div(class=styles.sliderNavigation)&attributes(attributes.SliderNavigation)
+					button(class=styles.sliderPrev)
+						include IMAGES/other/slider/arrow-navigation.svg
+					button(class=styles.sliderNext)
+						include IMAGES/other/slider/arrow-navigation.svg
+					if OPT('isSliderBorderBottom')
+						div(class=styles.sliderBorderBottom)

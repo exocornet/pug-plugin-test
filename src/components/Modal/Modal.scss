@@ -1,0 +1,209 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.modal {
+	--translate: 10%;
+
+	$self: &;
+
+	position: fixed;
+
+	z-index: 999999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: none;
+
+	animation: fade-in 200ms both;
+
+	&__overlay {
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		background-color: $black-40;
+
+		@include media(xs) {
+			background-color: $black-20;
+		}
+	}
+
+	&__inner {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+
+		width: 1520px;
+
+		max-width: 80%;
+		min-height: 620px;
+		max-height: 90%;
+		padding: 28px;
+
+		animation: fade-in 200ms both, slide-up 200ms both;
+
+		border-radius: 16px;
+		background-color: $smoky-white;
+
+		&_video {
+			width: responsive-size(560, 1189);
+			height: responsive-size(360, 667);
+
+			min-height: 0;
+
+			padding: 0;
+
+			#{$self}__close {
+				@include media(xs) {
+					top: 30px;
+
+					display: block;
+				}
+			}
+
+			@include media(xs) {
+				height: 100vh;
+			}
+		}
+
+		&_slider {
+			display: flex;
+
+			overflow-y: scroll;
+
+			justify-content: center;
+
+			padding: 0;
+
+			#{$self}__close {
+				@include media(xs) {
+					top: 190px;
+
+					display: block;
+				}
+			}
+
+			@include no-scrollbar;
+
+			@include media(xs) {
+				justify-content: center;
+
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		&_transparent {
+			background-color: transparent;
+		}
+
+		&_video, &_slider {
+			max-height: 100%;
+		}
+
+		@include media(xs) {
+			max-width: 100%;
+			height: auto;
+			padding-top: 12px;
+
+			border-radius: 20px 20px 0 0;
+		}
+	}
+
+	&__body {
+		display: flex;
+
+		overflow-x: hidden;
+		overflow-y: auto;
+		flex-grow: 1;
+
+		@include no-scrollbar;
+	}
+
+	&__footer {
+		margin-top: auto;
+	}
+
+	&__close {
+		position: absolute;
+
+		z-index: 2;
+
+		top: 14px;
+		right: 14px;
+
+		max-height: none;
+
+		padding: responsive-size(14);
+
+		@include media(xs) {
+			display: none;
+		}
+	}
+
+	&__footer-button-close {
+		margin-left: auto;
+	}
+
+	&__swipe-modal {
+		position: relative;
+
+		height: 4px;
+
+		&::after {
+			position: absolute;
+			left: 50%;
+
+			display: block;
+
+			width: 41px;
+			height: 100%;
+
+			content: "";
+			transform: translateX(-50%);
+
+			border-radius: 10px;
+
+			background-color: $achromatic;
+		}
+	}
+
+	&.show {
+		display: flex;
+		align-items: center;
+
+		justify-content: center;
+
+		@include media(xs) {
+			--translate: 100%;
+
+			align-items: flex-end;
+		}
+	}
+
+	&.error {
+		.heading {
+			color: $red;
+
+			&__footnote {
+				color: initial;
+			}
+		}
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 1;
+	}
+}
+
+@keyframes slide-up {
+	from {
+		transform: translateY(var(--translate));
+	}
+}

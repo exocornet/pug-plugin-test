@@ -1,0 +1,41 @@
+mixin FilterCases(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include FilterCases.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.FilterCases)
+		+Container
+			+I('Filters', {data: {dataIdComponent: '123'}})
+				+FiltersPanel
+					+FiltersLinkControl({
+						elem: {
+							ButtonFilterArr: [
+								{data: {text: 'покупателей', href: '/cases/buyers', dataTabSelect: '/select-cases/buyers'}, cn: {jsActiveLinkControl: true}},
+								{data: {text: 'поставщиков', href: '/cases/supplies', dataTabSelect: '/select-cases/supplies'}},
+								{data: {text: 'закупки', href: '/cases/procurement', dataTabSelect: '/select-cases/procurement'}},
+								{data: {text: 'истории успеха', href: '/cases/history-success', dataTabSelect: '/select-cases/history-success'}},
+								{data: {text: 'образовательные', href: '/cases/educational', dataTabSelect: '/select-cases/educational'}},
+							]
+						}
+					})
+					+FiltersSelectControl(ELEM('FiltersSelectControl'))(class=styles.FilterCasesFiltersSelectControl)
+				+FiltersContentContainer(class=styles.FilterCasesCards)
+					for item, index in ELEM_ARR('CardsArr')
+						- const stylesItem = classes(item && item.cn);
+						div(class=stylesItem.FilterCasesCardWrap)
+							+I('CardPersonal', item)
+					+Button({
+						data: {
+							href: '/cases/buyers',
+							text: 'Показать еще',
+						},
+						cn: {
+							margin: 'mr-auto ml-auto',
+							size: 'large',
+							isMoreButton: 'js-load-more-button',
+						},
+					})

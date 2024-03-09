@@ -1,0 +1,82 @@
+-
+	const Footer = {
+		cn: {
+			margin: 'mt-200 mt-80@xs',
+		},
+		elem: {
+			LinkContacts: {
+				data: {
+					text: 'Контакты',
+					ariaLink: 'Контакты',
+					title: 'Контакты'
+				}
+			},
+			LinkPhone: {
+				data: {
+					text: '+7 3842 57-22-99',
+					ariaLink: '+7 3842 57-22-99',
+					title: '+7 3842 57-22-99',
+					linkHref: 'tel:+7 3842 57-22-99'
+				}
+			},
+			LinkEmail: {
+				data: {
+					text: 'info@azot.kuzbass.net',
+					ariaLink: 'info@azot.kuzbass.net',
+					title: 'info@azot.kuzbass.net',
+					linkHref: 'mail:info@azot.kuzbass.net'
+				},
+				cn: {
+					textTransform: 'text-transform-lower'
+				}
+			}
+		},
+		dataArr: {
+			cityArr: [
+				{
+					data: {
+						key: 'Кемерово',
+						value: '16:15',
+						img: require('IMAGES/other/contacts-indicator.svg')
+					},
+					cn: {
+						style: 'cap',
+						textTransform: 'upper'
+					},
+					opt: {
+						img: true
+					}
+				},
+				{
+					data: {
+						key: 'Москва',
+						value: '12:15'
+					},
+					cn: {
+						style: 'cap',
+						textTransform: 'upper'
+					}
+				}
+			],
+			socialButtonsArr: [
+				{
+					data: {
+						img: require('IMAGES/social/VK.svg'),
+						href: '#!'
+					}
+				},
+				{
+					data: {
+						img: require('IMAGES/social/Telegram.svg'),
+						href: '#!'
+					}
+				},
+				{
+					data: {
+						img: require('IMAGES/social/YouTube.svg'),
+						href: '#!'
+					}
+				}
+			]
+		}
+	}

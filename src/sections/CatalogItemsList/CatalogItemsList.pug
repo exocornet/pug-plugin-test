@@ -1,0 +1,34 @@
+mixin CatalogItemsList(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ СЕКЦИИ # -//
+	include CatalogItemsList.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА СЕКЦИИ # -//
+	section(class=styles.catalogItemsList)
+		+Container
+			+I('Filters', {data: {dataIdComponent: '4444'}})
+				+FiltersPanel
+					+FiltersSearch({data: {action: '/catalog'}})
+					div(class=styles.catalogItemsListFilterLinkWrapper)
+						+FiltersLinkControl({elem: {
+								ButtonFilterArr: [
+									{data: {text: 'вся продукция', href: '/catalog'}, cn: {jsActiveLinkControl: true}, opt: {isDataLinkControlAll: true}},
+									{data: {text: 'сельское хозяйство', href: '/catalog/agriculture'}},
+									{data: {text: 'производство', href: '/catalog/industry'}},
+								]
+							}})(class=styles.elementFilterLinkControlWrapper)
+					input(type="checkbox" class=styles.catalogItemsListFilterToggle title="изменить вид карточек")
+				div(class=styles.catalogItemsLinesHeading)
+					for item in DATA_ARR('TableColArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						span !{I_DATA('text')}
+				+FiltersContentContainer(class=styles.catalogItemsListContentContainer)
+					for item, pos in ELEM_ARR('CatalogItemsArr')
+						include ../../shared/helpers/pug/shortcut-check-store
+						+I('CatalogItem', I_ELEM('CatalogItem'))
+						if (pos === 7)
+							+I('AdvertisementMore', ELEM('Advert'))
+					+Button(ELEM('ButtonMore'))

@@ -1,0 +1,81 @@
+mixin I(nameComponent, variablesComponent)
+	case nameComponent
+		when 'ImagesHeading'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include ImagesHeading/ImagesHeading
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'Video'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include Video/Video
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'CardPersonal'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include CardPersonal/CardPersonal
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'BioData'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include BioData/BioData
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'Facts'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include Facts/Facts
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'StoryCard'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include StoryCard/StoryCard
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'CardQuote'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include CardQuote/CardQuote
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'ListTitle'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include ListTitle/ListTitle
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'Form'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include Form/Form
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+				block
+		when 'Modal'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include Modal/Modal
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+				block
+		when 'PageLink'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include PageLink/PageLink
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'PressCard'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include PressCard/PressCard
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'DatePicker'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include DatePicker/DatePicker
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'NewspaperCard'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include NewspaperCard/NewspaperCard
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'CatalogItem'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include CatalogItem/CatalogItem
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'Filters'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include Filters/Filters
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+				block
+		when 'AdvertisementMore'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include AdvertisementMore/AdvertisementMore
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'NviItem'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include NviItem/NviItem
+			+#{nameComponent}(variablesComponent)&attributes(attributes)
+		when 'ButtonYandexShare'
+			if typeof pug_mixins[`${nameComponent}`] !== 'function'
+				include ButtonYandexShare/ButtonYandexShare
+			+#{nameComponent}(variablesComponent)&attributes(attributes)

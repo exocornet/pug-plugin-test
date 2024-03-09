@@ -1,0 +1,39 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.heading-map {
+	&__wrapper {
+		margin-inline: responsive-size(-20, -28);
+		
+		margin-top: 24px;
+	}
+
+	&__header-right {
+		display: flex;
+		flex-basis: 17%;
+		flex-direction: column;
+		justify-content: space-between;
+		
+		@include media(xs) {
+			flex-direction: row;
+		}
+	}
+
+	&__header-link {
+		display: block;
+
+		letter-spacing: -0.04em;
+		
+		text-transform: lowercase;
+
+		font-family: $font-radio;
+
+		line-height: 1;
+
+		@include font-size-responsive(2.8, 6.4);
+	}
+
+	&__social-button {
+		padding: 6px 12px;
+	}
+}

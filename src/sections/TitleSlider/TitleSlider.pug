@@ -1,0 +1,25 @@
+mixin TitleSlider(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include TitleSlider.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.titleSlider)
+		+Container
+			if ELEM('Heading')
+				+Row
+					+Col(ELEM('ColHeading'))
+						+Heading(ELEM('Heading'))
+
+			+Slider(ELEM('Slider'))&attributes({SliderPagination: {class: styles.titleSliderSliderPagination}, SliderSwiper: {class: styles.titleSliderSliderSwiper},SliderNavigation: {class: styles.titleSliderSliderNavigation}})
+				for item in ELEM_ARR('SliderSlideArr')
+					//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК I_DATA, I_OPT, I_ELEM # -//
+					include ../../shared/helpers/pug/shortcut-check-store
+
+					+SliderSlide(class=styles.titleSliderSlide)
+						picture(class=styles.bannerSliderPicture)
+							source(srcset=I_DATA('imgSlideXs') media=`(max-width: ${media.xs})`)
+							img(class=styles.bannerSliderImageSlide src=I_DATA('imgSlide') alt="")

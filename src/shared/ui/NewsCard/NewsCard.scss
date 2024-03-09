@@ -1,0 +1,48 @@
+.news-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	height: responsive-size(412, 600);
+
+	padding: 20px;
+
+	border-radius: 16px;
+	background-color: var(--smoky-white);
+
+	&__picture {
+		display: block;
+
+		overflow: hidden;
+
+		height: responsive-size(214, 297);
+	}
+
+	&__image {
+		height: 100%;
+
+		border-radius: 16px;
+		object-fit: cover;
+
+		@include media(xs) {
+			border-radius: 8px;
+		}
+	}
+
+	&__text {
+		display: -webkit-box;
+		overflow: hidden;
+
+		text-overflow: ellipsis;
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+
+		@include media(md){
+			-webkit-line-clamp: 4;
+		}
+
+		@include media(xs){
+			-webkit-line-clamp: 3;
+		}
+	}
+}

@@ -1,0 +1,62 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Пресс-центр';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Пресс-центр' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции AsidePageNav # -//
+include press-center--aside-page-nav
+- pageStore.addSection(AsidePageNav);
+
+//- # Подключение store секции SliderNewsWithoutHeading # -//
+include press-center--slider-news-without-heading
+- pageStore.addSection(SliderNewsWithoutHeading);
+
+//- # Подключение store секции SliderNewspaper # -//
+include press-center--slider-newspaper
+- pageStore.addSection(SliderNewspaper);
+
+//- # Подключение store секции SliderNews # -//
+include press-center--slider-news
+- pageStore.addSection(SliderNews);
+
+//- ## Подключение store секции SubscriptionForm ## -//
+include press-center--subscription-form
+- pageStore.addSection(SubscriptionForm);
+
+//- # Добавление store для секции SliderInfoCard # -//
+include press-center--slider-info-card-news
+- pageStore.addSection(SliderInfoCardNews);
+
+//- # Подключение store для секции PageLinks # -//
+include press-center--page-links
+- pageStore.addSection(PageLinks);
+
+//- # Подключение store для секции PressCenterKit # -//
+include press-center--kit
+- pageStore.addSection(PressCenterKit);
+
+//- ## Подключение store секции ListContactLinks ## -//
+include press-center--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include press-center--dialog
+- pageStore.addSection(HiddenDialogContent);

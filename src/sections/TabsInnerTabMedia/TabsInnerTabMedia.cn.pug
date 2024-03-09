@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('tabs-inner-tab-media')
+
+		return {
+			tabsInnerTabMediaDownload: BLOCK('download'),
+			tabsInnerTabMedia: BLOCK({}, [cn?.margin]),
+			tabsInnerTabMediaWrapper: BLOCK('wrapper', ['d-flex', 'flex-direction-column']),
+			tabsInnerTabMediaButtons: BLOCK('tabs-buttons'),
+			tabsInnerTabMediaInnerButtons: BLOCK('inner-tabs-buttons'),
+			tabsInnerTabMediaContent: BLOCK('tabs-content', {
+				[`${cn?.tabContent}`]: ['video', 'image'].includes(cn?.tabContent),
+			}),
+			tabsInnerTabMediaImage: BLOCK('image', [
+				cn?.jsInnerClassItem,
+			]),
+			tabsInnerTabMediaStoryCard: BLOCK('story-card', [
+				cn?.jsInnerClassItem,
+			]),
+		}
+	}

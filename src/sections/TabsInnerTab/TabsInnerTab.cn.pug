@@ -1,0 +1,11 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('tabs-inner-tab')
+
+		return {
+			tabsInnerTab: BLOCK({}, [cn?.margin]),
+			tabsInnerTabWrapper: BLOCK('wrapper', ['d-flex', 'flex-direction-column']),
+			tabsInnerTabButtons: BLOCK('tabs-buttons'),
+			tabsInnerTabContent: BLOCK('tabs-content'),
+		}
+	}

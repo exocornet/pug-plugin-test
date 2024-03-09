@@ -1,0 +1,35 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Раскрытие информации';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'О компании' } },
+						{ data: { text: 'Раскрытие информации' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции TabsInnerTab ## -//
+include information-disclosure--tabs-inner-tab
+- pageStore.addSection(TabsInnerTab);
+
+//- ## Подключение store секции Requisites ## -//
+include information-disclosure--requisites
+- pageStore.addSection(Requisites);
+
+//- # Добавление store для секции PageLinks # -//
+include information-disclosure--page-links
+- pageStore.addSection(PageLinks);

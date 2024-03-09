@@ -1,0 +1,63 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Программы компании. Детальная страница';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Карьера' } },
+						{ data: { text: 'Программы компании' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include company-programs-detailed--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- ## Подключение store секции ImageFacts ## -//
+include company-programs-detailed--image-facts
+- pageStore.addSection(ImageFacts);
+
+//- ## Подключение store секции TitleTextWrap ## -//
+include company-programs-detailed--title-text-wrap
+- pageStore.addSection(TitleTextWrap);
+
+//- ## Подключение store секции SliderInfoCard ## -//
+include company-programs-detailed--slider-info-card-suitable
+- pageStore.addSection(SliderInfoCardSuitable);
+
+//- ## Подключение store секции SliderInfoCard ## -//
+include company-programs-detailed--slider-info-card-programs
+- pageStore.addSection(SliderInfoCardPrograms);
+
+//- # Подключение store секции Employees # -//
+include company-programs-detailed--employees
+- pageStore.addSection(Employees);
+
+//- # Подключение store секции AccordionListParticipant # -//
+include company-programs-detailed--accordion-list
+- pageStore.addSection(AccordionList);
+
+//- ## Подключение store секции Career ## -//
+include company-programs-detailed--career
+- pageStore.addSection(Career);
+
+//- ## Подключение store секции PageLinks ## -//
+include company-programs-detailed--page-links
+- pageStore.addSection(PageLinks);
+
+//- ## Подключение store секции ListContactLinks ## -//
+include company-programs-detailed--list-contact-links
+- pageStore.addSection(ListContactLinks);

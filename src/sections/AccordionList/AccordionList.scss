@@ -1,0 +1,18 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.accordion-list {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: responsive-size(20, 64);
+	}
+
+	&__accordion-body {
+		display: flex;
+		flex-direction: column;
+		row-gap: responsive-size(20, 40);
+
+		width: responsive-size(320, 877);
+	}
+}

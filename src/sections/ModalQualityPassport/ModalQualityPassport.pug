@@ -1,0 +1,22 @@
+mixin ModalQualityPassport(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ModalQualityPassport.cn.pug
+	- const styles = classes(props && props.cn);
+
+	div(class=styles.modalQualityPassport)
+		+I('Modal', ELEM('Modal'))
+			+ModalBody()(class=styles.modalQualityPassportModalBody)
+				div(class="step step-1 active")
+					+I('Form', ELEM('Form'))(data-default-transport-label=DATA('defaultTransportLabel', false) data-container-label=DATA('containerLabel', false) data-car-label=DATA('carLabel', false) data-carriage-label=DATA('carriageLabel', false))
+
+				div(class="step step-2")
+					div(class=styles.modalQualityPassportFileWrapper)
+						img(src=DATA('icon') alt="load-icon" class=styles.modalQualityPassportIcon)
+						+Text({data: {text: 'Скачать «Паспорт качества»'}})
+						+Text({data: {text: 'Форматы файла: PDF. Вес: 10МБ'}, cn: {style: 'cap'}})
+
+				div(class=styles.modalQualityPassportLoader)
+					+Text({data: {text: '«Паспорт качества» загружается'}, cn: {size: 'big'}})

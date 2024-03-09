@@ -1,0 +1,33 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('card-personal');
+
+		return {
+			cardPersonal: BLOCK({
+				[`${cn?.isHover}`]: ['no-hover'].includes(cn?.isHover),
+			}, [cn?.margin, cn?.padding]),
+			cardPersonalVideoContainer: BLOCK('video-container', ['mb-24 mb-20@md']),
+			cardPersonalVideo: BLOCK('video'),
+			cardPersonalPlayer: BLOCK('player'),
+			cardPersonalImageContainer: BLOCK('image-container', ['mb-24 mb-20@xs']),
+			cardPersonalMaterialImageContainer: BLOCK('material-image-container',
+				{[`${cn?.bgColor}`]: ['green', 'grey'].includes(cn?.bgColor),},
+				['mb-24 mb-20@xs']),
+			cardPersonalPicture: BLOCK('picture'),
+			cardPersonalMaterialPicture: BLOCK('material-picture'),
+			cardPersonalImage: BLOCK('image'),
+			cardPersonalMaterialIcon: BLOCK('material-icon'),
+			cardPersonalMaterialIconWrap: BLOCK('material-icon-wrap'),
+			cardPersonalInfo: BLOCK('info', {[`${cn?.withButton}`]: ['with-button',].includes(cn?.withButton),}),
+			cardPersonalName: BLOCK('name'),
+			cardPersonalButtonWrap: BLOCK('button-wrap', ['mt-4']),
+			cardPersonalDownloadButton: BLOCK('download-button'),
+			cardPersonalPosition: BLOCK('position'),
+			cardPersonalLinkArrow: BLOCK('link-arrow'),
+			cardPersonalProductWrap: BLOCK('product-wrap'),
+			cardPersonalProductLink: BLOCK('product-link'),
+			cardPersonalProductImageWrap: BLOCK('product-image-wrap'),
+			cardPersonalProductImage: BLOCK('product-image'),
+			cardPersonalProductInfo: BLOCK('product-info'),
+		}
+	}

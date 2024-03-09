@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('search-result-product');
+
+		return {
+			searchResultProduct: BLOCK({
+				[`${cn?.colorTheme}`]: ['grey'].includes(cn?.colorTheme)
+			}),
+			searchResultProductTheme: BLOCK('theme', ['d-flex', 'g-24', 'mb-24']),
+			searchResultProductThemeBody: BLOCK('theme-body'),
+			searchResultProductThemeImage: BLOCK('theme-image'),
+			// TOP
+			searchResultProductThemeTop: BLOCK('theme-top'),
+			searchResultProductThemeHeading: BLOCK('theme-heading'),
+			searchResultProductThemeBrand: BLOCK('theme-brand'),
+			// BOTTOM
+			searchResultProductThemeBottom: BLOCK('theme-bottom'),
+			searchResultProductThemeText: BLOCK('theme-text'),
+			searchResultProductThemePrice: BLOCK('theme-price')
+		}
+	}

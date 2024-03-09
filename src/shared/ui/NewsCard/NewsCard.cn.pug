@@ -1,0 +1,21 @@
+-
+	function classes(cn) {
+
+		const BLOCK = CN('news-card')
+
+		return {
+			newsCard: BLOCK({}, [
+				cn?.margin,
+				cn?.cols,
+			]),
+			newsCardTextBlock: BLOCK('text-block', [
+				cn?.marginTextBlock
+			]),
+			newsCardImage: BLOCK('image', [
+				cn?.displayImage
+			]),
+			newsCardButton: BLOCK('button', ['mt-auto@md']),
+			newsCardPicture: BLOCK('picture'),
+			newsCardText: BLOCK('text'),
+		}
+	}

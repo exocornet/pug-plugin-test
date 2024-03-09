@@ -1,0 +1,16 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('image-facts')
+		const flexDirection = cn?.isReverse ? "flex-direction-column-reverse" : "flex-direction-column"
+
+		return {
+			imageFacts: BLOCK({}, [cn?.margin]),
+			imageFactsPictureWrapper: BLOCK('picture-wrapper', ['position-relative']),
+			imageFactsPicture: BLOCK('picture'),
+			imageFactsImage: BLOCK('image'),
+			imageFactsWrapper: BLOCK('wrapper', ["d-flex", flexDirection]),
+			imageFactsCaption: BLOCK('caption'),
+			imageFactsCaptionTopLine: BLOCK('caption-top-line'),
+			imageFactsCaptionBottomLine: BLOCK('caption-bottom-line'),
+		}
+	}

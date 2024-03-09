@@ -1,0 +1,32 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.supervisor {
+	&__wrapper {
+		margin-inline: responsive-size(-20, -28);
+
+		padding: responsive-size(20, 28);
+
+		border-radius: responsive-size(8, 16);
+
+		background: $smoky-white;
+	}
+
+	&__picture {
+		display: block;
+		aspect-ratio: 1.13;
+
+		@include media(xs) {
+			width: 75%;
+		}
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top center;
+
+		border-radius: responsive-size(8, 16);
+	}
+}

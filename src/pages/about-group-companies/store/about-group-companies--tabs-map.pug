@@ -1,0 +1,71 @@
+-
+	const TabsMap = {
+		includeSection: 'TabsMap',
+		cn: {
+			margin: 'mt-120 mt-80@xs'
+		},
+		opt: {
+			isTabs: true
+		},
+		elem: {
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: 'Предприятия укрепляющие свою позицию в разных регионах',
+					footnoteText: 'офисы ГК «Азот»'
+				},
+				cn: {
+					size: 'h3',
+					textIndent: true,
+				},
+			},
+			TabsButtons: {
+				dataArr: {
+					buttonArr: [
+						{
+							data: {
+								dataTabsButton: 'list'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Списком',
+									}
+								}
+							}
+						},
+						{
+							data: {
+								dataTabsButton: 'map'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'На карте',
+									}
+								}
+							}
+						},
+					]
+				},
+			},
+			TabsContentArr: [
+				{
+					data: {
+						dataTabsContent: 'list',
+					},
+				},
+				{
+					data: {
+						dataTabsContent: 'map',
+					},
+					opt: {
+						isMap: true
+					},
+					cn: {
+						overflowTabsContent: 'overflow-visible'
+					}
+				},
+			]
+		}
+	}

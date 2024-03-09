@@ -1,0 +1,32 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('facts-align-right');
+
+		return {
+			factsAlignRight: BLOCK({}, [
+				cn?.margin,
+			]),
+			factsAlignRightFootnote: BLOCK('footnote'),
+			factAlignRightFactsBlock: BLOCK('facts-block', {
+				[`${cn?.backgroundColor}`]: ['light-green'].includes(cn?.backgroundColor),
+			}, [
+				cn?.marginFactsBlock,
+			]),
+			factsAlignRightWrapper: BLOCK('fact-wrapper', [
+				cn?.wrapperDisplay,
+				cn?.wrapperDirection,
+				cn?.wrapperRowGap,
+			]),
+			factsAlignRightFact: BLOCK('fact', [
+				'd-flex',
+				'justify-content-between',
+				'flex-direction-column-reverse@xs',
+				'align-items-end align-items-start@xs',
+				'rg-4@xs'
+			]),
+			factsAlignRightFactText: BLOCK('fact-text'),
+			factsAlignRightFactNumber: BLOCK('fact-number', [
+				cn?.colorFactNumber
+			]),
+		}
+	}

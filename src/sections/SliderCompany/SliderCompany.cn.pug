@@ -1,0 +1,15 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('slider-company')
+
+		return {
+			sliderCompany: BLOCK({}, [cn?.margin]),
+			sliderCompanySliderSwiper: BLOCK('slider-swiper'),
+			sliderCompanySliderNavigation: BLOCK('slider-navigation'),
+			sliderCompanySliderSlide: BLOCK('slider-slide'),
+			sliderCompanyWrapper: BLOCK('wrapper'),
+			sliderCompanyImage: BLOCK('image'),
+			sliderCompanyText: BLOCK('text'),
+			sliderCompanyLink: BLOCK('link', ['position-absolute position-static@xs']),
+		}
+	}

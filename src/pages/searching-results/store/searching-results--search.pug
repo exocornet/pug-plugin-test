@@ -1,0 +1,123 @@
+-
+	const Search = {
+		includeSection: 'Search',
+		elem: {
+			Input: {
+				data: {
+					placeholder: 'продукция, статьи или новости',
+					img: require('IMAGES/search.svg')
+				},
+				opt: {
+					img: true
+				},
+				cn: {
+					icon: 'with-icon'
+				}
+			},
+			CardSearchMenuInfoArr: [
+				{
+					elem: {
+						Col: {cn: {cols: 'col-2 col-2@md col-3@xs'}},
+						CardSearchMenuInfo: {
+							data: {
+								background: require("IMAGES/menu/balls.png")
+							},
+							elem: {
+								Text: {
+									data: {
+										text: 'аммиачная селитра'
+									}
+								}
+							},
+							opt: {
+								background: true,
+								button: false
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						Col: {cn: {cols: 'col-2 col-2@md col-3@xs'}},
+						CardSearchMenuInfo: {
+							data: {
+								background: require("IMAGES/menu/balls_1.png")
+							},
+							elem: {
+								Text: {
+									data: {
+										text: 'аммиачная селитра'
+									}
+								},
+								Button: {
+									data: {
+										href: '#!',
+										text: 'подробнее'
+									},
+									opt: {
+										icon: true
+									}
+								}
+							},
+							opt: {
+								background: true,
+								button: true
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						Col: {cn: {cols: 'col-4 col-3@md col-4@xs'}},
+						CardSearchMenuInfo: {
+							elem: {
+								Text: {
+									data: {
+										text: 'влияние минеральных удобрений на биохимический состав и качество плодов'
+									}
+								},
+								Button: {
+									data: {
+										href: '#!',
+										text: 'читать статью'
+									},
+									opt: {
+										icon: true
+									}
+								}
+							},
+							opt: {
+								button: true
+							}
+						}
+					}
+				},
+				{
+					elem: {
+						Col: {cn: {cols: 'col-4 col-3@md col-4@xs'}},
+						CardSearchMenuInfo: {
+							elem: {
+								Text: {
+									data: {
+										text: 'торговая политика и документация'
+									}
+								},
+								Button: {
+									data: {
+										href: '#!',
+										text: 'перейти в раздел'
+									},
+									opt: {
+										icon: true
+									}
+								}
+							},
+							opt: {
+								button: true
+							}
+						}
+					}
+				},
+			]
+		}
+	}

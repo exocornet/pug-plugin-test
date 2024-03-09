@@ -1,0 +1,22 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('filters');
+		const jsActiveLinkControl = cn?.jsActiveLinkControl && 'js-active-filters-link-control';
+
+		return {
+			block: BLOCK(),
+			elementPanel: BLOCK('panel'),
+			// search
+			elementForm: BLOCK('form'),
+			elementSearch: BLOCK('search'),
+			// link-control
+			elementLinkControlWrapper: BLOCK('link-control-wrapper'),
+			elementLinkControl: BLOCK('link-control', [jsActiveLinkControl]),
+			elementLinkControlSeparator: BLOCK('link-control-separator'),
+			// select-wrapper
+			elementSelectWrapper: BLOCK('select-wrapper', [cn?.marginSelectControl]),
+			elementSelectButtonClear: BLOCK('select-button-clear'),
+
+			elementContentContainer: BLOCK('content-container'),
+		}
+	}

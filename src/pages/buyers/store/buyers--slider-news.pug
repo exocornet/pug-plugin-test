@@ -1,0 +1,163 @@
+-
+	const SliderNews = {
+		includeSection: 'SliderNews',
+		cn: {
+			margin: 'mt-200 mt-80@xs'
+		},
+		elem: {
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			Heading: {
+				data: {
+					tag: "h3",
+					text: "Материалы помогут справиться со сложными вопросами, а наши клиенты поделятся своим опытом и знаниями",
+					footnoteText: "кейсы"
+				},
+				cn: {
+					size: "h3",
+					margin: 'mt-20 mb-40 mb-20@md',
+					textIndent: true,
+					cols: 'col-9 col-4@xs'
+				},
+			},
+			Slider: {
+				data: {
+					dataSlideEffect: 'slide',
+					dataSlidesPerView: 'auto'
+				},
+				opt: {
+					isSliderNavigation: true,
+				},
+			},
+			ColNewsSlider: {
+				cn: {
+					cols: 'col-12 col-4@xs',
+					margin: 'pb-40 pb-0@xs'
+				}
+			},
+			SliderNewsArr: [
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/buyers/buyers-slide1.png'),
+								imageXs: require('IMAGES/sections/buyers/buyers-slide1xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '09.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Влияние удобрений на биохимический состав и качество плодов. Результаты отечественных и зарубежных исследований с 1978 по 2018 гг.'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/buyers/buyers-slide2.png'),
+								imageXs: require('IMAGES/sections/buyers/buyers-slide2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.03.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: '«Настоящая находка для садоводов и огородников». Рассказ и Ивана о его опыте работы с аммиачной селитрой для подкормки плодовых деревьев»'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/news/news-slide3.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.03.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Повышение энергетической эффективности является одним из ключевых приоритетов глобальной и долгосрочной энергетической политики КАО «Азот»'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					}
+				}
+			],
+			PageLink: {
+				data: {
+					href: '#!',
+					text: 'все публикации'
+				},
+				opt: {
+					icon: true
+				}
+			}
+		}
+	}

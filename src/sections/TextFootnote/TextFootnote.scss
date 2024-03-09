@@ -1,0 +1,17 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.text-footnote {
+	&__images-heading-top {
+		//
+	}
+
+	&__images-heading-bottom {
+		margin-top: responsive-size(20);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			margin-top: 20px;
+		}
+	}
+}

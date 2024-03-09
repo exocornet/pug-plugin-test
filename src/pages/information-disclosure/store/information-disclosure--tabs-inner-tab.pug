@@ -1,0 +1,951 @@
+-
+	const TabsInnerTab = {
+		includeSection: 'TabsInnerTab',
+		elem: {
+			Heading: {
+				data: {
+					tag: 'h3',
+					text: '<span class="light-grey">Раскрытие информации.</span> Публичная документация и финансовая отчетность'
+				},
+				cn: {
+					textIndent: true,
+					size: 'h3'
+				}
+			},
+			TabsButtons: {
+				dataArr: {
+					buttonArr: [
+						{
+							data: {
+								dataTabsButton: 'suppliers'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'поставщикам',
+									}
+								}
+							}
+						},
+						{
+							data: {
+								dataTabsButton: 'financial'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'финансовые',
+									}
+								}
+							}
+						},
+						{
+							data: {
+								dataTabsButton: 'archive'
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'Архив',
+									}
+								}
+							}
+						},
+					]
+				},
+			},
+			TabsContentArr: [
+				{
+					data: {
+						dataTabsContent: 'suppliers',
+					},
+					elem: {
+						TabsInnerButtons: {
+							cn: {
+								buttonStyle: 'none-stroke'
+							},
+							dataArr: {
+								buttonArr: [
+									{
+										data: {
+											dataTabsButton: 'year-2023'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2023',
+												}
+											}
+										}
+									},
+									{
+										data: {
+											dataTabsButton: 'year-2022'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2022',
+												}
+											}
+										}
+									},
+									{
+										data: {
+											dataTabsButton: 'year-2021'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2021',
+												}
+											}
+										}
+									},
+								]
+							},
+						},
+						TabsInnerContentArr: [
+							{
+								data: {
+									dataTabsContent: 'year-2023',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+							{
+								data: {
+									dataTabsContent: 'year-2022',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+							{
+								data: {
+									dataTabsContent: 'year-2021',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+						]
+					},
+				},
+				{
+					data: {
+						dataTabsContent: 'financial',
+					},
+					elem: {
+						TabsInnerButtons: {
+							cn: {
+								buttonStyle: 'none-stroke'
+							},
+							dataArr: {
+								buttonArr: [
+									{
+										data: {
+											dataTabsButton: 'year-2023'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2023',
+												}
+											}
+										}
+									},
+									{
+										data: {
+											dataTabsButton: 'year-2022'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2022',
+												}
+											}
+										}
+									},
+									{
+										data: {
+											dataTabsButton: 'year-2021'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2021',
+												}
+											}
+										}
+									},
+								]
+							},
+						},
+						TabsInnerContentArr: [
+							{
+								data: {
+									dataTabsContent: 'year-2023',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+							{
+								data: {
+									dataTabsContent: 'year-2022',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+							{
+								data: {
+									dataTabsContent: 'year-2021',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+						]
+					},
+				},
+				{
+					data: {
+						dataTabsContent: 'archive',
+					},
+					elem: {
+						TabsInnerButtons: {
+							cn: {
+								buttonStyle: 'none-stroke'
+							},
+							dataArr: {
+								buttonArr: [
+									{
+										data: {
+											dataTabsButton: 'year-2023'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2023',
+												}
+											}
+										}
+									},
+									{
+										data: {
+											dataTabsButton: 'year-2022'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2022',
+												}
+											}
+										}
+									},
+									{
+										data: {
+											dataTabsButton: 'year-2021'
+										},
+										elem: {
+											Button: {
+												data: {
+													text: '2021',
+												}
+											}
+										}
+									},
+								]
+							},
+						},
+						TabsInnerContentArr: [
+							{
+								data: {
+									dataTabsContent: 'year-2023',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+							{
+								data: {
+									dataTabsContent: 'year-2022',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+							{
+								data: {
+									dataTabsContent: 'year-2021',
+								},
+								elem: {
+									PageLinksArr: [
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'реализация минеральных удобрений сельскохозяйственным товаропроизводителям'
+													},
+													cn: {
+														size: 'bigger',
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+										{
+											data: {
+												extension: 'PDF',
+												href: '#',
+											},
+											elem: {
+												ColLink: {
+													cn: {
+														cols: 'col-9 col-4@xs',
+														display: 'd-flex',
+														direction: 'flex-direction-column@xs',
+														alignItems: 'align-items-start'
+													}
+												},
+												Text: {
+													data: {
+														text: 'продажа удобрений сельскохозяйственным производителям'
+													},
+													cn: {
+														size: 'bigger'
+													},
+												},
+												TextDateRight: {
+													data: {
+														text: '01.06.2023-30.11.2023'
+													},
+													cn: {
+														style: 'cap',
+														order: 'order-3'
+													}
+												},
+											},
+											opt: {
+												download: true
+											},
+										},
+									]
+								}
+							},
+						]
+					},
+				},
+			]
+		},
+	}

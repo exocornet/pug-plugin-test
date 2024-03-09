@@ -1,0 +1,27 @@
+mixin SliderInfoCard(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include SliderInfoCard.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.sliderInfoCard id=DATA('id', false))
+		+Container
+			if ELEM('Heading')
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			+Row
+				+Col(ELEM('ColCardSlider'))
+					+Slider(ELEM('Slider'))&attributes({SliderPagination: {class: styles.sliderProductsSliderPagination}, SliderNavigation: {class: styles.sliderInfoCardSliderNavigation}, SliderSwiper: {class: styles.sliderInfoCardSliderSwiper}})
+						for item in ELEM_ARR('SliderInfoArr')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+CardInfo(I_ELEM('CardInfo'))
+					if OPT('isTransportRent', false)
+						+Button({data: {text: 'СКАЧАТЬ ВЕСЬ ПЕРЕЧЕНЬ', href: '#!'}, cn: {size: 'large', display: 'd-none d-inline-block@xs'}, opt: {"icon-download": true}})(class="slider-info-card__bottom-link")
+					//- ## Ссылка на страницу  ## -//
+					if ELEM('PageLink', false)
+						div(class=styles.sliderInfoCardLinkContainer)
+							+Button(ELEM('PageLink'))(class=styles.sliderInfoCardLink)

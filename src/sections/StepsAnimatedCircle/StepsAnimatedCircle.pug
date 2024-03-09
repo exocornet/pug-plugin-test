@@ -1,0 +1,19 @@
+mixin StepsAnimatedCircle(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include StepsAnimatedCircle.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.stepsAnimatedCircle)
+		+Container
+			if ELEM('Heading', false)
+				+Row(ELEM('Row'))
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			include include-svg/StepsAnimatedCircle
+			div(class=styles.stepsAnimatedCircleContent)
+				div(class=styles.stepsAnimatedCircleLine)
+				div(class=styles.stepsAnimatedCircleClonedElement)

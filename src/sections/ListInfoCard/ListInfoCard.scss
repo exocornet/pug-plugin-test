@@ -1,0 +1,35 @@
+@import "../../shared/styles/include-setings-styles";
+
+.list-info-card {
+	--gap: 6px;
+
+	&__content {
+		margin-inline: responsive-size(0);
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__card {
+		width: calc(50% - var(--gap));
+	}
+
+	&__link-wrapper {
+		margin-top: responsive-size(20, 40);
+
+		@include media(xs) {
+			width: 100%;
+		}
+	}
+
+	&__button {
+		// max-height: 64px;
+		padding: 28px 48px;
+		@include media(xs) {
+			display: block;
+
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('search-result');
+
+		return {
+			searchResult: BLOCK({}, ['mb-56 mb-32@md']),
+			searchResultTheme: BLOCK('theme', {
+				[`${cn?.colorSearchResultTheme}`]: ['grey'].includes(cn?.colorSearchResultTheme)
+			}, ['mb-24']),
+			searchResultWrapText: BLOCK('wrap-text', ['w-70 w-100@md']
+			),
+			searchResultDate: BLOCK('date'),
+		}
+	}

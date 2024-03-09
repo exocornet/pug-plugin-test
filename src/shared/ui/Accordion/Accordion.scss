@@ -1,0 +1,105 @@
+.accordion {
+	$self: &;
+
+	position: relative;
+
+	cursor: pointer;
+
+	border-bottom: 1px solid $white-aluminum;
+
+	&__title {
+		width: responsive-size(280, 878);
+
+		user-select: none;
+
+		transition: color 0.4s linear;
+
+		&-wrap {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			margin-bottom: responsive-size(20, 64);
+
+			&::after {
+				content: "+";
+
+				transition: color 0.4s linear;
+
+				font-size: 18px;
+			}
+		}
+	}
+
+	&__body {
+		overflow: hidden;
+
+		max-height: 0;
+
+		transition: max-height 0.4s ease-out;
+	}
+
+	&__text {
+		padding-bottom: responsive-size(20, 64);
+	}
+
+	@include media(md, "min") {
+		&::after {
+			position: absolute;
+
+			width: 0;
+			height: 2px;
+
+			content: "";
+			transition: width 0.4s linear;
+
+			background-color: $selection-color;
+		}
+
+		&:hover {
+			#{$self}__title-wrap {
+				&::after {
+					color: $selection-color;
+				}
+			}
+
+			#{$self}__title {
+				color: $selection-color;
+			}
+
+			&::after {
+				width: 100%;
+
+				color: $selection-color;
+			}
+		}
+	}
+}
+
+.js-accordion-active {
+	.accordion {
+		&__title {
+			color: $selection-color;
+
+			&-wrap {
+				&::after {
+					content: "-";
+
+					color: $selection-color;
+				}
+			}
+		}
+
+		&__body {
+			margin-bottom: responsive-size(20, 64);
+		}
+	}
+
+	@include media(md, "min") {
+		&::after, {
+			width: 100%;
+
+			color: $selection-color;
+		}
+	}
+}

@@ -1,0 +1,17 @@
+mixin Select(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Select.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.customSelect)
+		select(name=DATA('name', 'theme') data-type=DATA('name', false))&attributes(attributes)
+			for item in ELEM_ARR("OptionsArr")
+				include ../../helpers/pug/shortcut-check-store.pug
+				option(value=I_DATA('key', item.elem.Text.data.text) data-event-id=I_DATA('dataEventId', false))
+					+Text(I_ELEM('Text'))
+		div(class=styles.customSelected)
+		div(class=styles.customSelectItems)

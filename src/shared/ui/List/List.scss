@@ -1,0 +1,79 @@
+@import "../../../shared/styles/include-setings-styles";
+
+.list {
+	&_numeric {
+		margin-left: responsive-size(22, 26);
+
+		list-style-type: decimal;
+
+		li::marker {
+			font-size: responsive-size(16, 18);
+		}
+	}
+
+	&_square {
+		margin-left: responsive-size(12, 18);
+
+		list-style-type: square;
+
+		li::marker {
+			font-size: responsive-size(6, 8);
+		}
+	}
+
+	&_square-no-margin {
+		margin-left: 0;
+
+		list-style-type: square;
+
+		li {
+			line-height: 1.35;
+		}
+		
+		li::marker {
+			font-size: responsive-size(6, 8);
+		}
+
+		@include media(xs) {
+			padding-left: 22px;
+
+			li {
+				margin-bottom: 12px;
+
+				line-height: 1.2;
+			}
+
+			li:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&_none {
+		padding-bottom: 64px;
+
+		list-style-type: none;
+
+		li::marker {
+			font-size: responsive-size(6, 8);
+		}
+
+		& + hr {
+			display: none;
+
+			visibility: hidden;
+			
+			border: none;
+		}
+
+		@include media(xs) {
+			padding-bottom: 48px;
+		}
+	}
+
+	&_large-marker {
+		li::marker {
+			font-size: responsive-size(10, 18);
+		}
+	}
+}

@@ -1,0 +1,8 @@
+mixin AccordionBody(props)
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Accordion.cn.pug
+	- const styles = classes();
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	div(class=styles.accordionBody)&attributes(attributes)
+		block

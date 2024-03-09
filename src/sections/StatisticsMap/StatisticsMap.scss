@@ -1,0 +1,128 @@
+// # ------------ LAYER SETTINGS and LAYER TOOLS------------ # //
+@import "../../shared/styles/include-setings-styles";
+
+.statistics-map {
+	&__container {
+		position: relative;
+		z-index: 0;
+
+		overflow: hidden;
+
+		min-height: responsive-size(184, 820);
+		padding: responsive-size(20, 28);
+
+		border-radius: 16px;
+		background-color: $light-green;
+		margin-inline: responsive-size(-20, -28);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			border-radius: 8px;
+		}
+	}
+
+	&__world-map {
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		right: 0;
+		left: 0;
+
+		width: responsive-size(268, 1191);
+		margin-inline: auto;
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			top: -30px;
+			left: -450px;
+
+			width: 976px;
+		}
+	}
+
+	&__text {
+		width: responsive-size(245);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			width: 100%;
+			margin-bottom: 77px;
+		}
+	}
+
+	&__wrap-number {
+		letter-spacing: -0.04em;
+
+		line-height: 0.8;
+		@include font-size-responsive(6.4, 24.5);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			--margin-wrap-number: #{responsive-size(12, 20)};
+			width: calc(50% - (var(--margin-wrap-number) / 2));
+			@include font-size-responsive(6.4, 12);
+		}
+
+		// stylelint-disable-next-line order/order
+		&_mini {
+			@include font-size-responsive(6.4, 12);
+
+			// # MEDIA QUERY 360 # //
+			@include media(xs) {
+				&:nth-child(odd) {
+					margin-left: var(--margin-wrap-number);
+				}
+			}
+		}
+	}
+
+	&__big-number {
+		margin-bottom: responsive-size(8, 24);
+	}
+
+	&__numbers-bottom {
+		column-gap: responsive-size(215)
+	}
+
+	&__kemerovo {
+		position: absolute;
+
+		&-text {
+			text-transform: uppercase;
+
+			font-size: 10px;
+			font-weight: 500;
+			line-height: 14px;
+		}
+	}
+}
+
+// [START] => Классы для анимаций точек на карте //
+.js-animation-radius-start {
+	animation: animationRadiusStart 1s forwards;
+}
+
+.js-animation-radius-end {
+	animation: animationRadiusEnd 1s forwards;
+}
+
+@keyframes animationRadiusStart {
+	0% {
+		r: 0;
+	}
+
+	100% {
+		r: 15;
+	}
+}
+
+@keyframes animationRadiusEnd {
+	0% {
+		r: 15;
+	}
+
+	100% {
+		r: 0;
+	}
+}
+// Классы для анимаций точек на карте <= [END] //

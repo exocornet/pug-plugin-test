@@ -1,0 +1,884 @@
+-
+	const FilterNews = {
+		includeSection: 'FilterNews',
+		cn: {
+			margin: 'mt-40'
+		},
+		elem: {
+			FiltersSelectControl: {
+				cn: {
+					marginSelectControl: 'ml-auto ml-0@xs'
+				},
+				elem: {
+					SelectFilterArr: [
+						{
+							data: {
+								text: 'Выберите месяц',
+								nameSelect: 'month'
+							},
+							dataArr: {
+								optionArr: [
+									{
+										data: {
+											text: 'Январь'
+										}
+									},
+									{
+										data: {
+											text: 'Февраль'
+										}
+									},
+									{
+										data: {
+											text: 'Март'
+										}
+									},
+									{
+										data: {
+											text: 'Апрель'
+										}
+									},
+									{
+										data: {
+											text: 'Май'
+										}
+									},
+									{
+										data: {
+											text: 'Июнь'
+										}
+									},
+									{
+										data: {
+											text: 'Июль'
+										}
+									},
+									{
+										data: {
+											text: 'Август'
+										}
+									},
+									{
+										data: {
+											text: 'Сентябрь'
+										}
+									},
+									{
+										data: {
+											text: 'Октябрь'
+										}
+									},
+									{
+										data: {
+											text: 'Ноябрь'
+										}
+									},
+									{
+										data: {
+											text: 'Декабрь'
+										}
+									},
+								]
+							},
+						}
+					],
+				}
+			},
+			Form: {
+				data: {
+					action: '/api/forms/callback'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									cn: {
+										isPr: true
+									},
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'email'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш email",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-4 col-4@xs',
+												zIndex: 'z-1'
+											}
+										},
+										Select: {
+											data: {
+												name: 'theme'
+											},
+											elem: {
+												OptionsArr: [
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "новости",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "газета",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "медиа",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "рассылка",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "сми о нас",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "пресс-релизы",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "пресс-кит",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+													{
+														elem: {
+															Text: {
+																data: {
+																	tag: 'span',
+																	text: "контакты",
+																	textTransform: 'upper'
+																},
+															}
+														}
+													},
+												]
+											},
+											cn: {
+												subscription: 'subscription'
+											}
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "выберите тему",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						},
+						cn: {
+							margin: 'mt-24 mt-0@xs'
+						}
+					},
+					ColButtonSubscribe: {
+						cn: {
+							cols: 'col-2 col-4@xs'
+						}
+					},
+					ButtonSubscribe: {
+						data: {
+							text: 'Подписаться',
+							type: 'submit',
+						},
+						cn: {
+							size: 'large',
+						},
+						opt: {
+							icon: true
+						}
+					},
+				},
+				cn: {
+					margin: 'mt-0'
+				}
+			},
+			Col: {
+				cn: {
+					cols: 'col-9 col-4@xs'
+				}
+			},
+			ColForm: {
+				cn: {
+					cols: 'col-10 col-4@xs',
+					offset: 'offset-2 offset-0@xs'
+				}
+			},
+			HeadingForm: {
+				data: {
+					tag: 'h3',
+					text: 'Подпишитесь на рассылку свежих новостей и важной информации',
+					footnoteText: 'рассылка'
+				},
+				cn: {
+					size: 'h3',
+				}
+			},
+			NewsCardArr: [
+				{
+					elem: {
+						Col: {
+							cn: {
+								cols: 'col-6 col-4@xs',
+							}
+						},
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-1.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-1xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '09.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Промышленные строения'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						Col: {
+							cn: {
+								cols: 'col-6 col-4@xs',
+							}
+						},
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-1.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-1xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '09.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Промышленные строения'
+									},
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+				{
+					elem: {
+						NewsCard: {
+							data: {
+								image: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2.png'),
+								imageXs: require('IMAGES/sections/slider-press-center/slider-press-center-slide-2xs.png'),
+							},
+							elem: {
+								Button: {
+									data: {
+										text: 'читать'
+									},
+									opt: {
+										icon: true
+									}
+								},
+								TextDate: {
+									data: {
+										text: '12.07.2023'
+									},
+									cn: {
+										style: 'cap',
+										margin: 'mb-8'
+									}
+								},
+								Text: {
+									data: {
+										text: 'Лица компании'
+									},
+									cn: {
+										width: 'w-90'
+									}
+								}
+							},
+							cn: {
+								marginTextBlock: 'mt-24 mb-24',
+							}
+						},
+					},
+				},
+			],
+			ButtonMore: {
+				data: {
+					href: '/news',
+					text: 'Показать еще',
+				},
+				cn: {
+					margin: 'mt-40 mt-10@xs mr-auto ml-auto',
+					size: 'large',
+					isMoreButton: 'js-load-more-button',
+				},
+			},
+		}
+	}

@@ -1,0 +1,118 @@
+.slider {
+	$self: &;
+
+	&__slide {
+		-webkit-text-size-adjust: 100%
+	}
+
+	// [START] ===> Стили пагинации
+	&__pagination-bullet {
+		position: relative;
+
+		width: fit-content;
+
+		transition: opacity 0.4s;
+		text-decoration: none;
+
+		letter-spacing: 0.1em;
+
+		opacity: 1;
+		color: $black-40;
+
+		@include font-size-responsive(1)
+	}
+
+	.swiper-pagination-bullet-active {
+		color: $black;
+	}
+
+	&__pagination {
+		--swiper-pagination-color: var(--transparent);
+		--swiper-pagination-bullet-inactive-color: trnsparent;
+		--swiper-pagination-bullet-horizontal-gap: 0;
+		position: absolute;
+		z-index: 2;
+
+		display: flex;
+
+		max-width: fit-content;
+
+		transition: none;
+
+		font-family: $font-helvetica;
+		font-weight: 550;
+		column-gap: 10px;
+
+		&_color-active-green {
+			#{$self}__pagination-bullet {
+				color: $black;
+			}
+
+			.swiper-pagination-bullet-active {
+				color: $dark-green;
+			}
+		}
+	}
+
+	&__pagination-bullet + &__pagination-bullet {
+		padding-left: 10px;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+
+			min-width: 3px;
+
+			content: url("IMAGES/other/pagination-separator.svg");
+			transform: translateY(-50%);
+		}
+	}
+
+	&__pagination-link {
+		height: 8px;
+	}
+	// Стили пагинации <=== [END]
+
+	// [START] ===> Стили навигации
+	&__navigation {
+		position: absolute;
+		left: 0;
+
+		display: flex;
+		column-gap: 4px;
+	}
+
+	&__next {
+		transform: rotate(180deg);
+	}
+
+	&__prev, &__next {
+		display: flex;
+
+		padding: 8px 12px;
+
+		border-radius: 4px;
+		background-color: $black-04;
+
+		&:disabled, &[disabled] {
+			background-color: $black-03;
+		}
+
+		&_white {
+			backdrop-filter: blur(6px);
+
+			color: $white;
+			background-color: $black-20;
+
+			&:disabled, &[disabled] {
+				background-color: $black-10;
+			}
+		}
+	}
+	// Стили навигации <=== [END]
+
+	&__border-bottom {
+		border-bottom: 1px solid $light-gray;
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"status": 200,
+	"data": {
+		"278": {
+			"title": "New Holland 14 excavator loader",
+			"price": {
+				"city": 3300,
+				"region": 3500
+			}
+		},
+		"279": {
+			"title": "New Holland 15 excavator loader",
+			"price": {
+				"city": 3400,
+				"region": 3600
+			}
+		}
+	}
+}

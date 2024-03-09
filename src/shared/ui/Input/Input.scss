@@ -1,0 +1,136 @@
+.input {
+	width: 100%;
+
+	padding: 15px 0;
+
+	border: none $black-40;
+	border-bottom: 1px solid $black-40;
+	outline: none;
+	background-color: $main;
+
+	&[type="number"] {
+		appearance: textfield;
+
+		&::-webkit-inner-spin-button,
+		&::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+		}
+	}
+
+	&::placeholder {
+		color: $black-40;
+	}
+
+	&_with-icon {
+		padding-left: 30px;
+
+		& + .input__image {
+			position: absolute;
+
+			z-index: 9;
+			top: 50%;
+			left: 0;
+
+			width: auto;
+			height: 18px;
+
+			transform: translateY(-50%);
+
+			opacity: 0.6;
+		}
+
+		&:not(:placeholder-shown) + .input__image,
+		&:focus + .input__image {
+			opacity: 1;
+		}
+	}
+
+	&_subscription {
+		height: 42px;
+		@include media(xs) {
+			height: auto;
+		}
+		@include media(xxl, min) {
+			height: 63px;
+		}
+	}
+
+	&[type="file"] {
+		padding-right: 40px;
+
+		& ~ svg {
+			display: none;
+		}
+
+		&[data-file-type] {
+			color: initial;
+
+			&::before {
+				display: inline-block;
+
+				margin-right: 10px;
+
+				padding: 10px 14px 8px;
+
+				content: attr(data-file-type);
+				vertical-align: middle;
+
+				letter-spacing: 0.1em;
+
+				color: $black;
+				border-radius: 4px;
+				background-color: $black-04;
+
+				font-family: $font-helvetica;
+				font-weight: 550;
+				line-height: 1.4;
+
+				@include font-size-responsive(1);
+			}
+
+			&::after {
+				display: none;
+			}
+
+			& ~ svg {
+				position: absolute;
+				right: 0;
+				bottom: responsive-size(20, 30);
+
+				display: block;
+
+				width: responsive-size(24, 38);
+				height: auto;
+			}
+		}
+	}
+
+	&__button-number {
+		background-color: transparent;
+
+		&-container {
+			display: flex;
+		}
+	}
+
+	@include font-size-responsive(2);
+
+	@include media(xs) {
+		padding: 8px;
+
+		border-bottom: none;
+		border-radius: 4px;
+
+		background-color: $black-04;
+
+		&_with-icon {
+			padding-left: 30px;
+
+			& + .input__image {
+				left: 8px;
+			}
+
+			@include font-size-responsive(1.6);
+		}
+	}
+}

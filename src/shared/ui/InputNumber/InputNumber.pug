@@ -1,0 +1,23 @@
+mixin InputNumber(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include InputNumber.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	+Button({data: {text: '-', type: 'button'}})(class="input-number__button input-number__button--left")
+	input(
+		type=DATA('type', 'text')
+		placeholder=DATA('placeholder')
+		name=DATA('name', 'search')
+		accept=DATA('accept', false)
+		max=DATA("max", false)
+		min=DATA("min", false)
+		data-type=DATA('dataType', ELEM('name'))
+		class=styles.inputNumber
+		value=DATA("min", '1')
+		data-default-value=DATA("min", '1')
+	)&attributes(attributes)
+	+Button({data: {text: '+', type: 'button'}})(class="input-number__button input-number__button--right")

@@ -1,0 +1,12 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('card-quote')
+
+		return {
+			cardQuote: BLOCK({}, [
+				cn?.margin,
+			]),
+			cardTextQuote: BLOCK('text-quote'),
+			cardTextQuoteBy: BLOCK('text-quote-by')
+		}
+	}

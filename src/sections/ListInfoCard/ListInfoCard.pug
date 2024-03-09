@@ -1,0 +1,26 @@
+mixin ListInfoCard(props)
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include ListInfoCard.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	section(class=styles.listInfoCard)
+		+Container
+			if ELEM('Heading', false)
+				+Row
+					+Col(ELEM('Col'))
+						+Heading(ELEM('Heading'))
+			+Row
+				+Col(ELEM('ColList'))
+					div(class=styles.listInfoCardContent)&attributes({...DATA('moreAttributes', false)})
+						for item in ELEM_ARR('ListInfoArr')
+							include ../../shared/helpers/pug/shortcut-check-store
+							+CardInfo(I_ELEM('CardInfo'))(class=styles.listInfoCardCard)
+
+					//- ## Ссылка на страницу  ## -//
+					if ELEM('PageLink', false)
+						div(class=styles.listInfoCardLinkWrapper)
+							+Button(ELEM('PageLink'))(class=styles.listInfoCardLinkButton)

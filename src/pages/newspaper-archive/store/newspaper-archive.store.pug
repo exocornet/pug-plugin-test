@@ -1,0 +1,43 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Архив выпусков газеты';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Пресс-центр' } },
+						{ data: { text: 'Корпоративная газета' } }
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- ## Подключение store секции HeadingDetailed ## -//
+include newspaper-archive--heading-detailed
+- pageStore.addSection(HeadingDetailed);
+
+//- ## Подключение store секции FilterNewspaper ## -//
+include newspaper-archive--filter-newspaper
+- pageStore.addSection(FilterNewspaper);
+
+//- ## Подключение store секции SubscriptionForm ## -//
+include newspaper-archive--subscription-form
+- pageStore.addSection(SubscriptionForm);
+
+//- # Подключение store для секции PageLinks # -//
+include newspaper-archive--page-links
+- pageStore.addSection(PageLinks);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include newspaper-archive--dialog
+- pageStore.addSection(HiddenDialogContent);

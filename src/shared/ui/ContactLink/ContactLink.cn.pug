@@ -1,0 +1,14 @@
+-
+		function classes(cn) {
+				const BLOCK = CN('contact-link')
+
+				return {
+						contactLink: BLOCK({}, [
+							cn?.margin,
+						]),
+						contactLinkBlock: BLOCK('link-block'),
+						contactLinkHeader: BLOCK('header', ['mb-12 mb-20@xs']),
+						contactLinkEmail: BLOCK('email'),
+						contactLinkPhone: BLOCK('phone'),
+				}
+		}

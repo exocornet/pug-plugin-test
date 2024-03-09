@@ -1,0 +1,58 @@
+mixin Footer(props)
+	//- # ПОДКЛЮЧЕНИЕ СТАТИЧНОГО STORE ДЛЯ FOOTER # -//
+	include Footer.store.pug
+	//- # ФУНКЦИОНАЛ ДЛЯ ПЕРЕОПРЕДЕЛЕНИЯ СТАТИЧНОГО STORE СО STORE СТРАНИЦЫ # -//
+	- props = deepMerge(Footer, props);
+
+	//- # ПОДКЛЮЧЕНИЕ ДЛЯ ПРОВЕРОК DATA, OPT, ELEM # -//
+	include ../../shared/helpers/pug/shortcut-check-store
+
+	//- # ЛОГИКА КОМПОНЕНТА # -//
+	-
+		const variables = 'переменная';
+
+	//- # ПОЛУЧЕНИЕ CSS КЛАССОВ КОМПОНЕНТА # -//
+	include Footer.cn.pug
+	- const styles = classes(props && props.cn);
+
+	//- # ВЕРСТКА КОМПОНЕНТА # -//
+	footer(class=styles.footer)
+		+Container
+			hr(class=styles.footerBorderTop)
+			if !OPT('notContacts')
+				+Row(class="mt-40 mt-20@xs")
+					+Col({cn: {cols: 'col-1 col-2@xs'}})
+						div(class="d-flex align-items-start")
+							+Link(ELEM('LinkContacts'))
+
+					+Col({cn: {cols: 'col-2@xs col-3@md col-2', margin: 'ml-auto'}})
+						for item in DATA_ARR('cityArr')
+							include ../../shared/helpers/pug/shortcut-check-store
+							div(class="d-flex justify-content-between mb-16 mb-4@xs")
+								+Text(item) !{I_DATA('key')}
+								if I_OPT('img')
+									+Text(item)
+										img(src=I_DATA('img') alt="" width="18" height="10" class="w-fit mr-4")
+										| !{I_DATA('value')}
+								else
+									+Text(item) !{I_DATA('value')}
+
+				+Row(class="mt-80 mt-56@md")
+					+Col({cn: {cols: 'col-3 col-6@md col-4@xs', offset: 'offset-2 offset-0@md', order: 'order-1 order-2@md', margin: 'mt-8@md'}})
+						+Link(ELEM('LinkEmail'))(class=styles.footerAddress)
+						+Text(class=styles.footerAddress) Кемерово, ул. Грузовая, стр. 1,
+						div(class=styles.footerSocialButtons)
+							for item in DATA_ARR('socialButtonsArr')
+								include ../../shared/helpers/pug/shortcut-check-store
+								+Button(item)(class=styles.footerSocialButton)
+
+					+Col({cn: {cols: 'col-7 col-6@md col-4@xs', order: 'order-2 order-1@md'}})(class="text-align-right text-align-left@md")
+						+Link(ELEM('LinkPhone'))(class=styles.footerLinkPhone)
+			- const cls = OPT('notContacts') ? styles.footerContactsRow : 'mt-80 mt-64@md';
+			+Row(class=cls)
+				+Col({cn: {cols: 'col-2 col-2@xs', order: 'order-2@md'}})
+					+Text({cn: {style: 'cap'}})(class="d-inline-block vertical-align-middle") © 2023
+				+Col({cn: {cols: 'col-8 col-6@md col-3@xs', order: 'order-1@md', margin: 'mb-8@md'}})
+					+Text({cn: {style: 'cap', textTransform: 'upper'}})(class="d-inline-block vertical-align-middle") КАО «Азот», входит в группу компаний «Азот»
+				+Col({cn: {cols: 'col-2 col-2@xs', order: 'order-3@md', margin: 'ml-auto@md'}})(class="text-align-right")
+					+Link({data: {title: 'сделано в aic.', text: 'сделано в aic.', linkHref: '#!'}})(class=styles.footerMadeIn)

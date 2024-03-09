@@ -1,0 +1,169 @@
+-
+	const FeedbackForm = {
+		includeSection: 'FeedbackForm',
+		cn: {
+			margin: 'mt-120 mt-80@xs',
+		},
+		elem: {
+			Footnote: {
+				data: {
+					tag: 'span',
+					text: "форма обратной связи",
+					textTransform: 'upper',
+				},
+			},
+			Form: {
+				data: {
+					dialogName: 'feedBackFormDialog',
+					action: '/api/forms/callback'
+				},
+				elem: {
+					FromFieldsArr: [
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'name'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "имя",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									cn: {
+										isPl: true
+									},
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'company'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "компания",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												type: 'text',
+												name: 'email'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш email",
+												textTransform: 'upper'
+											},
+										}
+									}
+								},
+							}
+						},
+						{
+							elem: {
+								Field: {
+									cn: {
+										isPl: true
+									},
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-6 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'phone',
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "номер телефона",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+						{
+							elem: {
+								Field: {
+									elem: {
+										Col: {
+											cn: {
+												cols: 'col-12 col-4@xs',
+											}
+										},
+										Input: {
+											data: {
+												name: 'question'
+											},
+										},
+										Label: {
+											data: {
+												tag: 'span',
+												text: "ваш вопрос",
+												textTransform: 'upper'
+											},
+										}
+									}
+								}
+							}
+						},
+					],
+					Agreement: {
+						data: {
+							text: 'Нажимая «отправить», вы даёте согласие на <a href="#" class="link light-grey">обработку персональных данных</a>'
+						}
+					},
+					SubmitButton: {
+						data: {
+							text: 'Отправить',
+							type: 'submit',
+						},
+					}
+				}
+			}
+		},
+	}

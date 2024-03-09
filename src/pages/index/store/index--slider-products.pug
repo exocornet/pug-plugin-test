@@ -1,0 +1,97 @@
+-
+	const SliderProducts = {
+		includeSection: 'SliderProducts',
+		cn: {
+			margin: 'mt-200 mt-80@xs'
+		},
+		elem: {
+			CornerButton: {
+				data: {
+					text: 'вся продукция',
+					href: '#!'
+				},
+				opt: {
+					icon: true
+				}
+			},
+			Button: {
+				data: {
+					text: 'узнать больше',
+					href: '#!'
+				},
+				cn: {
+					size: 'large'
+				},
+			},
+			//- данные компонента Slider
+			Slider: {
+				data: {
+					dataCustomPagination: 'АММИАЧНАЯ СЕЛИТРА;АЗОТНАЯ КИСЛОТА;КАРБАМИД',
+				},
+				opt: {
+					isSliderPagination: true,
+					isSliderNavigation: true,
+				},
+				cn: {
+					isPaginationActiveGreen: true
+				}
+			},
+			//- массив данных компонента SliderSlide
+			SliderSlideArr: [
+				{
+					data: {
+						image: require('IMAGES/sections/slider-products/slider-products-1.png'),
+						imageXs: require('IMAGES/sections/slider-products/slider-products-1-xs.png')
+					},
+					elem: {
+						Heading: {
+							data: {
+								text: 'аммиачная селитра',
+								footnoteText: 'NH₄NO₃'
+							}
+						},
+						Text: {
+							data: { text: 'Гарантируем высокую чистоту и стабильность концентрации аммиачной селитры в каждой партии продукции. Мы используем первоклассные сырьевые материалы и современное оборудование, чтобы обеспечить высокую эффективность и стабильность продукта.' }
+						}
+					}
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-products/slider-products-2.png'),
+						imageXs: require('IMAGES/sections/slider-products/slider-products-1-xs.png')
+					},
+					elem: {
+						Heading: {
+							data: {
+								text: 'азотная кислота',
+								footnoteText: 'HNO₃'
+							}
+						},
+						Text: {
+							data: { text: 'Гарантируем высокую чистоту и стабильность концентрации аммиачной селитры в каждой партии продукции. Мы используем первоклассные сырьевые материалы и современное оборудование, чтобы обеспечить высокую эффективность и стабильность продукта.' }
+						}
+					}
+				},
+				{
+					data: {
+						image: require('IMAGES/sections/slider-products/slider-products-3.png'),
+						imageXs: require('IMAGES/sections/slider-products/slider-products-1-xs.png')
+					},
+					elem: {
+						Heading: {
+							data: {
+								text: 'карбамид',
+								footnoteText: 'CH₄N₂O'
+							}
+						},
+						Text: {
+							data: { text: 'Карбамид — это не просто удобрение, но и экономичный способ улучшить качество посадок и получить высокий урожай. Наш продукт легко растворяется и не повреждает корни растений. Вы сможете не только улучшить плодородие почвы, но и повысить устойчивость растений к различным болезням и вредителям.' }
+						}
+					}
+				}
+			]
+		},
+		opt: {
+			isLinkButton: true,
+		}
+	}

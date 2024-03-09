@@ -1,0 +1,63 @@
+//- # ПАРАМЕТРЫ ДЛЯ НАСТРОЙКИ LAYOUT # -//
+-
+	const pageTitle = 'Каталог. Детальная страница продукта';
+	// const isSvgSprite = true;
+	// const classBodyPage = 'about-body';
+	// const classMainPage = 'about-main';
+
+	const Header = {
+		elem: {
+			BreadCrumbs: {
+				dataArr: {
+					LinksArr: [
+						{ data: { text: 'Главная' } },
+						{ data: { text: 'Продукция' } },
+						{ data: { text: 'Аммиачная селитра' } },
+					]
+				}
+			}
+		}
+	};
+
+//- # НАСЛЕДОВАНИЕ ФУНКЦИИ ДЛЯ РАЗДЕЛЕНИЯ СТОРОВ # -//
+- const pageStore = addSections();
+
+//- # Подключение store секции SliderProducts # -//
+include catalog-detailed--slider-products.pug
+- pageStore.addSection(SliderProducts);
+
+//- # Подключение store секции TabsFacts # -//
+include catalog-detailed--tabs-facts.pug
+- pageStore.addSection(TabsFacts);
+
+//- # Подключение store секции ListContactLinks # -//
+include catalog-detailed--list-contact-links
+- pageStore.addSection(ListContactLinks);
+
+//- # Добавление store для секции PageLinks # -//
+include catalog-detailed--page-links
+- pageStore.addSection(PageLinks);
+
+//- # Подключение store секции AccordionList # -//
+include catalog-detailed--accordion-list
+- pageStore.addSection(AccordionList);
+
+//- # Добавление store для секции SliderInfoCard # -//
+include catalog-detailed--slider-info-card
+- pageStore.addSection(SliderInfoCard);
+
+//- ## Подключение store секции FeedbackForm ## -//
+include catalog-detailed--feedback-form
+- pageStore.addSection(FeedbackForm);
+
+//- # Подключение store секции SliderNews # -//
+include catalog-detailed--slider-news
+- pageStore.addSection(SliderNews);
+
+//- ## Подключение store секции HiddenDialogContent ## -//
+include catalog-detailed--dialog
+- pageStore.addSection(HiddenDialogContent);
+
+//- ## Подключение store секции ModalOrderForm ## -//
+include catalog-detailed--modal-order-form
+- pageStore.addSection(ModalOrderForm);

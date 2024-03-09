@@ -1,0 +1,27 @@
+-
+		function classes(cn) {
+				const BLOCK = CN('card-info')
+
+				return {
+						cardInfo: BLOCK({'default-width': cn?.isDefaultWidth, 'fixed-height': cn?.isFixedHeight}, [
+							cn?.slider,
+							cn?.margin,
+							cn?.cols,
+							cn?.card,
+						]),
+						cardInfoTextBlock: BLOCK('text-block', [
+								cn?.marginTextBlock,
+								cn?.isRow,
+								cn?.isw100,
+								cn?.isw90,
+							'w-80 w-100@xs'
+						]),
+						cardInfoHeader: BLOCK('header', ['w-90']),
+						cardInfoButton: BLOCK('button', ['mt-auto@md']),
+						cardInfoCircle: BLOCK('circle', ['position-absolute']),
+						cardInfoIcon: BLOCK('icon'),
+						cardInfoTransportInfo: BLOCK('transport-info'),
+						cardInfoTransportHeader: BLOCK('transport-header'),
+						cardInfoBranchLine: BLOCK('branch-line'),
+				}
+		}

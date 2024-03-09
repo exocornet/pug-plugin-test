@@ -1,0 +1,11 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('contacts');
+
+		return {
+			contacts: BLOCK({}, [cn?.margin]),
+			contactsWrapper: BLOCK('wrapper', ['position-relative']),
+			contactsRowTop: BLOCK('row-top'),
+			contactsRowBottom: BLOCK('row-bottom'),
+		}
+	}

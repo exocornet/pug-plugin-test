@@ -1,0 +1,40 @@
+-
+	const VacancyListExpectations = {
+		includeSection: 'VacancyList',
+		opt: {
+			isHR: true,
+		},
+		elem: {
+			TextFootnote: {
+				data: {
+					text: 'наши ожидания',
+				},
+				cn: {
+					style: 'cap',
+					textTransform: 'upper'
+				}
+			},
+			List: {
+				data: {
+					tag: 'ul',
+				},
+				cn: {
+					listStyle: 'square-no-margin',
+				},
+			},
+			ListArr: [
+				{
+					data: {
+						text: 'Наличие среднего образования',
+						tag: 'li',
+					}
+				},
+				{
+					data: {
+						text: 'Желателен опыт работы с электроинструментом и бензоинструментом',
+						tag: 'li',
+					}
+				},
+			]
+		}
+	}

@@ -1,0 +1,13 @@
+-
+	function classes(cn) {
+		const BLOCK = CN('date-picker');
+
+		return {
+			datePicker: BLOCK(),
+			datePickerInput: BLOCK('input'),
+			datePickerText: BLOCK('text'),
+			datePickerDateItems: BLOCK('date-items', ['d-flex']),
+			datePickerTimeItems: BLOCK('time-items', ['d-flex']),
+			datePickerItem: BLOCK('item', ['d-flex', 'justify-content-center', 'align-items-center'])
+		}
+	}

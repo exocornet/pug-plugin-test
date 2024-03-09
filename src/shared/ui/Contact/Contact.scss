@@ -1,0 +1,52 @@
+.contact {
+	--heading-line-height: 0.8;
+	--heading-letter-spacing: -0.04em;
+	position: relative;
+
+	letter-spacing: var(--heading-letter-spacing);
+
+	line-height: var(--heading-line-height);
+
+	&__label {
+		position: absolute;
+		top: responsive-size(35);
+		left: responsive-size(-257);
+
+		text-decoration: none;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+
+		font-family: $font-helvetica;
+		font-weight: 550;
+		line-height: 1.4;
+		@include font-size-responsive(1);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			position: static;
+			left: 0;
+
+			display: block;
+		}
+
+		// stylelint-disable-next-line order/order
+		&_top-0 {
+			top: 0;
+		}
+
+		&_top-26 {
+			top: -26px;
+		}
+	}
+
+
+	// # OTHER MODIFIER # //
+	&_text-indent {
+		text-indent: responsive-size(257);
+
+		// # MEDIA QUERY 360 # //
+		@include media(xs) {
+			text-indent: unset;
+		}
+	}
+}
